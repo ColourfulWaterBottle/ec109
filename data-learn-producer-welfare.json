@@ -1,0 +1,495 @@
+{
+  "block": "producer-welfare",
+  "lessons": [
+    {
+      "id": "lesson-pw-supply-demand",
+      "topic": "Supply & Demand",
+      "title": "Demand and Supply: The Market Model",
+      "steps": [
+        {
+          "type": "text",
+          "heading": "The most important model in economics",
+          "body": "Having built up consumer theory (one person choosing a bundle) and started producer theory (one firm choosing inputs), we now zoom out to the MARKET level: many buyers and many sellers interacting through price. This is the demand-and-supply model, and it is the tool you will use to analyse competitive markets — large numbers of buyers and sellers, none of whom individually affects the price (no bargaining power, no 'Amazon' setting prices unilaterally)."
+        },
+        {
+          "type": "text",
+          "heading": "The demand function and its inverse",
+          "body": "A demand function Q(p) takes a price and returns the quantity demanded at that price — it is usually decreasing (higher price, lower quantity) and drawn with price on the vertical axis, quantity on the horizontal (output convention, even though price is the input to the function).\n\nSometimes we work with the INVERSE demand function p(Q) instead — given a quantity, what price would make consumers demand exactly that much? Economically, p(Q) has a specific meaning: it is the maximum willingness to pay of the consumer buying the marginal (last) unit at that quantity. This inverse-demand-as-willingness-to-pay idea becomes central later when measuring consumer surplus."
+        },
+        {
+          "type": "check",
+          "q": "What does the inverse demand function p(Q) represent economically?",
+          "options": [
+            "The minimum price a firm is willing to accept",
+            "The maximum willingness to pay of the marginal consumer at quantity Q",
+            "The average price paid across all units sold",
+            "The price that maximises total revenue"
+          ],
+          "answer": 1,
+          "explain": "p(Q) tells you, for a given quantity Q already being sold, what price the LAST (marginal) unit could be sold at — equivalently, the maximum willingness to pay of the consumer who values the good least among current buyers."
+        },
+        {
+          "type": "text",
+          "heading": "From individual demand to market demand",
+          "body": "Market demand is built up from individual consumers. If consumer i has demand qx,i(px, py, mi), market demand is just the sum across everyone:\n\nQx(px, py, m1,...,mN) = Sum of qx,i(px, py, mi)\n\nGraphically, this means summing individual demand curves HORIZONTALLY (add up quantities at each price), not vertically. Market demand depends on: the price of the good itself (this is the endogenous relationship we're modelling), the prices of other goods, and the incomes of all N buyers — all exogenous, taken as given."
+        },
+        {
+          "type": "text",
+          "heading": "Worked example: Cobb-Douglas market demand",
+          "body": "Take N consumers with identical income m, each with Cobb-Douglas utility ui = x^a y^(1-a) over cereal (x) and orange juice (y). From the consumer theory lessons, you already know individual demand: x* = am/Px.\n\nMarket demand is just N times this: Qx = N x* = N a m / Px.\n\nNotice what market demand depends on: total income across consumers (N times m), the preference weight a, and price Px. A 'shift' in demand means a change in anything OTHER than Px that moves the whole curve — here, that's N (population), m (income), or a (tastes) changing."
+        },
+        {
+          "type": "check",
+          "q": "Market demand is Qx = N a m / Px. If a rises (consumers now prefer good x more), while N, m, Px stay fixed, what happens to the demand curve?",
+          "options": [
+            "A movement along the curve, since Px is unchanged",
+            "The curve shifts outward — demand rises at every price level",
+            "The curve shifts inward",
+            "Nothing changes since a is not a price"
+          ],
+          "answer": 1,
+          "explain": "a is a preference parameter, not the good's own price — a rise in a (holding Px fixed) means MORE is demanded at every possible price, which is exactly what a rightward/outward SHIFT of the demand curve means, as opposed to a movement along it."
+        },
+        {
+          "type": "text",
+          "heading": "Aggregating demand curves with a kink",
+          "body": "When you sum two individual demand curves that hit zero at different prices, the market demand curve gets a KINK at the price where the first consumer drops out. Below that price, both consumers contribute to market demand (steeper aggregate response); above it, only the remaining consumer's demand curve matters. This is a common source of exam questions — always check whether you're above or below every individual consumer's choke price before summing."
+        },
+        {
+          "type": "text",
+          "heading": "Supply: the mirror image",
+          "body": "Supply works the same way from the production side. A typical (inverse) supply function p(Q) is usually increasing — firms need a higher price to be willing to supply more, reflecting rising marginal costs (covered properly in the Cost Minimisation and Profit Maximisation lessons). Industry supply is the horizontal sum of individual firm supply curves, exactly analogous to market demand: Qs(p,r,w) = Sum of qi(p,r,w), where industry supply depends on the price of the good and the prices of inputs (capital, labour) common to all suppliers."
+        },
+        {
+          "type": "check",
+          "q": "An industry has 40 identical firms, each with supply qsi = 5p. What is industry supply Qs, and how does its slope compare to a single firm’s supply curve?",
+          "options": [
+            "Qs = 5p, same slope as a single firm",
+            "Qs = 200p, flatter (more price-responsive) than a single firm’s curve",
+            "Qs = 45p, steeper than a single firm’s curve",
+            "Qs = 200p, steeper than a single firm’s curve"
+          ],
+          "answer": 1,
+          "explain": "Qs = 40 x 5p = 200p (horizontal sum across identical firms). The slope dp/dQs = 1/200 is much flatter than a single firm's dp/dqsi = 1/5 — with many firms in the industry, a given change in industry quantity requires a much smaller price change, i.e. industry supply is more elastic than any individual firm's."
+        },
+        {
+          "type": "text",
+          "heading": "Movement along vs. shift — the rule that trips people up",
+          "body": "The single most common source of lost marks on supply-and-demand questions: confusing a movement ALONG a curve with a SHIFT of the curve. The rule is simple and absolute: a change in the good's OWN price causes a movement along the curve (you stay on the same Q(p) function, just at a different point). A change in ANYTHING else the function depends on — income, other prices, number of buyers/sellers, input costs, tastes — shifts the whole curve to a new position. Always ask first: 'is this a change in the good's own price, or in something else?' before drawing an arrow on your diagram."
+        },
+        {
+          "type": "check",
+          "q": "The price of a complement good rises. What happens to the demand curve for the good we are analysing?",
+          "options": [
+            "Movement along the demand curve",
+            "The demand curve shifts inward (leftward) — less is demanded at every price of our good",
+            "The demand curve shifts outward (rightward)",
+            "No effect, since only OUR good’s price matters"
+          ],
+          "answer": 1,
+          "explain": "The price of a complement is one of the 'other goods' prices that market demand depends on — it is NOT our good's own price, so this is a SHIFT, not a movement along the curve. Since it's a complement, a price rise there makes the complement pair less attractive overall, shifting demand for our good inward (left)."
+        }
+      ]
+    },
+    {
+      "id": "lesson-pw-elasticities",
+      "topic": "Elasticities",
+      "title": "Elasticities: Measuring Responsiveness",
+      "steps": [
+        {
+          "type": "text",
+          "heading": "Why the slope of demand isn’t enough",
+          "body": "You might think the slope dQ/dp of the demand curve already tells you how responsive quantity is to price. The problem: the SIZE of dQ/dp depends entirely on the units you're measuring in (litres vs gallons, pounds vs pence) — comparing a £1 change in the price of apples to a £1 change in the price of cars using raw slopes tells you almost nothing useful, since a car costs vastly more than an apple to begin with. Elasticity fixes this by normalising: it measures PERCENTAGE change in quantity per PERCENTAGE change in price, which is unit-free and genuinely comparable across goods."
+        },
+        {
+          "type": "text",
+          "heading": "The formula, three ways",
+          "body": "Price elasticity of demand:\n\neD = (dQ/dp) x (p/Q)\n\nThis is algebraically identical to the percentage-change ratio (%change in Q / %change in p) in the limit as the price change shrinks to zero — it's the same idea as any other calculus-based marginal concept you've met (MRS, MRTS): a ratio of small changes, evaluated exactly at a point using derivatives rather than approximated with large discrete changes.\n\nSince demand curves usually slope down, eD is usually negative. Some textbooks (and some exam questions) instead quote |eD|, the absolute value, to avoid constantly writing minus signs — always check which convention a given question is using."
+        },
+        {
+          "type": "check",
+          "q": "A demand curve has eD = -0.3 at the current price. If price rises by 10%, approximately what happens to quantity demanded?",
+          "options": [
+            "Rises by about 3%",
+            "Falls by about 3%",
+            "Falls by about 30%",
+            "Falls by exactly 10%"
+          ],
+          "answer": 1,
+          "explain": "%change in Q is approximately eD x %change in p = -0.3 x 10% = -3%. Quantity falls by about 3% — and since |eD| = 0.3 < 1, this demand is INELASTIC (quantity responds proportionally less than price)."
+        },
+        {
+          "type": "text",
+          "heading": "Elastic, inelastic, and the three named cases",
+          "body": "The dividing line is |eD| = 1 (unit elastic): quantity and price move by exactly the same percentage. |eD| < 1 is INELASTIC (quantity barely responds — think: insulin, cigarettes, other necessities with few substitutes). |eD| > 1 is ELASTIC (quantity responds strongly — think: a specific brand when many close substitutes exist). Two limiting cases matter for diagrams: PERFECTLY elastic demand is a horizontal line (any price rise loses ALL customers — infinite responsiveness); PERFECTLY inelastic demand is a vertical line (quantity demanded never changes regardless of price — zero responsiveness)."
+        },
+        {
+          "type": "text",
+          "heading": "Elasticity is a LOCAL concept, not global",
+          "body": "Here is a genuinely important, exam-relevant subtlety: for a straight-line (linear) demand curve, elasticity is NOT constant along the curve — it varies continuously, from perfectly elastic at the price-axis intercept down to perfectly inelastic at the quantity-axis intercept, passing through unit-elastic exactly at the midpoint. So 'demand curve A is more elastic than demand curve B' is only a well-defined comparison AT A SPECIFIC POINT (e.g. where they cross) — it does not mean A is more elastic everywhere. Contrast this with a CONSTANT-elasticity demand curve of the form Q = Ap^b, where elasticity equals b at every single point — this special functional form is what makes the log-linear trick below so useful."
+        },
+        {
+          "type": "check",
+          "q": "Two linear demand curves, A and B, cross at a single point. At that crossing point, curve A is flatter than curve B. What can you correctly conclude?",
+          "options": [
+            "Curve A is more elastic than curve B at every point on both curves",
+            "Curve A is more elastic than curve B ONLY at that specific crossing point (elasticity is local, not a global property of the whole curve for linear demand)",
+            "Nothing can be concluded about elasticity from slope alone",
+            "Curve B must be a constant-elasticity demand curve"
+          ],
+          "answer": 1,
+          "explain": "At the same point (same p, same Q), the flatter curve has the higher |elasticity|, since |e|=|slope| x (p/Q) and p/Q is identical for both curves at that shared point. But because linear demand curves have elasticity that varies along their length, this comparison does NOT extend to other points — you cannot say curve A is 'more elastic' in general, only at that one point."
+        },
+        {
+          "type": "text",
+          "heading": "The log-derivative shortcut",
+          "body": "There is a second, equivalent way to write price elasticity: eD = d(ln Q)/d(ln p). You can verify this is identical to the derivative-ratio definition using the chain rule (d(ln p)/dp = 1/p is the key step). Why bother with this version? Because many demand functions used in this course are constant-elasticity forms, Q = Ap^b — taking logs gives ln Q = ln A + b x ln p, a straight line in log-log space, where the elasticity b can simply be READ OFF as the coefficient on ln p, with zero calculus required once you recognise the functional form."
+        },
+        {
+          "type": "text",
+          "heading": "Income elasticity and cross-price elasticity",
+          "body": "Two more elasticities use exactly the same logic, just with a different 'cause' variable:\n\nIncome elasticity: xi_m = (dQ/dm)(m/Q) — positive identifies a NORMAL good (demand rises with income), negative identifies an INFERIOR good (demand falls as you get richer).\n\nCross-price elasticity: eX,Y = (dQX/dpY)(pY/QX) — positive means X and Y are SUBSTITUTES (Y gets pricier, buyers switch toward X), negative means they're COMPLEMENTS (Y gets pricier, less of the pair is consumed together, so X falls too).\n\nReal-world estimates from the notes: pork in the UK has income elasticity of about 0.19 (normal, but only weakly responsive to income); beer and wine have cross-price elasticity of about 0.365 (positive — weak substitutes); two near-identical wine brands can have cross-price elasticity as high as 5.76 (very close substitutes)."
+        },
+        {
+          "type": "check",
+          "q": "A good has income elasticity of -0.5 and a cross-price elasticity with good Y of -1.2. What does this tell you?",
+          "options": [
+            "The good is normal, and X and Y are substitutes",
+            "The good is inferior, and X and Y are complements",
+            "The good is inferior, and X and Y are substitutes",
+            "The good is normal, and X and Y are complements"
+          ],
+          "answer": 1,
+          "explain": "Income elasticity of -0.5 (negative) identifies an INFERIOR good (demand falls as income rises). Cross-price elasticity of -1.2 (negative) identifies COMPLEMENTS (a price rise in Y reduces demand for X, since they are consumed together)."
+        },
+        {
+          "type": "text",
+          "heading": "Why market-level and firm-level elasticity differ",
+          "body": "A subtlety worth internalising: the elasticity of demand for a whole PRODUCT CATEGORY (e.g. 'cars') is usually much lower in magnitude than the elasticity of demand for one SPECIFIC BRAND within that category (e.g. a particular model). The reason: close substitutes exist WITHIN a market (rival brands, essentially interchangeable) but not necessarily ACROSS markets (there's no close substitute for 'a car' in general if you need to drive somewhere). This is why a single firm can face wildly elastic demand for its own product even in a market where overall category demand is fairly inelastic — it explains why an individual seller usually has far less pricing power than the market-level statistics might suggest."
+        }
+      ]
+    },
+    {
+      "id": "lesson-pw-government-intervention-welfare",
+      "topic": "Government Intervention & Welfare",
+      "title": "Government Intervention, Welfare and Deadweight Loss",
+      "steps": [
+        {
+          "type": "text",
+          "heading": "What does it mean for a market to be efficient?",
+          "body": "In the Supply & Demand lesson we found that a competitive market settles at the price P* where QD = QS. But is that outcome actually good for society, or just an accident of where the two curves happen to cross? Welfare analysis answers this question by measuring the total gains that consumers and producers get from trading in the market, and asking whether any other outcome - achieved, say, by a government policy - could make total gains bigger.\n\nWhen a government intervenes in a market - with a tax, a subsidy, a price ceiling, a quota - it inevitably changes who gets how much of the gains from trade, and very often it also destroys some of those gains outright. This lesson builds the tools to measure both effects precisely: consumer surplus and producer surplus (which measure the gains going to each side of the market), and deadweight loss (which measures gains destroyed rather than redistributed). We then apply these tools to the single most common form of government intervention: a per-unit tax."
+        },
+        {
+          "type": "text",
+          "heading": "Consumer surplus: the buyer's side of the gains",
+          "body": "The demand curve tells us quantity demanded at each price. Read in reverse, the same curve tells us the maximum price a buyer would pay for one more unit, given how many units they already have - this is called the marginal willingness to pay, or MWTP. As more units are consumed, MWTP falls (this is exactly why demand curves slope down).\n\nThe total willingness to pay (TWTP) for qA units is the sum of the MWTP for every unit up to qA - graphically, the area under the MWTP (demand) curve from 0 up to qA. If the buyer only has to pay the market price P for every one of those units, the difference between what they were willing to pay in total and what they actually paid is pure gain to them:\n\nConsumer surplus (CS) = TWTP minus actual amount paid\n\nGraphically, at market price P with quantity QD, CS is the area of the region between the demand curve and the horizontal line at height P, running from 0 out to QD. When price rises, CS shrinks: buyers both pay more for the units they still buy, and lose the surplus they used to get from units they no longer buy."
+        },
+        {
+          "type": "text",
+          "heading": "Producer surplus: the seller's side of the gains",
+          "body": "An exactly parallel idea applies to sellers. The supply curve QS(P) reflects, at each quantity, the minimum price a seller needs to be willing to supply one more unit - this minimum price is closely tied to marginal cost, defined precisely in the Cost Minimisation and Profit Maximisation lessons later in this block.\n\nProducer surplus (PS) is the difference between the amount sellers actually receive (price P times quantity QS) and the minimum amount they would have needed to receive to be willing to supply that QS - graphically, the area between the horizontal line at height P and the supply curve, running from 0 out to QS.\n\nAt the competitive equilibrium (P*, Q*), CS + PS together measure the total gains from trade generated by the market - sometimes called total surplus. A key result is that total surplus is maximised exactly at the competitive equilibrium quantity Q* - any policy that pushes the traded quantity away from Q*, in either direction, reduces total surplus."
+        },
+        {
+          "type": "check",
+          "q": "Consumer surplus at the market equilibrium is best described as:",
+          "options": [
+            "The total amount consumers spend on the good",
+            "The area between the demand curve and the price line, up to the equilibrium quantity",
+            "The total quantity demanded at the equilibrium price",
+            "The area between the supply curve and the price line"
+          ],
+          "answer": 1,
+          "explain": "Consumer surplus is the gap between what buyers were willing to pay for each unit (the height of the demand curve) and what they actually paid (the market price). Summed over all units bought, this is the area between the demand curve and the horizontal price line, from zero up to the quantity traded - not total spending, and not the supply-side area, which is producer surplus."
+        },
+        {
+          "type": "text",
+          "heading": "A unit tax drives a wedge between buyers and sellers",
+          "body": "Consider a per-unit tax of t (a fixed amount charged on every unit sold, as opposed to a percentage or ad valorem tax). Once the tax is in place, the price buyers pay, pD, and the price sellers actually keep, pS, are no longer the same number: the government keeps the difference.\n\npD - pS = t\n\nThe market still has to clear: quantity demanded at the buyer's price must equal quantity supplied at the seller's price, so the new quantity Q** solves QD(pD) = QS(pS) simultaneously with pD - pS = t. Because buyers now face a higher effective price (pD > P*) and sellers receive a lower effective price (pS < P*), both quantity demanded and quantity supplied fall to the same new lower level Q** < Q* - fewer units are traded than before the tax.\n\nThis fall in traded quantity is the source of deadweight loss (DWL): all the mutually beneficial trades between Q** and Q* - trades where the buyer's MWTP still exceeded the seller's minimum acceptable price - simply no longer happen. That lost surplus is not transferred to the government as revenue; it vanishes, which is why it is called deadweight."
+        },
+        {
+          "type": "text",
+          "heading": "Worked example: revenue, deadweight loss and where they go",
+          "body": "Take our familiar market QD = 100 - 2P and QS = 20 + 3P (equilibrium P* = 16, Q* = 68, from the Supply & Demand lesson), and suppose the government imposes a unit tax of t = 5.\n\nStep 1: Buyers pay pD, sellers receive pS = pD - 5. Set QD(pD) = QS(pD - 5):\n100 - 2pD = 20 + 3(pD - 5)\n100 - 2pD = 5 + 3pD\n95 = 5pD\npD = 19\n\nStep 2: Find pS = pD - t = 19 - 5 = 14.\n\nStep 3: Find the new quantity Q** by substituting into either curve:\nQ** = 100 - 2(19) = 62\n(check with supply: 20 + 3(14) = 62, matches)\n\nStep 4: Government tax revenue is t × Q** = 5 × 62 = 310.\n\nStep 5: Deadweight loss is the area of the triangle with base (Q* - Q**) = 68 - 62 = 6 and height t = 5:\nDWL = (1/2) × t × (Q* - Q**) = (1/2) × 5 × 6 = 15\n\nSo of the surplus lost to buyers and sellers from the price wedge, 310 is recovered by the government as usable revenue, while 15 is destroyed completely - trades that would have made both a willing buyer and a willing seller better off, at quantities between 62 and 68, simply do not happen."
+        },
+        {
+          "type": "check",
+          "q": "In the diagram of a unit tax, the deadweight loss triangle sits:",
+          "options": [
+            "Between the new quantity Q** and the original equilibrium quantity Q*, bounded by the demand and supply curves",
+            "Between the price axis and the tax revenue rectangle",
+            "Above the demand curve entirely",
+            "Below the supply curve entirely, regardless of quantity"
+          ],
+          "answer": 0,
+          "explain": "The deadweight loss is the triangle-shaped region between the reduced post-tax quantity Q** and the original equilibrium quantity Q*, bounded above and below by the demand and supply curves. It represents surplus from all the trades between Q** and Q* that used to happen but no longer do once the tax is imposed."
+        },
+        {
+          "type": "text",
+          "heading": "Generalising the deadweight loss formula",
+          "body": "Using the same linear demand and supply as before, QD = a - bP and QS = c + dP, it can be shown (by the same algebra you just did, kept in symbols) that a unit tax t reduces quantity traded by:\n\nΔQ = Q* - Q** = [bd / (b + d)] × t\n\nand creates total deadweight loss:\n\nDWL = (1/2) × t × ΔQ = (1/2) × [bd / (b + d)] × t^2\n\nTwo important features fall straight out of this formula. First, DWL grows with the square of t - doubling a tax rate more than doubles the deadweight loss it causes (it quadruples it, holding b and d fixed), which is why very large taxes are disproportionately distorting compared with several smaller ones. Second, DWL is exactly zero whenever b = 0 or d = 0 - that is, whenever demand or supply is perfectly inelastic (a vertical QD or QS curve). If quantity simply cannot respond to the price wedge, there is no reduction in trade to cause a deadweight loss - a fact that motivates the Ramsey rule for choosing optimal tax rates."
+        },
+        {
+          "type": "check",
+          "q": "A tax is imposed on a good with a perfectly inelastic supply curve (a vertical QS). What is the deadweight loss?",
+          "options": [
+            "It is at its maximum possible value",
+            "It is exactly zero",
+            "It is impossible to determine without knowing demand",
+            "It equals the full tax revenue"
+          ],
+          "answer": 1,
+          "explain": "Deadweight loss comes entirely from the fall in quantity traded, ΔQ = [bd/(b+d)] × t. If supply is perfectly inelastic, quantity supplied does not change at all as price changes, so d = 0, making ΔQ = 0 and therefore DWL = 0. The full tax burden falls on the inelastic side (here, sellers), but no trades are actually lost."
+        },
+        {
+          "type": "text",
+          "heading": "Tax incidence: who really bears the burden?",
+          "body": "A government can legally require either buyers or sellers to hand over the tax (statutory incidence), but who actually ends up worse off - the economic incidence - does not depend on that legal choice at all. It depends entirely on the relative elasticities of demand and supply.\n\nThe side of the market that is more inelastic (less able to adjust quantity in response to the price change) ends up bearing more of the tax burden, because they cannot easily escape the market by buying or selling less. If demand is very inelastic relative to supply (buyers cannot easily do without the good - insulin is a classic example), the price paid by buyers pD rises by nearly the full amount of the tax, while the price received by sellers pS barely falls: buyers bear almost the whole burden. If supply is very inelastic relative to demand (as with housing, or agricultural land in a given season), sellers bear almost the whole burden instead, even if the tax is formally levied on buyers.\n\nThis logic - tax more heavily where responses are smallest, to minimise the deadweight loss created - is exactly the intuition behind the Ramsey rule for optimal taxation, which states that the optimal ad valorem tax rate on a good is proportional to (1/|εS| + 1/|εD|): higher taxes on goods where both sides of the market are inelastic."
+        },
+        {
+          "type": "text",
+          "heading": "Subsidies: the mirror image, and a common mistake",
+          "body": "A per-unit subsidy s works exactly like a negative tax: it pays sellers an extra s per unit, so pS = pD + s. Because sellers receive more, QS expands; because buyers effectively pay less, QD expands too, so equilibrium quantity rises above Q* to some Q** > Q*. This looks like a free lunch, but exactly the same deadweight loss logic applies in reverse: quantity is pushed past the point where MWTP still exceeds the marginal cost of production, so the 'extra' units traded beyond Q* cost more to produce than buyers value them at - a deadweight loss triangle again, this time from over-production rather than under-production. The total cost of the subsidy to the government, s × Q**, always exceeds the combined gain in consumer and producer surplus, with the gap equal to this deadweight loss.\n\nThe most common mistake with both taxes and subsidies is assuming the side of the market that legally receives or pays the money is the side that is economically better or worse off. Always work out who bears the burden (or captures the benefit) using relative elasticities, not the letter of the policy - this is precisely the trap that made the UK's Help to Buy housing subsidy largely benefit housebuilders (the relatively inelastic, supply-constrained side of that market) rather than the first-time buyers it was nominally aimed at."
+        }
+      ]
+    },
+    {
+      "id": "lesson-pw-production-isoquants",
+      "topic": "Production & Isoquants",
+      "title": "Production Functions & Isoquants",
+      "steps": [
+        {
+          "type": "text",
+          "heading": "The firm's problem: turning inputs into output",
+          "body": "A firm doesn't just decide 'how much to produce' in a vacuum - it must decide how to combine scarce, costly inputs (workers, machines, land, raw materials) to generate that output. Just as consumer theory modelled a household choosing a bundle of goods subject to a budget constraint, producer theory models a firm choosing a bundle of inputs subject to a technological constraint: what combinations of inputs are physically capable of producing a given amount of output?\n\nThis lesson builds the technological side of that problem. In the next two lessons (Cost Minimisation and Profit Maximisation & Supply) we add prices and turn this technological description into an economic one - working out the cheapest way to produce a target output, and then the profit-maximising amount to produce. But first we need a precise language for describing the technology itself: the production function, and its close cousin from consumer theory, the isoquant (playing the role that the indifference curve played for consumers).\n\nFollowing Harkins' notation, we work with two inputs, labour (L) and capital (K), and one output (Q), so the production function is written Q = f(L, K)."
+        },
+        {
+          "type": "text",
+          "heading": "Marginal product: the extra output from one more input",
+          "body": "The marginal product of labour, MPL, is the extra output produced by employing one more unit of labour, holding capital fixed:\n\nMPL = ΔQ/ΔL = ∂Q/∂L\n\n(the partial derivative notation ∂Q/∂L is used because Q depends on two inputs, L and K, and MPL asks specifically what happens as L alone changes, K held fixed). The marginal product of capital, MPK = ∂Q/∂K, is defined the same way with the roles of L and K reversed.\n\nWe normally assume diminishing marginal product: as you add more and more workers to a factory of fixed size, each additional worker adds less extra output than the one before, because they have less capital and floor-space to work with. Formally, ∂MPL/∂L = ∂^2Q/∂L^2 < 0. Graphically, if you plot total output Q against L (holding K fixed), diminishing marginal product means the curve gets flatter and flatter as L increases - it may even turn down after some point, called the law of diminishing marginal returns.\n\nA closely related concept is the average product of labour, APL = Q/L (total output per worker), which is not the same thing as MPL - a point we return to as a common source of confusion later in this lesson."
+        },
+        {
+          "type": "check",
+          "q": "The marginal product of labour, MPL, measures:",
+          "options": [
+            "Total output divided by the number of workers",
+            "The extra output from employing one more unit of labour, holding capital fixed",
+            "The extra output from employing one more unit of both labour and capital",
+            "The wage rate paid to workers"
+          ],
+          "answer": 1,
+          "explain": "MPL = ∂Q/∂L is specifically the extra output from one more unit of labour with capital held fixed - a partial, not total, derivative. Total output per worker (Q/L) is a different concept, the average product of labour (APL); and MPL says nothing directly about wages, though we connect the two once we reach profit maximisation."
+        },
+        {
+          "type": "text",
+          "heading": "Worked example: computing marginal product for a Cobb-Douglas function",
+          "body": "A very common production function in this course is the Cobb-Douglas form, Q = A L^α K^β, where A > 0 is a productivity scale parameter and α, β > 0 describe how intensively each input is used.\n\nWorked example: take Q = 10 L^0.5 K^0.5, and suppose the firm currently uses L = 16 and K = 25.\n\nStep 1: Differentiate Q with respect to L, holding K fixed, to get MPL:\nMPL = ∂Q/∂L = 10 × 0.5 × L^(0.5-1) × K^0.5 = 5 L^(-0.5) K^0.5\n\nStep 2: Substitute in the current input levels L = 16, K = 25:\nMPL = 5 × 16^(-0.5) × 25^0.5 = 5 × (1/4) × 5 = 6.25\n\nStep 3: By symmetry, MPK = ∂Q/∂K = 5 L^0.5 K^(-0.5) = 5 × 4 × (1/5) = 4\n\nSo at this input combination, one extra unit of labour raises output by roughly 6.25 units, while one extra unit of capital raises output by roughly 4 units - labour is currently the more productive input at the margin. This ratio, MPL/MPK = 6.25/4 = 1.5625, will turn out to be exactly the slope of the isoquant at this point, which is where we turn next."
+        },
+        {
+          "type": "text",
+          "heading": "Isoquants: mapping out equal-output combinations",
+          "body": "An isoquant is the set of all (L, K) input combinations that produce exactly the same level of output Q0: formally, {(L, K) : f(L, K) = Q0}. This plays exactly the role that an indifference curve played in consumer theory, except that output Q0 is directly measurable (unlike utility, which is only ordinal) - doubling all the output labels on an isoquant map genuinely means the technology produces twice as much from every input bundle, which is not true for utility numbers on an indifference map.\n\nIsoquants slope downward: to keep output constant while using more labour, you must use less capital (assuming both inputs have positive marginal product). They are also typically drawn as convex to the origin, reflecting the idea that it becomes progressively harder to substitute one input for the other as you use more and more of it in place of the other.\n\nThe slope of the isoquant at any point is called the marginal rate of technical substitution, MRTS - the direct producer-theory analogue of the MRS from consumer theory."
+        },
+        {
+          "type": "check",
+          "q": "An isoquant differs from an indifference curve mainly because:",
+          "options": [
+            "Isoquants slope upward while indifference curves slope downward",
+            "The output labels on an isoquant map are directly measurable and meaningful, unlike ordinal utility numbers",
+            "Isoquants use only one input while indifference curves use two goods",
+            "There is no MRTS equivalent to MRS for isoquants"
+          ],
+          "answer": 1,
+          "explain": "Both isoquants and indifference curves slope downward and have an MRTS/MRS describing their slope. The key difference is that output Q is cardinally measurable - doubling every isoquant label genuinely means twice as much output from every input bundle - whereas utility numbers are only ordinal, so doubling all utility labels changes nothing about the underlying preferences."
+        },
+        {
+          "type": "text",
+          "heading": "Deriving MRTS from marginal products",
+          "body": "We can derive a precise formula for the MRTS using the total differential technique used for the MRS in consumer theory. Take the total differential of the production function:\n\ndQ = (∂Q/∂L) dL + (∂Q/∂K) dK = MPL × dL + MPK × dK\n\nAlong an isoquant, output is constant, so dQ = 0:\n\nMPL × dL = -MPK × dK\n\nRearranging for the slope dK/dL along the isoquant (holding Q = Q0) gives:\n\nMRTSL,K = dK/dL (along Q=Q0) = -MPL/MPK\n\nIn our worked Cobb-Douglas example above, at L=16, K=25 we found MPL = 6.25 and MPK = 4, so MRTSL,K = -6.25/4 = -1.5625: at this point, the firm could give up roughly 1.56 units of capital for one extra unit of labour and produce exactly the same output. Notice the formula mirrors MRS = -MUx/MUy from consumer theory exactly, with output replacing utility and (L,K) replacing (x,y)."
+        },
+        {
+          "type": "text",
+          "heading": "Returns to scale: what happens if you scale up every input together?",
+          "body": "A separate question from marginal product is: what happens to output if you increase all inputs by the same proportion at once - say, doubling both labour and capital together? This is returns to scale, formally defined via a homogeneous production function:\n\nf(tL, tK) = t^m f(L, K) = t^m Q\n\nfor some constant m. If m > 1, output more than doubles when inputs double: increasing returns to scale (IRS). If m = 1, output exactly doubles: constant returns to scale (CRS). If m < 1, output less than doubles: decreasing returns to scale (DRS).\n\nFor the Cobb-Douglas function Q = A L^α K^β, there is a very clean rule: f(tL,tK) = A(tL)^α(tK)^β = t^(α+β) A L^α K^β, so m = α+β exactly. Therefore: α+β > 1 implies IRS, α+β = 1 implies CRS, and α+β < 1 implies DRS. In our worked example, Q = 10L^0.5K^0.5 has α+β = 0.5+0.5 = 1, so this technology exhibits constant returns to scale: doubling both labour and capital exactly doubles output."
+        },
+        {
+          "type": "check",
+          "q": "A firm's production function is Q = 4 L^0.4 K^0.4. What kind of returns to scale does it exhibit?",
+          "options": [
+            "Increasing returns to scale, since 0.4 + 0.4 = 0.8 < 1",
+            "Decreasing returns to scale, since 0.4 + 0.4 = 0.8 < 1",
+            "Constant returns to scale, since both exponents are equal",
+            "Cannot be determined without specific input values"
+          ],
+          "answer": 1,
+          "explain": "For a Cobb-Douglas function Q = A L^α K^β, returns to scale is determined by comparing α+β to 1. Here α+β = 0.4+0.4 = 0.8 < 1, so the function exhibits decreasing returns to scale: doubling both L and K less than doubles output. This holds at every input level, since Cobb-Douglas homogeneity does not depend on the specific values of L and K used."
+        },
+        {
+          "type": "text",
+          "heading": "Common mistake: diminishing marginal product is not the same as decreasing returns to scale",
+          "body": "This is one of the most persistent points of confusion in producer theory, so it is worth stating very explicitly: a production function can have diminishing marginal product in each input separately, while still exhibiting constant (or even increasing) returns to scale overall. These are two entirely different experiments.\n\nDiminishing marginal product asks: what happens if I add more of ONE input, holding the OTHER input fixed? Returns to scale asks: what happens if I scale up ALL inputs together, by the same proportion?\n\nConcretely, take f(L,K) = L^α K^β with 0 < α < 1 and 0 < β < 1. Because each exponent is less than 1, MPL and MPK are each individually diminishing (∂MPL/∂L = α(α-1)L^(α-2)K^β < 0 whenever α < 1). But if additionally α+β = 1 exactly (for instance α=β=0.5, as in our worked example), the function has constant returns to scale even though each individual input shows diminishing marginal product. There is no contradiction: adding labour alone runs into a fixed amount of capital (hence diminishing MPL), while adding both together avoids that problem entirely (hence CRS). Never infer the returns-to-scale classification from a statement about diminishing marginal product, or vice versa - always check them via their two separate, different definitions."
+        }
+      ]
+    },
+    {
+      "id": "lesson-pw-cost-minimisation",
+      "topic": "Cost Minimisation",
+      "title": "Cost Minimisation & Cost Functions",
+      "steps": [
+        {
+          "type": "text",
+          "heading": "Why minimise cost before maximising profit?",
+          "body": "In the Production & Isoquants lesson we described a firm's technology: which combinations of labour L and capital K can produce a given output Q. But a firm doesn't only care about what is technologically possible - it cares about cost. If two input combinations both produce exactly 100 units of output, a profit-seeking firm will always choose the cheaper one, regardless of which combination it 'prefers' on any other grounds.\n\nHarkins' approach (and the one we follow throughout this course) breaks the firm's overall profit-maximisation problem into two steps, which give exactly the same answer as solving everything at once but are usually much easier to work through:\n\nStep 1: For a given target output Q0, find the cheapest combination of inputs that can produce it - this is cost minimisation, the subject of this lesson.\n\nStep 2: Given that cheapest-cost way of producing any quantity, choose the quantity that maximises profit - this is the subject of the next lesson, Profit Maximisation & Supply.\n\nThis lesson focuses entirely on Step 1. We reuse the isoquant machinery from the previous lesson (particularly MRTS = -MPL/MPK) and combine it with input prices to find the actual cost-minimising input bundle."
+        },
+        {
+          "type": "text",
+          "heading": "Economic cost: it is not just what you write a cheque for",
+          "body": "Before setting up the maths, it is worth being precise about what 'cost' means to an economist, because this differs from everyday accounting. The economic cost of using any input is its opportunity cost: what that input would have earned in its next-best alternative use. This includes explicit costs (direct monetary payments, like wages and rent) and implicit costs (foregone opportunities, like the income an owner-manager could have earned working elsewhere).\n\nA crucial related idea is the sunk cost: a cost that has already been incurred and cannot be recovered or avoided by any future decision. Because a sunk cost cannot be changed by what you decide to do next, it should play no role in forward-looking economic decisions. For example, a factory that has already paid a £10,000 fine for past pollution should not let that fine affect how much to produce going forward: the fine is fixed regardless of today's production choice, so it is not an economic cost of today's production, even though it appears on this year's accounts.\n\nThis lesson builds a model of cost that is entirely forward-looking: total cost TC = wL + rK, where w is the price of labour (the wage) and r is the price of capital (the rental rate)."
+        },
+        {
+          "type": "check",
+          "q": "A firm already spent £50,000 developing a product that turned out to be unsellable. Should this £50,000 affect the firm's decision about whether to spend more money marketing it?",
+          "options": [
+            "Yes - the firm must recoup the original £50,000 before making any new decisions",
+            "No - the £50,000 is a sunk cost and cannot be changed by any future decision, so it is irrelevant to whether further spending is worthwhile",
+            "Yes, but only if the marketing budget is also £50,000",
+            "No, because sunk costs are always equal to zero"
+          ],
+          "answer": 1,
+          "explain": "The £50,000 is already spent and unrecoverable regardless of what the firm does next - it is a sunk cost. The only economically relevant question going forward is whether the future marketing spend will generate future revenue exceeding that future spend; the past £50,000 changes nothing about that comparison and should be ignored."
+        },
+        {
+          "type": "text",
+          "heading": "Isocost lines and the tangency condition",
+          "body": "An isocost line shows all combinations of L and K that cost the firm exactly the same total amount, TC: rearranging TC = wL + rK gives K = TC/r - (w/r)L, a straight line with vertical intercept TC/r and slope -w/r (exactly analogous to the budget line from consumer theory, with input prices w and r playing the role of good prices).\n\nTo produce a target output Q0 at minimum cost, the firm wants to reach the isoquant for Q0 using the lowest possible isocost line - graphically, this means sliding the isocost line inward until it is just tangent to the Q0 isoquant. At any point where the isocost line crosses the isoquant (rather than being tangent to it), the firm could reduce cost while still producing Q0 by moving along the isoquant towards the tangency point - so a crossing point can never be cost-minimising.\n\nAt the tangency point, the slope of the isoquant (MRTSL,K = -MPL/MPK) exactly equals the slope of the isocost line (-w/r):\n\nMPL/MPK = w/r\n\nThis has a clean interpretation: the rate at which the firm can technologically trade off labour for capital (MRTS) must equal the rate at which the market allows it to trade off labour for capital in terms of cost (w/r)."
+        },
+        {
+          "type": "text",
+          "heading": "Worked example: solving the cost minimisation problem",
+          "body": "Take Q = L^α K^β, with input prices w (labour) and r (capital), and target output Q0. Set up the Lagrangian:\n\nℒ = wL + rK + λ(Q0 - L^α K^β)\n\nFirst-order conditions:\n\n∂ℒ/∂L = w - λαL^(α-1)K^β = 0\n∂ℒ/∂K = r - λβL^α K^(β-1) = 0\n∂ℒ/∂λ = Q0 - L^α K^β = 0\n\nDividing the first two conditions: w/r = (αK)/(βL), which rearranges to K = L(w/r)(β/α) - exactly the tangency condition from the previous step, written out explicitly.\n\nSubstituting this expression for K into the constraint L^α K^β = Q0 and solving gives the conditional (or 'derived') factor demands:\n\nL* = Q0^(1/(α+β)) × (αr/βw)^(β/(α+β))\nK* = Q0^(1/(α+β)) × (βw/αr)^(α/(α+β))\n\nThese are called conditional factor demands because they are conditional on the target output Q0 - they tell you the cheapest input bundle for that specific Q0, not the profit-maximising output level itself (that choice comes in the next lesson)."
+        },
+        {
+          "type": "check",
+          "q": "At the cost-minimising input bundle, what condition must hold?",
+          "options": [
+            "MPL = MPK exactly",
+            "MPL/MPK = w/r, i.e. the isoquant is tangent to the isocost line",
+            "L = K, so both inputs are used in equal quantities",
+            "w = r, so both input prices must be equal"
+          ],
+          "answer": 1,
+          "explain": "Cost minimisation requires the slope of the isoquant (MRTS = -MPL/MPK) to equal the slope of the isocost line (-w/r), i.e. MPL/MPK = w/r. There is no general requirement that MPL=MPK, that L=K, or that the input prices themselves be equal - those would only coincidentally hold for specific parameter values."
+        },
+        {
+          "type": "text",
+          "heading": "From conditional demands to the cost function",
+          "body": "Once we know the cheapest input bundle L*(w,r,Q) and K*(w,r,Q) for any output Q, we can substitute back into TC = wL + rK to get the firm's (long-run) total cost function, C(w,r,Q) - the minimum possible cost of producing each level of output Q, given input prices w and r.\n\nTwo derived concepts matter throughout the rest of this course:\n\nAverage cost, AC(w,r,Q) = C(w,r,Q)/Q - cost per unit of output.\n\nMarginal cost, MC(w,r,Q) = ∂C(w,r,Q)/∂Q - the extra cost of producing one more unit of output.\n\nThese two are linked by a simple but important relationship: AC is falling in Q exactly when MC < AC (an extra unit costing less than the current average pulls the average down); AC is rising in Q exactly when MC > AC; and AC is at its minimum exactly when MC = AC. This is the same 'marginal pulls the average' logic that applies to any average - your grade average rises only when your next module's mark exceeds your current average, and falls only when it is below it."
+        },
+        {
+          "type": "text",
+          "heading": "Worked example: the cost function for Q = L^0.5 K^0.5",
+          "body": "Continuing the running Cobb-Douglas example with α = β = 0.5 (constant returns to scale, from the Production & Isoquants lesson), substituting into the general cost function formula gives:\n\nTC = wQ0^(1/(α+β))(αr/βw)^(β/(α+β)) + rQ0^(1/(α+β))(βw/αr)^(α/(α+β))\n\nWith α = β = 0.5, this simplifies (since 1/(α+β) = 1 and β/(α+β) = α/(α+β) = 1/2) to:\n\nTC = wQ(r/w)^0.5 + rQ(w/r)^0.5 = 2Q(wr)^0.5\n\nSuppose w = r = 4. Then TC = 2Q × (4×4)^0.5 = 2Q × 4 = 8Q.\n\nNotice this cost function is linear in Q: AC = TC/Q = 8 (constant) and MC = ∂TC/∂Q = 8 (also constant). AC = MC everywhere - exactly as the 'marginal pulls the average' rule predicts when the average never changes. This flat AC/MC is a direct consequence of the underlying constant returns to scale technology: with CRS, output increases proportionally with cost, so average and marginal cost are both constant and equal to each other at every output level."
+        },
+        {
+          "type": "check",
+          "q": "A firm's average cost curve AC(Q) is currently falling as Q increases. What must be true of marginal cost MC at this output level?",
+          "options": [
+            "MC must be greater than AC",
+            "MC must be less than AC",
+            "MC must equal AC exactly",
+            "Nothing can be said about MC without more information"
+          ],
+          "answer": 1,
+          "explain": "AC falls when the next unit produced costs less than the current average - pulling the average down. This means MC < AC whenever AC is falling. Conversely, MC > AC whenever AC is rising, and MC = AC exactly at the minimum point of a U-shaped AC curve."
+        },
+        {
+          "type": "text",
+          "heading": "Short run versus long run: the fixed input",
+          "body": "Everything so far assumed the firm is free to choose both L and K - this is the long run. In the short run, at least one input (conventionally capital, K with a bar denoting 'fixed') is stuck at some pre-committed level, and the firm can only adjust labour. Short-run total cost becomes TC = wL + r×Kfixed, splitting into total variable cost (wL, which changes as output changes) and total fixed cost (r×Kfixed, paid no matter how much - or how little - the firm produces).\n\nBecause the firm cannot freely substitute towards the technologically ideal input mix in the short run, short-run cost of producing any given Q is generally higher than long-run cost of producing that same Q. Graphically, the short-run average cost (SAC) curve touches the long-run average cost (LAC) curve at exactly one point - the output level for which the fixed capital happens to be the cost-minimising choice - and lies above it everywhere else. As the fixed capital level varies, we get a whole family of SAC curves, and the LAC curve is their lower envelope: the boundary formed by tracing out the lowest point reachable by any SAC curve at each output level."
+        },
+        {
+          "type": "text",
+          "heading": "Common mistake: do not confuse cost minimisation with profit maximisation",
+          "body": "A very frequent error is to treat the cost-minimisation problem in this lesson as though it already tells you how much the firm should produce. It does not. Cost minimisation answers a conditional question: 'given that the firm has decided to produce Q0 units (for whatever reason), what is the cheapest way to do it?' It says nothing about whether Q0 is actually the output level that maximises the firm's profit - that requires bringing in the output price and comparing marginal revenue to marginal cost, which is exactly the subject of the next lesson.\n\nA second closely related mistake: the conditional factor demands L*(w,r,Q) and K*(w,r,Q) derived in this lesson are not the same objects as the unconditional input demands you get once you also optimise over Q in the profit maximisation problem - although, reassuringly, once you plug the profit-maximising Q* into these conditional demand functions, you get exactly the same input choices the firm would make solving the whole problem in one step at once. We verify this equivalence explicitly at the start of the next lesson."
+        }
+      ]
+    },
+    {
+      "id": "lesson-pw-profit-maximisation-supply",
+      "topic": "Profit Maximisation & Supply",
+      "title": "Profit Maximisation & the Firm's Supply Curve",
+      "steps": [
+        {
+          "type": "text",
+          "heading": "From cost minimisation to profit maximisation",
+          "body": "The Cost Minimisation lesson found, for any target output Q, the cheapest way to produce it: the cost function C(w,r,Q). That still leaves one question unanswered: how much should the firm actually produce? This lesson answers that question, completing Harkins' two-step approach to the firm's problem.\n\nAssume the firm is a price taker in both the output market (it sells at a fixed market price p, unable to influence it by producing more or less) and the input markets (it buys labour and capital at fixed prices w and r). The firm's profit is:\n\nπ = Total Revenue - Total Cost = pQ - C(w,r,Q)\n\nStep 2 of the two-step approach is to choose Q to maximise this expression, treating C(w,r,Q) as already known from Step 1. Because this is now a function of the single variable Q (with L and K already optimised out via the cost-minimisation problem), it is an unconstrained maximisation problem - no Lagrangian required, just an ordinary first-order condition."
+        },
+        {
+          "type": "text",
+          "heading": "The profit-maximising output rule: price equals marginal cost",
+          "body": "Differentiate π = pQ - C(w,r,Q) with respect to Q and set the derivative to zero:\n\n∂π/∂Q = p - ∂C(w,r,Q)/∂Q = 0\n\np = ∂C(w,r,Q)/∂Q = MC(Q)\n\nThis is one of the most important results in microeconomics: a price-taking, profit-maximising firm produces up to the point where price equals marginal cost. The intuition is straightforward: if producing one more unit brings in revenue p that exceeds the marginal cost MC of producing it, the firm gains by producing that extra unit - so it should keep expanding output as long as p > MC. If instead MC > p, the last unit produced cost more than it earned, so the firm should cut back. Only at p = MC is there no further gain available in either direction.\n\nA subtlety worth flagging now (we return to it properly later): because the firm should keep expanding whenever p > MC, marginal cost must be increasing (sloping upward) at the profit-maximising quantity - only the upward-sloping portion of the MC curve is ever relevant to profit maximisation."
+        },
+        {
+          "type": "check",
+          "q": "A price-taking firm currently produces where price exceeds marginal cost (p > MC). To increase profit, it should:",
+          "options": [
+            "Reduce output, since MC will fall",
+            "Increase output, since each additional unit adds more revenue than cost",
+            "Keep output unchanged, since profit is already maximised",
+            "Shut down immediately"
+          ],
+          "answer": 1,
+          "explain": "As long as price exceeds marginal cost, producing one more unit brings in p in revenue while costing only MC to produce - a net gain. The firm should keep expanding output until p = MC exactly, at which point no further expansion adds to profit. This is the core logic behind the profit-maximising rule p = MC."
+        },
+        {
+          "type": "text",
+          "heading": "Worked example: the two-step solution for a Cobb-Douglas firm",
+          "body": "Take Q = L^(1/3)K^(1/3) (so α = β = 1/3, giving α+β = 2/3 < 1 - decreasing returns to scale, following the definitions from the Production & Isoquants lesson). Using the general cost function formula from the Cost Minimisation lesson with these exponents gives (after substituting and simplifying):\n\nTC = 2Q^(3/2)(rw)^(1/2)\n\nStep 1: Write profit as a function of Q alone:\nπ = pQ - 2Q^(3/2)(rw)^(1/2)\n\nStep 2: Differentiate with respect to Q and set to zero (apply p = MC):\np = 3Q^(1/2)(rw)^(1/2)\n\nStep 3: Solve for the profit-maximising output, Q*:\nQ* = p^2 / (9rw)\n\nStep 4: Substitute back to find maximised profit:\nπ* = p^3 / (27rw)\n\nSuppose specifically p = 9, w = r = 1. Then Q* = 81/9 = 9, and π* = 729/27 = 27. You can check this is indeed optimal: at Q slightly below 9, price (9) exceeds marginal cost 3Q^0.5, so expanding pays; at Q slightly above 9, marginal cost exceeds price, so contracting pays."
+        },
+        {
+          "type": "text",
+          "heading": "The one-step problem: an equivalent way to solve the same problem",
+          "body": "Instead of first minimising cost and then choosing Q, we could instead choose L and K directly to maximise profit in one go:\n\nmaximise over L,K: π = pQ - wL - rK = p×f(L,K) - wL - rK\n\nThis is again unconstrained (no Lagrangian needed, since the firm is simply free to pick any L, K it likes and accept whatever output results). The first-order conditions are:\n\np × ∂f(L,K)/∂L - w = 0, which gives p × MPL = w\np × ∂f(L,K)/∂K - r = 0, which gives p × MPK = r\n\nEach condition has a clean interpretation: p × MPL is the value of the marginal product of labour - the extra revenue generated by hiring one more worker. The firm hires labour up to the point where this value exactly equals the wage w; beyond that point, the extra worker costs more than the revenue they generate.\n\nSolving these two conditions simultaneously for L*(w,r,p) and K*(w,r,p), then substituting into f(L,K) to get Q*(w,r,p), gives exactly the same supply function and exactly the same profit π* = pQ* - wL* - rK* as the two-step approach above - a fact you should convince yourself of directly using the Q=L^(1/3)K^(1/3) example above."
+        },
+        {
+          "type": "check",
+          "q": "At the profit-maximising input choice, the condition p × MPL = w means:",
+          "options": [
+            "The wage rate determines the price of output",
+            "Labour costs exactly as much as capital",
+            "The value of the extra output produced by one more worker exactly equals the cost of hiring them",
+            "Labour productivity is zero at the optimum"
+          ],
+          "answer": 2,
+          "explain": "p × MPL is the value of the marginal product of labour: the extra output from one more worker (MPL), valued in money terms at the market price p. Profit maximisation requires hiring labour up to the point where this value exactly equals the wage w - hiring further would cost more than the extra revenue generated, while stopping earlier would leave profitable hires unmade."
+        },
+        {
+          "type": "text",
+          "heading": "The profit function and its properties",
+          "body": "Solving either version of the problem gives the firm's profit function, π(w,r,p) - the maximum profit achievable at given input and output prices. Three properties recur throughout applied microeconomics:\n\nπ(w,r,p) is increasing in p (a higher output price can only help - the firm could always keep producing exactly what it did before and earn more) and decreasing in w and r (higher input prices can only hurt, or leave profit unchanged if that input is not being used).\n\nπ(w,r,p) is homogeneous of degree 1 in (w,r,p): if all three prices double, profit exactly doubles too. Intuitively, this is just a unit-of-account change - if wages, rental rates and the output price all double simultaneously, nothing real has changed about the firm's optimal choices, so real profit in the new units is simply twice the old number.\n\nGraphically, isoprofit lines (analogous to isoquants and isocosts) show combinations of inputs and output that yield the same level of profit; the profit-maximising point is where the production function reaches the highest attainable isoprofit line, mirroring how cost minimisation found the lowest attainable isocost line tangent to a fixed isoquant."
+        },
+        {
+          "type": "text",
+          "heading": "From marginal cost to the supply curve",
+          "body": "The condition p = MC(Q), derived earlier, effectively already tells us the supply function: for any output price p, it gives the quantity Q* the firm wants to supply. But there is a missing piece: the firm always has the option of producing Q = 0 instead, and it will exercise that option whenever producing anything would leave it worse off than shutting down entirely.\n\nIn the long run, the firm shuts down (chooses Q = 0) whenever price falls below average cost, P < AC(Q) at every Q, because it cannot even cover the full cost of production. In the short run, since fixed costs must be paid regardless of output level, the firm keeps producing as long as price at least covers average variable cost, P ≥ AVC(Q), even if it does not fully cover average total cost - producing something at least contributes towards the unavoidable fixed cost, which would otherwise be lost entirely.\n\nPutting this together: the firm's supply curve is the upward-sloping portion of its MC curve that lies above AC (long run) or above AVC (short run); below that threshold, the firm supplies zero. This is why short-run supply tends to be flatter (more elastic, in the language of the Elasticities lesson) than long-run supply, since in the short run at least one input is fixed and cannot adjust."
+        },
+        {
+          "type": "check",
+          "q": "In the long run, at what price does a price-taking firm choose to produce zero output?",
+          "options": [
+            "Whenever price is below marginal cost at every output level",
+            "Whenever price is below average cost at every output level, i.e. the firm cannot cover its full costs",
+            "Whenever price falls at all, even slightly, from its previous level",
+            "Never - firms always produce a positive quantity in the long run"
+          ],
+          "answer": 1,
+          "explain": "In the long run all costs, including fixed costs, must be covered for production to be worthwhile. If price P is below average cost AC(Q) for every possible Q, the firm cannot find any output level that avoids a loss, so it produces nothing at all and earns zero profit rather than a guaranteed loss. In the short run the relevant threshold is lower - average variable cost AVC - because fixed costs are sunk and must be paid regardless of the output decision."
+        },
+        {
+          "type": "text",
+          "heading": "Common mistake: profit function homogeneity is not the same as supply function homogeneity",
+          "body": "Students frequently mix up two closely related but distinct homogeneity results. The profit function π(w,r,p) is homogeneous of degree 1 in prices: doubling w, r and p together exactly doubles profit. The supply function Q*(w,r,p), by contrast, is homogeneous of degree 0 in prices: doubling w, r and p together leaves the profit-maximising quantity completely unchanged.\n\nThe reasoning is straightforward once you see it: doubling all prices simultaneously is equivalent to just relabelling the currency - it changes nothing real about the underlying trade-off between producing more or less, since both the extra revenue and the extra cost of one more unit scale by exactly the same factor. So the profit-maximising quantity itself is unaffected (degree 0), even though the money value of profit, measured in the new currency units, does double (degree 1). You can verify this directly from Q* = p^2/(9rw) derived earlier: replacing p, w, r with 2p, 2w, 2r gives Q* = (2p)^2/(9×2r×2w) = 4p^2/(36rw) = p^2/(9rw), exactly unchanged.\n\nA second common mistake, already flagged in the Cost Minimisation lesson but worth repeating here: never apply the profit-maximisation condition p = MC without checking that the resulting output is actually worth producing at all - i.e. that price at least covers average (variable) cost. A firm can satisfy p = MC at some Q > 0 and still be better off shutting down completely if that price is below the relevant average cost threshold."
+        }
+      ]
+    }
+  ]
+}
