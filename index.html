@@ -53,6 +53,15 @@
   .countdown-box .label{font-size:0.68rem;text-transform:uppercase;letter-spacing:.08em;color:var(--text-faint);}
   .countdown-box .num{font-family:var(--serif);font-size:2.1rem;color:var(--accent-strong);line-height:1.1;margin-top:2px;}
   .countdown-box .unit{color:var(--text-dim);font-size:0.78rem;}
+  .timer-box{background:var(--surface);border:1px solid var(--border-soft);border-radius:var(--radius);padding:14px 16px;box-shadow:var(--shadow);}
+  .timer-box .label{font-size:0.68rem;text-transform:uppercase;letter-spacing:.08em;color:var(--text-faint);}
+  .timer-box .timer-display{font-family:var(--serif);font-size:1.55rem;color:var(--text);line-height:1.1;margin-top:2px;font-variant-numeric:tabular-nums;}
+  .timer-box .timer-today{color:var(--text-dim);font-size:0.76rem;margin-top:4px;}
+  .timer-box .timer-today b{color:var(--text);font-weight:600;}
+  .timer-btn{width:100%;margin-top:10px;padding:9px;border-radius:8px;border:1px solid var(--border);background:var(--accent);color:var(--accent-ink);font-weight:700;font-size:0.83rem;cursor:pointer;font-family:var(--sans);}
+  .timer-btn:hover{background:var(--accent-strong);}
+  .timer-btn.running{background:var(--bad-bg);color:var(--bad);border-color:#e6bcbc;}
+  .timer-btn.running:hover{background:#f6d6d6;}
   nav.mainnav{display:flex;flex-direction:column;gap:3px;}
   nav.mainnav button{
     all:unset;cursor:pointer;padding:10px 12px;border-radius:8px;color:var(--text-dim);font-size:0.92rem;
@@ -190,6 +199,12 @@
     <div class="code">Microeconomics 1</div>
     <h1>EC109</h1>
     <div class="sub">Warwick · Andrew Harkins</div>
+  </div>
+  <div class="timer-box">
+    <div class="label">Study time (all-time)</div>
+    <div class="timer-display" id="timerTotal">0h 0m</div>
+    <div class="timer-today">Today: <b id="timerToday">0m</b></div>
+    <button class="timer-btn" id="timerBtn" onclick="toggleStudyTimer()">Start studying</button>
   </div>
   <div class="countdown-box">
     <div class="label">Days to exam</div>
@@ -935,6 +950,60 @@ function rateOpen(id, rating){
   saveProgress(progress);
   render();
 }
+
+/* ---------------- Study timer ---------------- */
+const TIMER_KEY = "ec109-study-timer-v1";
+function loadTimer(){
+  try{ return JSON.parse(localStorage.getItem(TIMER_KEY)) || {totalMs:0, byDate:{}}; }
+  catch(e){ return {totalMs:0, byDate:{}}; }
+}
+function saveTimer(t){ try{ localStorage.setItem(TIMER_KEY, JSON.stringify(t)); }catch(e){} }
+let studyTimer = loadTimer();
+let timerRunning = false;
+let timerIntervalId = null;
+
+function todayKey(){
+  const d = new Date();
+  return d.getFullYear()+"-"+String(d.getMonth()+1).padStart(2,"0")+"-"+String(d.getDate()).padStart(2,"0");
+}
+function fmtDuration(ms, withSeconds){
+  const totalSec = Math.max(0, Math.floor(ms/1000));
+  const h = Math.floor(totalSec/3600);
+  const m = Math.floor((totalSec%3600)/60);
+  const s = totalSec%60;
+  if(withSeconds) return h>0 ? `${h}h ${m}m ${s}s` : (m>0 ? `${m}m ${s}s` : `${s}s`);
+  return h>0 ? `${h}h ${m}m` : `${m}m`;
+}
+function updateTimerUI(){
+  const btn = document.getElementById("timerBtn");
+  if(btn){
+    btn.textContent = timerRunning ? "Stop studying" : "Start studying";
+    btn.classList.toggle("running", timerRunning);
+  }
+  const totalEl = document.getElementById("timerTotal");
+  if(totalEl) totalEl.textContent = fmtDuration(studyTimer.totalMs, timerRunning);
+  const todayEl = document.getElementById("timerToday");
+  if(todayEl) todayEl.textContent = fmtDuration(studyTimer.byDate[todayKey()]||0, timerRunning);
+}
+function toggleStudyTimer(){
+  if(timerRunning){
+    timerRunning = false;
+    clearInterval(timerIntervalId);
+    timerIntervalId = null;
+  } else {
+    timerRunning = true;
+    timerIntervalId = setInterval(()=>{
+      studyTimer.totalMs += 1000;
+      const k = todayKey();
+      studyTimer.byDate[k] = (studyTimer.byDate[k]||0) + 1000;
+      saveTimer(studyTimer);
+      updateTimerUI();
+    }, 1000);
+  }
+  updateTimerUI();
+}
+window.addEventListener("beforeunload", ()=>{ if(timerRunning) saveTimer(studyTimer); });
+updateTimerUI();
 
 render();
 </script>
