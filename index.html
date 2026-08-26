@@ -71,7 +71,17 @@
   nav.mainnav button:hover{background:var(--surface);color:var(--text);}
   nav.mainnav button.active{background:var(--surface-2);color:var(--accent-strong);font-weight:600;}
   nav.mainnav button.active .k{border-color:var(--accent);color:var(--accent);}
-  .sidebar-footer{margin-top:auto;color:var(--text-faint);font-size:0.72rem;line-height:1.5;}
+  .sidebar-bottom{margin-top:auto;display:flex;flex-direction:column;gap:12px;}
+  .sidebar-footer{color:var(--text-faint);font-size:0.72rem;line-height:1.5;}
+  .sync-links{display:flex;flex-direction:column;gap:6px;}
+  .sync-link{all:unset;cursor:pointer;color:var(--cool);font-size:0.78rem;text-align:left;}
+  .sync-link:hover{color:var(--accent-strong);text-decoration:underline;}
+  .modal-overlay{position:fixed;inset:0;background:rgba(30,25,10,0.45);z-index:2000;display:flex;align-items:center;justify-content:center;padding:20px;}
+  .modal-box{background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:22px;max-width:480px;width:100%;box-shadow:0 12px 40px rgba(0,0,0,0.3);max-height:88vh;overflow-y:auto;}
+  .modal-title{font-family:var(--serif);font-size:1.2rem;font-weight:700;margin-bottom:8px;}
+  .modal-sub{color:var(--text-dim);font-size:0.85rem;line-height:1.5;margin-bottom:14px;}
+  .sync-textarea{width:100%;min-height:110px;background:var(--surface-2);color:var(--text);border:1px solid var(--border);border-radius:8px;padding:12px;font-family:var(--mono);font-size:0.76rem;resize:vertical;word-break:break-all;}
+  .modal-actions{display:flex;justify-content:flex-end;gap:10px;margin-top:16px;flex-wrap:wrap;}
 
   /* ---------- main ---------- */
   #main{flex:1;min-width:0;padding:34px 42px 70px;max-width:980px;}
@@ -190,6 +200,38 @@
   }
   .def-popover .def-term{font-family:var(--serif);font-weight:700;color:var(--accent-strong);font-size:0.95rem;margin-bottom:6px;text-transform:capitalize;}
   .def-popover .def-body{font-size:0.86rem;line-height:1.5;color:var(--text-dim);}
+
+  /* ---------- mobile ---------- */
+  @media (max-width:760px){
+    body{flex-direction:column;}
+    #sidebar{
+      width:100%;flex:0 0 auto;position:relative;top:auto;height:auto;
+      flex-direction:row;flex-wrap:wrap;align-items:center;gap:10px;padding:14px 16px;
+      border-right:none;border-bottom:1px solid var(--border-soft);
+    }
+    .brand{flex:1 1 auto;min-width:120px;}
+    .brand h1{font-size:1.25rem;}
+    .timer-box,.countdown-box{flex:1 1 130px;padding:10px 12px;}
+    .timer-box .timer-display{font-size:1.15rem;}
+    .timer-box .timer-today{font-size:0.7rem;}
+    .timer-btn{margin-top:6px;padding:7px;font-size:0.78rem;}
+    .countdown-box .num{font-size:1.5rem;}
+    nav.mainnav{order:10;width:100%;flex-direction:row;flex-wrap:wrap;gap:6px;}
+    nav.mainnav button{padding:8px 10px;font-size:0.8rem;}
+    nav.mainnav button .k{display:none;}
+    .sidebar-bottom{order:11;width:100%;margin-top:0;}
+    #main{padding:20px 16px 50px;max-width:100%;}
+    .page-head h2{font-size:1.35rem;}
+    .grid-stats{gap:10px;}
+    .topic-row{grid-template-columns:1fr;gap:2px;padding:10px 0;}
+    .topic-row .pct{text-align:left;}
+    .grade-row{flex-wrap:wrap;}
+    .grade-row button{max-width:none;flex:1 1 30%;}
+    .lesson-nav-row{flex-wrap:wrap;}
+    .flashcard{padding:28px 18px;min-height:200px;}
+    .filters{gap:8px;}
+    .filters select{flex:1 1 auto;min-width:0;}
+  }
 </style>
 </head>
 <body>
@@ -212,7 +254,13 @@
     <div class="unit">Tue 1 Sep, 9:00am</div>
   </div>
   <nav class="mainnav" id="nav"></nav>
-  <div class="sidebar-footer">Progress is saved locally in this browser. Real question bank pulled from your lecture slides, pre-class questions and seminar sheets — past exam papers held back for timed mocks.</div>
+  <div class="sidebar-bottom">
+    <div class="sync-links">
+      <button class="sync-link" onclick="openSyncExport()">↗ Export sync code (send to another device)</button>
+      <button class="sync-link" onclick="openSyncImport()">↙ Import sync code (from another device)</button>
+    </div>
+    <div class="sidebar-footer">Progress is saved locally in this browser per device. Real question bank pulled from your lecture slides, pre-class questions and seminar sheets — past exam papers held back for timed mocks.</div>
+  </div>
 </div>
 
 <div id="main"></div>
@@ -1004,6 +1052,138 @@ function toggleStudyTimer(){
 }
 window.addEventListener("beforeunload", ()=>{ if(timerRunning) saveTimer(studyTimer); });
 updateTimerUI();
+
+/* ---------------- Cross-device sync (manual export/import code) ----------------
+   No backend, no account, nothing that can silently break or leak data — you
+   generate a code on one device and paste it into the other. Uses gzip
+   compression (native browser API) when available to keep the code short. */
+async function gzipCompress(bytes){
+  if(!window.CompressionStream) return null;
+  try{
+    const cs = new CompressionStream("gzip");
+    const writer = cs.writable.getWriter();
+    writer.write(bytes); writer.close();
+    return new Uint8Array(await new Response(cs.readable).arrayBuffer());
+  }catch(e){ return null; }
+}
+async function gzipDecompress(bytes){
+  const ds = new DecompressionStream("gzip");
+  const writer = ds.writable.getWriter();
+  writer.write(bytes); writer.close();
+  return new Uint8Array(await new Response(ds.readable).arrayBuffer());
+}
+function bytesToBase64(bytes){
+  let bin = "";
+  for(let i=0;i<bytes.length;i++) bin += String.fromCharCode(bytes[i]);
+  return btoa(bin);
+}
+function base64ToBytes(b64){
+  const bin = atob(b64);
+  const bytes = new Uint8Array(bin.length);
+  for(let i=0;i<bin.length;i++) bytes[i] = bin.charCodeAt(i);
+  return bytes;
+}
+async function buildSyncCode(){
+  const payload = { progress, studyTimer, exportedAt: Date.now() };
+  const raw = new TextEncoder().encode(JSON.stringify(payload));
+  const gz = await gzipCompress(raw);
+  if(gz) return "1:" + bytesToBase64(gz);
+  return "0:" + bytesToBase64(raw);
+}
+async function parseSyncCode(code){
+  code = code.trim();
+  const sep = code.indexOf(":");
+  if(sep===-1) throw new Error("Invalid code");
+  const mode = code.slice(0,sep);
+  const bytes = base64ToBytes(code.slice(sep+1));
+  const raw = mode==="1" ? await gzipDecompress(bytes) : bytes;
+  return JSON.parse(new TextDecoder().decode(raw));
+}
+function syncSummary(p, t){
+  const cardsReviewed = Object.keys((p&&p.cards)||{}).length;
+  const lessonsDone = Object.values((p&&p.learn)||{}).filter(l=>l.completed).length;
+  const totalMs = (t&&t.totalMs)||0;
+  return `${cardsReviewed} flashcards reviewed, ${lessonsDone} lessons completed, ${fmtDuration(totalMs)} studied total`;
+}
+function closeSyncModal(){
+  const m = document.getElementById("syncModalOverlay");
+  if(m) m.remove();
+}
+function openSyncModal(innerHtml){
+  closeSyncModal();
+  const overlay = document.createElement("div");
+  overlay.id = "syncModalOverlay";
+  overlay.className = "modal-overlay";
+  overlay.innerHTML = `<div class="modal-box">${innerHtml}</div>`;
+  overlay.addEventListener("click", (e)=>{ if(e.target===overlay) closeSyncModal(); });
+  document.body.appendChild(overlay);
+  return overlay;
+}
+document.addEventListener("keydown", (e)=>{ if(e.key==="Escape") closeSyncModal(); });
+
+async function openSyncExport(){
+  openSyncModal(`
+    <div class="modal-title">Export sync code</div>
+    <div class="modal-sub">Generating…</div>
+  `);
+  const code = await buildSyncCode();
+  const overlay = openSyncModal(`
+    <div class="modal-title">Export sync code</div>
+    <div class="modal-sub">${esc(syncSummary(progress, studyTimer))}. Copy this code and paste it into "Import sync code" on your other device.</div>
+    <textarea class="sync-textarea" readonly id="syncExportArea"></textarea>
+    <div class="modal-actions">
+      <button class="pill" onclick="closeSyncModal()">Close</button>
+      <button class="btn-primary" id="syncCopyBtn">Copy code</button>
+    </div>
+  `);
+  const area = document.getElementById("syncExportArea");
+  area.value = code;
+  document.getElementById("syncCopyBtn").onclick = async ()=>{
+    const btn = document.getElementById("syncCopyBtn");
+    try{
+      await navigator.clipboard.writeText(code);
+      btn.textContent = "Copied!";
+    }catch(e){
+      area.select();
+      document.execCommand("copy");
+      btn.textContent = "Copied!";
+    }
+  };
+}
+function openSyncImport(){
+  const overlay = openSyncModal(`
+    <div class="modal-title">Import sync code</div>
+    <div class="modal-sub">Paste the code you exported from your other device.</div>
+    <textarea class="sync-textarea" id="syncImportArea" placeholder="Paste code here..."></textarea>
+    <div class="modal-actions">
+      <button class="pill" onclick="closeSyncModal()">Cancel</button>
+      <button class="btn-primary" id="syncImportBtn">Import</button>
+    </div>
+  `);
+  document.getElementById("syncImportBtn").onclick = async ()=>{
+    const val = document.getElementById("syncImportArea").value;
+    if(!val.trim()){ return; }
+    let data;
+    try{ data = await parseSyncCode(val); }
+    catch(e){ alert("That code doesn't look valid — check you copied the whole thing."); return; }
+    const incomingSummary = syncSummary(data.progress, data.studyTimer);
+    const currentSummary = syncSummary(progress, studyTimer);
+    const ok = confirm(
+      "Import this data?\n\n" +
+      "Incoming (from other device): " + incomingSummary + "\n" +
+      "Currently on this device: " + currentSummary + "\n\n" +
+      "This will REPLACE this device's progress and study time with the imported version. This can't be undone."
+    );
+    if(!ok) return;
+    progress = data.progress || progress;
+    studyTimer = data.studyTimer || studyTimer;
+    saveProgress(progress);
+    saveTimer(studyTimer);
+    updateTimerUI();
+    closeSyncModal();
+    render();
+  };
+}
 
 render();
 </script>
