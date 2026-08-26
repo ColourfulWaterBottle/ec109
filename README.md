@@ -1,4 +1,4 @@
-# EC109 Resit Trainer
+# EC109
 
 A self-contained offline study app for Warwick's EC109 (Microeconomics 1) — interactive lessons, flashcards, MCQ drills, and open-ended practice with worked solutions, plus a click-to-define glossary throughout.
 
