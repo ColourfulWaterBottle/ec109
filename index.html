@@ -118,13 +118,17 @@
   /* ---------- flashcards ---------- */
   .fc-progress{font-family:var(--mono);color:var(--text-faint);font-size:0.78rem;margin-bottom:10px;letter-spacing:.03em;}
   .flashcard{
-    min-height:260px;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;
-    padding:40px 34px;cursor:pointer;position:relative;
+    min-height:220px;display:flex;flex-direction:column;align-items:center;text-align:center;
+    padding:36px 38px;cursor:pointer;position:relative;
   }
-  .flashcard .tag{font-family:var(--mono);font-size:0.7rem;letter-spacing:.1em;text-transform:uppercase;color:var(--cool);margin-bottom:16px;}
-  .flashcard.answer .tag{color:var(--accent);}
-  .flashcard .content{font-size:1.12rem;line-height:1.6;white-space:pre-wrap;max-width:640px;}
-  .flashcard .hint{position:absolute;bottom:16px;color:var(--text-faint);font-size:0.74rem;font-family:var(--mono);}
+  .flashcard.unrevealed{justify-content:center;min-height:260px;}
+  .flashcard .qa-block{width:100%;max-width:660px;}
+  .flashcard .qa-block + .qa-block{margin-top:22px;padding-top:22px;border-top:1px solid var(--border-soft);}
+  .flashcard .tag{font-family:var(--mono);font-size:0.7rem;letter-spacing:.1em;text-transform:uppercase;color:var(--cool);margin-bottom:14px;}
+  .flashcard .tag.answer-tag{color:var(--accent);}
+  .flashcard .content{font-size:1.14rem;line-height:1.75;white-space:pre-wrap;}
+  .flashcard .content.question-content{font-size:0.98rem;color:var(--text-dim);line-height:1.65;}
+  .flashcard .hint{margin-top:22px;color:var(--text-faint);font-size:0.74rem;font-family:var(--mono);}
   .grade-row{display:flex;gap:10px;justify-content:center;margin-top:16px;}
   .grade-row button{flex:1;max-width:150px;padding:11px;border-radius:8px;border:1px solid var(--border);cursor:pointer;font-weight:600;font-size:0.84rem;font-family:var(--sans);}
   .grade-row .kbd{display:block;font-family:var(--mono);font-size:0.68rem;opacity:.7;margin-top:2px;}
@@ -133,29 +137,29 @@
   .btn-good{background:var(--good-bg);color:var(--good);border-color:#b0dcc0;}
 
   /* ---------- mcq ---------- */
-  .mcq-stem{font-size:1.02rem;line-height:1.55;margin-bottom:18px;white-space:pre-wrap;}
+  .mcq-stem{font-size:1.04rem;line-height:1.75;margin-bottom:20px;white-space:pre-wrap;}
   .mcq-marks{float:right;font-family:var(--mono);font-size:0.72rem;color:var(--text-faint);}
   .mcq-opt{
-    display:flex;gap:12px;align-items:flex-start;width:100%;text-align:left;background:var(--surface-2);
-    border:1px solid var(--border);color:var(--text);padding:13px 15px;border-radius:8px;margin-bottom:9px;
-    cursor:pointer;font-size:0.92rem;font-family:var(--sans);line-height:1.45;
+    display:flex;gap:14px;align-items:flex-start;width:100%;text-align:left;background:var(--surface-2);
+    border:1px solid var(--border);color:var(--text);padding:15px 17px;border-radius:8px;margin-bottom:10px;
+    cursor:pointer;font-size:0.94rem;font-family:var(--sans);line-height:1.65;
   }
-  .mcq-opt .letter{font-family:var(--mono);color:var(--text-faint);flex:0 0 18px;}
+  .mcq-opt .letter{font-family:var(--mono);color:var(--text-faint);flex:0 0 18px;padding-top:1px;}
   .mcq-opt:hover:not(:disabled){border-color:var(--accent);}
   .mcq-opt.correct{background:var(--good-bg);border-color:var(--good);}
   .mcq-opt.correct .letter{color:var(--good);}
   .mcq-opt.wrong{background:var(--bad-bg);border-color:var(--bad);}
   .mcq-opt.wrong .letter{color:var(--bad);}
-  .explain{margin-top:14px;padding:14px 16px;background:var(--surface-2);border-left:3px solid var(--accent);border-radius:0 8px 8px 0;font-size:0.87rem;color:var(--text-dim);line-height:1.55;white-space:pre-wrap;}
+  .explain{margin-top:16px;padding:16px 18px;background:var(--surface-2);border-left:3px solid var(--accent);border-radius:0 8px 8px 0;font-size:0.89rem;color:var(--text-dim);line-height:1.7;white-space:pre-wrap;}
 
   /* ---------- open ended ---------- */
-  .oe-stem{font-size:1.02rem;line-height:1.6;margin-bottom:16px;white-space:pre-wrap;}
+  .oe-stem{font-size:1.04rem;line-height:1.75;margin-bottom:18px;white-space:pre-wrap;}
   textarea{
     width:100%;min-height:130px;background:var(--surface-2);color:var(--text);border:1px solid var(--border);
     border-radius:8px;padding:14px;font-family:var(--mono);font-size:0.85rem;resize:vertical;line-height:1.5;
   }
-  .model-answer{background:var(--surface-2);border:1px solid var(--border-soft);border-radius:8px;padding:18px 20px;margin-top:16px;font-size:0.88rem;line-height:1.65;white-space:pre-wrap;font-family:var(--mono);}
-  .model-answer .mtag{font-family:var(--sans);font-weight:700;color:var(--accent-strong);font-size:0.72rem;text-transform:uppercase;letter-spacing:.08em;margin-bottom:10px;display:block;}
+  .model-answer{background:var(--surface-2);border:1px solid var(--border-soft);border-radius:8px;padding:20px 22px;margin-top:18px;font-size:0.92rem;line-height:1.85;white-space:pre-wrap;font-family:var(--sans);}
+  .model-answer .mtag{font-family:var(--sans);font-weight:700;color:var(--accent-strong);font-size:0.72rem;text-transform:uppercase;letter-spacing:.08em;margin-bottom:12px;display:block;}
   .rate-row{display:flex;gap:10px;margin-top:16px;}
   .rate-row button{flex:1;padding:10px;border-radius:8px;border:1px solid var(--border);cursor:pointer;font-weight:600;font-size:0.84rem;font-family:var(--sans);}
   .rate-weak{background:var(--bad-bg);color:var(--bad);}
@@ -181,11 +185,11 @@
   .lesson-topic-tag{font-family:var(--mono);font-size:0.72rem;text-transform:uppercase;letter-spacing:.08em;color:var(--cool);margin-bottom:6px;}
   .lesson-title-h{font-family:var(--serif);font-size:1.55rem;font-weight:600;margin:0 0 22px;}
   .lesson-heading{font-family:var(--serif);font-size:1.1rem;color:var(--accent-strong);font-weight:600;margin:0 0 10px;}
-  .lesson-body p{font-size:0.96rem;line-height:1.75;color:var(--text);margin:0 0 14px;}
-  .lesson-step{margin-bottom:26px;}
-  .check-box{background:var(--surface-2);border:1px solid var(--border);border-radius:var(--radius);padding:18px 20px;margin-bottom:26px;}
-  .check-box .check-label{font-family:var(--mono);font-size:0.68rem;text-transform:uppercase;letter-spacing:.08em;color:var(--cool);margin-bottom:10px;}
-  .check-box .check-q{font-size:0.94rem;line-height:1.55;margin-bottom:14px;}
+  .lesson-body p{font-size:0.98rem;line-height:1.85;color:var(--text);margin:0 0 16px;}
+  .lesson-step{margin-bottom:30px;}
+  .check-box{background:var(--surface-2);border:1px solid var(--border);border-radius:var(--radius);padding:20px 22px;margin-bottom:28px;}
+  .check-box .check-label{font-family:var(--mono);font-size:0.68rem;text-transform:uppercase;letter-spacing:.08em;color:var(--cool);margin-bottom:12px;}
+  .check-box .check-q{font-size:0.96rem;line-height:1.7;margin-bottom:16px;}
   .lesson-complete-box{text-align:center;padding:30px 20px;}
   .lesson-complete-box .tick{font-family:var(--serif);font-size:1.3rem;color:var(--good);margin-bottom:6px;}
   .lesson-nav-row{display:flex;gap:10px;justify-content:center;margin-top:14px;}
@@ -417,8 +421,11 @@ function prettifyMath(s){
   // implied multiplication dot right after a closing exponent, before the next term
   s = s.replace(/(<\/sup>)(?=[A-Za-zα-ωΑ-Ω(])/g, "$1·");
   // subscripts: known econ variable stems immediately followed by 1-2 digits
-  const stems = "MRTS|MRS|MRT|AVC|ATC|AFC|MPL|MPK|MU|MC|MR|TC|TR|TU|FC|VC|AC|BR|SE|IE|CV|EV|HHI|CR|Qs|Qd|Q|P|K|L|w|r|c|x|y|u|U|A|b|v|m|M|D|S|H|N|a|d|F|T|G|Y|I|q|p";
-  const subRe = new RegExp("\\b(" + stems + ")(\\d{1,2})\\b", "g");
+  const stems = "MRTS|MRS|MRT|AVC|ATC|AFC|MPL|MPK|MU|MC|MR|TC|TR|TU|FC|VC|AC|BR|SE|IE|CV|EV|HHI|CR|Qs|Qd|Q|P|K|L|w|r|c|x|y|u|U|A|b|v|m|M|D|S|H|N|F|T|q|p";
+  // Lookbehind/lookahead instead of \b: \b fails to split adjacent tokens like
+  // "P1x1" (no non-word char between the "1" and the "x"), which silently
+  // skipped every stem that wasn't the first one in a concatenated run.
+  const subRe = new RegExp("(?<![A-Za-z])(" + stems + ")(\\d{1,2})(?!\\d)", "g");
   s = s.replace(subRe, (m, stem, num)=>`${stem}<sub>${num}</sub>`);
   return s;
 }
@@ -810,8 +817,20 @@ function renderFlashcards(main){
   main.appendChild(prog);
 
   const cardEl = document.createElement("div");
-  cardEl.className = "card flashcard" + (flashState.showBack?" answer":"");
-  cardEl.innerHTML = `<div class="tag">${flashState.showBack?"Answer":"Question"}</div><div class="content">${linkTerms(flashState.showBack?c.back:c.front)}</div><div class="hint">${flashState.showBack?"":"space / click to reveal"}</div>`;
+  cardEl.className = "card flashcard" + (flashState.showBack?" answer":" unrevealed");
+  if(flashState.showBack){
+    cardEl.innerHTML = `
+      <div class="qa-block">
+        <div class="tag">Question</div>
+        <div class="content question-content">${linkTerms(c.front)}</div>
+      </div>
+      <div class="qa-block">
+        <div class="tag answer-tag">Answer</div>
+        <div class="content">${linkTerms(c.back)}</div>
+      </div>`;
+  } else {
+    cardEl.innerHTML = `<div class="qa-block"><div class="tag">Question</div><div class="content">${linkTerms(c.front)}</div></div><div class="hint">space / click to reveal</div>`;
+  }
   cardEl.onclick = ()=>{ if(!flashState.showBack){ flashState.showBack=true; render(); } };
   main.appendChild(cardEl);
 
