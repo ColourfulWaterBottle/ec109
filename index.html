@@ -201,6 +201,13 @@
   .def-popover .def-term{font-family:var(--serif);font-weight:700;color:var(--accent-strong);font-size:0.95rem;margin-bottom:6px;text-transform:capitalize;}
   .def-popover .def-body{font-size:0.86rem;line-height:1.5;color:var(--text-dim);}
 
+  /* ---------- math typesetting (exponents, subscripts, fractions) ---------- */
+  sup{font-size:0.7em;line-height:0;position:relative;top:-0.55em;}
+  sub{font-size:0.7em;line-height:0;position:relative;bottom:-0.28em;}
+  .frac{display:inline-flex;flex-direction:column;vertical-align:middle;text-align:center;margin:0 3px;font-size:0.82em;line-height:1.15;position:relative;top:0.12em;}
+  .frac .fnum{border-bottom:1.3px solid currentColor;padding:0 4px 1px;}
+  .frac .fden{padding:1px 4px 0;}
+
   /* ---------- mobile ---------- */
   @media (max-width:760px){
     body{flex-direction:column;}
@@ -399,8 +406,25 @@ function lookupGlossary(matched){
   return null;
 }
 
+function prettifyMath(s){
+  // stacked fractions: (A)/(B) -> real fraction, num over den
+  s = s.replace(/\(([^()]{1,40})\)\/\(([^()]{1,40})\)/g, (m, num, den)=>
+    `<span class="frac"><span class="fnum">${num}</span><span class="fden">${den}</span></span>`);
+  // exponents: ^(expr) or ^number or ^singleLetter
+  s = s.replace(/\^\(([^()]{1,30})\)/g, (m, exp)=>`<sup>${exp}</sup>`);
+  s = s.replace(/\^(-?\d+(?:\.\d+)?)/g, (m, exp)=>`<sup>${exp}</sup>`);
+  s = s.replace(/\^([A-Za-zα-ωΑ-Ω])/g, (m, exp)=>`<sup>${exp}</sup>`);
+  // implied multiplication dot right after a closing exponent, before the next term
+  s = s.replace(/(<\/sup>)(?=[A-Za-zα-ωΑ-Ω(])/g, "$1·");
+  // subscripts: known econ variable stems immediately followed by 1-2 digits
+  const stems = "MRTS|MRS|MRT|AVC|ATC|AFC|MPL|MPK|MU|MC|MR|TC|TR|TU|FC|VC|AC|BR|SE|IE|CV|EV|HHI|CR|Qs|Qd|Q|P|K|L|w|r|c|x|y|u|U|A|b|v|m|M|D|S|H|N|a|d|F|T|G|Y|I|q|p";
+  const subRe = new RegExp("\\b(" + stems + ")(\\d{1,2})\\b", "g");
+  s = s.replace(subRe, (m, stem, num)=>`${stem}<sub>${num}</sub>`);
+  return s;
+}
+
 function linkTerms(raw){
-  const safe = esc(raw);
+  const safe = prettifyMath(esc(raw));
   return safe.replace(GLOSSARY_REGEX, (m)=>{
     const def = lookupGlossary(m);
     if(!def) return m;
