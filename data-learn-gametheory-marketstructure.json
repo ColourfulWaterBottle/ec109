@@ -6,16 +6,77 @@
       "topic": "Nash Equilibrium",
       "title": "Nash Equilibrium",
       "steps": [
-        {"type":"text","heading":"A new kind of problem","body":"Everything so far — consumer theory, producer theory, even perfect competition — involved a single decision-maker (or many decision-makers so small none of them affects anyone else) optimising against a FIXED environment. Game theory is different: it studies situations where a small number of players each choose an action, and the OUTCOME for each of them depends on what everyone chooses, not just their own choice. This is 'strategic interaction', and it shows up whenever firms are few enough to affect each other — oligopoly, bargaining, coordination problems."},
-        {"type":"text","heading":"The three ingredients of a game","body":"Every game needs: (1) Players — who is making decisions. (2) Strategies — the full set of actions each player could take. (3) Payoffs — what each player gets, as a function of EVERYONE's choices, not just their own. We usually write a two-player game as a payoff matrix: rows are Player 1's strategies, columns are Player 2's, and each cell shows (Player 1's payoff, Player 2's payoff) for that combination."},
-        {"type":"text","heading":"Best responses","body":"A strategy is a best response for a player if it maximises THEIR payoff, given a specific (fixed) choice by the other player(s). To find best responses in a matrix, fix each column in turn and find which row gives Player 1 the highest payoff in that column; then fix each row and find Player 2's best column."},
-        {"type":"check","q":"In a payoff matrix, what does it mean to find Player 1's 'best response' to a particular strategy of Player 2?","options":["The strategy that maximises the SUM of both players' payoffs","The strategy that maximises Player 1's own payoff, holding Player 2's strategy fixed at that particular choice","The strategy Player 1 would choose if they didn't know what Player 2 would do","The strategy that minimises Player 2's payoff"],"answer":1,"explain":"Best response is always defined relative to a SPECIFIC fixed choice by the other player — it's 'what's optimal FOR ME, GIVEN you do X'. It says nothing directly about joint payoffs or about uncertainty."},
-        {"type":"text","heading":"Nash equilibrium: mutual best responses","body":"A Nash equilibrium (NE) is a strategy profile — one strategy per player — where EVERY player's strategy is simultaneously a best response to everyone else's. No one can gain by unilaterally switching, given what the others are doing. This is what makes it 'stable': if the players ever ended up there, none of them would individually want to move away."},
-        {"type":"text","heading":"Worked example: finding NE in a matrix","body":"Two firms choose High or Low price. Payoffs (Firm A, Firm B): (High,High)=(50,50), (High,Low)=(10,60), (Low,High)=(60,10), (Low,Low)=(30,30).\n\nCheck each cell: at (High,High), would A deviate to Low? A would get 60 instead of 50 — yes, profitable, so (High,High) is NOT a NE. At (Low,Low), would A deviate to High? A would get 10 instead of 30 — no, not profitable. Would B deviate? By symmetry, no. So (Low,Low) IS a Nash equilibrium — the only one here, since checking (High,Low) and (Low,High) similarly shows a profitable deviation exists in each. Notice both players would prefer (High,High)=(50,50) to the equilibrium (Low,Low)=(30,30) — this is a prisoner's dilemma structure, and it's completely normal for the Nash equilibrium to NOT be the best outcome for the players jointly."},
-        {"type":"check","q":"Why can the Nash equilibrium of a game be worse for BOTH players than some other outcome that isn't an equilibrium?","options":["This is a contradiction and can never actually happen","Nash equilibrium only requires no UNILATERAL profitable deviation — it says nothing about whether a joint, coordinated deviation by both players together would help; if reaching the better outcome requires both to move together without a binding agreement, self-interest alone won't get them there","Nash equilibrium always selects the best outcome by definition","It only happens in games with more than two players"],"answer":1,"explain":"This is exactly the prisoner's dilemma logic: the jointly better outcome isn't self-enforcing — each player has an individual incentive to deviate from it (that's WHY it isn't itself a Nash equilibrium), even though both would be better off if they could commit to it together."},
-        {"type":"text","heading":"Multiple equilibria: payoff and risk dominance","body":"Some games have more than one Nash equilibrium — a classic case is the Stag Hunt (a coordination game): both hunting Stag together gives a high payoff to both, but requires trusting the other player to also choose Stag; both choosing the safer Hare gives a lower but guaranteed payoff. Both (Stag,Stag) and (Hare,Hare) can be Nash equilibria. If (Stag,Stag) gives strictly higher payoffs to both players, it 'payoff-dominates' the other equilibrium. But (Hare,Hare) may be 'risk-dominant' — safer to aim for if you're at all unsure the other player will also pick Stag. These can point in different directions, which is exactly the coordination problem real institutions (contracts, communication, reputation) exist to solve."},
-        {"type":"check","q":"In a Stag Hunt game, what makes (Hare,Hare) a Nash equilibrium even though (Stag,Stag) gives both players a strictly higher payoff?","options":["(Hare,Hare) is not actually a Nash equilibrium","If your partner is playing Hare, switching alone to Stag makes YOU worse off (Stag only pays off if both hunt it together) — so neither player wants to unilaterally deviate from (Hare,Hare), even though jointly switching to (Stag,Stag) would help both","Hare always dominates Stag as a strategy","Players are irrational in Stag Hunt games by assumption"],"answer":1,"explain":"The defining feature of Stag Hunt: Stag is only profitable if BOTH players choose it, so from (Hare,Hare), a lone switch to Stag backfires — you get the low payoff of hunting Stag alone. Neither player benefits from deviating alone, satisfying the Nash equilibrium condition, even though the outcome isn't the best one available if the players could coordinate."},
-        {"type":"text","heading":"Rationalizability: a broader concept","body":"Nash equilibrium requires players' BELIEFS about each other to be exactly correct (each strategy really is a best response to what the OTHER actually does). A weaker, related idea is rationalizability: a strategy survives if it's a best response to SOME belief you could hold about the other player — even a belief that turns out to be wrong. Every Nash equilibrium strategy is rationalizable, but the reverse isn't true — rationalizability is a bigger set, found by repeatedly eliminating strategies that could never be a best response to anything."}
+        {
+          "type": "text",
+          "heading": "A new kind of problem",
+          "body": "Everything so far — consumer theory, producer theory, even perfect competition — involved a single decision-maker (or many decision-makers so small none of them affects anyone else) optimising against a FIXED environment. Game theory is different: it studies situations where a small number of players each choose an action, and the OUTCOME for each of them depends on what everyone chooses, not just their own choice. This is 'strategic interaction', and it shows up whenever firms are few enough to affect each other — oligopoly, bargaining, coordination problems."
+        },
+        {
+          "type": "text",
+          "heading": "The three ingredients of a game",
+          "body": "Every game needs: (1) Players — who is making decisions. (2) Strategies — the full set of actions each player could take. (3) Payoffs — what each player gets, as a function of EVERYONE's choices, not just their own. We usually write a two-player game as a payoff matrix: rows are Player 1's strategies, columns are Player 2's, and each cell shows (Player 1's payoff, Player 2's payoff) for that combination."
+        },
+        {
+          "type": "text",
+          "heading": "Best responses",
+          "body": "A strategy is a best response for a player if it maximises THEIR payoff, given a specific (fixed) choice by the other player(s). To find best responses in a matrix, fix each column in turn and find which row gives Player 1 the highest payoff in that column; then fix each row and find Player 2's best column."
+        },
+        {
+          "type": "check",
+          "q": "In a payoff matrix, what does it mean to find Player 1's 'best response' to a particular strategy of Player 2?",
+          "options": [
+            "The strategy that maximises the SUM of both players' payoffs",
+            "The strategy that maximises Player 1's own payoff, holding Player 2's strategy fixed at that particular choice",
+            "The strategy Player 1 would choose if they didn't know what Player 2 would do",
+            "The strategy that minimises Player 2's payoff"
+          ],
+          "answer": 1,
+          "explain": "Best response is always defined relative to a SPECIFIC fixed choice by the other player — it's 'what's optimal FOR ME, GIVEN you do X'. It says nothing directly about joint payoffs or about uncertainty."
+        },
+        {
+          "type": "text",
+          "heading": "Nash equilibrium: mutual best responses",
+          "body": "A Nash equilibrium (NE) is a strategy profile — one strategy per player — where EVERY player's strategy is simultaneously a best response to everyone else's. No one can gain by unilaterally switching, given what the others are doing. This is what makes it 'stable': if the players ever ended up there, none of them would individually want to move away."
+        },
+        {
+          "type": "text",
+          "heading": "Worked example: finding NE in a matrix",
+          "body": "Two firms choose High or Low price. Payoffs (Firm A, Firm B): (High,High)=(50,50), (High,Low)=(10,60), (Low,High)=(60,10), (Low,Low)=(30,30).\n\nCheck each cell: at (High,High), would A deviate to Low? A would get 60 instead of 50 — yes, profitable, so (High,High) is NOT a NE. At (Low,Low), would A deviate to High? A would get 10 instead of 30 — no, not profitable. Would B deviate? By symmetry, no. So (Low,Low) IS a Nash equilibrium — the only one here, since checking (High,Low) and (Low,High) similarly shows a profitable deviation exists in each. Notice both players would prefer (High,High)=(50,50) to the equilibrium (Low,Low)=(30,30) — this is a prisoner's dilemma structure, and it's completely normal for the Nash equilibrium to NOT be the best outcome for the players jointly."
+        },
+        {
+          "type": "check",
+          "q": "Why can the Nash equilibrium of a game be worse for BOTH players than some other outcome that isn't an equilibrium?",
+          "options": [
+            "This is a contradiction and can never actually happen",
+            "Nash equilibrium only requires no UNILATERAL profitable deviation — it says nothing about whether a joint, coordinated deviation by both players together would help; if reaching the better outcome requires both to move together without a binding agreement, self-interest alone won't get them there",
+            "Nash equilibrium always selects the best outcome by definition",
+            "It only happens in games with more than two players"
+          ],
+          "answer": 1,
+          "explain": "This is exactly the prisoner's dilemma logic: the jointly better outcome isn't self-enforcing — each player has an individual incentive to deviate from it (that's WHY it isn't itself a Nash equilibrium), even though both would be better off if they could commit to it together."
+        },
+        {
+          "type": "text",
+          "heading": "Multiple equilibria: payoff and risk dominance",
+          "body": "Some games have more than one Nash equilibrium — a classic case is the Stag Hunt (a coordination game): both hunting Stag together gives a high payoff to both, but requires trusting the other player to also choose Stag; both choosing the safer Hare gives a lower but guaranteed payoff. Both (Stag,Stag) and (Hare,Hare) can be Nash equilibria. If (Stag,Stag) gives strictly higher payoffs to both players, it 'payoff-dominates' the other equilibrium. But (Hare,Hare) may be 'risk-dominant' — safer to aim for if you're at all unsure the other player will also pick Stag. These can point in different directions, which is exactly the coordination problem real institutions (contracts, communication, reputation) exist to solve."
+        },
+        {
+          "type": "check",
+          "q": "In a Stag Hunt game, what makes (Hare,Hare) a Nash equilibrium even though (Stag,Stag) gives both players a strictly higher payoff?",
+          "options": [
+            "(Hare,Hare) is not actually a Nash equilibrium",
+            "If your partner is playing Hare, switching alone to Stag makes YOU worse off (Stag only pays off if both hunt it together) — so neither player wants to unilaterally deviate from (Hare,Hare), even though jointly switching to (Stag,Stag) would help both",
+            "Hare always dominates Stag as a strategy",
+            "Players are irrational in Stag Hunt games by assumption"
+          ],
+          "answer": 1,
+          "explain": "The defining feature of Stag Hunt: Stag is only profitable if BOTH players choose it, so from (Hare,Hare), a lone switch to Stag backfires — you get the low payoff of hunting Stag alone. Neither player benefits from deviating alone, satisfying the Nash equilibrium condition, even though the outcome isn't the best one available if the players could coordinate."
+        },
+        {
+          "type": "text",
+          "heading": "Rationalizability: a broader concept",
+          "body": "Nash equilibrium requires players' BELIEFS about each other to be exactly correct (each strategy really is a best response to what the OTHER actually does). A weaker, related idea is rationalizability: a strategy survives if it's a best response to SOME belief you could hold about the other player — even a belief that turns out to be wrong. Every Nash equilibrium strategy is rationalizable, but the reverse isn't true — rationalizability is a bigger set, found by repeatedly eliminating strategies that could never be a best response to anything."
+        }
       ]
     },
     {
@@ -23,14 +84,67 @@
       "topic": "Mixed Strategies",
       "title": "Mixed Strategy Nash Equilibrium",
       "steps": [
-        {"type":"text","heading":"When there's no pure-strategy equilibrium","body":"Some games — the classic example is Matching Pennies (Row wants to match Column's choice of Heads/Tails, Column wants to mismatch) — have NO Nash equilibrium in pure strategies at all. Check any cell: whoever is 'losing' there always wants to switch, and that switch then makes the OTHER player want to switch too — you can chase around the matrix forever without settling. This is where mixed strategies come in: instead of picking one action for certain, a player randomizes between their options with some probability."},
-        {"type":"text","heading":"Why randomize? The intuition","body":"If you always played the same action, an opponent who's paying attention would learn to exploit it. Randomizing is a way to remain genuinely unpredictable — but there's a sharper, more precise idea underneath: in a mixed-strategy equilibrium, each player's mixing probabilities are chosen SPECIFICALLY to make the OTHER player indifferent between their own pure strategies. That's the key mechanical trick you'll use to actually solve these."},
-        {"type":"check","q":"In a mixed-strategy Nash equilibrium, whose payoffs determine YOUR mixing probability?","options":["Your own payoffs only","The other player's payoffs — your mix is set to make THEM indifferent between their pure strategies","Both players' payoffs equally, averaged together","Neither — mixing probabilities are arbitrary as long as they sum to 1"],"answer":1,"explain":"This is the single most counter-intuitive (and most tested) fact about mixed strategies: MY mixing probability is chosen to satisfy YOUR indifference condition, not mine. It feels backwards at first, but it's exactly what makes the equilibrium stable — if I mix any other way, you'd have a strict preference for one of your pure strategies and would stop mixing."},
-        {"type":"text","heading":"Worked example: solving for the mix","body":"Row has Up/Down, Column has Left/Right. Payoffs to Row: (Up,Left)=3, (Up,Right)=0, (Down,Left)=1, (Down,Right)=4. Suppose Column plays Left with probability q (and Right with probability 1-q). For ROW to be willing to mix, Row's expected payoff from Up must equal Row's expected payoff from Down:\n\nE[Up] = 3q + 0(1-q) = 3q\nE[Down] = 1q + 4(1-q) = 4-3q\n\nSetting equal: 3q = 4-3q → 6q = 4 → q = 2/3.\n\nSo Column plays Left with probability 2/3 — this is exactly the mix that makes ROW indifferent between Up and Down, which is what allows Row to be willing to randomize too. You'd then repeat the same logic using Column's OWN payoffs (not given here) to solve for how ROW should mix, in order to make COLUMN indifferent."},
-        {"type":"check","q":"After solving for Column's equilibrium mixing probability q using Row's indifference condition, what would you use to find Row's own equilibrium mixing probability?","options":["The same indifference condition — no further calculation is needed","Column's payoffs, setting up the analogous indifference condition so that Row's mix makes Column indifferent between Column's own two strategies","Row's own payoffs directly, without reference to indifference at all","There is no need to find Row's mixing probability if Column's is already known"],"answer":1,"explain":"The two mixing probabilities are found independently, each using a different player's payoffs: Column's mix is pinned down by making ROW indifferent (using Row's payoffs), and Row's mix is pinned down by making COLUMN indifferent (using Column's payoffs) — you need both halves of the calculation to fully describe the mixed-strategy Nash equilibrium."},
-        {"type":"text","heading":"What each player earns in equilibrium","body":"Once you've found the equilibrium mix, each player's EXPECTED payoff equals the payoff from EITHER of their own pure strategies played against the opponent's mix (since, by construction, the indifference condition makes those two payoffs identical). This is precisely why mixing is an equilibrium: every strategy in a player's mix is equally good against what the opponent is actually doing — there's no strictly better pure strategy sitting on the table."},
-        {"type":"text","heading":"Matching Pennies revisited","body":"In Matching Pennies, by the symmetry of the payoffs, the unique mixed-strategy NE has both players playing Heads and Tails with probability 0.5 each. Neither player can do better by leaning toward either action, given the other is mixing 50-50 — any lean would be exploited if the opponent knew about it, but the opponent doesn't need to (and can't profitably) exploit an exactly 50-50 mix."},
-        {"type":"check","q":"Why does an EXACTLY 50-50 mix in Matching Pennies leave neither player able to improve by deviating?","options":["Because 50-50 always happens to be the answer in every mixed-strategy game","Because at exactly 50-50, the opponent's expected payoff is identical whether they play Heads or Tails — any pure strategy (or any other mix) gives exactly the same expected payoff, so there's no profitable deviation available","Because Matching Pennies has no Nash equilibrium at all","Because both players secretly agree on 50-50 in advance"],"answer":1,"explain":"50-50 is specific to this particular (symmetric) payoff structure, not a universal answer — it happens to be the probability that makes the opponent exactly indifferent between Heads and Tails here. In an asymmetric game (like the Up/Down example), the equilibrium mixing probability is generally NOT 50-50."}
+        {
+          "type": "text",
+          "heading": "When there's no pure-strategy equilibrium",
+          "body": "Some games — the classic example is Matching Pennies (Row wants to match Column's choice of Heads/Tails, Column wants to mismatch) — have NO Nash equilibrium in pure strategies at all. Check any cell: whoever is 'losing' there always wants to switch, and that switch then makes the OTHER player want to switch too — you can chase around the matrix forever without settling. This is where mixed strategies come in: instead of picking one action for certain, a player randomizes between their options with some probability."
+        },
+        {
+          "type": "text",
+          "heading": "Why randomize? The intuition",
+          "body": "If you always played the same action, an opponent who's paying attention would learn to exploit it. Randomizing is a way to remain genuinely unpredictable — but there's a sharper, more precise idea underneath: in a mixed-strategy equilibrium, each player's mixing probabilities are chosen SPECIFICALLY to make the OTHER player indifferent between their own pure strategies. That's the key mechanical trick you'll use to actually solve these."
+        },
+        {
+          "type": "check",
+          "q": "In a mixed-strategy Nash equilibrium, whose payoffs determine YOUR mixing probability?",
+          "options": [
+            "Your own payoffs only",
+            "The other player's payoffs — your mix is set to make THEM indifferent between their pure strategies",
+            "Both players' payoffs equally, averaged together",
+            "Neither — mixing probabilities are arbitrary as long as they sum to 1"
+          ],
+          "answer": 1,
+          "explain": "This is the single most counter-intuitive (and most tested) fact about mixed strategies: MY mixing probability is chosen to satisfy YOUR indifference condition, not mine. It feels backwards at first, but it's exactly what makes the equilibrium stable — if I mix any other way, you'd have a strict preference for one of your pure strategies and would stop mixing."
+        },
+        {
+          "type": "text",
+          "heading": "Worked example: solving for the mix",
+          "body": "Row has Up/Down, Column has Left/Right. Payoffs to Row: (Up,Left)=3, (Up,Right)=0, (Down,Left)=1, (Down,Right)=4. Suppose Column plays Left with probability q (and Right with probability 1-q). For ROW to be willing to mix, Row's expected payoff from Up must equal Row's expected payoff from Down:\n\nE[Up] = 3q + 0(1-q) = 3q\nE[Down] = 1q + 4(1-q) = 4-3q\n\nSetting equal: 3q = 4-3q → 6q = 4 → q = 2/3.\n\nSo Column plays Left with probability 2/3 — this is exactly the mix that makes ROW indifferent between Up and Down, which is what allows Row to be willing to randomize too. You'd then repeat the same logic using Column's OWN payoffs (not given here) to solve for how ROW should mix, in order to make COLUMN indifferent."
+        },
+        {
+          "type": "check",
+          "q": "After solving for Column's equilibrium mixing probability q using Row's indifference condition, what would you use to find Row's own equilibrium mixing probability?",
+          "options": [
+            "The same indifference condition — no further calculation is needed",
+            "Column's payoffs, setting up the analogous indifference condition so that Row's mix makes Column indifferent between Column's own two strategies",
+            "Row's own payoffs directly, without reference to indifference at all",
+            "There is no need to find Row's mixing probability if Column's is already known"
+          ],
+          "answer": 1,
+          "explain": "The two mixing probabilities are found independently, each using a different player's payoffs: Column's mix is pinned down by making ROW indifferent (using Row's payoffs), and Row's mix is pinned down by making COLUMN indifferent (using Column's payoffs) — you need both halves of the calculation to fully describe the mixed-strategy Nash equilibrium."
+        },
+        {
+          "type": "text",
+          "heading": "What each player earns in equilibrium",
+          "body": "Once you've found the equilibrium mix, each player's EXPECTED payoff equals the payoff from EITHER of their own pure strategies played against the opponent's mix (since, by construction, the indifference condition makes those two payoffs identical). This is precisely why mixing is an equilibrium: every strategy in a player's mix is equally good against what the opponent is actually doing — there's no strictly better pure strategy sitting on the table."
+        },
+        {
+          "type": "text",
+          "heading": "Matching Pennies revisited",
+          "body": "In Matching Pennies, by the symmetry of the payoffs, the unique mixed-strategy NE has both players playing Heads and Tails with probability 0.5 each. Neither player can do better by leaning toward either action, given the other is mixing 50-50 — any lean would be exploited if the opponent knew about it, but the opponent doesn't need to (and can't profitably) exploit an exactly 50-50 mix."
+        },
+        {
+          "type": "check",
+          "q": "Why does an EXACTLY 50-50 mix in Matching Pennies leave neither player able to improve by deviating?",
+          "options": [
+            "Because 50-50 always happens to be the answer in every mixed-strategy game",
+            "Because at exactly 50-50, the opponent's expected payoff is identical whether they play Heads or Tails — any pure strategy (or any other mix) gives exactly the same expected payoff, so there's no profitable deviation available",
+            "Because Matching Pennies has no Nash equilibrium at all",
+            "Because both players secretly agree on 50-50 in advance"
+          ],
+          "answer": 1,
+          "explain": "50-50 is specific to this particular (symmetric) payoff structure, not a universal answer — it happens to be the probability that makes the opponent exactly indifferent between Heads and Tails here. In an asymmetric game (like the Up/Down example), the equilibrium mixing probability is generally NOT 50-50."
+        }
       ]
     },
     {
@@ -38,15 +152,66 @@
       "topic": "Extensive Form & Backward Induction",
       "title": "Extensive Form Games and Backward Induction",
       "steps": [
-        {"type":"text","heading":"Adding time to the model","body":"Everything so far assumed players choose simultaneously — a 'static' game. But many real strategic situations are DYNAMIC: one player moves, observes what happened, then the next player responds. Think of a firm deciding whether to enter a market before an incumbent decides how to react, or a product launch where one firm can observe a rival's move first. We need a richer representation to capture this: the extensive form (game tree)."},
-        {"type":"text","heading":"The parts of a game tree","body":"A game tree has decision nodes (points where a player must choose an action), branches (the available actions at each node, labelled), and terminal nodes (the end of the game, usually replaced with each player's payoff). The order of the tree — which nodes come before which — captures WHO moves when, and what they've observed by the time they move."},
-        {"type":"text","heading":"Information sets: what do you actually know?","body":"A crucial extra piece: an information set groups together all the decision nodes a player CANNOT tell apart at the moment they move. If a player's information set contains only a single node, they have PERFECT information at that point (they know exactly where they are in the tree). If an information set contains multiple nodes, the player must choose the SAME action across all of them, because they genuinely can't distinguish which node they're actually at — this is how simultaneous-move games get represented in extensive form: both players' nodes are grouped into one information set, since neither has observed the other's move yet."},
-        {"type":"check","q":"A game tree has a player's decision node grouped into an information set containing two nodes, not one. What does this represent?","options":["The player is allowed to choose a different action depending on which of the two nodes they are actually at","The player cannot distinguish between the two nodes — they must choose the SAME action regardless of which one has actually been reached, capturing imperfect information at that point","The game has an error and needs to be redrawn","The two nodes must have identical payoffs"],"answer":1,"explain":"An information set with more than one node means the player literally cannot tell which of those nodes they're at when they move — so their strategy must specify one single action to be used at all nodes in that set. This is exactly how a simultaneous-move situation (or any case of imperfect information) is captured within the tree structure."},
-        {"type":"text","heading":"A strategy is a COMPLETE plan","body":"In a dynamic game, a strategy for a player is not just 'what I'll do' — it's a complete contingent plan specifying an action at EVERY information set that player might ever be called to move at, including ones that might never actually be reached given how the game unfolds. This matters because to check whether a strategy profile is a Nash equilibrium, you need to compare full plans against each other, not just the moves actually observed along one path through the tree."},
-        {"type":"text","heading":"Backward induction: the solving technique","body":"When a game has PERFECT information throughout and a finite, known length, you can solve it by backward induction: 'look forward, reason backward'. Start at the LAST decision nodes — there, the optimal choice is obvious since there's no more continuation to think about. Then move to the second-to-last nodes, treating the now-known optimal play at the following nodes as fixed, and solve those. Keep working backward to the very first node. The path this traces out is the backward-induction solution."},
-        {"type":"text","heading":"Worked example","body":"A product launch game: Firm A first chooses Advertise (A) or Don't Advertise (D). Then Firm B, having observed A's choice, chooses Early (E) or Late (L) launch. Say the payoffs (to A, B) are: after A-then-E: (1,2); after A-then-L: (2,3); after D-then-E: (2,2); after D-then-L: (1,3).\n\nBackward induction starts at Firm B's two decision nodes (one following A, one following D):\n- Following A: B compares E (payoff 2) vs L (payoff 3) — B picks L.\n- Following D: B compares E (payoff 2) vs L (payoff 3) — B picks L again.\n\nSince B always picks L regardless, Firm A's real choice is between A-then-L (giving A a payoff of 2) and D-then-L (giving A a payoff of 1). A prefers Advertise. Backward-induction outcome: A advertises, B launches Late, giving payoffs (2,3)."},
-        {"type":"check","q":"In the worked example, why does backward induction start by analysing Firm B's decision, even though Firm A moves FIRST in the actual play of the game?","options":["Because Firm B is more important than Firm A","Because backward induction solves the LAST decisions first — Firm A's optimal first move depends on correctly anticipating what Firm B will do in response to each of Firm A's choices, so Firm B's later decision must be solved before Firm A's earlier one","This is an error — backward induction should always start with the first mover","Because Firm B's payoffs are always larger in this example"],"answer":1,"explain":"Backward induction works backward through TIME, not through the order you might naturally read the tree — the whole point is that you can't correctly decide the earlier move without first knowing how the later player will optimally respond to each possible earlier choice, so the analysis necessarily starts at the end and works toward the beginning."},
-        {"type":"text","heading":"Two important limitations","body":"Backward induction is powerful but has two real limits: (1) It cannot handle games of IMPERFECT information — if a player's information set contains more than one node, there's no single well-defined 'last decision' to start solving from at that point, since the player can't act differently depending on which node they're at. (2) It cannot handle games with no finite, known end point — an infinitely repeated game has no 'last period' to anchor the backward reasoning to. Both of these limitations are exactly why we need the more general concept of subgame perfect equilibrium, covered next."}
+        {
+          "type": "text",
+          "heading": "Adding time to the model",
+          "body": "Everything so far assumed players choose simultaneously — a 'static' game. But many real strategic situations are DYNAMIC: one player moves, observes what happened, then the next player responds. Think of a firm deciding whether to enter a market before an incumbent decides how to react, or a product launch where one firm can observe a rival's move first. We need a richer representation to capture this: the extensive form (game tree)."
+        },
+        {
+          "type": "text",
+          "heading": "The parts of a game tree",
+          "body": "A game tree has decision nodes (points where a player must choose an action), branches (the available actions at each node, labelled), and terminal nodes (the end of the game, usually replaced with each player's payoff). The order of the tree — which nodes come before which — captures WHO moves when, and what they've observed by the time they move."
+        },
+        {
+          "type": "text",
+          "heading": "Information sets: what do you actually know?",
+          "body": "A crucial extra piece: an information set groups together all the decision nodes a player CANNOT tell apart at the moment they move. If a player's information set contains only a single node, they have PERFECT information at that point (they know exactly where they are in the tree). If an information set contains multiple nodes, the player must choose the SAME action across all of them, because they genuinely can't distinguish which node they're actually at — this is how simultaneous-move games get represented in extensive form: both players' nodes are grouped into one information set, since neither has observed the other's move yet."
+        },
+        {
+          "type": "check",
+          "q": "A game tree has a player's decision node grouped into an information set containing two nodes, not one. What does this represent?",
+          "options": [
+            "The player is allowed to choose a different action depending on which of the two nodes they are actually at",
+            "The player cannot distinguish between the two nodes — they must choose the SAME action regardless of which one has actually been reached, capturing imperfect information at that point",
+            "The game has an error and needs to be redrawn",
+            "The two nodes must have identical payoffs"
+          ],
+          "answer": 1,
+          "explain": "An information set with more than one node means the player literally cannot tell which of those nodes they're at when they move — so their strategy must specify one single action to be used at all nodes in that set. This is exactly how a simultaneous-move situation (or any case of imperfect information) is captured within the tree structure."
+        },
+        {
+          "type": "text",
+          "heading": "A strategy is a COMPLETE plan",
+          "body": "In a dynamic game, a strategy for a player is not just 'what I'll do' — it's a complete contingent plan specifying an action at EVERY information set that player might ever be called to move at, including ones that might never actually be reached given how the game unfolds. This matters because to check whether a strategy profile is a Nash equilibrium, you need to compare full plans against each other, not just the moves actually observed along one path through the tree."
+        },
+        {
+          "type": "text",
+          "heading": "Backward induction: the solving technique",
+          "body": "When a game has PERFECT information throughout and a finite, known length, you can solve it by backward induction: 'look forward, reason backward'. Start at the LAST decision nodes — there, the optimal choice is obvious since there's no more continuation to think about. Then move to the second-to-last nodes, treating the now-known optimal play at the following nodes as fixed, and solve those. Keep working backward to the very first node. The path this traces out is the backward-induction solution."
+        },
+        {
+          "type": "text",
+          "heading": "Worked example",
+          "body": "A product launch game: Firm A first chooses Advertise (A) or Don't Advertise (D). Then Firm B, having observed A's choice, chooses Early (E) or Late (L) launch. Say the payoffs (to A, B) are: after A-then-E: (1,2); after A-then-L: (2,3); after D-then-E: (2,2); after D-then-L: (1,3).\n\nBackward induction starts at Firm B's two decision nodes (one following A, one following D):\n- Following A: B compares E (payoff 2) vs L (payoff 3) — B picks L.\n- Following D: B compares E (payoff 2) vs L (payoff 3) — B picks L again.\n\nSince B always picks L regardless, Firm A's real choice is between A-then-L (giving A a payoff of 2) and D-then-L (giving A a payoff of 1). A prefers Advertise. Backward-induction outcome: A advertises, B launches Late, giving payoffs (2,3).",
+          "diagram": "game-tree-simple"
+        },
+        {
+          "type": "check",
+          "q": "In the worked example, why does backward induction start by analysing Firm B's decision, even though Firm A moves FIRST in the actual play of the game?",
+          "options": [
+            "Because Firm B is more important than Firm A",
+            "Because backward induction solves the LAST decisions first — Firm A's optimal first move depends on correctly anticipating what Firm B will do in response to each of Firm A's choices, so Firm B's later decision must be solved before Firm A's earlier one",
+            "This is an error — backward induction should always start with the first mover",
+            "Because Firm B's payoffs are always larger in this example"
+          ],
+          "answer": 1,
+          "explain": "Backward induction works backward through TIME, not through the order you might naturally read the tree — the whole point is that you can't correctly decide the earlier move without first knowing how the later player will optimally respond to each possible earlier choice, so the analysis necessarily starts at the end and works toward the beginning."
+        },
+        {
+          "type": "text",
+          "heading": "Two important limitations",
+          "body": "Backward induction is powerful but has two real limits: (1) It cannot handle games of IMPERFECT information — if a player's information set contains more than one node, there's no single well-defined 'last decision' to start solving from at that point, since the player can't act differently depending on which node they're at. (2) It cannot handle games with no finite, known end point — an infinitely repeated game has no 'last period' to anchor the backward reasoning to. Both of these limitations are exactly why we need the more general concept of subgame perfect equilibrium, covered next."
+        }
       ]
     },
     {
@@ -54,14 +219,60 @@
       "topic": "Subgame Perfect Equilibrium",
       "title": "Subgame Perfect Equilibrium",
       "steps": [
-        {"type":"text","heading":"The problem with plain Nash equilibrium in dynamic games","body":"Recall from the extensive-form lesson: a Nash equilibrium of a dynamic game only requires each player's FULL strategy (their complete contingent plan) to be a mutual best response — it does NOT require every individual piece of that plan to be sensible at the moment it would actually be used. This opens the door to equilibria propped up by threats that would never actually be carried out if tested — 'non-credible threats'. We need a sharper solution concept that rules these out."},
-        {"type":"text","heading":"Subgames: the building block","body":"A subgame is any part of the full game tree that starts at a SINGLE decision node (one that is, on its own, a complete information set — i.e. reaching it is common knowledge) and includes ALL of that node's successors. Under perfect information, every single decision node in the tree defines its own valid subgame; the entire game itself is also (trivially) a subgame of itself."},
-        {"type":"text","heading":"The definition of SPE","body":"A strategy profile is a subgame perfect equilibrium (SPE) if it induces a NASH EQUILIBRIUM in EVERY subgame of the game — not just in the overall game as a whole. This is what 'subgame perfection' means: perfect (i.e. optimal, self-enforcing) play, checked independently within every possible subgame, including ones that the equilibrium path itself never actually visits."},
-        {"type":"check","q":"How does requiring a Nash equilibrium in EVERY subgame rule out non-credible threats?","options":["It doesn't — SPE and plain Nash equilibrium are exactly the same concept","A non-credible threat, by definition, is NOT optimal at the node where it would need to be carried out — so a strategy containing it fails to be a Nash equilibrium of the subgame STARTING at that node, even if the overall strategy still looks fine as a Nash equilibrium of the whole game","It only works in games with exactly two players","SPE ignores off-path behaviour entirely, so threats never matter"],"answer":1,"explain":"This is the mechanical heart of SPE: because every node (under perfect information) starts its own subgame, and SPE demands a Nash equilibrium WITHIN each one independently, a threatened action that wouldn't actually be optimal at that node fails the Nash-equilibrium-of-that-subgame test — even though it might look fine when you only check the game as a whole."},
-        {"type":"text","heading":"Two ways to find an SPE","body":"1) If backward induction can be applied (perfect information, finite game), just use it — the resulting outcome is guaranteed to be an SPE.\n2) When backward induction can't be used directly (imperfect information, or no finite end point), use the one-shot deviation principle instead: propose a candidate strategy profile, then check whether ANY player could gain by deviating from it at just a SINGLE information set, for one action, while sticking to the proposed strategy everywhere else. If no such profitable one-shot deviation exists anywhere, the profile is an SPE. This is a 'guess and check' method rather than a constructive one, but it extends to cases backward induction can't reach."},
-        {"type":"text","heading":"SPE under imperfect information","body":"When a game has imperfect information (e.g. a player's later move doesn't observe an earlier player's exact choice, just grouped into a shared information set), backward induction literally cannot be applied at that point — but subgames STILL exist wherever a single node forms its own information set, and SPE can still be checked there via the one-shot deviation principle. In games that are purely simultaneous at every stage (no node is ever its own single-node information set except the very start), SPE and ordinary Nash equilibrium coincide, since the only subgame is the whole game itself."},
-        {"type":"check","q":"In a game with some perfect-information nodes and some imperfect-information information sets, where can SPE still meaningfully restrict behaviour beyond plain Nash equilibrium?","options":["Nowhere — SPE only ever applies to fully perfect-information games","At any node that, by itself, forms a genuine single-node subgame — SPE requires optimal (Nash) play within that subgame specifically, even if backward induction can't be used to solve the whole imperfect-information game directly","Only at the very first node of the game","Only if all players have identical payoffs"],"answer":1,"explain":"SPE's requirement applies subgame-by-subgame — wherever a genuine single-node subgame exists (even inside an otherwise imperfect-information game), the equilibrium strategy must be optimal for the players from that point onward, which is a real, checkable restriction beyond just requiring the WHOLE-game strategy to be a Nash equilibrium."},
-        {"type":"text","heading":"Two applications: Centipede and Ultimatum","body":"The Centipede Game (players alternately choose to grow a shared pot or stop and split it, with stopping getting more attractive to the mover the longer it goes on) has an SPE where the very first player stops immediately — backward induction unravels cooperation exactly as in the finitely repeated prisoner's dilemma. The Ultimatum Game (one player proposes a split of a fixed pot, the other Accepts or Rejects, with rejection giving both zero) has an SPE where the Responder accepts ANY positive offer (something beats nothing) and the Proposer, anticipating this, offers the smallest possible positive amount. In BOTH cases, real experimental behaviour departs substantially from the SPE prediction — people cooperate longer in Centipede than predicted, and reject unfair Ultimatum offers far more often than the payoff-maximising model says they should, revealing that fairness concerns and other-regarding preferences matter for real decision-making, not just backward-induction logic."}
+        {
+          "type": "text",
+          "heading": "The problem with plain Nash equilibrium in dynamic games",
+          "body": "Recall from the extensive-form lesson: a Nash equilibrium of a dynamic game only requires each player's FULL strategy (their complete contingent plan) to be a mutual best response — it does NOT require every individual piece of that plan to be sensible at the moment it would actually be used. This opens the door to equilibria propped up by threats that would never actually be carried out if tested — 'non-credible threats'. We need a sharper solution concept that rules these out."
+        },
+        {
+          "type": "text",
+          "heading": "Subgames: the building block",
+          "body": "A subgame is any part of the full game tree that starts at a SINGLE decision node (one that is, on its own, a complete information set — i.e. reaching it is common knowledge) and includes ALL of that node's successors. Under perfect information, every single decision node in the tree defines its own valid subgame; the entire game itself is also (trivially) a subgame of itself."
+        },
+        {
+          "type": "text",
+          "heading": "The definition of SPE",
+          "body": "A strategy profile is a subgame perfect equilibrium (SPE) if it induces a NASH EQUILIBRIUM in EVERY subgame of the game — not just in the overall game as a whole. This is what 'subgame perfection' means: perfect (i.e. optimal, self-enforcing) play, checked independently within every possible subgame, including ones that the equilibrium path itself never actually visits."
+        },
+        {
+          "type": "check",
+          "q": "How does requiring a Nash equilibrium in EVERY subgame rule out non-credible threats?",
+          "options": [
+            "It doesn't — SPE and plain Nash equilibrium are exactly the same concept",
+            "A non-credible threat, by definition, is NOT optimal at the node where it would need to be carried out — so a strategy containing it fails to be a Nash equilibrium of the subgame STARTING at that node, even if the overall strategy still looks fine as a Nash equilibrium of the whole game",
+            "It only works in games with exactly two players",
+            "SPE ignores off-path behaviour entirely, so threats never matter"
+          ],
+          "answer": 1,
+          "explain": "This is the mechanical heart of SPE: because every node (under perfect information) starts its own subgame, and SPE demands a Nash equilibrium WITHIN each one independently, a threatened action that wouldn't actually be optimal at that node fails the Nash-equilibrium-of-that-subgame test — even though it might look fine when you only check the game as a whole."
+        },
+        {
+          "type": "text",
+          "heading": "Two ways to find an SPE",
+          "body": "1) If backward induction can be applied (perfect information, finite game), just use it — the resulting outcome is guaranteed to be an SPE.\n2) When backward induction can't be used directly (imperfect information, or no finite end point), use the one-shot deviation principle instead: propose a candidate strategy profile, then check whether ANY player could gain by deviating from it at just a SINGLE information set, for one action, while sticking to the proposed strategy everywhere else. If no such profitable one-shot deviation exists anywhere, the profile is an SPE. This is a 'guess and check' method rather than a constructive one, but it extends to cases backward induction can't reach."
+        },
+        {
+          "type": "text",
+          "heading": "SPE under imperfect information",
+          "body": "When a game has imperfect information (e.g. a player's later move doesn't observe an earlier player's exact choice, just grouped into a shared information set), backward induction literally cannot be applied at that point — but subgames STILL exist wherever a single node forms its own information set, and SPE can still be checked there via the one-shot deviation principle. In games that are purely simultaneous at every stage (no node is ever its own single-node information set except the very start), SPE and ordinary Nash equilibrium coincide, since the only subgame is the whole game itself."
+        },
+        {
+          "type": "check",
+          "q": "In a game with some perfect-information nodes and some imperfect-information information sets, where can SPE still meaningfully restrict behaviour beyond plain Nash equilibrium?",
+          "options": [
+            "Nowhere — SPE only ever applies to fully perfect-information games",
+            "At any node that, by itself, forms a genuine single-node subgame — SPE requires optimal (Nash) play within that subgame specifically, even if backward induction can't be used to solve the whole imperfect-information game directly",
+            "Only at the very first node of the game",
+            "Only if all players have identical payoffs"
+          ],
+          "answer": 1,
+          "explain": "SPE's requirement applies subgame-by-subgame — wherever a genuine single-node subgame exists (even inside an otherwise imperfect-information game), the equilibrium strategy must be optimal for the players from that point onward, which is a real, checkable restriction beyond just requiring the WHOLE-game strategy to be a Nash equilibrium."
+        },
+        {
+          "type": "text",
+          "heading": "Two applications: Centipede and Ultimatum",
+          "body": "The Centipede Game (players alternately choose to grow a shared pot or stop and split it, with stopping getting more attractive to the mover the longer it goes on) has an SPE where the very first player stops immediately — backward induction unravels cooperation exactly as in the finitely repeated prisoner's dilemma. The Ultimatum Game (one player proposes a split of a fixed pot, the other Accepts or Rejects, with rejection giving both zero) has an SPE where the Responder accepts ANY positive offer (something beats nothing) and the Proposer, anticipating this, offers the smallest possible positive amount. In BOTH cases, real experimental behaviour departs substantially from the SPE prediction — people cooperate longer in Centipede than predicted, and reject unfair Ultimatum offers far more often than the payoff-maximising model says they should, revealing that fairness concerns and other-regarding preferences matter for real decision-making, not just backward-induction logic."
+        }
       ]
     },
     {
@@ -69,15 +280,72 @@
       "topic": "Repeated Games & Folk Theorem",
       "title": "Repeated Games and the Folk Theorem",
       "steps": [
-        {"type":"text","heading":"Why repeat a game at all?","body":"A one-shot prisoner's dilemma always ends in mutual defection — cooperation isn't self-enforcing in a single interaction. But most real strategic relationships (firms competing over years, business partners, even everyday social cooperation) are REPEATED. Repetition opens up entirely new kinds of strategies — ones that condition today's action on what happened in the past — and the question becomes: can repetition sustain cooperation that a single round never could?"},
-        {"type":"text","heading":"The finitely repeated case: unravelling","body":"Suppose the prisoner's dilemma is played for a FIXED, KNOWN number of rounds, say 12. Apply backward induction: in round 12 (the last), there's no future left to threaten punishment over, so defection is optimal regardless of history — this is locked in. But if round 12's play is fixed at defect no matter what, there's no way to credibly threaten punishment IN round 11 either (the 'punishment' of defecting in round 12 was going to happen anyway) — so round 11 unravels to defect too. This logic cascades all the way back to round 1. The unique SPE of a FINITELY repeated prisoner's dilemma is to defect in EVERY single round, including the very first."},
-        {"type":"check","q":"Why does knowing the EXACT, FINITE number of rounds in advance destroy the possibility of sustained cooperation via backward induction?","options":["It doesn't — cooperation is always sustainable in repeated games","Because the final round has no future to threaten with, defection there is locked in regardless of history, and this certainty then unravels backward through every earlier round via the same logic, all the way to round 1","Because players forget the rules after round 1","Because payoffs change over time in a finitely repeated game"],"answer":1,"explain":"The unravelling argument depends critically on there being a KNOWN final round where punishment becomes impossible — remove that certainty (by making the game infinite, or the ending merely PROBABILISTIC rather than a fixed known date) and the unravelling logic breaks down, which is exactly why the infinite/indefinite case behaves so differently."},
-        {"type":"text","heading":"Infinitely (or indefinitely) repeated games","body":"Now suppose the game continues forever, or — more realistically — continues each period with some probability, captured by a discount factor δ<1 (δ could represent patience, the probability the relationship continues, or both). With no known final round, the unravelling argument has no anchor to start from, and cooperation becomes genuinely possible if players are patient enough."},
-        {"type":"text","heading":"Grim Trigger and the sustainability condition","body":"Grim Trigger: cooperate in period 0; keep cooperating as long as NEITHER player has ever defected; if EITHER player ever defects, defect forever after as punishment. To check if this sustains cooperation as a Nash equilibrium, compare the payoff from always cooperating to the payoff from defecting once (getting the one-off high payoff π_D) and then facing permanent mutual defection (π_N) forever after:\n\nCooperate forever: π_C + δπ_C + δ²π_C + ... = π_C/(1-δ) [geometric series]\nDefect once, then punished forever: π_D + δπ_N + δ²π_N + ... = π_D + δπ_N/(1-δ)\n\nCooperation is sustained if π_C/(1-δ) ≥ π_D + δπ_N/(1-δ), which rearranges to δ ≥ (π_D-π_C)/(π_D-π_N). If players are patient enough (or the relationship is likely enough to continue), the future losses from permanent punishment outweigh today's one-off gain from cheating."},
-        {"type":"check","q":"A repeated game has π_C=5, π_D=9, π_N=2. What is the minimum δ needed to sustain cooperation via Grim Trigger?","options":["δ≥4/7≈0.571","δ≥5/9≈0.556","δ≥2/9≈0.222","δ≥7/9≈0.778"],"answer":0,"explain":"δ≥(π_D-π_C)/(π_D-π_N)=(9-5)/(9-2)=4/7≈0.571."},
-        {"type":"text","heading":"The Folk Theorem: beyond just Grim Trigger","body":"The Folk Theorem generalises this idea: in an infinitely (or indefinitely) repeated game with a sufficiently high discount factor, ALMOST ANY payoff combination that gives each player at least their 'minmax' payoff (the worst they can be held to if everyone else tries to punish them as hard as possible) can be supported as an SPE outcome — not just the one-shot Nash equilibrium, but a much wider range of cooperative, mutually beneficial outcomes, sustained by the credible threat of reverting to punishment."},
-        {"type":"text","heading":"Which strategies actually work well? Axelrod's tournaments","body":"Robert Axelrod ran computer tournaments where submitted strategies played repeated prisoner's dilemmas against each other. Tit-for-Tat (start by cooperating, then simply copy whatever the opponent did last period) won both tournaments, beating far more complex strategies. Axelrod identified three properties shared by the best performers: 'Niceness' (never the first to defect), 'Retaliation' (punish defection immediately, so you can't be exploited for free), and 'Forgiveness' (return to cooperation once the opponent stops defecting, rather than punishing forever like Grim Trigger does). Grim Trigger itself performed only middlingly in the tournaments — its total inability to forgive a single mistake made it too harsh in a noisy, repeated-interaction environment."},
-        {"type":"check","q":"Why might Grim Trigger perform worse than Tit-for-Tat in a real (possibly noisy) repeated interaction, even though both can theoretically sustain cooperation?","options":["Grim Trigger always requires a higher discount factor to work at all","Grim Trigger punishes FOREVER after a single defection (even an accidental one), permanently destroying all future cooperation, while Tit-for-Tat's 'forgiveness' allows cooperation to resume after just one round of punishment — this matters a great deal if mistakes or misunderstandings ever occur","Tit-for-Tat is a dominant strategy in the one-shot game","Grim Trigger cannot be represented as a valid strategy in game theory"],"answer":1,"explain":"Grim Trigger's permanent punishment is powerful in theory but brutally unforgiving in practice — a single mistake, misread signal, or noisy observation locks both players into mutual defection forever. Tit-for-Tat's willingness to forgive after one round of punishment lets relationships recover from occasional errors, which is exactly the kind of robustness Axelrod's tournaments rewarded."}
+        {
+          "type": "text",
+          "heading": "Why repeat a game at all?",
+          "body": "A one-shot prisoner's dilemma always ends in mutual defection — cooperation isn't self-enforcing in a single interaction. But most real strategic relationships (firms competing over years, business partners, even everyday social cooperation) are REPEATED. Repetition opens up entirely new kinds of strategies — ones that condition today's action on what happened in the past — and the question becomes: can repetition sustain cooperation that a single round never could?"
+        },
+        {
+          "type": "text",
+          "heading": "The finitely repeated case: unravelling",
+          "body": "Suppose the prisoner's dilemma is played for a FIXED, KNOWN number of rounds, say 12. Apply backward induction: in round 12 (the last), there's no future left to threaten punishment over, so defection is optimal regardless of history — this is locked in. But if round 12's play is fixed at defect no matter what, there's no way to credibly threaten punishment IN round 11 either (the 'punishment' of defecting in round 12 was going to happen anyway) — so round 11 unravels to defect too. This logic cascades all the way back to round 1. The unique SPE of a FINITELY repeated prisoner's dilemma is to defect in EVERY single round, including the very first."
+        },
+        {
+          "type": "check",
+          "q": "Why does knowing the EXACT, FINITE number of rounds in advance destroy the possibility of sustained cooperation via backward induction?",
+          "options": [
+            "It doesn't — cooperation is always sustainable in repeated games",
+            "Because the final round has no future to threaten with, defection there is locked in regardless of history, and this certainty then unravels backward through every earlier round via the same logic, all the way to round 1",
+            "Because players forget the rules after round 1",
+            "Because payoffs change over time in a finitely repeated game"
+          ],
+          "answer": 1,
+          "explain": "The unravelling argument depends critically on there being a KNOWN final round where punishment becomes impossible — remove that certainty (by making the game infinite, or the ending merely PROBABILISTIC rather than a fixed known date) and the unravelling logic breaks down, which is exactly why the infinite/indefinite case behaves so differently."
+        },
+        {
+          "type": "text",
+          "heading": "Infinitely (or indefinitely) repeated games",
+          "body": "Now suppose the game continues forever, or — more realistically — continues each period with some probability, captured by a discount factor δ<1 (δ could represent patience, the probability the relationship continues, or both). With no known final round, the unravelling argument has no anchor to start from, and cooperation becomes genuinely possible if players are patient enough."
+        },
+        {
+          "type": "text",
+          "heading": "Grim Trigger and the sustainability condition",
+          "body": "Grim Trigger: cooperate in period 0; keep cooperating as long as NEITHER player has ever defected; if EITHER player ever defects, defect forever after as punishment. To check if this sustains cooperation as a Nash equilibrium, compare the payoff from always cooperating to the payoff from defecting once (getting the one-off high payoff π_D) and then facing permanent mutual defection (π_N) forever after:\n\nCooperate forever: π_C + δπ_C + δ²π_C + ... = π_C/(1-δ) [geometric series]\nDefect once, then punished forever: π_D + δπ_N + δ²π_N + ... = π_D + δπ_N/(1-δ)\n\nCooperation is sustained if π_C/(1-δ) ≥ π_D + δπ_N/(1-δ), which rearranges to δ ≥ (π_D-π_C)/(π_D-π_N). If players are patient enough (or the relationship is likely enough to continue), the future losses from permanent punishment outweigh today's one-off gain from cheating."
+        },
+        {
+          "type": "check",
+          "q": "A repeated game has π_C=5, π_D=9, π_N=2. What is the minimum δ needed to sustain cooperation via Grim Trigger?",
+          "options": [
+            "δ≥4/7≈0.571",
+            "δ≥5/9≈0.556",
+            "δ≥2/9≈0.222",
+            "δ≥7/9≈0.778"
+          ],
+          "answer": 0,
+          "explain": "δ≥(π_D-π_C)/(π_D-π_N)=(9-5)/(9-2)=4/7≈0.571."
+        },
+        {
+          "type": "text",
+          "heading": "The Folk Theorem: beyond just Grim Trigger",
+          "body": "The Folk Theorem generalises this idea: in an infinitely (or indefinitely) repeated game with a sufficiently high discount factor, ALMOST ANY payoff combination that gives each player at least their 'minmax' payoff (the worst they can be held to if everyone else tries to punish them as hard as possible) can be supported as an SPE outcome — not just the one-shot Nash equilibrium, but a much wider range of cooperative, mutually beneficial outcomes, sustained by the credible threat of reverting to punishment."
+        },
+        {
+          "type": "text",
+          "heading": "Which strategies actually work well? Axelrod's tournaments",
+          "body": "Robert Axelrod ran computer tournaments where submitted strategies played repeated prisoner's dilemmas against each other. Tit-for-Tat (start by cooperating, then simply copy whatever the opponent did last period) won both tournaments, beating far more complex strategies. Axelrod identified three properties shared by the best performers: 'Niceness' (never the first to defect), 'Retaliation' (punish defection immediately, so you can't be exploited for free), and 'Forgiveness' (return to cooperation once the opponent stops defecting, rather than punishing forever like Grim Trigger does). Grim Trigger itself performed only middlingly in the tournaments — its total inability to forgive a single mistake made it too harsh in a noisy, repeated-interaction environment."
+        },
+        {
+          "type": "check",
+          "q": "Why might Grim Trigger perform worse than Tit-for-Tat in a real (possibly noisy) repeated interaction, even though both can theoretically sustain cooperation?",
+          "options": [
+            "Grim Trigger always requires a higher discount factor to work at all",
+            "Grim Trigger punishes FOREVER after a single defection (even an accidental one), permanently destroying all future cooperation, while Tit-for-Tat's 'forgiveness' allows cooperation to resume after just one round of punishment — this matters a great deal if mistakes or misunderstandings ever occur",
+            "Tit-for-Tat is a dominant strategy in the one-shot game",
+            "Grim Trigger cannot be represented as a valid strategy in game theory"
+          ],
+          "answer": 1,
+          "explain": "Grim Trigger's permanent punishment is powerful in theory but brutally unforgiving in practice — a single mistake, misread signal, or noisy observation locks both players into mutual defection forever. Tit-for-Tat's willingness to forgive after one round of punishment lets relationships recover from occasional errors, which is exactly the kind of robustness Axelrod's tournaments rewarded."
+        }
       ]
     },
     {
@@ -85,14 +353,62 @@
       "topic": "Perfect Competition & Monopoly",
       "title": "Perfect Competition and Monopoly",
       "steps": [
-        {"type":"text","heading":"Two ends of a spectrum","body":"You've already met the demand-and-supply model, which assumes firms are price takers. This lesson makes that assumption explicit and precise (perfect competition), and then studies its complete opposite: a single seller with total market power (monopoly). Real markets sit somewhere between these two extremes, which is exactly why studying both endpoints is useful — they're benchmarks, not literal descriptions of any one real industry."},
-        {"type":"text","heading":"The four assumptions of perfect competition","body":"1) Many buyers and sellers, each individually small relative to the market. 2) Undifferentiated products (perfect substitutes across sellers). 3) Perfect information about prices. 4) Equal access to resources and production technology (no firm has a unique cost advantage). Under these assumptions, no single firm can affect the market price — each firm faces a perfectly horizontal (perfectly elastic) individual demand curve at the going market price, since pricing even slightly above it loses ALL customers to identical rivals."},
-        {"type":"check","q":"Why is an individual perfectly competitive firm's demand curve horizontal, even though the MARKET demand curve slopes downward?","options":["Because the firm's product is fundamentally different from its competitors'","Because with many identical sellers of a perfect substitute, pricing even slightly above the market rate loses the firm ALL its customers (they switch instantly to identical rivals), while it can sell as much as it wants exactly at the market price — the firm simply has no power to move price at all","Because the firm has a monopoly on its own brand","This is only true in the long run, not the short run"],"answer":1,"explain":"The key is the combination of many sellers AND identical products — together these mean no single firm's output decision meaningfully affects market price, and any attempt to charge above that price is punished immediately and completely by losing all sales to competitors."},
-        {"type":"text","heading":"Firm behaviour and long-run zero profit","body":"A price-taking firm maximises profit by producing where price equals marginal cost (P=MC) — since price is fixed for them, this is just the standard MR=MC rule with MR=P. In the SHORT run, this can yield positive or negative economic profit depending on where the cost curves sit relative to the fixed market price. In the LONG run, free entry and exit erode any profit or loss: positive profit attracts new entrants (shifting market supply out, pushing price down); losses drive firms out (shifting supply in, pushing price up). This continues until price settles at exactly the minimum of the average cost curve — zero economic profit, the defining feature of long-run competitive equilibrium."},
-        {"type":"text","heading":"Monopoly: a single seller, no substitutes","body":"A monopolist faces the full downward-sloping MARKET demand curve directly (there's no one else to lose customers to) — this is the crucial difference from perfect competition. Because the monopolist's own price affects the price it gets for EVERY unit sold, marginal revenue is LESS than price: selling one more unit requires lowering the price on all units, not just the marginal one. Monopolies persist only because of barriers to entry — technical (large fixed costs, network effects, unique inputs) or legal (patents, licences) — since positive profit would otherwise draw in competitors."},
-        {"type":"text","heading":"Deriving the monopolist's pricing rule","body":"Profit π(Q) = Qp(Q) - c(Q). First-order condition: dπ/dQ = p(Q) + Q(dp/dQ) - dc/dQ = 0, i.e. MR = MC, where MR = p + Q(dp/dQ) (price plus the effect of extra output on price, times quantity). Rearranging the FOC gives (p-MC)/p = -Q/p · (dp/dQ) = 1/|ε| — the optimal PRICE-COST MARGIN, as a fraction of price, equals the inverse of the absolute price elasticity of demand at that point. Less elastic demand (consumers less price-sensitive) justifies a bigger markup; highly elastic demand forces a smaller one."},
-        {"type":"check","q":"A monopolist finds that demand for their product is much MORE elastic than they'd assumed. What does the optimal markup formula (p-MC)/p = 1/|ε| imply should happen to their price-cost margin?","options":["The margin should increase","The margin should decrease — more elastic demand means a smaller optimal markup, since consumers would cut back sharply if price rose too far above marginal cost","The margin is unaffected by elasticity","The firm should exit the market entirely"],"answer":1,"explain":"Since |ε| is now larger, 1/|ε| is smaller — the optimal fractional markup over marginal cost shrinks. Intuitively: if consumers are very responsive to price, pushing price far above cost causes a big drop in quantity sold, which erodes profit — so the profit-maximising monopolist restrains its markup more when facing more elastic demand."},
-        {"type":"text","heading":"Deadweight loss from monopoly underproduction","body":"Social efficiency requires marginal social benefit (=the demand curve, p(Q)) to equal marginal social cost (=MC): the socially optimal quantity Q** solves p(Q)=MC(Q). But the monopolist instead sets MARGINAL REVENUE = MC, and since MR<p for any downward-sloping demand curve, this yields a LOWER quantity Q*<Q**. Every unit between Q* and Q** would have been a mutually beneficial trade — buyers valued it above its cost to produce — but the monopolist withholds it to keep price higher on the units it DOES sell. This lost, un-captured surplus is the monopoly deadweight loss, and it's larger (relative to market size) the more elastic demand is, since elastic demand means a bigger gap opens up between the restricted monopoly quantity and the efficient one."}
+        {
+          "type": "text",
+          "heading": "Two ends of a spectrum",
+          "body": "You've already met the demand-and-supply model, which assumes firms are price takers. This lesson makes that assumption explicit and precise (perfect competition), and then studies its complete opposite: a single seller with total market power (monopoly). Real markets sit somewhere between these two extremes, which is exactly why studying both endpoints is useful — they're benchmarks, not literal descriptions of any one real industry."
+        },
+        {
+          "type": "text",
+          "heading": "The four assumptions of perfect competition",
+          "body": "1) Many buyers and sellers, each individually small relative to the market. 2) Undifferentiated products (perfect substitutes across sellers). 3) Perfect information about prices. 4) Equal access to resources and production technology (no firm has a unique cost advantage). Under these assumptions, no single firm can affect the market price — each firm faces a perfectly horizontal (perfectly elastic) individual demand curve at the going market price, since pricing even slightly above it loses ALL customers to identical rivals."
+        },
+        {
+          "type": "check",
+          "q": "Why is an individual perfectly competitive firm's demand curve horizontal, even though the MARKET demand curve slopes downward?",
+          "options": [
+            "Because the firm's product is fundamentally different from its competitors'",
+            "Because with many identical sellers of a perfect substitute, pricing even slightly above the market rate loses the firm ALL its customers (they switch instantly to identical rivals), while it can sell as much as it wants exactly at the market price — the firm simply has no power to move price at all",
+            "Because the firm has a monopoly on its own brand",
+            "This is only true in the long run, not the short run"
+          ],
+          "answer": 1,
+          "explain": "The key is the combination of many sellers AND identical products — together these mean no single firm's output decision meaningfully affects market price, and any attempt to charge above that price is punished immediately and completely by losing all sales to competitors."
+        },
+        {
+          "type": "text",
+          "heading": "Firm behaviour and long-run zero profit",
+          "body": "A price-taking firm maximises profit by producing where price equals marginal cost (P=MC) — since price is fixed for them, this is just the standard MR=MC rule with MR=P. In the SHORT run, this can yield positive or negative economic profit depending on where the cost curves sit relative to the fixed market price. In the LONG run, free entry and exit erode any profit or loss: positive profit attracts new entrants (shifting market supply out, pushing price down); losses drive firms out (shifting supply in, pushing price up). This continues until price settles at exactly the minimum of the average cost curve — zero economic profit, the defining feature of long-run competitive equilibrium.",
+          "diagram": "price-taking-firm"
+        },
+        {
+          "type": "text",
+          "heading": "Monopoly: a single seller, no substitutes",
+          "body": "A monopolist faces the full downward-sloping MARKET demand curve directly (there's no one else to lose customers to) — this is the crucial difference from perfect competition. Because the monopolist's own price affects the price it gets for EVERY unit sold, marginal revenue is LESS than price: selling one more unit requires lowering the price on all units, not just the marginal one. Monopolies persist only because of barriers to entry — technical (large fixed costs, network effects, unique inputs) or legal (patents, licences) — since positive profit would otherwise draw in competitors."
+        },
+        {
+          "type": "text",
+          "heading": "Deriving the monopolist's pricing rule",
+          "body": "Profit π(Q) = Qp(Q) - c(Q). First-order condition: dπ/dQ = p(Q) + Q(dp/dQ) - dc/dQ = 0, i.e. MR = MC, where MR = p + Q(dp/dQ) (price plus the effect of extra output on price, times quantity). Rearranging the FOC gives (p-MC)/p = -Q/p · (dp/dQ) = 1/|ε| — the optimal PRICE-COST MARGIN, as a fraction of price, equals the inverse of the absolute price elasticity of demand at that point. Less elastic demand (consumers less price-sensitive) justifies a bigger markup; highly elastic demand forces a smaller one."
+        },
+        {
+          "type": "check",
+          "q": "A monopolist finds that demand for their product is much MORE elastic than they'd assumed. What does the optimal markup formula (p-MC)/p = 1/|ε| imply should happen to their price-cost margin?",
+          "options": [
+            "The margin should increase",
+            "The margin should decrease — more elastic demand means a smaller optimal markup, since consumers would cut back sharply if price rose too far above marginal cost",
+            "The margin is unaffected by elasticity",
+            "The firm should exit the market entirely"
+          ],
+          "answer": 1,
+          "explain": "Since |ε| is now larger, 1/|ε| is smaller — the optimal fractional markup over marginal cost shrinks. Intuitively: if consumers are very responsive to price, pushing price far above cost causes a big drop in quantity sold, which erodes profit — so the profit-maximising monopolist restrains its markup more when facing more elastic demand."
+        },
+        {
+          "type": "text",
+          "heading": "Deadweight loss from monopoly underproduction",
+          "body": "Social efficiency requires marginal social benefit (=the demand curve, p(Q)) to equal marginal social cost (=MC): the socially optimal quantity Q** solves p(Q)=MC(Q). But the monopolist instead sets MARGINAL REVENUE = MC, and since MR<p for any downward-sloping demand curve, this yields a LOWER quantity Q*<Q**. Every unit between Q* and Q** would have been a mutually beneficial trade — buyers valued it above its cost to produce — but the monopolist withholds it to keep price higher on the units it DOES sell. This lost, un-captured surplus is the monopoly deadweight loss, and it's larger (relative to market size) the more elastic demand is, since elastic demand means a bigger gap opens up between the restricted monopoly quantity and the efficient one.",
+          "diagram": "monopoly-mrmc"
+        }
       ]
     },
     {
@@ -100,15 +416,65 @@
       "topic": "Monopolistic Competition",
       "title": "Monopolistic Competition: The Dixit-Stiglitz Model",
       "steps": [
-        {"type":"text","heading":"A market between the two extremes","body":"Perfect competition assumes identical products with zero market power; monopoly assumes a single seller with total market power. Most real markets (soft drinks, restaurants, toothpaste brands) sit in between: many sellers, but each offering a slightly DIFFERENT variant that isn't a perfect substitute for the others. This is monopolistic competition — 'monopolistic' because each firm has SOME pricing power over its own variety, 'competition' because there are still many firms and free entry."},
-        {"type":"text","heading":"Building the model from consumer preferences","body":"Rather than just assuming firms face some generic downward-sloping demand curve, the Dixit-Stiglitz approach builds monopolistic competition properly 'from the ground up', starting with consumer preferences. There are v possible product varieties, and N consumers each with income m and a CES (constant elasticity of substitution) utility function:\n\nu = (Σ xi^((σ-1)/σ))^(σ/(σ-1))\n\nσ is exactly the elasticity of substitution you already met in consumer and producer theory — it measures how substitutable the varieties are for each other. Dixit-Stiglitz requires σ>1 (varieties must be at least somewhat substitutable)."},
-        {"type":"text","heading":"What σ controls","body":"As σ→0, the CES form approaches perfect complements (right-angled indifference curves — you need all varieties together in fixed proportion). As σ→1, it approaches Cobb-Douglas (equal expenditure SHARE on every variety). As σ→∞, it approaches perfect substitutes (varieties are essentially interchangeable). The Dixit-Stiglitz model sits in the σ>1 range — varieties are 'differentiated but substitutable', which is exactly the monopolistic-competition case."},
-        {"type":"check","q":"As σ→∞ in the CES utility function, what does this represent about how consumers view the different product varieties?","options":["Consumers strictly need every variety in fixed proportions (perfect complements)","Consumers view the varieties as essentially interchangeable (perfect substitutes) — product differentiation stops mattering to them","Consumers ignore price entirely","Consumers only ever buy one variety regardless of price"],"answer":1,"explain":"σ→∞ is the perfect-substitutes limit of CES preferences — an infinitely high elasticity of substitution means consumers are willing to swap between varieties one-for-one in response to even tiny relative price differences, i.e. they don't really value the differentiation between them at all."},
-        {"type":"text","heading":"Deriving demand for each variety","body":"Maximising the CES utility subject to the budget constraint (using a Lagrangian, exactly as in earlier consumer theory) yields demand for variety i: xi = (m/P) · pi^(-σ), where P := Σ pk^(-(σ-1)) is a market-wide price index (treated as fixed by any one small firm, since it's an aggregate over ALL varieties). Demand for a given variety falls in its own price pi, and falls MORE steeply the higher σ is (more substitutable varieties punish a price increase more harshly, since consumers switch away more easily)."},
-        {"type":"text","heading":"Firm pricing: a constant markup","body":"Each firm treats P as fixed (it's 'small' relative to the whole market — its own price barely moves the aggregate index) and maximises πi = (pi-c)(N·m/P)pi^(-σ) - F. The first-order condition simplifies neatly to 1-σ(1-c/pi)=0, giving:\n\npi = [σ/(σ-1)] · c\n\nEvery firm charges a constant PROPORTIONAL markup over marginal cost, where the markup factor σ/(σ-1) depends only on the elasticity of substitution. As σ→∞ (varieties become near-perfect substitutes), the markup factor → 1, so price → marginal cost — exactly converging to the perfectly competitive outcome as differentiation vanishes."},
-        {"type":"check","q":"If σ=2, what proportional markup over marginal cost does each firm charge, using pi=[σ/(σ-1)]·c?","options":["A markup factor of 2 (price = double marginal cost)","A markup factor of 0.5 (price = half marginal cost)","A markup factor of 1 (price = marginal cost)","A markup factor of 3"],"answer":0,"explain":"pi = [σ/(σ-1)]·c = [2/1]·c = 2c — with σ=2, price is exactly double marginal cost, a 100% markup."},
-        {"type":"text","heading":"Free entry and the number of varieties","body":"New firms enter as long as they can earn positive profit; entry stops exactly when profit hits zero: D(pi)(pi-c)=F. Solving this zero-profit condition for the equilibrium number of varieties v gives:\n\nv = (Nm/F) · (1/σ)\n\nMore varieties survive in equilibrium when: the market is bigger/more valuable (Nm high — more total spending power to support fixed costs across more firms), fixed costs F are lower (cheaper to launch and sustain each new variety), and σ is LOWER (weaker substitutability means each firm faces gentler competition from other varieties, letting more of them coexist profitably without driving each other's profits to zero)."},
-        {"type":"text","heading":"'Love of variety'","body":"Plugging the equilibrium demand and price back into the utility function gives the consumer's indirect utility u(x*(p,m)) = (m/p)·v^(1/(σ-1)). Notice utility rises with v (the number of available varieties), holding everything else fixed — consumers genuinely benefit from having MORE distinct options to choose among, not just from lower prices. This 'love of variety' effect is a distinctive feature of monopolistic competition with no counterpart in the perfect-competition or monopoly models, where product variety isn't part of the story at all."}
+        {
+          "type": "text",
+          "heading": "A market between the two extremes",
+          "body": "Perfect competition assumes identical products with zero market power; monopoly assumes a single seller with total market power. Most real markets (soft drinks, restaurants, toothpaste brands) sit in between: many sellers, but each offering a slightly DIFFERENT variant that isn't a perfect substitute for the others. This is monopolistic competition — 'monopolistic' because each firm has SOME pricing power over its own variety, 'competition' because there are still many firms and free entry."
+        },
+        {
+          "type": "text",
+          "heading": "Building the model from consumer preferences",
+          "body": "Rather than just assuming firms face some generic downward-sloping demand curve, the Dixit-Stiglitz approach builds monopolistic competition properly 'from the ground up', starting with consumer preferences. There are v possible product varieties, and N consumers each with income m and a CES (constant elasticity of substitution) utility function:\n\nu = (Σ xi^((σ-1)/σ))^(σ/(σ-1))\n\nσ is exactly the elasticity of substitution you already met in consumer and producer theory — it measures how substitutable the varieties are for each other. Dixit-Stiglitz requires σ>1 (varieties must be at least somewhat substitutable)."
+        },
+        {
+          "type": "text",
+          "heading": "What σ controls",
+          "body": "As σ→0, the CES form approaches perfect complements (right-angled indifference curves — you need all varieties together in fixed proportion). As σ→1, it approaches Cobb-Douglas (equal expenditure SHARE on every variety). As σ→∞, it approaches perfect substitutes (varieties are essentially interchangeable). The Dixit-Stiglitz model sits in the σ>1 range — varieties are 'differentiated but substitutable', which is exactly the monopolistic-competition case."
+        },
+        {
+          "type": "check",
+          "q": "As σ→∞ in the CES utility function, what does this represent about how consumers view the different product varieties?",
+          "options": [
+            "Consumers strictly need every variety in fixed proportions (perfect complements)",
+            "Consumers view the varieties as essentially interchangeable (perfect substitutes) — product differentiation stops mattering to them",
+            "Consumers ignore price entirely",
+            "Consumers only ever buy one variety regardless of price"
+          ],
+          "answer": 1,
+          "explain": "σ→∞ is the perfect-substitutes limit of CES preferences — an infinitely high elasticity of substitution means consumers are willing to swap between varieties one-for-one in response to even tiny relative price differences, i.e. they don't really value the differentiation between them at all."
+        },
+        {
+          "type": "text",
+          "heading": "Deriving demand for each variety",
+          "body": "Maximising the CES utility subject to the budget constraint (using a Lagrangian, exactly as in earlier consumer theory) yields demand for variety i: xi = (m/P) · pi^(-σ), where P := Σ pk^(-(σ-1)) is a market-wide price index (treated as fixed by any one small firm, since it's an aggregate over ALL varieties). Demand for a given variety falls in its own price pi, and falls MORE steeply the higher σ is (more substitutable varieties punish a price increase more harshly, since consumers switch away more easily)."
+        },
+        {
+          "type": "text",
+          "heading": "Firm pricing: a constant markup",
+          "body": "Each firm treats P as fixed (it's 'small' relative to the whole market — its own price barely moves the aggregate index) and maximises πi = (pi-c)(N·m/P)pi^(-σ) - F. The first-order condition simplifies neatly to 1-σ(1-c/pi)=0, giving:\n\npi = [σ/(σ-1)] · c\n\nEvery firm charges a constant PROPORTIONAL markup over marginal cost, where the markup factor σ/(σ-1) depends only on the elasticity of substitution. As σ→∞ (varieties become near-perfect substitutes), the markup factor → 1, so price → marginal cost — exactly converging to the perfectly competitive outcome as differentiation vanishes."
+        },
+        {
+          "type": "check",
+          "q": "If σ=2, what proportional markup over marginal cost does each firm charge, using pi=[σ/(σ-1)]·c?",
+          "options": [
+            "A markup factor of 2 (price = double marginal cost)",
+            "A markup factor of 0.5 (price = half marginal cost)",
+            "A markup factor of 1 (price = marginal cost)",
+            "A markup factor of 3"
+          ],
+          "answer": 0,
+          "explain": "pi = [σ/(σ-1)]·c = [2/1]·c = 2c — with σ=2, price is exactly double marginal cost, a 100% markup."
+        },
+        {
+          "type": "text",
+          "heading": "Free entry and the number of varieties",
+          "body": "New firms enter as long as they can earn positive profit; entry stops exactly when profit hits zero: D(pi)(pi-c)=F. Solving this zero-profit condition for the equilibrium number of varieties v gives:\n\nv = (Nm/F) · (1/σ)\n\nMore varieties survive in equilibrium when: the market is bigger/more valuable (Nm high — more total spending power to support fixed costs across more firms), fixed costs F are lower (cheaper to launch and sustain each new variety), and σ is LOWER (weaker substitutability means each firm faces gentler competition from other varieties, letting more of them coexist profitably without driving each other's profits to zero)."
+        },
+        {
+          "type": "text",
+          "heading": "'Love of variety'",
+          "body": "Plugging the equilibrium demand and price back into the utility function gives the consumer's indirect utility u(x*(p,m)) = (m/p)·v^(1/(σ-1)). Notice utility rises with v (the number of available varieties), holding everything else fixed — consumers genuinely benefit from having MORE distinct options to choose among, not just from lower prices. This 'love of variety' effect is a distinctive feature of monopolistic competition with no counterpart in the perfect-competition or monopoly models, where product variety isn't part of the story at all."
+        }
       ]
     },
     {
@@ -116,15 +482,66 @@
       "topic": "Oligopoly (Cournot & Bertrand)",
       "title": "Oligopoly: Cournot and Bertrand Competition",
       "steps": [
-        {"type":"text","heading":"Few firms, real strategic interaction","body":"Oligopoly means a small number of firms with real market power, each fully aware that its own choices affect — and are affected by — its rivals. Unlike monopolistic competition (where each firm is small enough to treat the aggregate market as fixed), oligopolists must explicitly reason about how their rivals will respond. This is squarely game theory applied to firm behaviour, and the two workhorse models — Cournot (quantity competition) and Bertrand (price competition) — give strikingly different predictions from the same basic setup."},
-        {"type":"text","heading":"Measuring how oligopolistic a market actually is","body":"Before modelling behaviour, economists measure market concentration directly: the Herfindahl-Hirschman Index (HHI) sums each firm's market share (as a percentage) squared: HHI = Σ(qi/Q × 100)². A single monopolist gives HHI=10,000; many tiny equal-sized firms give HHI close to 0. Concentration ratios (CR4, CR8) instead report the percentage of total sales held by the top 4 or top 8 firms. Both are used in practice (e.g. by competition regulators reviewing mergers) to flag industries where oligopoly models, rather than perfect competition, are the right lens."},
-        {"type":"text","heading":"The Cournot model: competing on quantity","body":"Assumptions: homogeneous products, firms simultaneously choose OUTPUT (not price), the market price is then determined by TOTAL industry output via the inverse demand function, and neither firm can commit to its quantity first. With linear inverse demand P(Q)=A-b(qi+qj) and constant marginal cost c, firm i's profit is πi = (A-b(qi+qj)-c)qi. Differentiating with respect to qi and setting to zero gives firm i's best response:\n\nBRi(qj) = (1/2)[(A-c)/b - qj]\n\nNotice this SLOPES DOWNWARD in qj — the more the rival produces, the less firm i wants to produce. This is because more rival output pushes down the market price, which reduces the marginal value of firm i's OWN output too. Quantities are 'strategic substitutes'."},
-        {"type":"check","q":"Why does Firm i's Cournot best response DECREASE as Firm j's output increases?","options":["Because Firm i's marginal cost rises when Firm j produces more","Because more output from Firm j lowers the market-clearing price, which reduces the marginal profitability of Firm i's own output too — so Firm i's optimal response is to scale back, not match Firm j's expansion","Because the two firms are colluding","Because demand becomes more elastic when Firm j produces more"],"answer":1,"explain":"The link runs through the shared market price: since P(Q) depends on TOTAL output qi+qj, any increase in qj directly lowers the price Firm i receives on every unit it sells — this makes Firm i's own output less profitable at the margin, so its best response is to produce somewhat less, not to match or exceed the rival's expansion."},
-        {"type":"text","heading":"Solving for Cournot-Nash equilibrium","body":"Solving the two (symmetric) best-response functions simultaneously — qi=(1/2)[(A-c)/b - qj] and qj=(1/2)[(A-c)/b - qi] — gives the symmetric solution qi=qj=(A-c)/(3b). Total output Q=2(A-c)/(3b), price p=(A+2c)/3, and profit per firm πi=(A-c)²/(9b). Compare this to the monopoly quantity QM=(A-c)/(2b) and the fully competitive (efficient) quantity QZP=(A-c)/b: Cournot output sits strictly BETWEEN monopoly and the efficient level — more competition than monopoly, but still short of perfectly competitive, since each firm still ignores the fact its extra output benefits the RIVAL too (via a lower price that both, not just itself, must accept)."},
-        {"type":"text","heading":"Cournot with free entry: N firms","body":"Allowing N identical firms to freely enter generalises the result: qi=(A-c)/[b(N+1)], price p=A-N(A-c)/(N+1), and profit per firm πi=(A-c)²/[b(N+1)²]. As N→∞, price converges to marginal cost c and profit converges to zero — Cournot competition with enough firms converges exactly to the perfectly competitive outcome. This confirms that entry BARRIERS (keeping N small), not the quantity-setting mechanism itself, are the deep source of oligopoly profit."},
-        {"type":"text","heading":"The Bertrand model: competing on price","body":"Bertrand's 1883 critique of Cournot: 'firms usually pick prices, not quantities'. Assumptions: homogeneous products, firms simultaneously choose PRICE, and whichever firm sets the LOWER price captures the ENTIRE market (buyers all switch to the cheapest identical option); ties split the market equally. Solving this by checking every possible case (rather than differentiating, since the profit function has a discontinuity where prices are equal) reveals a single Nash equilibrium: pi=pj=c — BOTH firms price exactly at marginal cost, earning ZERO profit."},
-        {"type":"check","q":"Why is pi=pj=c the ONLY Nash equilibrium in the standard homogeneous-product Bertrand model — why can't both firms sustain a price above c?","options":["Prices above c are illegal under competition law","At any common price above c, either firm could profitably undercut by an arbitrarily small amount and capture the ENTIRE market — this undercutting incentive persists at every price above c, only disappearing once price falls to c (below which selling would mean a loss)","Firms are not allowed to change their prices once set","Demand becomes zero at any price above c"],"answer":1,"explain":"As long as price sits above marginal cost, there is always a profitable undercut available — shaving the price by an infinitesimal amount steals the WHOLE market from the rival, for only a negligible loss in per-unit margin. This unravelling only stops once price reaches c exactly, since undercutting further would mean selling at a loss."},
-        {"type":"text","heading":"The Bertrand paradox and its resolution","body":"It's genuinely surprising that just TWO Bertrand competitors achieve the fully competitive, zero-profit outcome — the 'Bertrand paradox', since real-world duopolies rarely look perfectly competitive. The standard resolution: relax the assumption of homogeneous products. With imperfect substitutes, e.g. qi(pi,pj)=A-bpi+(b/2)pj, undercutting no longer captures the WHOLE market — some consumers still prefer firm i's variety even at a premium. Solving the resulting differentiable profit-maximisation problem gives best responses that now SLOPE UPWARD in the rival's price (pi and pj are 'strategic complements' — if your rival raises their price, your own optimal price rises too, since your product now looks relatively more attractive). The resulting equilibrium price sits ABOVE marginal cost, resolving the paradox: product differentiation, not just firm count, determines how intense price competition really is."}
+        {
+          "type": "text",
+          "heading": "Few firms, real strategic interaction",
+          "body": "Oligopoly means a small number of firms with real market power, each fully aware that its own choices affect — and are affected by — its rivals. Unlike monopolistic competition (where each firm is small enough to treat the aggregate market as fixed), oligopolists must explicitly reason about how their rivals will respond. This is squarely game theory applied to firm behaviour, and the two workhorse models — Cournot (quantity competition) and Bertrand (price competition) — give strikingly different predictions from the same basic setup."
+        },
+        {
+          "type": "text",
+          "heading": "Measuring how oligopolistic a market actually is",
+          "body": "Before modelling behaviour, economists measure market concentration directly: the Herfindahl-Hirschman Index (HHI) sums each firm's market share (as a percentage) squared: HHI = Σ(qi/Q × 100)². A single monopolist gives HHI=10,000; many tiny equal-sized firms give HHI close to 0. Concentration ratios (CR4, CR8) instead report the percentage of total sales held by the top 4 or top 8 firms. Both are used in practice (e.g. by competition regulators reviewing mergers) to flag industries where oligopoly models, rather than perfect competition, are the right lens."
+        },
+        {
+          "type": "text",
+          "heading": "The Cournot model: competing on quantity",
+          "body": "Assumptions: homogeneous products, firms simultaneously choose OUTPUT (not price), the market price is then determined by TOTAL industry output via the inverse demand function, and neither firm can commit to its quantity first. With linear inverse demand P(Q)=A-b(qi+qj) and constant marginal cost c, firm i's profit is πi = (A-b(qi+qj)-c)qi. Differentiating with respect to qi and setting to zero gives firm i's best response:\n\nBRi(qj) = (1/2)[(A-c)/b - qj]\n\nNotice this SLOPES DOWNWARD in qj — the more the rival produces, the less firm i wants to produce. This is because more rival output pushes down the market price, which reduces the marginal value of firm i's OWN output too. Quantities are 'strategic substitutes'."
+        },
+        {
+          "type": "check",
+          "q": "Why does Firm i's Cournot best response DECREASE as Firm j's output increases?",
+          "options": [
+            "Because Firm i's marginal cost rises when Firm j produces more",
+            "Because more output from Firm j lowers the market-clearing price, which reduces the marginal profitability of Firm i's own output too — so Firm i's optimal response is to scale back, not match Firm j's expansion",
+            "Because the two firms are colluding",
+            "Because demand becomes more elastic when Firm j produces more"
+          ],
+          "answer": 1,
+          "explain": "The link runs through the shared market price: since P(Q) depends on TOTAL output qi+qj, any increase in qj directly lowers the price Firm i receives on every unit it sells — this makes Firm i's own output less profitable at the margin, so its best response is to produce somewhat less, not to match or exceed the rival's expansion."
+        },
+        {
+          "type": "text",
+          "heading": "Solving for Cournot-Nash equilibrium",
+          "body": "Solving the two (symmetric) best-response functions simultaneously — qi=(1/2)[(A-c)/b - qj] and qj=(1/2)[(A-c)/b - qi] — gives the symmetric solution qi=qj=(A-c)/(3b). Total output Q=2(A-c)/(3b), price p=(A+2c)/3, and profit per firm πi=(A-c)²/(9b). Compare this to the monopoly quantity QM=(A-c)/(2b) and the fully competitive (efficient) quantity QZP=(A-c)/b: Cournot output sits strictly BETWEEN monopoly and the efficient level — more competition than monopoly, but still short of perfectly competitive, since each firm still ignores the fact its extra output benefits the RIVAL too (via a lower price that both, not just itself, must accept).",
+          "diagram": "cournot-reaction"
+        },
+        {
+          "type": "text",
+          "heading": "Cournot with free entry: N firms",
+          "body": "Allowing N identical firms to freely enter generalises the result: qi=(A-c)/[b(N+1)], price p=A-N(A-c)/(N+1), and profit per firm πi=(A-c)²/[b(N+1)²]. As N→∞, price converges to marginal cost c and profit converges to zero — Cournot competition with enough firms converges exactly to the perfectly competitive outcome. This confirms that entry BARRIERS (keeping N small), not the quantity-setting mechanism itself, are the deep source of oligopoly profit."
+        },
+        {
+          "type": "text",
+          "heading": "The Bertrand model: competing on price",
+          "body": "Bertrand's 1883 critique of Cournot: 'firms usually pick prices, not quantities'. Assumptions: homogeneous products, firms simultaneously choose PRICE, and whichever firm sets the LOWER price captures the ENTIRE market (buyers all switch to the cheapest identical option); ties split the market equally. Solving this by checking every possible case (rather than differentiating, since the profit function has a discontinuity where prices are equal) reveals a single Nash equilibrium: pi=pj=c — BOTH firms price exactly at marginal cost, earning ZERO profit."
+        },
+        {
+          "type": "check",
+          "q": "Why is pi=pj=c the ONLY Nash equilibrium in the standard homogeneous-product Bertrand model — why can't both firms sustain a price above c?",
+          "options": [
+            "Prices above c are illegal under competition law",
+            "At any common price above c, either firm could profitably undercut by an arbitrarily small amount and capture the ENTIRE market — this undercutting incentive persists at every price above c, only disappearing once price falls to c (below which selling would mean a loss)",
+            "Firms are not allowed to change their prices once set",
+            "Demand becomes zero at any price above c"
+          ],
+          "answer": 1,
+          "explain": "As long as price sits above marginal cost, there is always a profitable undercut available — shaving the price by an infinitesimal amount steals the WHOLE market from the rival, for only a negligible loss in per-unit margin. This unravelling only stops once price reaches c exactly, since undercutting further would mean selling at a loss."
+        },
+        {
+          "type": "text",
+          "heading": "The Bertrand paradox and its resolution",
+          "body": "It's genuinely surprising that just TWO Bertrand competitors achieve the fully competitive, zero-profit outcome — the 'Bertrand paradox', since real-world duopolies rarely look perfectly competitive. The standard resolution: relax the assumption of homogeneous products. With imperfect substitutes, e.g. qi(pi,pj)=A-bpi+(b/2)pj, undercutting no longer captures the WHOLE market — some consumers still prefer firm i's variety even at a premium. Solving the resulting differentiable profit-maximisation problem gives best responses that now SLOPE UPWARD in the rival's price (pi and pj are 'strategic complements' — if your rival raises their price, your own optimal price rises too, since your product now looks relatively more attractive). The resulting equilibrium price sits ABOVE marginal cost, resolving the paradox: product differentiation, not just firm count, determines how intense price competition really is."
+        }
       ]
     }
   ]
