@@ -619,6 +619,267 @@
      "explain": "Utility maximisation subject to a budget (the primal) produces Marshallian (uncompensated) demand, a function of prices and income. Expenditure minimisation subject to a utility target (the dual) produces Hicksian (compensated) demand, a function of prices and utility."
     }
    ]
+  },
+  {
+   "id": "lesson-ct-intertemporal-choice",
+   "topic": "Intertemporal Choice",
+   "title": "Intertemporal Choice: Consuming Across Time",
+   "steps": [
+    {
+     "type": "text",
+     "heading": "Treating time like a good",
+     "body": "Everything so far in consumer theory involved choosing between two DIFFERENT goods at a single point in time. But the exact same tools apply to a completely different kind of choice: how much to consume NOW versus how much to consume LATER. Should you spend your student loan today or save some of it? How much debt should you take on? How much should you save for retirement? All of these are intertemporal choice problems, and Harkins' approach is refreshingly direct: we treat two time periods (t=1, t=2) EXACTLY like two goods, and re-use every tool from the rest of consumer theory — budget constraints, tangency conditions, Marshallian demand — completely unchanged."
+    },
+    {
+     "type": "text",
+     "heading": "Building the intertemporal budget constraint",
+     "body": "Suppose you earn income m1 in period 1 and m2 in period 2, and can freely borrow or lend at interest rate r. If you consume c1 in period 1, you have (m1-c1) left over. If this is positive, you SAVE it, and it earns interest, becoming (1+r)(m1-c1) available in period 2 on top of your period-2 income m2. So the maximum you could consume in period 2 is:\n\nc2 = m2 + (1+r)(m1-c1)\n\nRearranging this single equation into the familiar 'total value = total value' budget-line form gives two equivalent ways to write it:\n\nFuture value form: (1+r)c1 + c2 = (1+r)m1 + m2\n(everything measured in period-2 pounds — money not spent in period 1 grows by the factor (1+r))\n\nPresent value form: c1 + c2/(1+r) = m1 + m2/(1+r)\n(everything measured in period-1 pounds — money to be received in period 2 is 'discounted' back to today by dividing by (1+r))\n\nBoth describe the exact same line. In the (c1,c2) diagram, this budget line has slope -(1+r) — exactly playing the role that -(P1/P2) played for ordinary goods. Here, (1+r) is the market's exchange rate between present and future consumption: giving up £1 of consumption today buys you exactly £(1+r) of consumption next period."
+    },
+    {
+     "type": "check",
+     "q": "You earn m1=£10,000 this period and expect m2=£0 next period. The interest rate is r=10%. If you consume c1=0 this period (save everything), what is the maximum you can consume next period?",
+     "options": [
+      "£10,000",
+      "£11,000",
+      "£9,000",
+      "£10,100"
+     ],
+     "answer": 1,
+     "explain": "Using the future-value budget constraint (1+r)c1+c2=(1+r)m1+m2 with c1=0: c2=(1+r)m1+m2=1.1(10,000)+0=£11,000 — your £10,000 grows by the 10% interest rate over the year."
+    },
+    {
+     "type": "text",
+     "heading": "Borrowers and lenders",
+     "body": "The point (m1,m2) — your income in each period, with no borrowing or saving at all — is called your ENDOWMENT point, and just like in the ordinary endowment model, the budget line ALWAYS passes through it (choosing to consume exactly your own income each period, trading nothing, is always feasible). Where you actually choose to consume relative to this point defines your role in the credit market:\n\nA LENDER chooses c1 < m1: they consume less than their period-1 income, SAVING (effectively lending out) the difference at rate r, which buys them extra consumption in period 2 beyond m2.\n\nA BORROWER chooses c1 > m1: they consume more than their period-1 income by borrowing against their period-2 income, and must repay that loan with interest, reducing what's left to consume in period 2 below m2.\n\nGraphically, lenders sit on the segment of the budget line to the LEFT of the endowment point (c1<m1), and borrowers sit to the RIGHT of it (c1>m1)."
+    },
+    {
+     "type": "check",
+     "q": "A consumer has m1=£40,000 and chooses c1=£55,000. Are they a borrower or a lender?",
+     "options": [
+      "A lender, since they are consuming a large amount",
+      "A borrower, since c1 > m1 — they are consuming more than their period-1 income by borrowing against period 2",
+      "Cannot be determined without knowing r",
+      "Neither — this is only possible if m2 is also given"
+     ],
+     "answer": 1,
+     "explain": "c1=£55,000 exceeds their period-1 income m1=£40,000, so they must be borrowing £15,000 against their future (period-2) income to fund this consumption — making them a borrower, regardless of the specific interest rate or m2."
+    },
+    {
+     "type": "text",
+     "heading": "Worked example: solving the two-period optimisation problem",
+     "body": "Take a consumer with m1=£100, m2=£55, facing interest rate r=10%, and Cobb-Douglas preferences over consumption timing: U(c1,c2)=c1^0.5c2^0.5.\n\nStep 1 — convert the problem into a form you already know how to solve. Using the present-value budget constraint c1 + c2/(1+r) = m1 + m2/(1+r), treat the RIGHT-HAND SIDE as a single number — 'present-value wealth':\nPV wealth = m1 + m2/(1+r) = 100 + 55/1.1 = 100 + 50 = £150\n\nStep 2 — notice the present-value budget constraint c1 + c2/(1+r) = 150 has EXACTLY the same shape as an ordinary budget constraint P1x1+P2x2=M, with 'price' P1=1 (for c1) and 'price' P2=1/(1+r) (for c2, since future consumption is discounted). So you can apply the Cobb-Douglas demand formula directly:\nc1* = α × (PV wealth)/P1 = 0.5 × 150/1 = £75\nc2* = (1-α) × (PV wealth)/P2 = 0.5 × 150/(1/1.1) = 0.5 × 150 × 1.1 = £82.5\n\nStep 3 — check against the budget constraint and classify borrower/lender. Since c1*=£75 is LESS than m1=£100, this consumer SAVES £25 today — they are a LENDER. Check c2: c2 should equal m2+(1+r)(m1-c1*) = 55 + 1.1(100-75) = 55 + 1.1(25) = 55+27.5 = £82.5 ✓ — matches exactly."
+    },
+    {
+     "type": "check",
+     "q": "Continuing the worked example (m1=100, m2=55, r=10%, U=c1^0.5c2^0.5), what is the present-value wealth, and is the consumer a borrower or lender?",
+     "options": [
+      "PV wealth=£155; borrower",
+      "PV wealth=£150; lender, since c1*=£75 < m1=£100",
+      "PV wealth=£150; borrower, since c2* > c1*",
+      "PV wealth=£145; lender"
+     ],
+     "answer": 1,
+     "explain": "PV wealth = m1+m2/(1+r) = 100+55/1.1 = 100+50 = £150. Solving gives c1*=£75 < m1=£100, so the consumer consumes less than their period-1 income and saves the rest — making them a lender."
+    },
+    {
+     "type": "text",
+     "heading": "Opportunity cost and extending to many periods",
+     "body": "The two-period model generalises cleanly. The OPPORTUNITY COST of consuming £1 today, in an N-period model with a constant interest rate r, is £(1+r)^(N-1) at time N — because £10,000 invested today becomes £10,000(1+r) after one year, £10,000(1+r)^2 after two years, and £10,000(1+r)^n after n years (compound interest).\n\nWith n different income amounts m1, m2, ..., mn across n periods (all earning/costing interest at the same constant rate r), the present value of the WHOLE income stream generalises the two-period formula:\n\nPV = m1 + m2/(1+r) + m3/(1+r)^2 + ... + mn/(1+r)^(n-1)\n\nEach future income payment is discounted back to period-1 pounds by dividing by (1+r) raised to however many periods away it is. This is exactly the same idea used to value pensions, mortgages, bonds, and any other stream of payments spread across time."
+    },
+    {
+     "type": "check",
+     "q": "An income stream pays m1=£1,000, m2=£1,100, m3=£1,210, with a constant interest rate r=10%. What is the present value?",
+     "options": [
+      "£3,310 (just summed with no discounting)",
+      "£3,000, since each payment discounts back to exactly £1,000 in present-value terms",
+      "£2,910",
+      "£3,100"
+     ],
+     "answer": 1,
+     "explain": "PV = m1 + m2/(1+r) + m3/(1+r)^2 = 1,000 + 1,100/1.1 + 1,210/1.21 = 1,000+1,000+1,000 = £3,000. (This income stream was deliberately constructed to grow at exactly rate r each period, so every term discounts back to the same £1,000 — a useful pattern to recognise quickly.)"
+    },
+    {
+     "type": "text",
+     "heading": "Comparative statics: what happens when the interest rate changes?",
+     "body": "Because the budget line always pivots around the FIXED endowment point (m1,m2) — never shifting away from it, only rotating around it — revealed preference gives us clean, general answers about who gains and who loses when r changes, WITHOUT needing to know anyone's specific utility function:\n\nIf r RISES: the budget line becomes STEEPER (slope -(1+r) becomes more negative), pivoting around (m1,m2). A LENDER's original choice remains exactly affordable, and strictly more is now available on the lending side (money saved earns more interest) — so a lender is unambiguously BETTER OFF and remains a lender. A BORROWER faces a shrinking feasible region on their side — their original choice may become unaffordable, so they may remain a borrower (just borrowing less) or the higher cost of debt may push them to switch entirely to becoming a lender instead — genuinely ambiguous without more information.\n\nIf r FALLS: exactly the mirror image. A BORROWER is unambiguously better off (borrowing is now cheaper) and remains a borrower. A LENDER may remain a lender or may switch to becoming a borrower instead — ambiguous."
+    },
+    {
+     "type": "check",
+     "q": "The interest rate r falls. A consumer who was previously a LENDER — what can we say about their wellbeing and whether they remain a lender?",
+     "options": [
+      "They are unambiguously better off and remain a lender",
+      "Ambiguous — they may remain a lender or might switch to becoming a borrower, since a fall in r shrinks the feasible region on the lending side",
+      "They are unambiguously worse off but always remain a lender",
+      "Nothing changes for a lender when r falls"
+     ],
+     "answer": 1,
+     "explain": "A fall in r makes the budget line flatter, pivoting around the endowment point (m1,m2) — this shrinks the feasible region on the LENDING side (saving now earns less interest) while expanding it on the borrowing side. A lender's original bundle may no longer be optimal or even preferred, so it is genuinely ambiguous whether they remain a lender or switch to borrowing — this is the mirror image of the 'r rises' case for borrowers covered just before."
+    },
+    {
+     "type": "text",
+     "heading": "Why this matters: real applications",
+     "body": "This simple two-good relabelling trick — consumption today vs. consumption tomorrow, connected by the interest rate acting as a relative price — underpins a huge range of real economic questions: how much student debt is worth taking on, how retirement savings respond to interest rate changes, how a rise in the Bank of England base rate affects borrowers versus savers very differently (exactly the ambiguous/unambiguous comparative statics above), and how governments think about the effects of policies that change borrowing costs. It's also exactly the same mathematical structure used later in EC202 for modelling saving, investment and asset markets — mastering it here pays off well beyond this one topic."
+    }
+   ]
+  },
+  {
+   "id": "lesson-ct-endowments",
+   "topic": "Endowments & the Revised Slutsky Equation",
+   "title": "Endowments and the Revised Slutsky Equation",
+   "steps": [
+    {
+     "type": "text",
+     "heading": "What is an endowment?",
+     "body": "Every consumer theory problem so far assumed a consumer starts with a fixed pot of MONEY (income M) and buys goods with it. But in many real situations, people instead start with a bundle of GOODS they already own — an endowment (w1,w2) — which they can sell (in part or in full) and use the proceeds to buy other things instead. Think of a farmer who grows wheat and wants to eat some bread and sell the rest, or a worker whose only 'endowment' is hours in the day.\n\nFormally, an endowment is a bundle of goods (w1,w2) owned by the consumer and tradable for other goods at market prices. Given prices p1, p2, the consumer's budget constraint becomes:\n\np1x1 + p2x2 = p1w1 + p2w2\n\nThe right-hand side — the total market VALUE of the endowment — plays exactly the role that fixed income M used to play. But crucially, this 'income' is now ENDOGENOUS: it depends on the prices p1 and p2, which is a genuinely new feature compared to everything covered so far."
+    },
+    {
+     "type": "text",
+     "heading": "The budget line always passes through the endowment point",
+     "body": "Here is the single most important structural fact about endowment budget constraints: whatever the prices are, the budget line ALWAYS passes through the point (w1,w2) itself. Why? Because choosing x=(w1,w2) exactly — trading nothing at all, just consuming what you already own — is always feasible and uses up exactly the value you started with:\n\np1w1 + p2w2 = p1w1 + p2w2  (trivially true, for any prices)\n\nSo as prices change, the budget line doesn't shift around freely the way an exogenous-income budget line does — it PIVOTS around the fixed point (w1,w2).\n\nWorked example: you own an endowment of (w1,w2)=(5,10) — say, 5 jumpers and 10 pairs of jeans — with prices p1=£40 (jumpers) and p2=£20 (jeans). Your budget constraint is 40x1+20x2=40(5)+20(10)=200+200=£400. Now suppose jeans go on sale at 50% off, so p2 falls to £10. Your new budget constraint is 40x1+10x2=40(5)+10(10)=200+100=£300 — notice this STILL passes through (5,10): 40(5)+10(10)=300 ✓ — but your total wealth has FALLEN from £400 to £300, purely because the goods you own became less valuable, even though you didn't sell anything.",
+     "diagram": "budget-line"
+    },
+    {
+     "type": "check",
+     "q": "Whatever the prices p1 and p2 are, the endowment budget line p1x1+p2x2=p1w1+p2w2 must always pass through which point?",
+     "options": [
+      "The origin (0,0)",
+      "The endowment point (w1,w2) itself — since 'trade nothing' is always feasible and always uses up exactly your endowment's value",
+      "The point where x1=x2",
+      "It depends on the specific prices and cannot be stated in general"
+     ],
+     "answer": 1,
+     "explain": "Substituting x=(w1,w2) into the budget constraint gives p1w1+p2w2=p1w1+p2w2, an identity that holds for ANY prices — meaning consuming exactly your own endowment is always affordable, so the line must always run through that point, however p1 and p2 move."
+    },
+    {
+     "type": "text",
+     "heading": "Net buyers and net sellers",
+     "body": "Given the optimal choice x1* (found the usual way, via tangency of an indifference curve with this budget line), the consumer's relationship to the market for good 1 is classified by comparing x1* to their endowment w1:\n\nNet buyer (net demander): x1* > w1 — the consumer buys MORE of good 1 than they started with, funding this by selling off some of their good-2 endowment.\n\nNet seller (net supplier): x1* < w1 — the consumer sells off part of their good-1 endowment, using the proceeds to buy more of good 2.\n\nThis distinction turns out to matter a great deal for how demand responds to price changes, which is where the story gets genuinely new relative to the fixed-income model."
+    },
+    {
+     "type": "check",
+     "q": "A consumer has endowment w1=10 and, after optimising, chooses x1*=6.25. Are they a net buyer or net seller of good 1?",
+     "options": [
+      "Net buyer, since 6.25 is a positive number",
+      "Net seller, since x1*=6.25 is LESS than their endowment w1=10 — they sell off the remaining 3.75 units",
+      "Neither — this can only be determined from p1 directly",
+      "Net buyer, since they are consuming most of their endowment"
+     ],
+     "answer": 1,
+     "explain": "x1*=6.25 falls short of the endowment w1=10, meaning the consumer holds onto only 6.25 units for themselves and sells the other 3.75 units — the defining feature of a net seller."
+    },
+    {
+     "type": "text",
+     "heading": "Endogenous vs exogenous income: why a price change now has an extra effect",
+     "body": "With an ordinary fixed money income M, a change in p1 affects demand through exactly two channels you already know: the substitution effect and the ordinary income effect (real purchasing power of a FIXED budget M changes). With an endowment, there's a THIRD channel: changing p1 also changes the MONEY VALUE of what the consumer owns (specifically, p1w1), so their effective income m=p1w1+p2w2 shifts too — even though M was never fixed in the first place. This extra channel is called the endowment income effect."
+    },
+    {
+     "type": "text",
+     "heading": "Deriving the revised Slutsky equation",
+     "body": "Putting all three channels together gives the revised Slutsky equation:\n\n∂x1/∂p1 = ∂x1^h/∂p1 + (w1-x1)·(∂x1/∂m)\n\nwhere ∂x1^h/∂p1 is the (always negative) Hicksian substitution effect, and (w1-x1)·(∂x1/∂m) bundles together BOTH income effects (ordinary + endowment) into a single term.\n\nCompare this to the ordinary Slutsky equation for fixed money income:\n\n∂x1/∂p1 = ∂x1^h/∂p1 - x1·(∂x1/∂m)\n\nNotice the revised equation reduces EXACTLY to the ordinary one when w1=0 (no endowment of good 1 at all — pure money income), since then (w1-x1)=(0-x1)=-x1. This is a useful consistency check: the endowment model doesn't contradict the earlier theory, it strictly generalises it.\n\nThe term (w1-x1) has a clean economic meaning: it is exactly the net amount of good 1 the consumer is SELLING (positive if w1>x1, a net seller; negative if w1<x1, a net buyer, since then w1-x1<0)."
+    },
+    {
+     "type": "check",
+     "q": "In the revised Slutsky equation, what happens to the term (w1-x1)·(∂x1/∂m) if the consumer is a net BUYER (x1*>w1) of a NORMAL good, when p1 rises?",
+     "options": [
+      "It is positive, opposing the substitution effect",
+      "It is negative, since (w1-x1)<0 for a net buyer and ∂x1/∂m>0 for a normal good — this REINFORCES the (always negative) substitution effect, making the total effect unambiguously negative",
+      "It is exactly zero for any net buyer",
+      "It cannot be signed without further information"
+     ],
+     "answer": 1,
+     "explain": "For a net buyer, x1*>w1, so (w1-x1)<0. For a normal good, ∂x1/∂m>0. Multiplying a negative by a positive gives a negative endowment-income term — which points the SAME way as the substitution effect (also negative), so a price rise unambiguously reduces demand for a net buyer of a normal good."
+    },
+    {
+     "type": "text",
+     "heading": "Worked example: applying the revised equation to a net seller",
+     "body": "Take a consumer with endowment (w1,w2)=(10,5), Cobb-Douglas preferences U(x1,x2)=x1^0.5x2^0.5, facing initial prices p1=2, p2=1.\n\nStep 1 — find initial income and demand: m=p1w1+p2w2=2(10)+1(5)=25. x1*=0.5(25)/2=6.25. Since x1*=6.25 < w1=10, this consumer is a net SELLER of good 1 (selling 3.75 units).\n\nStep 2 — now suppose p1 rises to 3. New income: m'=3(10)+1(5)=35 (income RISES, because the value of the good-1 endowment they're selling went up). New demand: x1*=0.5(35)/3≈5.83.\n\nStep 3 — interpret the total effect: Δx1 = 5.83-6.25 = -0.417, a small DECREASE — even though this consumer is a net seller whose income actually rose when the price went up (which should, other things equal, push a normal good's consumption UP via the income effect), the substitution effect away from the now-pricier good 1 was strong enough to still dominate, producing a net decrease overall. This illustrates exactly why the net-seller case is genuinely AMBIGUOUS in principle — here substitution happened to win, but for different preferences or a bigger endowment, the income effect could instead have won and demand could have risen."
+    },
+    {
+     "type": "check",
+     "q": "In the worked example above (net seller, w1=10, price rises from 2 to 3), why does the consumer's endogenous income RISE even though they end up consuming slightly less of good 1?",
+     "options": [
+      "This is a contradiction — the numbers must be wrong",
+      "Because they are a NET SELLER of good 1: a higher p1 raises the market value of the endowment they are selling (p1w1), raising their money income m, even though the substitution effect still pulls their own consumption of good 1 down slightly",
+      "Because good 1 is inferior",
+      "Income cannot rise when a price rises, by definition"
+     ],
+     "answer": 1,
+     "explain": "As a net seller, this consumer earns money by SELLING units of good 1 above what they keep — so a higher price for the good they're selling directly raises their income (m=p1w1+p2w2 rises when p1 rises, since w1>0). This is entirely separate from what happens to their own chosen CONSUMPTION x1*, which is instead governed by the (in this case dominant) substitution effect pulling it down."
+    },
+    {
+     "type": "text",
+     "heading": "Why endowments matter beyond textbook goods",
+     "body": "The endowment framework generalises far beyond literal goods like jumpers and jeans. Labour supply is a classic application: your 'endowment' is a fixed number of hours in the day, the wage is the 'price' of the good you're selling (your labour/time), and a wage change has exactly this same three-way decomposition — substitution, ordinary income, and endowment income effects (this is precisely why labour supply curves can bend backward at high wages: the endowment income effect from a wage rise can outweigh the substitution effect that would otherwise push people to work more). It's also the natural framework for savers and borrowers of capital, for owners of natural resources, and — as you'll see next — for intertemporal choice, where your endowment of income across time periods (m1,m2) plays exactly this same role."
+    }
+   ]
+  },
+  {
+   "id": "lesson-ct-behavioural-economics",
+   "topic": "Behavioural Economics & Present Bias",
+   "title": "Behavioural Economics: Present Bias and Sin Taxes",
+   "steps": [
+    {
+     "type": "text",
+     "heading": "Discounting: why £100 tomorrow is worth less than £100 today",
+     "body": "Everything in the Intertemporal Choice lesson assumed a consumer compares present and future consumption via a market interest rate r. But even setting markets aside, people psychologically DISCOUNT future payoffs relative to present ones: decisions taken over time involve applying a discount factor δ<1, so that £100 arriving in one year is only worth δ×£100 to you today. Reasons to discount include opportunity cost (money now can be invested), impatience (a genuine preference for consuming sooner), and simple uncertainty (a promised future payoff might never actually arrive).\n\nUnder standard EXPONENTIAL discounting, a payoff n years away is worth δ^n today — the SAME discount factor δ applied repeatedly, once per year. A payoff in two years is worth δ²×£100, in three years δ³×£100, and so on."
+    },
+    {
+     "type": "text",
+     "heading": "Worked example: testing for time-consistency",
+     "body": "Consider two offers, taken directly from lecture material:\n\nOffer 1: (A) £200 today, or (B) £205 in 1 week.\nOffer 2: (A) £200 in 20 weeks, or (B) £205 in 21 weeks.\n\nUnder exponential discounting with weekly discount factor δ, preferring option A in Offer 1 means 200 > 205δ. Now check what exponential discounting predicts for Offer 2: comparing 200δ^20 (option A, valued today) against 205δ^21 (option B, valued today). Dividing BOTH sides by the common factor δ^20 gives exactly 200 > 205δ — the SAME inequality as before. In other words, exponential discounting predicts that shifting BOTH payoffs equally far into the future (from 'now vs. 1 week' to '20 weeks vs. 21 weeks') can never flip which option you prefer. This property is called time-consistency."
+    },
+    {
+     "type": "check",
+     "q": "Under standard exponential discounting, if a consumer prefers £200 today over £205 in 1 week, what must they prefer in the choice between £200 in 20 weeks and £205 in 21 weeks?",
+     "options": [
+      "£205 in 21 weeks — the far future is always discounted more heavily so the larger amount wins",
+      "£200 in 20 weeks — the SAME relative preference, since exponential discounting is time-consistent and shifting both dates equally doesn't change the comparison",
+      "They must be exactly indifferent between the two options",
+      "It depends on the specific value of δ and cannot be determined in general"
+     ],
+     "answer": 1,
+     "explain": "Dividing both delayed values by the common factor δ^20 recovers exactly the original Offer 1 inequality — exponential discounting always predicts the same choice regardless of how far both options are pushed into the future, as long as the GAP between them (here, always exactly 1 week) stays the same."
+    },
+    {
+     "type": "text",
+     "heading": "The behavioural puzzle: many people flip their answer",
+     "body": "Empirically, a very common pattern is: people choose (A) £200 TODAY in Offer 1, but then choose (B) £205 in 21 weeks in Offer 2 — a reversal of the underlying 'sooner vs. later, same £5 premium' trade-off. As just shown, this reversal is IMPOSSIBLE to generate from any single, constant exponential discount rate δ. It is the classic empirical signature of present bias: people apply an extra, specific discount to whatever is available RIGHT NOW, over and above their normal patience between any two future dates.\n\nThis is modelled with quasi-hyperbolic ('beta-delta') discounting: utility = u(c0) + β[δu(c1) + δ²u(c2) + δ³u(c3) + ...], where β<1 is an EXTRA discount factor applied only to everything beyond right now, layered on top of the ordinary per-period discount δ. Setting β=1 recovers standard, time-consistent exponential discounting exactly as a special case."
+    },
+    {
+     "type": "check",
+     "q": "In the beta-delta model utility = u(c0) + β[δu(c1)+δ²u(c2)+...], what does β<1 specifically capture that δ alone cannot?",
+     "options": [
+      "The overall level of impatience between any two future periods, which δ already fully captures on its own",
+      "An EXTRA discount applied specifically to the gap between 'right now' and any future period, on top of the ordinary between-period discount δ — this is what produces the present-bias reversal that a single δ cannot generate",
+      "The consumer's risk aversion",
+      "The market interest rate"
+     ],
+     "answer": 1,
+     "explain": "δ alone (with β=1) treats every one-period gap identically, whether it's 'now vs. next period' or 'period 19 vs. period 20' — this is time-consistent and cannot produce a preference reversal. β<1 breaks that symmetry by applying an extra penalty specifically to the future relative to right now, which is exactly the ingredient needed to match the Offer 1/Offer 2 reversal."
+    },
+    {
+     "type": "text",
+     "heading": "Applying present bias: the sin tax model (O'Donoghue and Rabin, 2003)",
+     "body": "A well-known application of present bias, studied in the module, models a consumer choosing between a harmful good ('crisps', x — pleasure now, health cost later), a healthy good ('carrots', y), and money (z), each period. Because the consumer is present-biased (β<1), they systematically UNDERWEIGHT the delayed health cost of crisps relative to the immediate pleasure — leading them to consume MORE crisps than even their own fully-patient, long-run self would want.\n\nA benevolent government, wanting to maximise consumers' TRUE welfare (not just their present-biased in-the-moment choices), can respond with a tax on the harmful good. This raises its effective price TODAY, nudging present-day consumption of crisps down toward the level that better reflects the consumer's own genuine long-run interest. This is the core economic logic behind real-world sin taxes on sugary drinks, alcohol, tobacco, and gambling."
+    },
+    {
+     "type": "check",
+     "q": "Why can a sin tax make a present-biased consumer genuinely BETTER OFF, in a way that contradicts the standard 'all taxes reduce welfare' result from ordinary consumer theory?",
+     "options": [
+      "Because sin taxes always raise more government revenue than other taxes",
+      "Because standard welfare analysis assumes a consumer's own choices always reflect their true best interest (revealed preference) — but present bias breaks this link, so a tax that corrects the resulting over-consumption can raise true welfare rather than just create deadweight loss",
+      "Because the demand for harmful goods is always perfectly inelastic",
+      "Sin taxes cannot actually make anyone better off — this is a common misconception"
+     ],
+     "answer": 1,
+     "explain": "The standard deadweight-loss argument against taxation relies entirely on treating the consumer's freely chosen bundle as the correct benchmark for their welfare. Present bias means the bundle actually chosen (driven by β<1) is systematically distorted away from what the consumer's own fully-patient self would prefer — so a tax that pulls consumption back toward that undistorted level can genuinely help, not just transfer surplus to the government."
+    },
+    {
+     "type": "text",
+     "heading": "Why this challenges the standard rational choice model",
+     "body": "Every other welfare tool in this course — Marshallian and Hicksian demand, consumer surplus, compensating and equivalent variation — rests on the assumption that a consumer's own choices ARE the correct measure of their own wellbeing (revealed preference). Present bias breaks this link directly: the period-0 self and the period-1 self can genuinely disagree about what's best, so what gets chosen in the moment is no longer automatically the right benchmark for welfare. This is precisely why the syllabus frames behavioural economics as a 'critique of the rational choice framework' — it isn't that people behave randomly or irrationally in every sense, but that a single, time-consistent utility-maximising agent (the assumption underlying everything else in this course) fails to describe real intertemporal choices, with real, measurable, and policy-relevant consequences."
+    }
+   ]
   }
  ]
 }
