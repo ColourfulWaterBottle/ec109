@@ -263,15 +263,20 @@
   {
    "id": "pwm1",
    "topic": "Supply & Demand",
-   "q": "Market demand for good X is Qx = Nαm/Px where N=1000 consumers, α=0.4, m=£500 each. If N rises to 1500 with α, m, Px unchanged, what happens to the demand curve?",
+   "q": "Market demand for good X is Qx = Nαm/Px where N=1000 consumers, α=0.4, m=£500 each. Which of the following changes cause the demand curve to SHIFT rather than a movement along it? (Select ALL that apply.)",
    "options": [
-    "It shifts outward (demand rises at every price)",
-    "It shifts inward (demand falls at every price)",
-    "There is a movement along the curve, not a shift",
-    "No effect, since Px is unchanged"
+    "N rises to 1500 (Px, α, m unchanged)",
+    "α rises to 0.5 (N, m, Px unchanged)",
+    "m rises to £600 for every consumer (N, α, Px unchanged)",
+    "Px falls, with N, α, m all unchanged",
+    "Px rises, with N, α, m all unchanged"
    ],
-   "answer": 0,
-   "explain": "N is a determinant of the position of the demand curve (more buyers), not the good's own price — a rise in N with Px held fixed means MORE is demanded at every price level, i.e. an outward shift, not a movement along the curve."
+   "answer": [
+    0,
+    1,
+    2
+   ],
+   "explain": "Qx depends on N, α, m and Px. A change in Px (options D and E) is the good's OWN price, so it produces a movement ALONG the existing curve, not a shift. A change in N, α, or m (options A, B, C) is not the good's own price, so each shifts the whole curve to a new position — more buyers, stronger preference, or higher income all raise demand at every possible price level."
   },
   {
    "id": "pwm2",
@@ -281,7 +286,8 @@
     "Q(p)=35-2p",
     "Q(p)=20-p (only consumer 1 is in the market)",
     "Q(p)=15-p",
-    "Q(p)=5"
+    "Q(p)=5",
+    "Q(p)=15-p (only consumer 2 is in the market)"
    ],
    "answer": 1,
    "explain": "For prices above 15, consumer 2's demand (15-p) would be negative, so they're out of the market entirely — only consumer 1 contributes, giving market demand = 20-p on this price range. Below p=15, both contribute and market demand becomes 35-2p (the kink point)."
@@ -294,7 +300,8 @@
     "Qs=200p, slope dp/dQs=1/200",
     "Qs=4p, slope dp/dQs=1/4",
     "Qs=54p, slope dp/dQs=1/54",
-    "Qs=200p, slope dp/dQs=200"
+    "Qs=200p, slope dp/dQs=200",
+    "Qs=200p, slope dp/dQs=50"
    ],
    "answer": 0,
    "explain": "Qs=Σqsi=50×4p=200p (horizontal summation of 50 identical firms). Rearranged: p=Qs/200, so dp/dQs=1/200 — much flatter than any individual firm's supply curve (dp/dqsi=1/4), since aggregating across many firms makes industry supply more price-responsive."
@@ -307,7 +314,8 @@
     "Demand is elastic; the good is normal; X and Y are complements",
     "Demand is inelastic; the good is inferior; X and Y are substitutes",
     "Demand is inelastic; the good is normal; X and Y are complements",
-    "Demand is elastic; the good is inferior; X and Y are substitutes"
+    "Demand is elastic; the good is inferior; X and Y are substitutes",
+    "Demand is unit elastic; the good is normal; X and Y are unrelated"
    ],
    "answer": 1,
    "explain": "|εx,px|=0.4<1 → inelastic. ξx,M=-0.2<0 → inferior good. ex,py=0.6>0 → positive cross-price elasticity means substitutes (price of Y up, demand for X up, i.e. consumers switch toward X)."
@@ -320,7 +328,8 @@
     "A calculation error — firm-level and market-level elasticity must always be equal",
     "Close substitutes (rival firms' near-identical products) exist within the market but the category as a whole has fewer substitutes outside it, making an individual firm's demand far more elastic",
     "The firm's product must be a Giffen good",
-    "Market elasticity is always higher in magnitude than firm-level elasticity, this is backwards"
+    "Market elasticity is always higher in magnitude than firm-level elasticity, this is backwards",
+    "The firm's product and the market category must be entirely unrelated goods"
    ],
    "answer": 1,
    "explain": "This matches the cars example from the notes: within the car market, one specific model has many close substitutes (rival models), so its own-price elasticity is very high (-6). The overall car market has fewer substitutes (no cars vs. cars), so market-level elasticity is much lower in magnitude (-1.2). Individual product elasticity being far more elastic than market elasticity is the normal, expected pattern, not an error."
@@ -333,7 +342,8 @@
     "ε=-2, constant everywhere (constant elasticity demand curve)",
     "ε=-2 only at P=1, varies elsewhere",
     "ε=-100, constant everywhere",
-    "ε depends on Q and cannot be determined without a value"
+    "ε depends on Q and cannot be determined without a value",
+    "ε=-2 at low P, approaching 0 as P rises"
    ],
    "answer": 0,
    "explain": "For Q=AP^b (a power/constant-elasticity form), ε=∂Q/∂P × P/Q = AbP^(b-1) × P/(AP^b) = b, a constant. Here b=-2, so ε=-2 at every point along the curve — this is the defining feature of a constant-elasticity demand curve, unlike a linear demand curve where elasticity varies continuously."
@@ -346,7 +356,8 @@
     "The good must be a Giffen good",
     "There is an income effect present (the good is not quasilinear in this consumer's utility), since CV and EV coincide only when there's no income effect",
     "This is impossible — CV and EV must always be equal for any price change",
-    "The good must be inferior specifically, not just non-quasilinear"
+    "The good must be inferior specifically, not just non-quasilinear",
+    "There is no income effect present, and the £7 gap is purely a rounding/calculation error"
    ],
    "answer": 1,
    "explain": "CV and EV use different reference indifference curves (compensating back to the original utility vs. to the new utility), and they only coincide exactly when there's no income effect for that good (e.g. quasilinear preferences in that good). A gap between CV and EV, as here, signals a genuine income effect is present — it does not by itself tell you the good is inferior or Giffen specifically."
@@ -359,7 +370,8 @@
     "Consumers bear the full burden",
     "Producers bear the full burden",
     "The burden is split 50-50 regardless of elasticities",
-    "No one bears any burden since perfectly elastic demand eliminates deadweight loss"
+    "No one bears any burden since perfectly elastic demand eliminates deadweight loss",
+    "Consumers and producers split the burden exactly according to the tax rate percentage"
    ],
    "answer": 1,
    "explain": "With perfectly elastic demand, consumers can costlessly walk away at any price above the going rate — the market price they pay cannot rise at all. All of the tax wedge must therefore be absorbed by producers receiving a lower net price. (Deadweight loss is NOT eliminated here — quantity traded still falls, unlike the perfectly inelastic demand case.)"
@@ -367,28 +379,30 @@
   {
    "id": "pwm9",
    "topic": "Government Intervention & Welfare",
-   "q": "Following a per-unit tax, the deadweight loss triangle is formed between the original equilibrium quantity and the new (lower) post-tax quantity. What economic condition characterises every unit of output in that lost range?",
+   "q": "Following a per-unit tax, a deadweight loss triangle forms between the original equilibrium quantity Q* and the new (lower) post-tax quantity Q**. Which statement correctly characterises every unit of output in that lost range (Q**,Q*)?",
    "options": [
-    "Marginal cost exceeds price for all these units",
-    "Consumers' willingness to pay for these units exceeds producers' marginal cost of supplying them, but they are no longer traded due to the tax wedge",
-    "These units were never actually demanded even before the tax",
-    "Producers refuse to supply these units regardless of price"
+    "Marginal cost exceeds price for all these units, so they were never worth producing",
+    "Consumers' willingness to pay for these units still exceeds producers' marginal cost of supplying them, but they are simply no longer traded because of the tax wedge",
+    "These units were never demanded even before the tax was introduced",
+    "Producers refuse to supply these units at any price, tax or no tax",
+    "Government revenue is collected on these units at a reduced rate"
    ],
    "answer": 1,
-   "explain": "Deadweight loss arises exactly because units in this range represent mutually beneficial trades (buyer's value exceeds seller's cost) that no longer occur once the tax wedge separates the price paid from the price received — this lost surplus, with no offsetting tax revenue on these forgone units, is the deadweight loss."
+   "explain": "Deadweight loss arises precisely because units between Q** and Q* represent genuinely mutually beneficial trades (buyer's value still exceeds seller's cost) that stop happening once the tax wedge separates the price paid from the price received. No revenue is collected on these forgone units at all (ruling out E) — that lost surplus, with nothing collected to offset it, IS the deadweight loss."
   },
   {
    "id": "pwm10",
    "topic": "Government Intervention & Welfare",
-   "q": "Which government intervention, in a market with an upward-sloping supply curve and a perfectly INELASTIC demand curve, could increase producer surplus?",
+   "q": "In a market with an upward-sloping supply curve and a PERFECTLY INELASTIC demand curve, which government intervention raises producer surplus with zero deadweight loss?",
    "options": [
     "A tax on purchases in the market",
-    "A maximum price (price ceiling) below equilibrium",
-    "A minimum price (price floor) above equilibrium — or, since demand is perfectly inelastic, quantity never falls, so any policy raising price raises producer surplus with no offsetting quantity loss",
-    "A subsidy paid to consumers only"
+    "A maximum price (price ceiling) set below equilibrium",
+    "A minimum price (price floor) set above equilibrium",
+    "A subsidy paid directly to consumers only",
+    "None of the above can raise producer surplus without creating deadweight loss"
    ],
    "answer": 2,
-   "explain": "With perfectly inelastic demand, quantity purchased never changes regardless of price. A price floor above equilibrium forces price up while quantity stays fixed (since inelastic demand will absorb any quantity at any price) — producer surplus rises with zero deadweight loss, since no mutually beneficial trades are lost when quantity can't fall."
+   "explain": "With perfectly inelastic demand, quantity purchased is fixed regardless of price — consumers absorb any quantity at any price. A price floor above equilibrium raises the price sellers receive while quantity stays exactly the same (since inelastic demand doesn't respond to the higher price by buying less) — producer surplus rises with NO deadweight loss, since no mutually beneficial trade is lost when quantity literally cannot fall."
   },
   {
    "id": "pwm11",
@@ -398,7 +412,8 @@
     "MPL=0.75, MPK=0.33, MRTS=-2.25",
     "MPL=1.5, MPK=0.67, MRTS=-2.25",
     "MPL=0.75, MPK=1.33, MRTS=-0.56",
-    "MPL=1.5, MPK=0.67, MRTS=-1.78"
+    "MPL=1.5, MPK=0.67, MRTS=-1.78",
+    "MPL=0.33, MPK=0.75, MRTS=-0.44"
    ],
    "answer": 0,
    "explain": "MPL=0.5L^(-0.5)K^0.5=0.5(4)^(-0.5)(9)^0.5=0.5(0.5)(3)=0.75. MPK=0.5L^0.5K^(-0.5)=0.5(2)(1/3)=0.333. MRTS=-MPL/MPK=-0.75/0.333=-2.25."
@@ -411,7 +426,8 @@
     "IRS; output more than doubles (rises by factor 2^1.6≈3.03)",
     "CRS; output exactly doubles",
     "DRS; output less than doubles (rises by factor 2^0.8≈1.74)",
-    "Cannot be determined without specific input values"
+    "Cannot be determined without specific input values",
+    "IRS; output exactly triples regardless of the exponent value"
    ],
    "answer": 0,
    "explain": "f(L,K)=(LK)^0.8=L^0.8K^0.8, so α+β=0.8+0.8=1.6>1, implying IRS. Formally: f(tL,tK)=(tL·tK)^0.8=t^1.6(LK)^0.8=t^1.6f(L,K), so doubling inputs (t=2) gives output rising by 2^1.6≈3.03× — more than double, confirming increasing returns to scale."
@@ -424,7 +440,8 @@
     "Q=30, labour is binding",
     "Q=20, capital is binding",
     "Q=20, labour is binding (since 3L=30>5K=20, capital limits output to 20)",
-    "Q=30, capital is binding"
+    "Q=30, capital is binding",
+    "Q=14, with both inputs equally binding"
    ],
    "answer": 2,
    "explain": "3L=3(10)=30, 5K=5(4)=20. Q=min{30,20}=20. Since 5K=20 is the smaller (binding) term, CAPITAL is the binding constraint — there's 'excess' labour that goes unused given the fixed 3:5 ratio requirement."
@@ -437,7 +454,8 @@
     "K/L=4",
     "K/L=0.25",
     "K/L=1",
-    "K/L=16"
+    "K/L=16",
+    "K/L=2, from equating w and r directly without reference to marginal products"
    ],
    "answer": 0,
    "explain": "MRTS=MPL/MPK=(0.5L^-0.5K^0.5)/(0.5L^0.5K^-0.5)=K/L. Tangency: K/L=w/r=8/2=4."
@@ -450,7 +468,8 @@
     "L*=10, K*=40",
     "L*=5, K*=20",
     "L*=20, K*=5",
-    "L*=4, K*=16"
+    "L*=4, K*=16",
+    "L*=8, K*=32"
    ],
    "answer": 0,
    "explain": "Sub K=4L into Q0=L^0.5K^0.5=20: L^0.5(4L)^0.5=20 → L^0.5×2×L^0.5=20 → 2L=20 → L=10. Then K=4(10)=40."
@@ -463,7 +482,8 @@
     "The expansion path stays exactly the same ray, unaffected by input price changes",
     "The expansion path rotates to a NEW (different) ray, since the cost-minimising K/L ratio itself depends on w/r, not just on homotheticity",
     "The expansion path becomes non-linear (curved) once w changes",
-    "Homotheticity is irrelevant to how the expansion path responds to price changes"
+    "Homotheticity is irrelevant to how the expansion path responds to price changes",
+    "The expansion path becomes a full circle around the origin"
    ],
    "answer": 1,
    "explain": "Homotheticity guarantees that for GIVEN input prices, the cost-minimising ratio K/L is constant across all output levels (giving a straight-line expansion path). But that ratio itself is a function of w/r (K/L = (α/β)(w/r) for Cobb-Douglas) — when w rises, the whole expansion path rotates to a new, steeper (more capital-intensive) ray, even though it remains straight at every output level for the new prices."
@@ -476,7 +496,8 @@
     "C(Q) is concave; AC(Q) falls as Q rises (economies of scale)",
     "C(Q) is convex; AC(Q) rises as Q rises (diseconomies of scale)",
     "C(Q) is linear; AC(Q) is constant",
-    "Cannot be determined from returns to scale alone"
+    "Cannot be determined from returns to scale alone",
+    "C(Q) is undefined when returns to scale are decreasing"
    ],
    "answer": 1,
    "explain": "DRS (concave production function) maps to a CONVEX cost function C(Q) — costs rise more than proportionally with output, so both MC(Q) and AC(Q) increase as Q rises: diseconomies of scale."
@@ -489,7 +510,8 @@
     "Reduce output; stop when MC=AC",
     "Increase output; stop when MC rises to equal p=£30",
     "Increase output; stop when MC=AVC",
-    "Reduce output; stop when p=AR"
+    "Reduce output; stop when p=AR",
+    "Increase output; stop only once AC begins to fall"
    ],
    "answer": 1,
    "explain": "Since p (£30) > MC (£25), the last unit produced generates more revenue than it costs — producing more raises profit. The firm should keep expanding output until MC rises to meet p exactly (using diminishing returns/rising MC), which is the profit-maximising condition p=MC(Q)."
@@ -502,7 +524,8 @@
     "Shut down immediately and produce Q=0",
     "Continue producing where p=MC in the short run, accepting a loss that is smaller than the loss from shutting down (since it's still covering variable costs and contributing to fixed costs)",
     "Continue producing but ignore the p=MC rule since it doesn't apply below AC",
-    "Exit the industry permanently"
+    "Exit the industry permanently",
+    "Continue producing, but only if price also exceeds average total cost"
    ],
    "answer": 1,
    "explain": "As long as price covers average variable cost, the firm is better off producing at p=MC in the short run than shutting down — it recoups all variable costs plus makes a partial contribution toward its (unavoidable in the short run) fixed costs, which minimises its loss compared to producing zero and losing all fixed costs outright. Shutting down is only optimal once p falls below minimum AVC."
@@ -510,15 +533,16 @@
   {
    "id": "pwm20",
    "topic": "Profit Maximisation & Supply",
-   "q": "A firm's profit function is homogeneous of degree 1 in (w,r,p), and its supply function is homogeneous of degree 0 in the same variables. If w, r, AND p all simultaneously double, what happens to optimal output Q* and profit π*?",
+   "q": "A firm's profit function π(w,r,p) is homogeneous of degree 1 in (w,r,p), and its supply function Q*(w,r,p) is homogeneous of degree 0 in the same variables. If w, r, AND p all simultaneously double, what happens to optimal output Q* and profit π*? And what is the underlying economic reason?",
    "options": [
-    "Q* doubles, π* doubles",
-    "Q* is unchanged, π* doubles",
-    "Q* is unchanged, π* is unchanged",
-    "Q* doubles, π* is unchanged"
+    "Q* doubles, π* doubles — because higher prices always raise both output and profit",
+    "Q* is unchanged, π* doubles — because doubling all prices together is just a change of currency units, leaving every real trade-off (and hence Q*) unaffected, while profit measured in money terms scales up with the price level",
+    "Q* is unchanged, π* is unchanged — since nothing real has changed at all, including measured profit",
+    "Q* doubles, π* is unchanged — since higher output exactly offsets the higher costs",
+    "Neither Q* nor π* can be determined without knowing the specific functional form of production"
    ],
    "answer": 1,
-   "explain": "Homogeneous of degree 0 means Q*(2w,2r,2p)=2^0×Q*(w,r,p)=Q*(w,r,p) — output is UNCHANGED, since doubling all prices doesn't change any relative price the firm actually responds to. Homogeneous of degree 1 means π*(2w,2r,2p)=2×π*(w,r,p) — profit exactly doubles, since it's measured in money terms and everything scales up proportionally."
+   "explain": "Homogeneous of degree 0 means Q*(2w,2r,2p)=2^0·Q*(w,r,p)=Q*(w,r,p) — output is completely UNCHANGED, because doubling every price simultaneously doesn't change any RELATIVE price the firm actually responds to (it's exactly like relabelling the currency, e.g. dollars to half-dollars). Homogeneous of degree 1 means π*(2w,2r,2p)=2·π*(w,r,p) — profit, measured in money, exactly doubles, purely because it's a monetary quantity in a world where all money values have doubled, not because anything real changed."
   },
   {
    "id": "pwm21",
@@ -528,7 +552,8 @@
     "Long-run supply is always steeper (less elastic) than short-run supply, because more inputs are fixed in the long run",
     "Short-run supply is always steeper (less elastic) than long-run supply, because at least one input (typically capital) is fixed in the short run, limiting how much the firm can adjust output in response to a price change",
     "They are always identical since both are derived from the same underlying production function",
-    "Neither is generally steeper — it depends entirely on whether returns to scale are increasing or decreasing"
+    "Neither is generally steeper — it depends entirely on whether returns to scale are increasing or decreasing",
+    "Short-run and long-run supply always cross exactly at the shutdown price"
    ],
    "answer": 1,
    "explain": "In the short run, fixed capital limits the firm's ability to adjust output as price changes — the firm can only vary labour, so its output response to a price change is smaller than when it can adjust ALL inputs freely in the long run. This makes short-run supply steeper (more inelastic) than long-run supply at the same base output level."
@@ -541,7 +566,8 @@
     "£50",
     "£100",
     "£150",
-    "£200"
+    "£200",
+    "£75"
    ],
    "answer": 1,
    "explain": "Original utility: x1*=50, x2*=50 at p1=1, so u0=sqrt(50*50)=50. CV=e(4,1,50)-e(1,1,50)=2(50)sqrt(4)-2(50)sqrt(1)=200-100=£100 — exactly the extra money needed at the new prices to restore the original utility level."
@@ -554,7 +580,8 @@
     "£100",
     "£50",
     "£25",
-    "£150"
+    "£150",
+    "£75"
    ],
    "answer": 1,
    "explain": "EV=e(p_old,u1)-e(p_old,u0)=e(1,1,25)-e(1,1,50)=2(25)(1)-2(50)(1)=50-100=-£50, i.e. a magnitude of £50 — the consumer would be willing to give up £50 of their ORIGINAL income to avoid facing the price rise at all."
@@ -567,7 +594,8 @@
     "EV is always exactly equal to CV",
     "CV tends to exceed EV in magnitude, since CV compensates at the (relatively poorer) post-change utility's implied prices while EV values the change at the richer, original position",
     "EV always exceeds CV for any price change",
-    "Neither measure has any general relationship to the other"
+    "Neither measure has any general relationship to the other",
+    "EV always exceeds CV in magnitude for any price rise in a normal good"
    ],
    "answer": 1,
    "explain": "This is the pattern in the worked example (CV=£100 > EV=£50). Intuitively, CV asks how much extra money is needed at the NEW (higher) prices to feel as good as before, while EV asks how much could be taken away at the OLD (lower) prices to feel as bad as after — because a normal good's marginal value of money differs between the rich and poor reference points, these need not match, and for a price rise CV is typically the larger of the two."
@@ -580,7 +608,8 @@
     "Shifting the ORIGINAL budget line inward until tangent to the NEW indifference curve",
     "Shifting the NEW budget line outward until tangent to the ORIGINAL indifference curve",
     "The area under the Marshallian demand curve between the two prices",
-    "The vertical distance between the two indifference curves at x1=0"
+    "The vertical distance between the two indifference curves at x1=0",
+    "The horizontal distance between the demand curve and the price axis"
    ],
    "answer": 1,
    "explain": "CV asks how much compensation, added to the NEW (post-change) budget line, is needed to reach back to the ORIGINAL indifference curve — graphically, the new budget line is shifted outward (more income) until it becomes tangent to the original indifference curve."
@@ -588,28 +617,34 @@
   {
    "id": "pwm26",
    "topic": "Compensating & Equivalent Variation",
-   "q": "Under which condition do CS, CV and EV all coincide exactly?",
+   "q": "Under which condition do Consumer Surplus, Compensating Variation, and Equivalent Variation all coincide exactly for a price change in good 1?",
    "options": [
-    "Whenever the good in question is inferior",
-    "Whenever preferences are quasilinear in the numeraire good, eliminating the income effect on the price-changing good",
-    "Whenever the price change is very large",
-    "They never coincide under any condition"
+    "Whenever good 1 is inferior",
+    "Whenever preferences are quasilinear in good 2 (the numeraire), eliminating the income effect on good 1",
+    "Whenever the price change in good 1 is very large",
+    "Whenever the two goods are perfect complements",
+    "They never coincide exactly under any realistic set of preferences"
    ],
    "answer": 1,
-   "explain": "With quasilinear preferences (no income effect on the price-changing good), Hicksian demand for that good does not depend on the utility level at all, and coincides with Marshallian demand — collapsing all three welfare measures (CS, CV, EV) into a single number."
+   "explain": "With preferences quasilinear in good 2 (U=v(x1)+x2), there is NO income effect on good 1 at all — Hicksian demand for good 1 doesn't depend on the utility level chosen, and coincides exactly with Marshallian demand. Since CS, CV and EV are really three different ways of measuring the area under (variants of) the SAME demand curve for good 1, they all collapse to one identical number precisely when that curve stops varying with utility — i.e. under quasilinearity, not under any of the other listed conditions."
   },
   {
    "id": "pwm27",
    "topic": "Pareto Efficiency & Social Welfare",
-   "q": "Outcomes give utilities (Person 1, Person 2) as follows: W=(5,1), X=(1,4), Y=(2,2), Z=(0,0). Is W a Pareto improvement over Y?",
+   "q": "Outcomes give utilities (Person 1, Person 2): W=(5,1), X=(1,4), Y=(2,2), Z=(0,0). Which of the following Pareto comparisons are CORRECT? (Select ALL that apply.)",
    "options": [
-    "Yes, since Person 1 is better off under W",
-    "No — Person 1 gains (5>2) but Person 2 loses (1<2), so it is not a Pareto improvement",
-    "Yes, since the sum of utilities is higher under W",
-    "No, because Z is worse than both"
+    "X is a Pareto improvement over Z",
+    "W is a Pareto improvement over Y",
+    "W is a Pareto improvement over Z",
+    "Y is a Pareto improvement over Z",
+    "X is a Pareto improvement over W"
    ],
-   "answer": 1,
-   "explain": "A Pareto improvement requires NO ONE to be worse off. Moving from Y to W, Person 1 gains (2 to 5) but Person 2 loses (2 to 1) — since someone is worse off, W is NOT a Pareto improvement over Y, even though Person 1 individually prefers it."
+   "answer": [
+    0,
+    2,
+    3
+   ],
+   "explain": "X vs Z: (1,4) vs (0,0), both strictly better — Pareto improvement (A correct). W vs Y: (5,1) vs (2,2), Person 1 gains but Person 2 LOSES (1<2) — NOT a Pareto improvement (B wrong). W vs Z: (5,1) vs (0,0), both strictly better — Pareto improvement (C correct). Y vs Z: (2,2) vs (0,0), both strictly better — Pareto improvement (D correct). X vs W: (1,4) vs (5,1), Person 1 loses (1<5) — NOT a Pareto improvement (E wrong)."
   },
   {
    "id": "pwm28",
@@ -619,7 +654,8 @@
     "No, since Person 2's gain is larger than Person 1's",
     "Yes — both people are weakly better off under X (1>=0 and 4>=0), with Person 1 strictly better off and Person 2 strictly better off too",
     "Cannot be determined from utility numbers alone",
-    "No, since Z gives both people equal utility"
+    "No, since Z gives both people equal utility",
+    "Cannot be determined since Z gives both people zero utility"
    ],
    "answer": 1,
    "explain": "X=(1,4) vs Z=(0,0): Person 1 gets 1 instead of 0 (strictly better), Person 2 gets 4 instead of 0 (strictly better). Since NO ONE is worse off and at least one person (in fact both) is strictly better off, X is a clear Pareto improvement over Z."
@@ -632,7 +668,8 @@
     "W (6) > X (5) > Y (4) > Z (0)",
     "X (5) > W (6) > Y (4) > Z (0)",
     "Y (4) > W (6) > X (5) > Z (0)",
-    "Z (0) > Y (4) > X (5) > W (6)"
+    "Z (0) > Y (4) > X (5) > W (6)",
+    "Z (0) > W (6) > X (5) > Y (4)"
    ],
    "answer": 0,
    "explain": "Summing utilities: W=5+1=6, X=1+4=5, Y=2+2=4, Z=0+0=0. Ranking from highest sum to lowest: W(6) > X(5) > Y(4) > Z(0). Note this resolves the W-vs-Y comparison (which the Pareto criterion alone could not rank) by simply preferring the higher total, an implicit value judgement about trading off Person 1's gain against Person 2's loss."
@@ -645,7 +682,8 @@
     "A competitive market equilibrium is always fair and equal, as well as efficient",
     "A competitive market equilibrium (with no externalities, no market power, full information) is typically Pareto efficient, but Pareto efficiency says nothing about how equal or fair the resulting distribution is",
     "Pareto efficiency guarantees the utilitarian social welfare function is maximised",
-    "Pareto efficient allocations cannot exist in real markets"
+    "Pareto efficient allocations cannot exist in real markets",
+    "Pareto efficiency requires a competitive equilibrium to exist in the first place, by definition"
    ],
    "answer": 1,
    "explain": "Under the standard competitive assumptions, market equilibrium tends to be Pareto efficient — but this is purely a statement about whether further mutual gains exist, not about fairness. A Pareto efficient allocation can be highly unequal, and Pareto efficiency does not require or imply that any particular social welfare function (like the utilitarian sum) is maximised."
