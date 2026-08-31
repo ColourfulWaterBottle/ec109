@@ -205,55 +205,55 @@
    "back": "An isoprofit curve is the set of (L,Q) combinations giving the same level of profit π, given fixed capital K̄: derived from π=pQ-wL-rK̄, rearranged to Q = π/p + (r/p)K̄ + (w/p)L. Slope = w/p (constant along a given isoprofit line). Vertical intercept = π/p + (r/p)K̄ — profit plus fixed costs, expressed in output units. Profit maximisation occurs where the production function is tangent to the highest attainable isoprofit line."
   },
   {
-   "id": "pw16",
+   "id": "pw33",
    "topic": "Compensating & Equivalent Variation",
    "front": "What question does Compensating Variation (CV) answer, and how is it shown graphically?",
    "back": "CV answers: how much money would the government need to give the consumer AFTER a price rise to make them exactly as well off as before it? Graphically, shift the NEW (post-price-change) budget line outward until it is just tangent to the ORIGINAL indifference curve — CV is the size of that shift, in money terms."
   },
   {
-   "id": "pw17",
+   "id": "pw34",
    "topic": "Compensating & Equivalent Variation",
    "front": "What question does Equivalent Variation (EV) answer, and how is it shown graphically?",
    "back": "EV answers: how much money would have to be taken from the consumer BEFORE a price rise to leave them just as badly off as they'd be AFTER it — equivalently, the most they'd pay to AVOID the price change entirely. Graphically, shift the ORIGINAL budget line inward until it is just tangent to the NEW (post-price-change) indifference curve."
   },
   {
-   "id": "pw18",
+   "id": "pw35",
    "topic": "Compensating & Equivalent Variation",
    "front": "CV and EV are both defined using expenditure (Hicksian) functions, but at different utility levels. Which utility level does each use?",
    "back": "CV uses the ORIGINAL (pre-change) utility level u0 throughout: CV = e(p', p2, u0) - e(p, p2, u0). EV uses the NEW (post-change) utility level u1 throughout: EV = e(p, p2, u1) - e(p', p2, u1). Using the same reference utility for both terms in each formula is what keeps each measure internally consistent."
   },
   {
-   "id": "pw19",
+   "id": "pw36",
    "topic": "Compensating & Equivalent Variation",
    "front": "Why can Consumer Surplus, CV and EV all give different numeric values for the exact same price change?",
    "back": "Consumer surplus is measured along the ORDINARY (Marshallian) demand curve, which mixes both substitution and income effects at the actual income level. CV and EV instead use Hicksian (compensated) demand curves, but evaluated at two DIFFERENT fixed utility levels (u0 for CV, u1 for EV) — three different demand curves being used to measure 'the same' price change, so in general they diverge whenever there is a genuine income effect."
   },
   {
-   "id": "pw20",
+   "id": "pw37",
    "topic": "Compensating & Equivalent Variation",
    "front": "Under what special condition do Consumer Surplus, CV and EV all collapse to exactly the same value?",
    "back": "When preferences are quasilinear in the good whose price is NOT changing (so there is no income effect on the price-changing good) — then Hicksian demand for that good is identical at every utility level and identical to Marshallian demand, so all three welfare measures coincide exactly."
   },
   {
-   "id": "pw21",
+   "id": "pw38",
    "topic": "Pareto Efficiency & Social Welfare",
    "front": "Give the formal definition of a Pareto improvement.",
    "back": "Outcome Y is a Pareto improvement over outcome X if Y makes at least one person strictly better off, and makes no one worse off — formally, Yi >= Xi in utility for every person i, with strict inequality for at least one person."
   },
   {
-   "id": "pw22",
+   "id": "pw39",
    "topic": "Pareto Efficiency & Social Welfare",
    "front": "Define Pareto efficiency (Pareto optimality).",
    "back": "An allocation is Pareto efficient if there is no other feasible allocation that is a Pareto improvement over it — i.e. you cannot make anyone better off without making someone else worse off. Equivalently, all the mutually beneficial reallocations have already been exhausted."
   },
   {
-   "id": "pw23",
+   "id": "pw40",
    "topic": "Pareto Efficiency & Social Welfare",
    "front": "Why is the Pareto criterion often described as requiring 'no controversial value judgement', while a social welfare function (SWF) does?",
    "back": "A Pareto improvement requires unanimous (weak) agreement — literally everyone is at least as well off, and someone is strictly better off, so nobody could reasonably object. A SWF (e.g. the utilitarian sum of utilities) must instead take a stance on how to trade off one person's gain against another's loss whenever a change helps one person and hurts another — a value judgement not everyone will share."
   },
   {
-   "id": "pw24",
+   "id": "pw41",
    "topic": "Pareto Efficiency & Social Welfare",
    "front": "Can a highly unequal allocation (e.g. one person gets everything, another gets nothing) still be Pareto efficient? Explain.",
    "back": "Yes. Pareto efficiency only asks whether any further reallocation could help someone without hurting anyone else — it says nothing about fairness or equality of the distribution. An allocation can be maximally unequal and still Pareto efficient, if there is genuinely no way to make the worse-off person better off without taking something from the better-off person."
@@ -534,7 +534,7 @@
    "explain": "In the short run, fixed capital limits the firm's ability to adjust output as price changes — the firm can only vary labour, so its output response to a price change is smaller than when it can adjust ALL inputs freely in the long run. This makes short-run supply steeper (more inelastic) than long-run supply at the same base output level."
   },
   {
-   "id": "pwm16",
+   "id": "pwm22",
    "topic": "Compensating & Equivalent Variation",
    "q": "A consumer has U(x1,x2)=x1^0.5x2^0.5, p2=1, M=100. Price p1 rises from 1 to 4. Using the Cobb-Douglas expenditure function e(p1,p2,u)=2u*sqrt(p1*p2) (for alpha=0.5), what is the Compensating Variation?",
    "options": [
@@ -547,7 +547,7 @@
    "explain": "Original utility: x1*=50, x2*=50 at p1=1, so u0=sqrt(50*50)=50. CV=e(4,1,50)-e(1,1,50)=2(50)sqrt(4)-2(50)sqrt(1)=200-100=£100 — exactly the extra money needed at the new prices to restore the original utility level."
   },
   {
-   "id": "pwm17",
+   "id": "pwm23",
    "topic": "Compensating & Equivalent Variation",
    "q": "Continuing the same example (U=x1^0.5x2^0.5, p2=1, M=100, p1 rises from 1 to 4), the new utility level is u1=25. What is the Equivalent Variation?",
    "options": [
@@ -560,7 +560,7 @@
    "explain": "EV=e(p_old,u1)-e(p_old,u0)=e(1,1,25)-e(1,1,50)=2(25)(1)-2(50)(1)=50-100=-£50, i.e. a magnitude of £50 — the consumer would be willing to give up £50 of their ORIGINAL income to avoid facing the price rise at all."
   },
   {
-   "id": "pwm18",
+   "id": "pwm24",
    "topic": "Compensating & Equivalent Variation",
    "q": "For a price RISE in a normal good, which relationship between CV and EV magnitudes is typical (as illustrated by the worked example CV=£100, EV=£50)?",
    "options": [
@@ -573,7 +573,7 @@
    "explain": "This is the pattern in the worked example (CV=£100 > EV=£50). Intuitively, CV asks how much extra money is needed at the NEW (higher) prices to feel as good as before, while EV asks how much could be taken away at the OLD (lower) prices to feel as bad as after — because a normal good's marginal value of money differs between the rich and poor reference points, these need not match, and for a price rise CV is typically the larger of the two."
   },
   {
-   "id": "pwm19",
+   "id": "pwm25",
    "topic": "Compensating & Equivalent Variation",
    "q": "Compensating Variation is graphically represented by:",
    "options": [
@@ -586,7 +586,7 @@
    "explain": "CV asks how much compensation, added to the NEW (post-change) budget line, is needed to reach back to the ORIGINAL indifference curve — graphically, the new budget line is shifted outward (more income) until it becomes tangent to the original indifference curve."
   },
   {
-   "id": "pwm20",
+   "id": "pwm26",
    "topic": "Compensating & Equivalent Variation",
    "q": "Under which condition do CS, CV and EV all coincide exactly?",
    "options": [
@@ -599,7 +599,7 @@
    "explain": "With quasilinear preferences (no income effect on the price-changing good), Hicksian demand for that good does not depend on the utility level at all, and coincides with Marshallian demand — collapsing all three welfare measures (CS, CV, EV) into a single number."
   },
   {
-   "id": "pwm21",
+   "id": "pwm27",
    "topic": "Pareto Efficiency & Social Welfare",
    "q": "Outcomes give utilities (Person 1, Person 2) as follows: W=(5,1), X=(1,4), Y=(2,2), Z=(0,0). Is W a Pareto improvement over Y?",
    "options": [
@@ -612,7 +612,7 @@
    "explain": "A Pareto improvement requires NO ONE to be worse off. Moving from Y to W, Person 1 gains (2 to 5) but Person 2 loses (2 to 1) — since someone is worse off, W is NOT a Pareto improvement over Y, even though Person 1 individually prefers it."
   },
   {
-   "id": "pwm22",
+   "id": "pwm28",
    "topic": "Pareto Efficiency & Social Welfare",
    "q": "Using the same outcomes W=(5,1), X=(1,4), Y=(2,2), Z=(0,0), is X a Pareto improvement over Z?",
    "options": [
@@ -625,7 +625,7 @@
    "explain": "X=(1,4) vs Z=(0,0): Person 1 gets 1 instead of 0 (strictly better), Person 2 gets 4 instead of 0 (strictly better). Since NO ONE is worse off and at least one person (in fact both) is strictly better off, X is a clear Pareto improvement over Z."
   },
   {
-   "id": "pwm23",
+   "id": "pwm29",
    "topic": "Pareto Efficiency & Social Welfare",
    "q": "A utilitarian social welfare function ranks outcomes by the sum of individual utilities. Using W=(5,1), X=(1,4), Y=(2,2), Z=(0,0), what is the utilitarian ranking from best to worst?",
    "options": [
@@ -638,7 +638,7 @@
    "explain": "Summing utilities: W=5+1=6, X=1+4=5, Y=2+2=4, Z=0+0=0. Ranking from highest sum to lowest: W(6) > X(5) > Y(4) > Z(0). Note this resolves the W-vs-Y comparison (which the Pareto criterion alone could not rank) by simply preferring the higher total, an implicit value judgement about trading off Person 1's gain against Person 2's loss."
   },
   {
-   "id": "pwm24",
+   "id": "pwm30",
    "topic": "Pareto Efficiency & Social Welfare",
    "q": "Which statement about Pareto efficiency and competitive equilibrium is most accurate for this course?",
    "options": [
@@ -688,13 +688,13 @@
    "model": "(a) Tangency: MRTS=K/L=w/r=16/4=4, so K=4L. Substitute into Q0=L^0.5K^0.5=40: L^0.5(4L)^0.5=40 → L^0.5×2×L^0.5=40 → 2L=40 → L*=20. Then K*=4(20)=80.\n(b) TC=wL*+rK*=16(20)+4(80)=320+320=640.\n(c) New tangency: K/L=w/r=25/4=6.25, so K=6.25L. Sub into Q0=40: L^0.5(6.25L)^0.5=40 → L^0.5×2.5×L^0.5=40 → 2.5L=40 → L*=16. K*=6.25(16)=100. New TC=25(16)+4(100)=400+400=800.\n\nTotal cost rose from 640 to 800, a rise of 160. The 'naive' comparison — keeping the ORIGINAL bundle (L=20, K=80) and just paying the new wage — would cost 25(20)+4(80)=500+320=820, a rise of 180 from the original 640. The actual rise (160) is smaller than this naive rise (180) precisely because the firm re-optimises: faced with a relatively more expensive input (labour), it substitutes toward the now relatively cheaper input (capital), reducing L from 20 to 16 and raising K from 80 to 100. This substitution is a genuine cost saving relative to being forced to keep the old input mix — it's the same logic as the substitution effect in consumer theory always working to cushion the impact of a price change, since the firm has the freedom to reoptimise rather than being stuck with its old choice."
   },
   {
-   "id": "pwo16",
+   "id": "pwo6",
    "topic": "Compensating & Equivalent Variation",
    "q": "A consumer has utility U(x1,x2)=x1^0.5x2^0.5 and faces p2=1 throughout. Her income is M=£200. The price of good 1 rises from p1=1 to p1=4. The Cobb-Douglas expenditure function is e(p1,p2,u)=2u*sqrt(p1*p2). (a) [3 marks] Find the original optimal bundle and original utility u0. (b) [2 marks] Find the new optimal bundle and new utility u1 at the new price with income still M=200. (c) [3 marks] Compute the Compensating Variation. (d) [2 marks] Compute the Equivalent Variation, and briefly comment on which is larger.",
    "model": "(a) At p1=1, p2=1, M=200: x1*=0.5(200)/1=100, x2*=0.5(200)/1=100. u0=sqrt(100*100)=100.\n\n(b) At p1=4, p2=1, M=200: x1*=0.5(200)/4=25, x2*=0.5(200)/1=100. u1=sqrt(25*100)=sqrt(2500)=50.\n\n(c) CV=e(4,1,100)-e(1,1,100)=2(100)sqrt(4)-2(100)sqrt(1)=400-200=£200.\n\n(d) EV=e(1,1,50)-e(1,1,100)=2(50)(1)-2(100)(1)=100-200=-£100, magnitude £100. CV (£200) exceeds EV (£100) here — consistent with the general pattern that for a price rise in a normal good, CV (compensation needed at the new, poorer-feeling prices) tends to be larger than EV (willingness to pay measured from the original, richer position)."
   },
   {
-   "id": "pwo17",
+   "id": "pwo7",
    "topic": "Pareto Efficiency & Social Welfare",
    "q": "Three possible allocations of a fixed resource between two people give utilities (Person 1, Person 2): A=(8,2), B=(4,4), C=(3,3). (a) [3 marks] Which of B and C, if either, is Pareto efficient relative to the other? Explain. (b) [3 marks] Is A a Pareto improvement over B? Explain. (c) [2 marks] Using a utilitarian social welfare function, rank all three allocations. (d) [2 marks] Explain why the Pareto criterion alone cannot rank A against B, even though a value judgement clearly could.",
    "model": "(a) B=(4,4) is a Pareto improvement over C=(3,3): both people are strictly better off under B (4>3 for both). So C is NOT Pareto efficient relative to B — B Pareto-dominates it.\n\n(b) A=(8,2) vs B=(4,4): Person 1 gains (8>4) but Person 2 loses (2<4). Since Person 2 is worse off, A is NOT a Pareto improvement over B (and B is not a Pareto improvement over A either) — the Pareto criterion cannot rank these two allocations relative to each other.\n\n(c) Utilitarian sums: A=8+2=10, B=4+4=8, C=3+3=6. Ranking: A (10) > B (8) > C (6).\n\n(d) The Pareto criterion requires unanimous agreement — every person must be at least as well off for one allocation to be ranked above another. Since A helps Person 1 but hurts Person 2 relative to B, there is no way to satisfy this requirement without taking a stance on how much Person 1's gain is 'worth' relative to Person 2's loss — precisely the kind of value judgement a full social welfare function (like the utilitarian one, which simply adds utilities as if a unit of utility means the same to each person) must make, but which the (deliberately weaker, judgement-free) Pareto criterion refuses to make."

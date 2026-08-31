@@ -208,91 +208,91 @@
    "back": "For the MRS to change by a given percentage, a less-curved (flatter-bending) IC requires a much bigger swing in the consumption ratio x2/x1 than a sharply-curved one does. Since σ is exactly that ratio (%Δ(x2/x1) over %ΔMRS), less curvature means a bigger numerator for the same denominator — hence higher σ. In the limit of a straight-line IC (perfect substitutes), σ→∞."
   },
   {
-   "id": "ct21",
+   "id": "ct33",
    "topic": "Endowments & the Revised Slutsky Equation",
    "front": "A consumer owns an endowment bundle (w1,w2) rather than a fixed money income M. Why must their budget line always pass through the point (w1,w2), whatever the prices are?",
    "back": "Because choosing x=(w1,w2) exactly — trading nothing at all — is always feasible and always uses up exactly the value of the endowment: p1·w1+p2·w2 = p1·w1+p2·w2. So (w1,w2) satisfies the budget constraint p1x1+p2x2=p1w1+p2w2 at ANY price vector, meaning the line must pass through it regardless of how p1 or p2 change."
   },
   {
-   "id": "ct22",
+   "id": "ct34",
    "topic": "Endowments & the Revised Slutsky Equation",
    "front": "Define what it means to be a net buyer versus a net seller of good 1, given endowment w1.",
    "back": "Net buyer (net demander): chosen x1* > w1, so the consumer buys additional units of good 1 beyond what they started with. Net seller (net supplier): chosen x1* < w1, so the consumer sells off part of their endowment of good 1 to buy more of good 2 instead."
   },
   {
-   "id": "ct23",
+   "id": "ct35",
    "topic": "Endowments & the Revised Slutsky Equation",
    "front": "With an endowment, income becomes endogenous: m(p1,p2)=p1w1+p2w2. Why does this change how a price change affects demand, compared to the fixed-M case?",
    "back": "With fixed M, a price change only works through substitution and an ordinary income effect (real purchasing power of a FIXED budget changes). With an endowment, a change in p1 ALSO changes the money value of what the consumer owns (p1w1), so there is a third channel — the endowment income effect — through which the price change affects demand."
   },
   {
-   "id": "ct24",
+   "id": "ct36",
    "topic": "Endowments & the Revised Slutsky Equation",
    "front": "Write the revised Slutsky equation for a consumer with an endowment, and state how it differs from the ordinary Slutsky equation.",
    "back": "Revised Slutsky: dx1/dp1 = dx1h/dp1 + (w1-x1)·(dx1/dm). Ordinary Slutsky (fixed money income): dx1/dp1 = dx1h/dp1 - x1·(dx1/dm). Setting w1=0 in the revised equation recovers the ordinary one exactly, since (0-x1)=-x1 — the ordinary equation is just the special case of no endowment in that good."
   },
   {
-   "id": "ct25",
+   "id": "ct37",
    "topic": "Endowments & the Revised Slutsky Equation",
    "front": "For a net SELLER of a normal good (w1>x1) facing a price rise in that good, is the overall effect on demand for good 1 unambiguous or ambiguous? Why?",
    "back": "Ambiguous. The substitution effect is always negative (pushes x1 down). But (w1-x1)>0 for a net seller, and for a normal good dx1/dm>0, so the endowment income effect term (w1-x1)·(dx1/dm) is POSITIVE — it works in the OPPOSITE direction to substitution (a price rise makes the seller richer, which — if normal — raises their demand for the good too). Which effect wins depends on magnitudes."
   },
   {
-   "id": "ct26",
+   "id": "ct38",
    "topic": "Intertemporal Choice",
    "front": "In the two-period intertemporal choice model, what plays the role of 'good 1' and 'good 2', and what plays the role of the price ratio?",
    "back": "Consumption in period 1 (c1) plays the role of good 1, and consumption in period 2 (c2) plays the role of good 2 — we treat two time periods 'exactly like two goods'. The role of the price ratio is played by (1+r), where r is the interest rate: giving up £1 of consumption today buys you £(1+r) of consumption next period, so (1+r) is the market's rate of exchange between present and future consumption."
   },
   {
-   "id": "ct27",
+   "id": "ct39",
    "topic": "Intertemporal Choice",
    "front": "Write the intertemporal budget constraint in both 'future value' and 'present value' form, for income m1 in period 1 and m2 in period 2, interest rate r.",
    "back": "Future value form: (1+r)c1 + c2 = (1+r)m1 + m2 (everything valued in period-2 pounds). Present value form: c1 + c2/(1+r) = m1 + m2/(1+r) (everything valued in period-1 pounds, i.e. discounted back to today). Both describe the same budget line; the slope is -(1+r) in the (c1,c2) diagram."
   },
   {
-   "id": "ct28",
+   "id": "ct40",
    "topic": "Intertemporal Choice",
    "front": "Define what makes a consumer a 'lender' versus a 'borrower' in the two-period model.",
    "back": "A lender chooses c1 < m1: they consume less than their period-1 income and save (lend out) the difference at rate r, giving them extra consumption in period 2. A borrower chooses c1 > m1: they consume more than their period-1 income by borrowing against period-2 income, and must repay with interest, reducing period-2 consumption below m2."
   },
   {
-   "id": "ct29",
+   "id": "ct41",
    "topic": "Intertemporal Choice",
    "front": "What is the opportunity cost of consuming £1 today, in an N-period model with constant interest rate r?",
    "back": "£(1+r)^(N-1) at time N — money not consumed today can be invested and compounds at rate r every period, so £1 today grows to £(1+r) after one year, £(1+r)^2 after two years, and £(1+r)^(N-1) by period N."
   },
   {
-   "id": "ct30",
+   "id": "ct42",
    "topic": "Intertemporal Choice",
    "front": "If the interest rate r rises, what happens to the intertemporal budget line, and who is unambiguously better off — a borrower or a lender?",
    "back": "The budget line pivots around the fixed endowment point (m1,m2), becoming STEEPER (slope -(1+r) becomes more negative). A LENDER (c1<m1) is unambiguously better off: their original consumption bundle is still exactly affordable, and strictly more is now reachable on the lending side, so by revealed preference they remain a lender and gain. A borrower's situation may worsen enough that they switch to becoming a lender, or they may remain a borrower — it is ambiguous for them."
   },
   {
-   "id": "ct31",
+   "id": "ct43",
    "topic": "Intertemporal Choice",
    "front": "In the N-period generalisation, write the present value of an income stream m1, m2, ..., mn with constant interest rate r.",
    "back": "PV = m1 + m2/(1+r) + m3/(1+r)^2 + ... + mn/(1+r)^(n-1). Each future income is discounted back to period-1 pounds by dividing by (1+r) raised to the number of periods it is away from period 1."
   },
   {
-   "id": "ct32",
+   "id": "ct44",
    "topic": "Behavioural Economics & Present Bias",
    "front": "What is quasi-hyperbolic ('beta-delta') discounting, and how does it differ from standard exponential discounting?",
    "back": "Beta-delta discounting writes utility as u(c0) + β[δu(c1)+δ²u(c2)+δ³u(c3)+...], adding an EXTRA discount factor β<1 that applies only to all future periods relative to right now, on top of the usual per-period discount δ. Standard exponential discounting is the special case β=1: every period is discounted by the same constant rate δ relative to the one before, with no extra penalty specifically for 'the future' versus 'right now'."
   },
   {
-   "id": "ct33",
+   "id": "ct45",
    "topic": "Behavioural Economics & Present Bias",
    "front": "Why does time-inconsistent preference reversal (e.g. preferring smaller-sooner now, but larger-later when both options are pushed equally far into the future) rule out standard exponential discounting?",
    "back": "Exponential discounting is time-consistent: multiplying both sides of a preference by the same power of δ (from shifting both dates by the same amount) never changes which side is bigger. A reversal — preferring option A over B today, but B over A once both are delayed by the same amount — cannot be produced by ANY constant δ, so it requires a different model (present bias / hyperbolic discounting)."
   },
   {
-   "id": "ct34",
+   "id": "ct46",
    "topic": "Behavioural Economics & Present Bias",
    "front": "In the O'Donoghue and Rabin sin tax model, why can a tax on a harmful good make a present-biased consumer genuinely BETTER OFF, unlike the standard tax-always-creates-deadweight-loss result?",
    "back": "Standard welfare analysis assumes a consumer's own choices correctly reveal what is best for them. A present-biased consumer over-consumes the harmful good relative to what even their own future self would want, because they underweight the delayed health cost. A tax raises the effective price of the harmful good today, nudging consumption down toward the level the consumer's own (unbiased) long-run interest would prefer — correcting a bias rather than just redistributing surplus, so it can raise true welfare even though it also raises revenue."
   },
   {
-   "id": "ct35",
+   "id": "ct47",
    "topic": "Behavioural Economics & Present Bias",
    "front": "Why does present bias undermine the usual link between 'revealed preference' and consumer welfare used throughout the rest of this course (e.g. in CV/EV or standard demand theory)?",
    "back": "Revealed preference assumes whatever a consumer chooses is, by definition, what is best for them. With present bias, the period-0 self and period-1 self can disagree — the self making the choice underweights future costs relative to what the person would want with full patience. So what is actually chosen is no longer a reliable guide to the consumer's own long-run wellbeing, breaking the standard welfare benchmark used elsewhere in consumer theory."
@@ -677,7 +677,7 @@
    "explain": "σ ranges from 0 (perfect complements — no substitutability) to ∞ (perfect substitutes). σ=0.15 is close to the complements end, meaning the consumer's indifference curves are sharply bowed (close to right-angled) — the goods are consumed in something close to a fixed ratio."
   },
   {
-   "id": "ctm21",
+   "id": "ctm30",
    "topic": "Endowments & the Revised Slutsky Equation",
    "q": "A consumer has endowment (w1,w2)=(8,4) and faces p1=3, p2=2. What is their endogenous money income m?",
    "options": [
@@ -690,7 +690,7 @@
    "explain": "m = p1·w1 + p2·w2 = 3(8) + 2(4) = 24 + 4 = 28."
   },
   {
-   "id": "ctm22",
+   "id": "ctm31",
    "topic": "Endowments & the Revised Slutsky Equation",
    "q": "A consumer with endowment w1=10 chooses x1*=6.25 at the optimum. Are they a net buyer or net seller of good 1?",
    "options": [
@@ -703,7 +703,7 @@
    "explain": "x1*=6.25 is LESS than the endowment w1=10, so the consumer holds onto only 6.25 units and sells the remaining 3.75 units of their endowment — this makes them a net seller of good 1."
   },
   {
-   "id": "ctm23",
+   "id": "ctm32",
    "topic": "Endowments & the Revised Slutsky Equation",
    "q": "In the revised Slutsky equation dx1/dp1 = dx1h/dp1 + (w1-x1)(dx1/dm), what does the term (w1-x1) represent economically?",
    "options": [
@@ -716,7 +716,7 @@
    "explain": "(w1-x1) is exactly the quantity of good 1 the consumer sells (if positive, w1>x1, net seller) or buys (if negative, w1<x1, net buyer, since then w1-x1<0). It is this net-trade quantity that determines how much a price change moves the value of what they own."
   },
   {
-   "id": "ctm24",
+   "id": "ctm33",
    "topic": "Endowments & the Revised Slutsky Equation",
    "q": "A consumer is a net BUYER of a normal good (x1*>w1). Their good's price rises. What can you say about the total effect on their demand?",
    "options": [
@@ -729,7 +729,7 @@
    "explain": "For a net buyer, (w1-x1)<0. With a normal good, dx1/dm>0, so the endowment income effect (w1-x1)(dx1/dm) is negative — reinforcing the always-negative substitution effect. Both effects push demand down, so the total effect is unambiguously negative: a price rise definitely reduces a net buyer's demand for a normal good."
   },
   {
-   "id": "ctm25",
+   "id": "ctm34",
    "topic": "Endowments & the Revised Slutsky Equation",
    "q": "You own 5 units of good 1 and 10 of good 2, prices are p1=£40, p2=£20 (so m=40(5)+20(10)=£400). Good 2 goes on sale at 50% off (p2 falls to £10). What is the new budget constraint, and does it still pass through (5,10)?",
    "options": [
@@ -742,7 +742,7 @@
    "explain": "New income is endogenous: m'=p1·w1+p2·w2=40(5)+10(10)=200+100=300 (income FALLS because the value of your good-2 endowment fell). The new budget line 40x1+10x2=300 still passes through (5,10): 40(5)+10(10)=200+100=300 ✓ — confirming the endowment point is always on the line, whatever the prices."
   },
   {
-   "id": "ctm26",
+   "id": "ctm35",
    "topic": "Intertemporal Choice",
    "q": "A consumer earns m1=£10,000 this period and m2=£0 next period. The interest rate is r=10%. If she consumes c1=0 this period, what is the maximum she can consume next period?",
    "options": [
@@ -755,7 +755,7 @@
    "explain": "If she saves all of m1, it earns interest at rate r: max c2 = (1+r)m1 + m2 = 1.1(10,000) + 0 = £11,000 — exactly the future-value form of the budget constraint evaluated at c1=0."
   },
   {
-   "id": "ctm27",
+   "id": "ctm36",
    "topic": "Intertemporal Choice",
    "q": "What is the slope of the intertemporal budget line in a (c1,c2) diagram?",
    "options": [
@@ -768,7 +768,7 @@
    "explain": "Rearranging (1+r)c1+c2=(1+r)m1+m2 for c2 gives c2 = [(1+r)m1+m2] - (1+r)c1, a straight line with slope -(1+r) — giving up £1 of period-1 consumption buys exactly £(1+r) of period-2 consumption."
   },
   {
-   "id": "ctm28",
+   "id": "ctm37",
    "topic": "Intertemporal Choice",
    "q": "A consumer has m1=£100, m2=£55, and faces r=10%. Using Cobb-Douglas preferences U(c1,c2)=c1^0.5c2^0.5, what is her optimal period-1 consumption c1*?",
    "options": [
@@ -781,7 +781,7 @@
    "explain": "Present-value wealth = m1 + m2/(1+r) = 100 + 55/1.1 = 100+50 = £150. Treating this like Cobb-Douglas income with 'price' of c1 equal to 1: c1*=0.5×150/1=£75. Since c1*=75 < m1=100, she saves £25 today — she is a LENDER, and c2*=0.5×150×1.1=£82.5, which checks out as c2*=m2+(1+r)(m1-c1*)=55+1.1(25)=82.5 ✓."
   },
   {
-   "id": "ctm29",
+   "id": "ctm38",
    "topic": "Intertemporal Choice",
    "q": "Under exponential (constant-rate) discounting with discount factor δ, if a consumer prefers £200 today over £205 in 1 week, what must they prefer between £200 in 20 weeks and £205 in 21 weeks?",
    "options": [
@@ -794,7 +794,7 @@
    "explain": "Preferring £200 now means 200 > 205δ. Shifting both dates 20 weeks later means comparing 200δ^20 versus 205δ^21 = 205δ·δ^20 — dividing both sides by the common factor δ^20 recovers exactly 200 > 205δ, the SAME inequality. Exponential discounting is time-consistent: shifting both payoffs equally far into the future never flips the preference."
   },
   {
-   "id": "ctm30",
+   "id": "ctm39",
    "topic": "Intertemporal Choice",
    "q": "Many real people choose £200 today over £205 in 1 week, but then choose £205 in 21 weeks over £200 in 20 weeks — a reversal. What behavioural concept does this demonstrate?",
    "options": [
@@ -807,7 +807,7 @@
    "explain": "This reversal is inconsistent with any single constant exponential discount rate (see the previous question) — it is the classic empirical signature of present bias: people apply an extra discount specifically to 'right now' versus 'any point in the future', even when they treat two future dates (20 vs 21 weeks) nearly interchangeably."
   },
   {
-   "id": "ctm31",
+   "id": "ctm40",
    "topic": "Intertemporal Choice",
    "q": "If the interest rate r falls, what happens to a BORROWER'S wellbeing, and could they switch to becoming a lender?",
    "options": [
@@ -820,7 +820,7 @@
    "explain": "A fall in r makes the budget line flatter and pivots it around the fixed endowment (m1,m2), expanding the feasible region on the borrowing side. A borrower's original choice remains affordable and more is now available, so by revealed preference they are unambiguously better off and remain a borrower. It is a RISE in r (not a fall) that could push a borrower to switch to becoming a lender instead."
   },
   {
-   "id": "ctm32",
+   "id": "ctm41",
    "topic": "Behavioural Economics & Present Bias",
    "q": "A consumer's utility over three periods is written u(c0) + β[δu(c1)+δ²u(c2)]. What does setting β=1 correspond to?",
    "options": [
@@ -833,7 +833,7 @@
    "explain": "β is the EXTRA discount applied specifically to all future periods relative to right now. Setting β=1 removes this extra penalty, leaving only the ordinary per-period exponential discount factor δ — i.e. standard, time-consistent exponential discounting."
   },
   {
-   "id": "ctm33",
+   "id": "ctm42",
    "topic": "Behavioural Economics & Present Bias",
    "q": "Which observed pattern of choices is the classic empirical signature of present bias?",
    "options": [
@@ -846,7 +846,7 @@
    "explain": "This is exactly the reversal that no constant exponential discount rate can produce: 'give me the money now' when now is an option, but 'I'll wait the extra week for more' once neither option is immediate — showing an extra, specific bias toward whatever is available RIGHT NOW."
   },
   {
-   "id": "ctm34",
+   "id": "ctm43",
    "topic": "Behavioural Economics & Present Bias",
    "q": "In the sin tax model, a present-biased consumer chooses between a harmful good (crisps) and a healthy good (carrots). What causes them to over-consume crisps relative to their own long-run interest?",
    "options": [
@@ -859,7 +859,7 @@
    "explain": "Present bias means costs and benefits arriving in the future are discounted more heavily than the consumer's own long-run (delta-only) preferences would justify. Since the pleasure of crisps arrives now but the health cost arrives later, present bias systematically tilts choices toward over-consuming the harmful good today."
   },
   {
-   "id": "ctm35",
+   "id": "ctm44",
    "topic": "Behavioural Economics & Present Bias",
    "q": "Which of these best describes why standard consumer theory (Marshallian demand, deadweight loss from taxation) assumes taxes always reduce welfare?",
    "options": [
@@ -916,19 +916,19 @@
    "model": "(a) Cost of A at prices (4,2): 4(3)+2(4)=12+8=20 = M for that observation. Cost of B at those same prices: 4(6)+2(2)=24+4=28 > 20, so B was NOT affordable when A was bought — this pair reveals nothing directly. Check the reverse: cost of A at prices (2,2): 2(3)+2(4)=6+8=14 ≤ cost of B at those prices =2(6)+2(2)=16 (=M there), so A WAS affordable when B was chosen — B is directly revealed preferred to A.\n(b) Cost of B at prices (2,2)=16 (=M). Cost of C at those prices: 2(8)+2(1)=16+2=18>16, so C was not affordable when B was chosen. Reverse: cost of C at prices (1,3)=1(8)+3(1)=11=M for that observation; cost of B at those prices = 1(6)+3(2)=6+6=12 > 11, so B was NOT affordable when C was chosen either. Neither direction reveals a preference directly for this pair.\n(c) WARP only checks each PAIR of observations for a direct two-way reversal. SARP additionally requires checking whether a preference CHAIN across all three observations creates an indirect cycle — e.g. if B≻A is revealed (as found in (a)), and some chain eventually reveals A≻C or similar, SARP requires that C can never be directly revealed preferred back to B, even though no single pairwise comparison shows this. You'd need to trace all revealed-preference links (here: B≻A) and check none of the other direct/indirect relationships loop back and contradict it."
   },
   {
-   "id": "cto21",
+   "id": "cto7",
    "topic": "Endowments & the Revised Slutsky Equation",
    "q": "A fisherman has an endowment of w1=20kg of fish and w2=£100 in money each week. He faces price p1=£5/kg for fish (he can sell fish at this price, or buy more at this price) and treats money (good 2) as the numeraire (p2=1). His utility is U(x1,x2)=x1^0.4·x2^0.6. (a) [3 marks] Write his budget constraint and find his endogenous income m. (b) [4 marks] Find his optimal consumption bundle (x1*,x2*). (c) [3 marks] Is he a net buyer or net seller of fish, and by how much?",
    "model": "(a) Budget constraint: p1x1+x2 = p1w1+w2, i.e. 5x1+x2=5(20)+100=200. So m=£200.\n\n(b) This is a standard Cobb-Douglas problem once we treat m=200 as the (endogenous) income: x1*=αm/p1=0.4(200)/5=16. x2*=(1-α)m/p2=0.6(200)/1=120.\n\n(c) x1*=16 is LESS than his endowment w1=20, so he is a net SELLER of fish, selling 20-16=4kg of fish per week (and using the proceeds, plus his money endowment, to consume x2*=120 worth of the other good)."
   },
   {
-   "id": "cto22",
+   "id": "cto8",
    "topic": "Intertemporal Choice",
    "q": "A graduate earns m1=£30,000 in year 1 and expects m2=£46,200 in year 2. The interest rate is r=10%. Her preferences over consumption are U(c1,c2)=c1^0.6c2^0.4. (a) [2 marks] Write her intertemporal budget constraint in present-value form and compute her present-value wealth. (b) [4 marks] Find her optimal consumption bundle (c1*,c2*). (c) [2 marks] Is she a borrower or a lender, and by how much? (d) [2 marks] If r unexpectedly rose, would she be better or worse off, and would her borrower/lender status necessarily stay the same?",
    "model": "(a) Present-value budget constraint: c1 + c2/(1+r) = m1 + m2/(1+r). PV wealth = 30,000 + 46,200/1.1 = 30,000 + 42,000 = £72,000.\n\n(b) Treating PV wealth as 'income' and the 'price' of c1 as 1: c1* = 0.6 × 72,000 = £43,200. c2* = 0.4 × 72,000 × (1+r) = 0.4 × 72,000 × 1.1 = £31,680.\n\n(c) c1*=£43,200 exceeds m1=£30,000, so she is a BORROWER, borrowing £43,200-£30,000=£13,200 against her year-2 income (with interest, this repays as £13,200×1.1=£14,520 out of her £46,200 year-2 income, leaving 46,200-14,520=£31,680 ✓ matches c2* above).\n\n(d) As a borrower, a RISE in r makes the budget line pivot to be steeper through the fixed endowment point (m1,m2)=(30,000, 46,200), shrinking the affordable region on the borrowing side. Her original chosen bundle may no longer be affordable, so she cannot be guaranteed to be better off — in fact for a borrower a rise in r generally makes them (weakly) worse off. Her status is NOT guaranteed to stay the same: she may remain a borrower (just borrowing less), or the higher cost of borrowing may be enough that she switches to becoming a lender instead — this is genuinely ambiguous without knowing more about her specific preferences."
   },
   {
-   "id": "cto23",
+   "id": "cto9",
    "topic": "Behavioural Economics & Present Bias",
    "q": "(a) [3 marks] Explain, using the beta-delta discounting framework, what distinguishes a present-biased consumer from a standard exponential discounter. (b) [4 marks] A consumer is offered: Offer 1 — £150 today or £160 in 1 week; Offer 2 — £150 in 10 weeks or £160 in 11 weeks. She chooses £150 today in Offer 1, but £160 in 11 weeks in Offer 2. Show why this pair of choices is inconsistent with any constant exponential discount rate delta. (c) [3 marks] Briefly explain how this same present bias can justify a 'sin tax' on a good like sugary drinks as welfare-improving, not just revenue-raising.",
    "model": "(a) A standard exponential discounter has utility u(c0)+delta*u(c1)+delta^2*u(c2)+..., applying the SAME discount rate between any two adjacent periods. A present-biased consumer instead has u(c0)+beta*[delta*u(c1)+delta^2*u(c2)+...], with an EXTRA discount factor beta<1 applied to everything beyond right now — meaning the gap between 'now' and 'one period from now' is treated as disproportionately larger than the gap between any two future periods that are equally far apart.\n\n(b) Under exponential discounting, choosing £150 today over £160 in 1 week means 150 > 160*delta. Since Offer 2 simply shifts both payoffs 10 weeks later, exponential discounting predicts the SAME ranking: 150*delta^10 vs 160*delta^11 — dividing both sides by delta^10 gives exactly 150 vs 160*delta again, so a consistent exponential discounter should still prefer the sooner £150 in Offer 2. Choosing the later £160 instead is a reversal that no single delta can generate, revealing an extra present-bias factor (beta<1) that specifically penalises 'right now' relative to future dates, rather than a smooth constant discount rate.\n\n(c) A present-biased consumer over-consumes goods with immediate pleasure and delayed costs (like sugary drinks) relative to what their own long-run, fully patient self would choose — the delayed health costs are underweighted by beta. A tax raises the immediate price of the good, nudging present-day consumption down closer to the level the consumer's own long-run interest would actually prefer. Because the consumer's own biased choices are not a reliable measure of their true welfare here, the tax can correct this bias and make the consumer genuinely better off in their own long-run terms — not merely transfer surplus to the government as ordinary deadweight-loss analysis would suggest."
