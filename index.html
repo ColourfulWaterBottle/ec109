@@ -153,6 +153,7 @@
   .mcq-opt.correct .letter{color:var(--good);}
   .mcq-opt.wrong{background:var(--bad-bg);border-color:var(--bad);}
   .mcq-opt.wrong .letter{color:var(--bad);}
+  .mcq-opt.picked{background:var(--surface-3);border-color:var(--accent);}
   .explain{margin-top:16px;padding:16px 18px;background:var(--surface-2);border-left:3px solid var(--accent);border-radius:0 8px 8px 0;font-size:0.89rem;color:var(--text-dim);line-height:1.7;white-space:pre-wrap;}
 
   /* ---------- open ended ---------- */
@@ -1144,19 +1145,49 @@ function renderMCQ(main){
   stem.className = "mcq-stem";
   stem.innerHTML = linkTerms(q.q);
   card.appendChild(stem);
+  const isMulti = Array.isArray(q.answer);
+  const answered = isMulti ? mcqState.submitted : (mcqState.selected!==null);
+  if(isMulti){
+    const hint = document.createElement("div");
+    hint.style.cssText = "color:var(--text-faint);font-size:0.78rem;margin:-4px 0 12px;";
+    hint.textContent = `Select ALL that apply (${q.answer.length} correct) — this question has more than one right answer.`;
+    card.appendChild(hint);
+    if(!mcqState.picked) mcqState.picked = [];
+  }
   q.options.forEach((opt,i)=>{
     const b = document.createElement("button");
     b.className = "mcq-opt";
-    b.innerHTML = `<span class="letter">${LETTERS[i]}</span><span>${linkTerms(opt)}</span>`;
-    if(mcqState.selected!==null){
-      if(i===q.answer) b.classList.add("correct");
-      else if(i===mcqState.selected) b.classList.add("wrong");
+    const isPicked = isMulti ? mcqState.picked.includes(i) : (mcqState.selected===i);
+    b.innerHTML = `<span class="letter">${LETTERS[i]}${isMulti && !answered ? (isPicked?" ☑":" ☐") : ""}</span><span>${linkTerms(opt)}</span>`;
+    if(answered){
+      const isCorrectOpt = isMulti ? q.answer.includes(i) : (i===q.answer);
+      if(isCorrectOpt) b.classList.add("correct");
+      else if(isPicked) b.classList.add("wrong");
+    } else if(isPicked && isMulti){
+      b.classList.add("picked");
     }
-    b.disabled = mcqState.selected!==null;
-    b.onclick = ()=>selectMcq(q,i);
+    b.disabled = answered;
+    b.onclick = ()=>{
+      if(isMulti){
+        const idx = mcqState.picked.indexOf(i);
+        if(idx>=0) mcqState.picked.splice(idx,1); else mcqState.picked.push(i);
+        render();
+      } else {
+        selectMcq(q,i);
+      }
+    };
     card.appendChild(b);
   });
-  if(mcqState.selected!==null){
+  if(isMulti && !answered){
+    const submit = document.createElement("button");
+    submit.className = "btn-primary";
+    submit.style.marginTop = "14px";
+    submit.textContent = "Submit answer";
+    submit.disabled = mcqState.picked.length===0;
+    submit.onclick = ()=>submitMultiMcq(q);
+    card.appendChild(submit);
+  }
+  if(answered){
     const ex = document.createElement("div");
     ex.className = "explain";
     ex.innerHTML = linkTerms(q.explain);
@@ -1166,7 +1197,7 @@ function renderMCQ(main){
     next.style.marginTop = "14px";
     next.textContent = (mcqState.idx+1<mcqState.queue.length) ? "Next question" : "See results";
     next.onclick = ()=>{
-      mcqState.idx++; mcqState.selected=null;
+      mcqState.idx++; mcqState.selected=null; mcqState.submitted=false; mcqState.picked=[];
       if(mcqState.idx>=mcqState.queue.length) mcqState.done=true;
       render();
     };
@@ -1176,9 +1207,10 @@ function renderMCQ(main){
 }
 document.addEventListener("keydown", e=>{
   if(currentTab!=="MCQ Quiz" || e.target.tagName==="SELECT") return;
-  if(mcqState.selected!==null) return;
   const q = mcqState.queue[mcqState.idx];
   if(!q) return;
+  if(Array.isArray(q.answer)) return; // multi-select: use mouse/touch to toggle checkboxes
+  if(mcqState.selected!==null) return;
   const idx = LETTERS.indexOf(e.key.toUpperCase());
   if(idx>=0 && idx<q.options.length) selectMcq(q, idx);
 });
@@ -1186,6 +1218,19 @@ function selectMcq(q, i){
   if(mcqState.selected!==null) return;
   mcqState.selected = i;
   const correct = i===q.answer;
+  if(correct) mcqState.score++;
+  const st = progress.mcq[q.id] || {attempts:0, correct:0};
+  st.attempts++; if(correct) st.correct++;
+  progress.mcq[q.id] = st;
+  saveProgress(progress);
+  render();
+}
+function submitMultiMcq(q){
+  if(mcqState.submitted) return;
+  mcqState.submitted = true;
+  const picked = [...mcqState.picked].sort();
+  const answer = [...q.answer].sort();
+  const correct = picked.length===answer.length && picked.every((v,idx)=>v===answer[idx]);
   if(correct) mcqState.score++;
   const st = progress.mcq[q.id] || {attempts:0, correct:0};
   st.attempts++; if(correct) st.correct++;
