@@ -302,67 +302,75 @@
   {
    "id": "ctm1",
    "topic": "Budget Constraints",
-   "q": "A consumer has income M=£240 and faces PX=£6, PY=£4. If PX rises to £8 with M and PY unchanged, what happens to the horizontal intercept (max X affordable) and the slope of the budget line?",
+   "q": "A consumer has income M=£240 and faces PX=£6, PY=£4. PX rises to £8 (M, PY unchanged). What happens to (i) the horizontal intercept, (ii) the vertical intercept, and (iii) the slope of the budget line?",
    "options": [
-    "Horizontal intercept falls from 40 to 30; slope becomes steeper (more negative)",
-    "Horizontal intercept rises from 40 to 30; slope becomes flatter",
-    "Horizontal intercept falls from 40 to 30; slope becomes flatter",
-    "Horizontal intercept is unchanged; only the slope changes"
+    "Horizontal intercept falls 40→30; vertical intercept unchanged at 60; slope steepens from -1.5 to -2",
+    "Horizontal intercept falls 40→30; vertical intercept also falls to 45; slope steepens to -2",
+    "Horizontal intercept rises 40→30; vertical intercept unchanged; slope flattens",
+    "Horizontal intercept falls 40→30; vertical intercept unchanged; slope flattens to -1",
+    "None of the above — the budget line does not change shape, only its position"
    ],
    "answer": 0,
-   "explain": "Max X = M/PX = 240/6 = 40 before, 240/8 = 30 after — it falls. Slope = -PX/PY = -6/4 = -1.5 before, -8/4 = -2 after — steeper (more negative), since X is now relatively more expensive."
+   "explain": "Horizontal intercept (max X, at x2=0) = M/PX = 240/6=40 before, 240/8=30 after — falls, since X is now more expensive. Vertical intercept (max Y, at x1=0) = M/PY = 240/4=60, and PY hasn't changed, so it stays at 60 — a common trap is assuming BOTH intercepts move when only PX changed. Slope = -PX/PY = -6/4=-1.5 before, -8/4=-2 after — steeper (more negative), since giving up one unit of Y now buys less X than before."
   },
   {
    "id": "ctm2",
    "topic": "Budget Constraints",
-   "q": "Both PX and PY double, and income M also doubles. What happens to the budget line?",
+   "q": "PX, PY and M all rise by the same 20%. A consumer initially at their optimal bundle (x1*,x2*) — what happens to their optimal bundle and to their utility level?",
    "options": [
-    "It shifts outward, parallel to the original",
-    "It is completely unchanged",
-    "It shifts inward, parallel to the original",
-    "It rotates around the horizontal intercept"
+    "Both the optimal bundle and utility level are completely unchanged",
+    "The optimal bundle is unchanged, but utility falls since prices rose",
+    "The optimal bundle scales up by 20% and utility rises",
+    "The optimal bundle is unchanged, but utility rises since income rose",
+    "The budget line rotates, so the optimal bundle must change even though its distance from the origin stays the same"
    ],
-   "answer": 1,
-   "explain": "The budget constraint is M/PX = intercept and slope -PX/PY. If M, PX, PY all double, every term in x2 = M/P2 - (P1/P2)x1 is unchanged (the doubling cancels in every ratio) — the line is identical."
+   "answer": 0,
+   "explain": "The budget constraint P1x1+P2x2=M is homogeneous of degree zero in (P1,P2,M) jointly: multiplying all three by the same factor t leaves the constraint set — and hence the feasible region, the tangency point, and utility — completely unchanged (divide both sides by t=1.2 to see the original constraint reappear exactly). This is why only RELATIVE prices and REAL income matter in consumer theory, never the absolute price level on its own."
   },
   {
    "id": "ctm3",
    "topic": "Budget Constraints",
-   "q": "A student has £M to split between two kinds of burgers, with a kink introduced by a bulk discount: the price per veggie burger drops after the 10th one bought. What is the shape of the resulting budget line?",
+   "q": "A student has £M to split between two kinds of burgers, with a bulk discount kicking in after the 10th veggie burger. What is the shape of the resulting budget line, and why?",
    "options": [
-    "A straight line, since prices haven't changed the trade-off ratio anywhere",
-    "A convex kinked line (bulging toward the origin) — steeper before the discount kicks in, flatter after",
-    "A concave kinked line (bulging away from the origin) — flatter before the discount, steeper after",
-    "Two disconnected line segments with a gap between them"
+    "A straight line — bulk discounts don't affect the shape of a budget constraint",
+    "A convex kinked line (bulging toward the origin): steeper (more veggie burgers given up per meat burger) before the discount, flatter after",
+    "A concave kinked line (bulging away from the origin): flatter before the discount, steeper after",
+    "Two disconnected line segments with a genuine gap between them",
+    "A curve, since the price is no longer constant at any point"
    ],
    "answer": 1,
-   "explain": "Before the 10th unit, the price is higher so you trade off veggie burgers more expensively (steeper in veggie-burger terms). Once the discount kicks in, each further veggie burger costs less, so the line becomes flatter (more veggie burgers per unit given up of the other good) — this produces a kink that bulges toward the origin, i.e. convex."
+   "explain": "Before the 10th veggie burger, its price is higher, so each veggie burger 'costs' more meat burgers given up — a steeper segment (in veggie-burger terms). After the discount, each further veggie burger is cheaper, so the same amount of meat burgers given up now buys MORE veggie burgers — a flatter segment. A steep-then-flat kink bulges toward the origin, which is a convex kink (the opposite pattern — flat then steep — would bulge away from the origin and be concave)."
   },
   {
    "id": "ctm4",
    "topic": "Budget Constraints",
-   "q": "Which of the following changes shifts the budget line but leaves its slope unchanged?",
+   "q": "Which of the following changes shifts the budget line outward but leaves its slope completely unchanged?",
    "options": [
-    "A rise in PX only",
-    "A rise in PY only",
+    "A rise in PX only, with PY and M fixed",
+    "A rise in PY only, with PX and M fixed",
     "A proportional rise in M with PX, PY fixed",
+    "A rise in M combined with a rise in PX by the same percentage",
     "More than one of the above"
    ],
    "answer": 2,
-   "explain": "Slope = -PX/PY only changes if the relative price PX/PY changes. A rise in M alone (prices fixed) shifts the line outward, parallel to itself — same slope, both intercepts scale up equally."
+   "explain": "Slope = -PX/PY only changes if the RATIO PX/PY changes. A rise in M alone (both prices fixed) shifts the line outward in parallel — both intercepts (M/PX and M/PY) scale up by the same factor, so slope is untouched. Option D is a trap: if PX rises alongside M, the PX/PY ratio DOES change, so the slope changes too — only a pure income change alone (option C) keeps the slope fixed."
   },
   {
    "id": "ctm5",
    "topic": "Preferences",
-   "q": "A consumer's preferences violate transitivity: they strictly prefer bundle A to B, B to C, but also strictly prefer C to A. What is the direct implication for the existence of an optimal choice among {A,B,C}?",
+   "q": "A consumer's preferences violate transitivity: they strictly prefer A to B, B to C, but also strictly prefer C to A. Which of the following are direct consequences of this cycle? (Select ALL that apply.)",
    "options": [
-    "No implication — a unique best choice still exists among the three",
-    "There is no well-defined 'best' bundle — the preference relation cycles with no top element",
-    "A and C are automatically indifferent to resolve the contradiction",
-    "B must be the optimal choice since it is preferred to C"
+    "There is no well-defined 'best' bundle among {A,B,C} — the preference relation has no top element",
+    "A and C must automatically become indifferent to resolve the contradiction",
+    "Standard utility maximisation techniques (tangency conditions, Lagrangians) cannot be relied upon, since they presuppose a complete, transitive ranking exists to maximise over",
+    "This situation is mathematically impossible and could never arise from real survey data",
+    "B is guaranteed to be the utility-maximising choice, since it is preferred to C"
    ],
-   "answer": 1,
-   "explain": "A≻B≻C≻A is a genuine preference cycle. There is no bundle among the three that is preferred or indifferent to all others — 'the best bundle' is undefined, which is exactly why transitivity is assumed for rational choice theory to make sense."
+   "answer": [
+    0,
+    2
+   ],
+   "explain": "A≻B≻C≻A is a genuine cycle with no resolution: since A,B,C is a closed loop of strict preference, none of the three bundles is preferred-or-indifferent to both others, so 'the best bundle' is undefined (option A correct). Because every optimisation technique in this course assumes a complete, transitive preference ordering exists to represent with a utility function, none of those techniques are valid once transitivity fails (option C correct). Options B, D and E are all wrong: nothing forces indifference to appear, this pattern DOES sometimes show up in real elicited preference data (a classic motivation for behavioural critiques of rationality), and B being preferred to C says nothing about B versus A."
   },
   {
    "id": "ctm6",
@@ -372,88 +380,102 @@
     "U(x1,x2) = x1 + x2",
     "U(x1,x2) = x1·x2",
     "U(x1,x2) = -x1 - x2",
-    "U(x1,x2) = ln(x1) + ln(x2)"
+    "U(x1,x2) = ln(x1) + ln(x2)",
+    "U(x1,x2) = min{x1,x2}"
    ],
    "answer": 2,
-   "explain": "U=-x1-x2 is DEcreasing in both goods — more of either good lowers utility, violating monotonicity. The other three are all strictly increasing in x1 and x2."
+   "explain": "U=-x1-x2 is strictly DEcreasing in both goods — more of either good makes the consumer worse off, directly violating monotonicity. All the others are non-decreasing in both goods everywhere in their domain (min{x1,x2} is weakly monotonic — increasing ONE good alone while the other stays fixed doesn't always raise utility at a kink, but it never decreases it, so it still satisfies the standard 'more is at least as good' monotonicity definition used in this course)."
   },
   {
    "id": "ctm7",
    "topic": "Preferences",
-   "q": "U(x1,x2) = x1^0.5 x2^0.5 for x1,x2≥0. Which axiom is violated at the boundary where x1=0 (and x2>0)?",
+   "q": "U(x1,x2) = x1^0.5 x2^0.5 for x1,x2≥0. As x1→0 (with x2>0 fixed), MU1=0.5x1^(-0.5)x2^0.5 → ∞. What does this tell you about the shape of the indifference curve as it approaches the x2-axis?",
    "options": [
-    "Completeness",
-    "Transitivity",
-    "Monotonicity — the marginal utility of x1 is undefined/infinite as x1→0, but the bundle itself doesn't violate monotonicity",
-    "Convexity is violated everywhere, not just at the boundary"
+    "The indifference curve becomes vertical (asymptotic to the x2-axis) — the consumer would give up an enormous amount of x2 for a tiny bit of x1 when they have almost none of it",
+    "The indifference curve has a kink exactly at x1=0",
+    "This proves the preferences are non-convex near the axis",
+    "Monotonicity is violated near x1=0",
+    "The MRS approaches zero near the axis, so the curve becomes horizontal there"
    ],
-   "answer": 2,
-   "explain": "This function is monotonic and convex throughout its domain including at x1=0 — no axiom is actually violated by the boundary itself here (this specific function is a well-behaved Cobb-Douglas case); the marginal utility of x1 tends to infinity as x1→0 but that doesn't break monotonicity or convexity of preferences."
+   "answer": 0,
+   "explain": "MRS = MU1/MU2 → ∞ as x1→0, meaning the indifference curve's slope (in absolute value) becomes arbitrarily steep — it approaches VERTICAL near the x2-axis, never actually touching it. This reflects extreme willingness to trade away x2 for a little x1 when starting with almost none of it. This is a well-behaved, standard Cobb-Douglas curve — no axiom is violated; it's exactly this steep-near-the-axis shape that guarantees an INTERIOR optimum (never a corner solution) for Cobb-Douglas preferences."
   },
   {
    "id": "ctm8",
    "topic": "Preferences",
-   "q": "Applying the monotonic transformation V=ln(U) to U(x1,x2)=x1^α x2^(1-α) gives V=α ln(x1)+(1-α)ln(x2). What is preserved and what changes?",
+   "q": "Applying the monotonic transformation V=ln(U) to U(x1,x2)=x1^α x2^(1-α) gives V=α ln(x1)+(1-α)ln(x2). Compute MRS using V, and compare it to the MRS computed using U directly.",
    "options": [
-    "The MRS changes but the set of optimal bundles chosen stays the same",
-    "Both the MRS and the optimal bundle change",
-    "Neither the MRS nor the optimal bundle changes — V represents identical preferences to U",
-    "The optimal bundle changes but the MRS stays the same"
+    "MRSv = [α/(1-α)](x2/x1), identical to MRSu — confirming a monotonic transformation never changes the MRS",
+    "MRSv = ln(α/(1-α))·(x2/x1), which differs from MRSu by a logarithmic factor",
+    "MRSv = α/(1-α), a constant, unlike MRSu which depends on x2/x1",
+    "MRSv is undefined since V involves logarithms",
+    "MRSv = (1-α)/α · (x1/x2), the reciprocal of MRSu"
    ],
-   "answer": 2,
-   "explain": "A monotonic transformation preserves the ordinal ranking of bundles exactly, so indifference curves (and hence the MRS at every point, and the optimal choice) are all completely unchanged — only the numerical utility values attached to each bundle differ."
+   "answer": 0,
+   "explain": "∂V/∂x1 = α/x1, ∂V/∂x2 = (1-α)/x2, so MRSv = [α/x1]/[(1-α)/x2] = [α/(1-α)]·(x2/x1) — exactly the same formula derived directly from U in the MRS lesson. This is not a coincidence: ANY strictly increasing transformation g(U) leaves the MRS unchanged, because the extra factor g'(U) appears in BOTH ∂V/∂x1=g'(U)·MU1 and ∂V/∂x2=g'(U)·MU2, and cancels exactly when you take the ratio."
   },
   {
    "id": "ctm9",
    "topic": "Preferences",
-   "q": "At prices (P1,P2)=(4,8), a consumer chooses bundle X=(10,5) when Y=(8,6) was affordable (4·8+8·6=80 ≤ 4·10+8·5=80). What does WARP say must NOT be observed at some other price (Q1,Q2)?",
+   "q": "At prices (P1,P2)=(4,8), a consumer chooses X=(10,5) when Y=(8,6) was also affordable (cost of Y = 4·8+8·6=80 ≤ cost of X = 4·10+8·5=80). Which of the following are valid conclusions from WARP? (Select ALL that apply.)",
    "options": [
-    "X being purchased again at the new prices",
-    "Y being purchased while X was affordable at the new prices",
-    "Y and X both being unaffordable at the new prices",
-    "X and Y costing the same amount at the new prices"
+    "X is directly revealed preferred to Y",
+    "At any future prices where Y is chosen and X is simultaneously affordable, WARP is violated",
+    "The consumer must literally be indifferent between X and Y, since both cost exactly £80",
+    "Y can never be purchased again at any prices whatsoever",
+    "If at new prices X is unaffordable while Y is chosen, this is consistent with WARP"
    ],
-   "answer": 1,
-   "explain": "X has been directly revealed preferred to Y. WARP says Y can never subsequently be directly revealed preferred to X — that would require Y being chosen at prices where X was also affordable, which WARP rules out."
+   "answer": [
+    0,
+    1,
+    4
+   ],
+   "explain": "Since Y was affordable when X was chosen (and X was at least as expensive), X is directly revealed preferred to Y (A correct). WARP then forbids Y ever being chosen while X is simultaneously affordable at different prices (B correct) — that would be a direct reversal. Equal cost does NOT imply indifference under revealed preference — the consumer chose X over an equally-affordable Y, revealing a preference for X, not indifference (C wrong). Y can absolutely be purchased later, just not while X remains affordable (D wrong). If X is unaffordable when Y is chosen, there's no reversal to detect — entirely consistent with WARP (E correct)."
   },
   {
    "id": "ctm10",
    "topic": "The MRS",
-   "q": "U(x1,x2)=x1^(1/3)x2^(2/3). What is the MRS = MU1/MU2?",
+   "q": "U(x1,x2)=x1^(1/3)x2^(2/3). What is the MRS = MU1/MU2, fully simplified?",
    "options": [
     "(1/2)(x2/x1)",
     "(2)(x2/x1)",
     "(1/3)(x1/x2)",
-    "(1/2)(x1/x2)"
+    "(1/2)(x1/x2)",
+    "(2/3)(x2/x1)"
    ],
    "answer": 0,
-   "explain": "MU1=(1/3)x1^(-2/3)x2^(2/3), MU2=(2/3)x1^(1/3)x2^(-1/3). MU1/MU2 = [(1/3)/(2/3)]·(x2^(2/3)x2^(1/3))/(x1^(2/3)x1^(1/3)) = (1/2)(x2/x1)."
+   "explain": "MU1=(1/3)x1^(-2/3)x2^(2/3), MU2=(2/3)x1^(1/3)x2^(-1/3). MU1/MU2 = [(1/3)/(2/3)] · [x1^(-2/3)/x1^(1/3)] · [x2^(2/3)/x2^(-1/3)] = (1/2) · x1^(-1) · x2^(1) = (1/2)(x2/x1). (The general Cobb-Douglas rule MRS=[α/(1-α)](x2/x1) with α=1/3 gives the same: [(1/3)/(2/3)](x2/x1)=(1/2)(x2/x1) — a useful shortcut to check your work.)"
   },
   {
    "id": "ctm11",
    "topic": "The MRS",
-   "q": "Which of the following preference types has an MRS that does NOT depend on the ratio x1/x2 alone (i.e. preferences are NOT homothetic)?",
+   "q": "Which TWO of the following preference types have an MRS that does NOT depend on the ratio x1/x2 alone (i.e. are NOT homothetic)? (Select ALL that apply.)",
    "options": [
     "Cobb-Douglas U=x1^α x2^(1-α)",
     "Perfect substitutes U=ax1+bx2",
-    "Perfect complements U=min{ax1,bx2}",
-    "Quasilinear U=v(x1)+x2 where v is strictly concave"
+    "Quasilinear U=v(x1)+x2 where v is strictly concave",
+    "A utility function with MRS = x2 - 5 (depends only on x2, shifted by a constant)",
+    "Perfect complements U=min{ax1,bx2}"
    ],
-   "answer": 3,
-   "explain": "Quasilinear preferences are the classic non-homothetic case: the MRS depends only on the level of x1 (not on x2 or the ratio), so scaling both goods up proportionally changes the MRS — unlike the other three, which are all homothetic."
+   "answer": [
+    2,
+    3
+   ],
+   "explain": "Homothetic preferences require the MRS to be a function of x2/x1 ONLY (unaffected by proportional scaling of both goods). Quasilinear preferences (option C) have MRS depending only on x1 — not homothetic. Option D's MRS depends only on x2 with a constant offset, which also fails the 'ratio only' test — not homothetic. Cobb-Douglas, perfect substitutes, and perfect complements are all classic homothetic cases (their MRS formulas each reduce to a function of x2/x1 alone)."
   },
   {
    "id": "ctm12",
    "topic": "The MRS",
-   "q": "A consumer has U(SR,SL)=min{2SR,3SL} for right and left shoes. At the optimal (kink) bundle, what is the relationship between SR and SL?",
+   "q": "A consumer has U(SR,SL)=min{2SR,3SL} for right and left shoes, with prices PR=£8, PL=£12 and income M=£240. Find the optimal bundle (SR*, SL*).",
    "options": [
-    "2SR = 3SL",
-    "3SR = 2SL",
-    "SR = SL",
-    "It cannot be determined without knowing prices"
+    "SR*=15, SL*=10",
+    "SR*=10, SL*=15",
+    "SR*=12, SL*=12",
+    "SR*=18, SL*=12",
+    "Cannot be determined without knowing the utility of each shoe individually"
    ],
    "answer": 0,
-   "explain": "At the kink of a Leontief (perfect complements) utility function min{aX,bY}, the two arguments of the min are equal: 2SR = 3SL. This holds regardless of prices — prices only determine how many total 'kink bundles' the consumer can afford, not the ratio within the bundle."
+   "explain": "At the kink, the two arguments of the min are equal: 2SR=3SL, so SL=(2/3)SR. Substitute into the budget constraint: 8SR+12SL=240 → 8SR+12(2/3)SR=8SR+8SR=16SR=240 → SR=15, so SL=(2/3)(15)=10. Verify BOTH conditions: kink check 2(15)=30=3(10)=30 ✓; budget check 8(15)+12(10)=120+120=240 ✓. Option D (SR*=18,SL*=12) is a trap: it satisfies the kink condition (2·18=36=3·12) but FAILS the budget check (8·18+12·12=144+144=288≠240) — always verify both conditions, not just one, since satisfying the kink ratio alone doesn't guarantee affordability."
   },
   {
    "id": "ctm13",
@@ -463,140 +485,151 @@
     "(20,10) — unchanged, since homothetic preferences don't respond to income",
     "(50,25)",
     "(35,20)",
-    "Cannot be determined without more information on preferences"
+    "Cannot be determined without knowing the specific utility function",
+    "(45,22.5)"
    ],
    "answer": 1,
-   "explain": "Homothetic preferences scale demand proportionally with income: 250/100 = 2.5, so the new bundle is 2.5×(20,10) = (50,25)."
+   "explain": "Homothetic preferences scale demand exactly proportionally with income: the scale factor is 250/100=2.5, so the new bundle is 2.5×(20,10)=(50,25). This works for ANY homothetic utility function (Cobb-Douglas, perfect substitutes, perfect complements, CES) — you don't need to know which one it is, only that homotheticity holds."
   },
   {
    "id": "ctm14",
    "topic": "Constrained Optimisation",
-   "q": "At a candidate bundle, MUx/MUy = 3 while Px/Py = 2. Assuming diminishing MRS and an interior tangency exists somewhere, what adjustment moves the consumer toward their optimum?",
+   "q": "At a candidate bundle, MUx/MUy = 3 while Px/Py = 2. Assuming diminishing MRS and an interior tangency exists somewhere on the budget line, what adjustment moves the consumer toward their optimum, and what happens to MRS as they move?",
    "options": [
-    "Buy more Y, less X",
-    "Buy more X, less Y",
-    "The consumer is already optimal",
-    "Buy more of both goods"
+    "Buy more Y, less X; MRS rises further away from 2",
+    "Buy more X, less Y; MRS falls toward 2 as x1 rises (diminishing MRS)",
+    "The consumer is already optimal since both ratios are positive",
+    "Buy more of both goods equally",
+    "Buy more X, less Y; MRS rises further away from 2"
    ],
    "answer": 1,
-   "explain": "MRS (3) exceeds the price ratio (2): the consumer is willing to give up more Y for an extra X than the market requires, so they gain by buying more X and less Y — this continues, with the MRS falling due to diminishing MRS, until MRS=2."
+   "explain": "MRS (3) exceeds the price ratio (2): the consumer is personally willing to give up 3 units of Y for 1 more X, but the market only demands 2 — a good deal, so they buy more X (and less Y). As x1 rises and x2 falls, diminishing MRS means MUx falls relative to MUy, so MRS falls — this continues until MRS=2, at which point no further gain is available."
   },
   {
    "id": "ctm15",
    "topic": "Constrained Optimisation",
-   "q": "U(x1,x2) = x1^0.25 x2^0.75, P1=5, P2=15, M=400. What is the Marshallian demand x1*?",
+   "q": "U(x1,x2) = x1^0.25 x2^0.75, P1=5, P2=15, M=400. Now P1 rises to P1'=8 (P2, M unchanged). What is the new Marshallian demand x1*, and by how much did x1* fall?",
    "options": [
-    "x1* = 20",
-    "x1* = 6.67",
-    "x1* = 80",
-    "x1* = 26.7"
+    "x1*=12.5, a fall of 7.5",
+    "x1*=20, no change",
+    "x1*=6.67, a fall of 13.33",
+    "x1*=8, a fall of 12",
+    "x1*=12.5, a fall of 12.5"
    ],
    "answer": 0,
-   "explain": "Cobb-Douglas share formula: x1* = αM/P1 = 0.25×400/5 = 100/5 = 20."
+   "explain": "Original: x1*=αM/P1=0.25(400)/5=100/5=20. New: x1*=0.25(400)/8=100/8=12.5. Fall = 20-12.5=7.5. Notice the Cobb-Douglas share formula means you never need to re-derive the tangency condition after a pure own-price change — just re-plug the new price into x1*=αM/P1 directly."
   },
   {
    "id": "ctm16",
    "topic": "Constrained Optimisation",
-   "q": "U(x1,x2)=min{x1,2x2}, P1=3, P2=4, M=110. Find x1* and x2* at the kink.",
+   "q": "U(x1,x2)=min{x1,2x2}, P1=3, P2=4, M=110. Find x1* and x2* at the kink, then verify against the budget constraint.",
    "options": [
     "x1*=20, x2*=10",
     "x1*=22, x2*=11",
     "x1*=10, x2*=20",
-    "x1*=11, x2*=22"
+    "x1*=11, x2*=22",
+    "x1*=24, x2*=12"
    ],
    "answer": 1,
-   "explain": "At the kink, the two arguments of the min are equal: x1=2x2. Substitute into the budget constraint: 3x1+4x2=110 → 3(2x2)+4x2=110 → 6x2+4x2=10x2=110 → x2=11, so x1=2(11)=22. Check: 3(22)+4(11)=66+44=110 ✓."
+   "explain": "At the kink, x1=2x2 (the two arguments of the min are equal). Substitute into the budget constraint: 3x1+4x2=110 → 3(2x2)+4x2=110 → 6x2+4x2=10x2=110 → x2=11, so x1=2(11)=22. Verify: 3(22)+4(11)=66+44=110 ✓ — always check your kink solution satisfies the budget exactly, since a small algebra slip here is easy to miss otherwise."
   },
   {
    "id": "ctm17",
    "topic": "Constrained Optimisation",
-   "q": "A consumer's indifference curves are strictly convex, but at the candidate tangency point the second-order condition for a maximum fails (it's actually a local minimum of utility along the budget line). What does this tell you about the underlying preferences at that point?",
+   "q": "A consumer's indifference curves are strictly convex everywhere, but at a candidate tangency point, the SECOND-order condition for a maximum fails (it's actually a local MINIMUM of utility along the budget line). What must be true?",
    "options": [
-    "Nothing unusual — this can happen even with globally convex, well-behaved preferences",
-    "Preferences must be non-convex (or only weakly/locally convex) at that point, since strict convexity throughout guarantees any tangency is a maximum",
-    "The budget constraint must be non-linear",
-    "The consumer must be at a corner solution instead"
+    "Nothing unusual — this can happen even with globally strictly convex, well-behaved preferences",
+    "This is a genuine contradiction: strict convexity throughout guarantees any interior tangency is a maximum, so preferences must actually be non-convex (or only weakly convex) somewhere",
+    "The budget constraint must be non-linear for this to occur",
+    "The consumer must actually be at a corner solution instead",
+    "This only happens when preferences are quasilinear"
    ],
    "answer": 1,
-   "explain": "With preferences that are strictly convex everywhere, any interior tangency to a straight budget line is guaranteed to be a utility maximum, not a minimum. A tangency that turns out to be a minimum is only possible if convexity fails somewhere (e.g. locally concave indifference curves)."
+   "explain": "With strictly convex preferences EVERYWHERE, any interior tangency to a straight (linear) budget line is guaranteed to be a genuine utility maximum — this is precisely why strict convexity is assumed throughout the course. A tangency that turns out to be a local minimum can only happen if convexity actually fails at or near that point (e.g. locally concave — 'bowed outward' — indifference curves), contradicting the stated assumption; so either the assumption is wrong, or there's an error in identifying the tangency."
   },
   {
    "id": "ctm18",
    "topic": "Constrained Optimisation",
-   "q": "U(x1,x2)=x1x2, P1=4, P2=2, M=120. Using the Lagrangian method, what is λ (the marginal utility of income) at the optimum?",
+   "q": "U(x1,x2)=x1x2, P1=4, P2=2, M=120. Using the Lagrangian method, find x1*, x2*, and λ (the marginal utility of income) at the optimum.",
    "options": [
     "x1*=15, x2*=30, λ=7.5",
     "x1*=30, x2*=15, λ=7.5",
     "x1*=15, x2*=30, λ=3.75",
-    "x1*=30, x2*=15, λ=0.5"
+    "x1*=30, x2*=15, λ=0.5",
+    "x1*=20, x2*=20, λ=5"
    ],
    "answer": 0,
-   "explain": "Equal Cobb-Douglas exponents: x1*=M/(2P1)=120/8=15, x2*=M/(2P2)=120/4=30. Check budget: 4(15)+2(30)=60+60=120 ✓. At the optimum, λ=MU1/P1=x2*/P1=30/4=7.5 (equivalently MU2/P2=x1*/P2=15/2=7.5, confirming both FOCs agree)."
+   "explain": "Equal Cobb-Douglas exponents (both =1, treating U=x1^1x2^1): x1*=M/(2P1)=120/8=15, x2*=M/(2P2)=120/4=30. Check budget: 4(15)+2(30)=60+60=120 ✓. λ is the shadow price of the budget constraint — economically, how much extra utility one more pound of income buys at the optimum. From the FOC MU1=λP1: MU1=x2*=30, so λ=MU1/P1=30/4=7.5. Cross-check with the other FOC: MU2=x1*=15, λ=MU2/P2=15/2=7.5 ✓ — both FOCs must give the identical λ at a genuine optimum."
   },
   {
    "id": "ctm19",
    "topic": "Constrained Optimisation",
-   "q": "Fresh fruit has an estimated PED of -0.29 (ONS, 2000). If the price of fresh fruit rises by 10%, what is the approximate percentage change in quantity demanded, and is demand elastic or inelastic?",
+   "q": "Fresh fruit has an estimated PED of -0.29 (ONS, 2000), while a specific branded snack has PED=-2.4. A government considers a uniform 10% tax on both goods. Which statement correctly compares the deadweight loss and revenue implications?",
    "options": [
-    "+2.9%, elastic",
-    "-2.9%, inelastic",
-    "-29%, elastic",
-    "-2.9%, elastic"
+    "The branded snack tax generates relatively more revenue per unit of deadweight loss, since inelastic demand minimises the quantity distortion",
+    "The fresh fruit tax generates relatively more revenue per unit of deadweight loss, since its inelastic demand means quantity barely falls, so revenue is collected on almost the full original quantity with little lost trade",
+    "Both taxes produce identical deadweight loss, since the tax rate (10%) is the same",
+    "The branded snack tax produces zero deadweight loss since PED is negative",
+    "Deadweight loss cannot be compared without knowing supply elasticities for both goods"
    ],
    "answer": 1,
-   "explain": "%ΔQ ≈ PED × %ΔP = -0.29 × 10% = -2.9%. Since |PED|=0.29<1, demand is inelastic — quantity falls proportionally less than the price rise."
+   "explain": "Deadweight loss depends on how much QUANTITY falls in response to the tax — the more elastic (responsive) demand is, the bigger the quantity fall and the bigger the DWL for a given tax rate. Fresh fruit's |PED|=0.29 is small, so quantity barely changes when taxed — revenue is collected on almost the original volume with little lost mutually-beneficial trade (low DWL per pound of revenue). The branded snack's |PED|=2.4 is large, so the same 10% tax causes a much bigger fall in quantity traded — more deadweight loss relative to revenue raised. This is exactly the intuition behind the Ramsey rule: tax inelastic goods more heavily to minimise distortion (option D and C are simply wrong statements)."
   },
   {
    "id": "ctm20",
    "topic": "Income & Substitution Effects",
-   "q": "U(x1,x2)=x1^0.5x2^0.5, P1=20, P2=10, M=200 gives x1*=5, x2*=10 initially. P1 falls to 10. Using the worked Hicksian decomposition method (hold utility at u=√50=7.071, minimise expenditure at new prices), what is the Hicksian (compensated) demand for x1 after the price fall?",
+   "q": "U(x1,x2)=x1^0.5x2^0.5, P1=20, P2=10, M=200 gives x1*=5, x2*=10 initially, at utility u=√50≈7.071. P1 falls to 10. Using the Hicksian decomposition (hold utility fixed at u=7.071, minimise expenditure at the NEW prices), what is the Hicksian (compensated) demand for x1 after the price fall?",
    "options": [
     "x1=5 (unchanged)",
     "x1=7.071",
     "x1=10",
-    "x1=8.5"
+    "x1=8.5",
+    "x1=6.25"
    ],
    "answer": 1,
-   "explain": "Minimising expenditure at the new price ratio (P1=P2=10, so MRS=1 at the optimum, meaning x1=x2) subject to u=7.071 gives x1=x2=7.071 (since x1^0.5x1^0.5=x1=7.071). This is the pure substitution effect."
+   "explain": "At the new price ratio (P1=P2=10, so P1/P2=1), the tangency condition MRS=P1/P2 requires x2/x1=1, i.e. x1=x2 at the compensated optimum. Substituting into the FIXED utility level: x1^0.5·x1^0.5=x1=7.071 (since utility is held at u=7.071 throughout the Hicksian calculation). So Hicksian demand is x1=x2=7.071 — this is the pure substitution effect, isolating how much of the rise in x1 (from 5 to 7.071) is due to good 1 becoming relatively cheaper, with the consumer kept exactly as happy as before (not richer)."
   },
   {
    "id": "ctm21",
    "topic": "Income & Substitution Effects",
-   "q": "Continuing the same example (P1 falls from 20 to 10, x1 was 5, Hicksian/substitution-effect x1=7.071, and the final Marshallian x1*=10 at the new prices): what is the size of the INCOME effect on x1, and is it positive or negative?",
+   "q": "Continuing the same example (P1 falls 20→10, x1 was 5, Hicksian/substitution-only x1=7.071, final Marshallian x1*=10 at the new prices and original income M=200). What is the size and sign of the INCOME effect on x1, and how does it compare to the substitution effect?",
    "options": [
-    "+2.071 (positive)",
-    "+2.929 (positive)",
-    "-2.929 (negative)",
-    "+5 (positive)"
+    "Income effect = +2.929; smaller than the substitution effect (+2.071)",
+    "Income effect = +2.929; larger than the substitution effect (+2.071)",
+    "Income effect = -2.929; opposite sign to the substitution effect",
+    "Income effect = +5; equal to the total effect entirely, with zero substitution effect",
+    "Income effect = +2.071; equal to the substitution effect"
    ],
    "answer": 1,
-   "explain": "Income effect = final Marshallian demand - Hicksian (substitution-only) demand = 10 - 7.071 = 2.929, and it's positive because good 1 is normal here (rising real income raises demand further)."
+   "explain": "Income effect = final Marshallian demand - Hicksian (substitution-only) demand = 10 - 7.071 = 2.929, and it's POSITIVE (good 1 is normal, so rising real income raises demand for it further). Comparing magnitudes: substitution effect = 7.071-5=2.071, income effect=2.929 — here the income effect is actually LARGER than the substitution effect, even though the good is normal (not Giffen) — both effects still point the SAME direction (positive), which is what matters for the law of demand to hold; only when a negative income effect for an inferior good outweighs the substitution effect does demand behave perversely (Giffen)."
   },
   {
    "id": "ctm22",
    "topic": "Income & Substitution Effects",
-   "q": "For a Giffen good, when its price falls, which of the following correctly ranks the substitution effect (SE) and income effect (IE) in magnitude and direction?",
+   "q": "For a Giffen good, when its price falls, which of the following correctly ranks the substitution effect (SE) and income effect (IE) in sign and relative magnitude?",
    "options": [
-    "SE positive and larger than IE (which is negative) — total demand rises",
-    "SE positive but smaller than IE (which is negative) — total demand falls",
-    "SE negative and IE positive — they exactly cancel",
-    "SE and IE are both positive — total demand rises even more than for a normal good"
+    "SE positive and larger in magnitude than IE (negative) — total demand rises",
+    "SE positive but smaller in magnitude than IE (negative) — total demand falls, violating the law of demand",
+    "SE negative and IE positive, and they exactly cancel to leave demand unchanged",
+    "SE and IE are both positive, with IE simply reinforcing SE more strongly than for a normal good",
+    "SE is undefined for Giffen goods since Hicksian demand does not exist for them"
    ],
    "answer": 1,
-   "explain": "For any good, the substitution effect of a price fall is always positive (more of the now-relatively-cheaper good). For a Giffen good specifically, the negative income effect (real income up, but the good is so inferior demand falls) is LARGER in magnitude than the positive substitution effect, so total demand falls — violating the law of demand."
+   "explain": "The substitution effect of a price FALL is ALWAYS positive for any good (more of the now-relatively-cheaper good, by the properties of Hicksian demand) — this never depends on whether the good is normal, inferior, or Giffen. What makes a good Giffen specifically is that it is so strongly INFERIOR that the resulting negative income effect (rising real income lowers demand for a strongly inferior good) is larger in magnitude than the positive substitution effect, flipping the TOTAL effect negative — quantity demanded falls even though price fell, an apparent violation of the law of demand."
   },
   {
    "id": "ctm23",
    "topic": "Income & Substitution Effects",
-   "q": "Which statement correctly distinguishes Marshallian from Hicksian demand?",
+   "q": "Which statement correctly and completely distinguishes Marshallian from Hicksian demand?",
    "options": [
-    "Marshallian demand x*(P1,P2,M) depends on prices and income; Hicksian demand H(P1,P2,v) depends on prices and a target utility level",
+    "Marshallian demand x*(P1,P2,M) solves utility maximisation subject to a fixed budget M; Hicksian demand H(P1,P2,v̄) solves expenditure minimisation subject to a fixed target utility v̄",
     "Marshallian demand depends on utility; Hicksian demand depends on income",
-    "They are always numerically identical at every price and income level",
-    "Hicksian demand is only defined for perfect substitutes"
+    "They are always numerically identical at every price and income level, by definition",
+    "Hicksian demand is only mathematically defined for perfect substitutes preferences",
+    "Marshallian demand ignores prices entirely, only depending on income"
    ],
    "answer": 0,
-   "explain": "Marshallian (uncompensated) demand comes from utility maximisation subject to a budget (hence depends on M); Hicksian (compensated) demand comes from expenditure minimisation subject to a utility target v (hence depends on v, not M). They coincide only at the specific (P,M) pair that generates exactly utility v."
+   "explain": "Marshallian (uncompensated/ordinary) demand comes from the PRIMAL problem — maximise utility subject to a fixed money budget M, so it's naturally written as a function of (P1,P2,M). Hicksian (compensated) demand comes from the DUAL problem — minimise expenditure subject to reaching a fixed target utility v̄, so it's naturally written as a function of (P1,P2,v̄) instead. They coincide numerically only at the ONE specific (P,M) combination that happens to generate exactly utility v̄ in the first place — not at every price and income level."
   },
   {
    "id": "ctm24",
@@ -604,77 +637,87 @@
    "q": "At prices (P1,P2)=(2,3), a consumer buys A=(4,2). Bundle B=(3,3) was also available for sale at those same prices. Was B affordable to the consumer when they chose A, and what does this imply for revealed preference?",
    "options": [
     "B was affordable (cost of B=14 ≤ cost of A=15), so A is directly revealed preferred to B",
-    "B was NOT affordable (cost of B=15 > cost of A=14), so this pair reveals nothing under WARP",
-    "B was affordable and exactly as expensive as A, so the consumer is indifferent between them",
-    "Affordability cannot be determined without knowing the consumer's income directly"
+    "B was NOT affordable (cost of B=15 > cost of A=14), so this single pair reveals nothing under WARP",
+    "B was affordable and exactly as expensive as A, so the consumer must be exactly indifferent between them",
+    "Affordability cannot be determined without additionally knowing the consumer's exact income",
+    "B was affordable and cheaper than A, so B is revealed preferred to A instead"
    ],
    "answer": 1,
-   "explain": "Cost of A at these prices = 2(4)+3(2)=8+6=14 = M (what the consumer actually spent, since A was chosen). Cost of B = 2(3)+3(3)=6+9=15 > 14. Since B costs MORE than the consumer's budget M, B was NOT affordable when A was chosen — the 'affordability' condition required for 'A is directly revealed preferred to B' isn't met, so this single observation reveals nothing about how the consumer ranks A versus B."
+   "explain": "Cost of A at these prices = 2(4)+3(2)=8+6=14, which equals the consumer's actual spending M (since A was the bundle chosen). Cost of B = 2(3)+3(3)=6+9=15, which is MORE than M=14. Since B costs more than the consumer could actually afford, B was NOT affordable when A was chosen — the affordability condition needed to say 'A is revealed preferred to B' isn't satisfied here, so this single observation, by itself, tells us nothing about how the consumer ranks A against B."
   },
   {
    "id": "ctm25",
    "topic": "WARP/SARP",
-   "q": "A dataset of choices satisfies WARP for every pair of observations but is later found to violate SARP via a three-bundle chain. What must be true?",
+   "q": "A dataset of pairwise choices satisfies WARP for every individual pair of observations, but is later found to violate SARP via a three-bundle chain X≻Y≻Z≻X. Which of the following are correct? (Select ALL that apply.)",
    "options": [
-    "This is impossible — WARP for all pairs automatically implies SARP",
-    "It's possible: WARP only checks direct two-way reversals, while SARP also catches indirect cycles like X≻Y≻Z≻X that no single pair reveals",
-    "SARP is strictly weaker than WARP, so this situation is trivial and expected",
-    "The data must contain a data-entry error, since SARP and WARP are logically equivalent"
+    "This situation is possible: WARP only checks direct two-way reversals between any single pair, while SARP additionally catches indirect cycles that no single pair reveals on its own",
+    "SARP is strictly stronger (harder to satisfy) than WARP, since satisfying SARP requires satisfying WARP but not vice versa",
+    "This proves the data must contain a recording error, since WARP and SARP are logically equivalent conditions",
+    "The consumer's choices are inconsistent with any well-behaved (transitive) preference ordering rationalising the whole dataset, even though no single pair looks inconsistent",
+    "SARP can only ever be tested with exactly two observed bundles, never three or more"
    ],
-   "answer": 1,
-   "explain": "WARP and SARP are NOT equivalent — WARP is pairwise consistency only. It's entirely possible to satisfy WARP for every individual pair of observations while an indirect chain (X revealed preferred to Y, Y to Z, and Z directly revealed preferred to X) violates the transitivity SARP demands. SARP is the stronger condition."
+   "answer": [
+    0,
+    1,
+    3
+   ],
+   "explain": "WARP and SARP are genuinely different conditions, not equivalent (options A and B correct, C wrong) — WARP is pairwise-only, checking that no two bundles directly reverse each other, while SARP additionally requires consistency across chains of ANY length (transitivity of revealed preference), catching indirect cycles like X≻Y≻Z≻X that never show up when you only look at pairs one at a time. Since this chain exists, there is no complete, transitive preference ordering that could have generated this whole dataset (option D correct) — even though checking any two observations in isolation looks perfectly fine. SARP is routinely tested using three or more observations specifically to catch exactly this kind of indirect cycle (option E wrong)."
   },
   {
    "id": "ctm26",
    "topic": "The Dual Problem",
-   "q": "U(x1,x2)=x1^0.5x2^0.5, P1=P2=10, M=200. Using the unconstrained-substitution method (sub x2=(M-P1x1)/P2 into U and maximise over x1 alone), what equation do you solve to find x1*?",
+   "q": "U(x1,x2)=x1^0.5x2^0.5, P1=P2=10, M=200. Using the unconstrained-substitution method (substitute x2=(M-P1x1)/P2 into U, then maximise over x1 alone by setting dU/dx1=0), what equation do you actually solve, and what is x1*?",
    "options": [
-    "Set dU/dx1=0 after substitution, which for this Cobb-Douglas case reduces to x1=M/(2P1)=10",
-    "Set d²U/dx1²=0",
-    "Set U(x1,x2)=0",
-    "Solve P1=P2 directly for x1 without differentiating"
+    "Setting dU/dx1=0 after substitution reduces, for this symmetric Cobb-Douglas case, to x1*=M/(2P1)=10",
+    "Setting d²U/dx1²=0, giving x1*=20",
+    "Setting U(x1,x2)=0, giving x1*=0",
+    "Solving P1=P2 directly without any differentiation, giving x1*=M/(P1+P2)=10",
+    "Setting dU/dx1=dU/dx2, giving x1*=5"
    ],
    "answer": 0,
-   "explain": "Substituting and differentiating (as in the worked Lagrangian/unconstrained methods for symmetric Cobb-Douglas) always collapses to the same equi-marginal answer: x1*=M/(2P1) when the exponents are equal (0.5 each) — here x1*=200/20=10. All three solution methods (equi-marginal, Lagrangian, unconstrained substitution) must agree."
+   "explain": "After substituting x2=(200-10x1)/10=20-x1 into U=x1^0.5x2^0.5 and differentiating with respect to x1, the resulting first-order condition simplifies (for equal Cobb-Douglas exponents of 0.5 each) to exactly the same tangency answer as the Lagrangian or equi-marginal methods: x1*=M/(2P1)=200/20=10. All three solution methods MUST produce identical answers — this is a useful way to check your own working under exam pressure if you have spare time."
   },
   {
    "id": "ctm27",
    "topic": "The Dual Problem",
-   "q": "In the dual (expenditure minimisation) problem min P1x1+P2x2 s.t. u(x1,x2)=v̄, what plays the role that income M plays in the primal problem?",
+   "q": "In the dual (expenditure minimisation) problem min P1x1+P2x2 s.t. u(x1,x2)=v̄, which of the following correctly describes the role of v̄, and what economic object does solving this problem produce?",
    "options": [
-    "The multiplier λ",
-    "The target utility level v̄, which is fixed (not chosen) and pins down which indifference curve to minimise cost along",
-    "There is no equivalent — the dual problem has no fixed parameter",
-    "P1 and P2 jointly replace M"
+    "v̄ is fixed (playing the role M played in the primal), and solving the problem produces Hicksian (compensated) demand functions H1(P1,P2,v̄), H2(P1,P2,v̄)",
+    "v̄ is chosen optimally by the consumer, and the problem produces Marshallian demand",
+    "v̄ plays no meaningful role and can be set to any arbitrary constant without changing the solution",
+    "Solving the dual problem produces the multiplier λ only, with no demand functions",
+    "v̄ represents the market price level, not a utility target"
    ],
-   "answer": 1,
-   "explain": "In the primal, M is fixed and utility is the thing being maximised. In the dual, the roles flip: utility v̄ is fixed (the target indifference curve) and expenditure is the thing being minimised — v̄ is the dual's counterpart to M."
+   "answer": 0,
+   "explain": "In the primal problem, income M is fixed (given, not chosen) and utility is maximised. The dual problem flips this exactly: a target utility level v̄ is fixed (given) and expenditure is minimised to reach it as cheaply as possible. Solving this constrained minimisation produces the Hicksian (compensated) demand functions — H1(P1,P2,v̄) and H2(P1,P2,v̄) — which depend on prices and the target utility v̄, not on income, since income was never part of the dual problem's setup."
   },
   {
    "id": "ctm28",
    "topic": "Elasticity of Substitution",
-   "q": "Two indifference curves both pass through the same point with the same MRS, but curve A is much more sharply bowed (curved) than curve B. Which has the higher elasticity of substitution σ?",
+   "q": "Two indifference curves both pass through the same point with the same MRS, but curve A is much more sharply bowed (curved) than curve B. Which has the higher elasticity of substitution σ, and why?",
    "options": [
-    "Curve A (more curved) has higher σ",
-    "Curve B (less curved) has higher σ",
-    "They must have equal σ since they share a point and MRS",
-    "σ cannot be compared without knowing the utility functions explicitly"
+    "Curve A (more curved) has higher σ, since curvature and substitutability move together",
+    "Curve B (less curved) has higher σ, since a given percentage change in MRS requires a LARGER percentage change in x2/x1 along the flatter curve",
+    "They must have equal σ, since they share a point and an MRS value",
+    "σ cannot be compared without knowing the underlying utility functions explicitly",
+    "Curve B has higher σ only if preferences are also homothetic"
    ],
    "answer": 1,
-   "explain": "Less curvature means a 1% change in the MRS requires a LARGER percentage change in the consumption ratio x2/x1 to achieve — and since σ = |%Δ(x2/x1)/%ΔMRS|, a bigger required ratio-change for the same MRS-change means higher σ. Curve B (flatter/less curved) has the higher elasticity of substitution."
+   "explain": "σ = |%Δ(x2/x1) / %ΔMRS| measures how much the consumption RATIO must adjust to produce a given percentage change in the MRS. A sharply curved (bowed) indifference curve means the MRS changes rapidly even for a small movement along it — so only a SMALL change in x2/x1 is needed to produce a given %ΔMRS, implying LOW σ. A flatter, less-curved curve (like B) needs a much BIGGER change in x2/x1 to produce the same %ΔMRS, implying HIGH σ — flatter curves indicate goods that are easier to substitute for one another."
   },
   {
    "id": "ctm29",
    "topic": "Elasticity of Substitution",
-   "q": "A researcher estimates σ=0.15 between two goods in a consumer's utility function. What does this imply about how close the two goods are to perfect complements vs perfect substitutes?",
+   "q": "A researcher estimates σ=0.15 between two goods in a consumer's utility function, and separately estimates σ=8 between a different pair of goods for the same consumer. Which pair behaves more like perfect complements, and which more like perfect substitutes?",
    "options": [
-    "Very close to perfect substitutes (σ near ∞ would be perfect substitutes)",
-    "Very close to perfect complements (σ near 0 would be perfect complements)",
-    "Exactly Cobb-Douglas (σ=1 is Cobb-Douglas)",
-    "σ=0.15 is impossible; elasticities of substitution must exceed 1"
+    "σ=0.15 pair behaves like perfect complements (σ→0); σ=8 pair behaves like perfect substitutes (σ→∞)",
+    "σ=0.15 pair behaves like perfect substitutes; σ=8 pair behaves like perfect complements",
+    "Both pairs behave identically since both values are finite and positive",
+    "σ=0.15 is impossible; elasticities of substitution must always exceed 1",
+    "σ=8 indicates Cobb-Douglas preferences exactly, since Cobb-Douglas has σ close to a large number"
    ],
-   "answer": 1,
-   "explain": "σ ranges from 0 (perfect complements — no substitutability) to ∞ (perfect substitutes). σ=0.15 is close to the complements end, meaning the consumer's indifference curves are sharply bowed (close to right-angled) — the goods are consumed in something close to a fixed ratio."
+   "answer": 0,
+   "explain": "σ ranges from 0 (perfect complements — literally zero substitutability, a right-angled indifference map) to ∞ (perfect substitutes — a straight-line indifference map). σ=0.15 is very close to the complements end (sharply bowed, near-fixed-ratio consumption), while σ=8 is far toward the substitutes end (nearly straight indifference curves, easy to swap one good for the other). Recall Cobb-Douglas sits at exactly σ=1, in the middle — neither of these estimates describes Cobb-Douglas preferences, since both are far from 1."
   },
   {
    "id": "ctm30",
@@ -684,7 +727,8 @@
     "28",
     "32",
     "20",
-    "24"
+    "24",
+    "£36 (from mistakenly adding the two endowment quantities before multiplying by a single price)"
    ],
    "answer": 0,
    "explain": "m = p1·w1 + p2·w2 = 3(8) + 2(4) = 24 + 4 = 28."
@@ -697,7 +741,8 @@
     "Net buyer, since x1* is a positive quantity",
     "Net seller, since x1* < w1 means they sell off part of their endowment",
     "Net buyer, since 6.25 is close to half of 10",
-    "Cannot be determined without knowing p1"
+    "Cannot be determined without knowing p1",
+    "Cannot be determined — net buyer/seller status also requires knowing w2, not just w1"
    ],
    "answer": 1,
    "explain": "x1*=6.25 is LESS than the endowment w1=10, so the consumer holds onto only 6.25 units and sells the remaining 3.75 units of their endowment — this makes them a net seller of good 1."
@@ -710,7 +755,8 @@
     "The consumer's total wealth",
     "The net amount of good 1 being SOLD by the consumer (positive if a net seller, negative if a net buyer)",
     "The Hicksian substitution effect",
-    "The price elasticity of demand for good 1"
+    "The price elasticity of demand for good 1",
+    "The consumer's marginal propensity to consume out of income"
    ],
    "answer": 1,
    "explain": "(w1-x1) is exactly the quantity of good 1 the consumer sells (if positive, w1>x1, net seller) or buys (if negative, w1<x1, net buyer, since then w1-x1<0). It is this net-trade quantity that determines how much a price change moves the value of what they own."
@@ -723,7 +769,8 @@
     "Ambiguous — could rise or fall",
     "Unambiguously negative — demand falls, since both substitution and endowment income effects push the same way",
     "Unambiguously positive — demand rises",
-    "Total effect is always exactly zero for a net buyer"
+    "Total effect is always exactly zero for a net buyer",
+    "Zero — substitution and endowment income effects always exactly cancel for a net buyer"
    ],
    "answer": 1,
    "explain": "For a net buyer, (w1-x1)<0. With a normal good, dx1/dm>0, so the endowment income effect (w1-x1)(dx1/dm) is negative — reinforcing the always-negative substitution effect. Both effects push demand down, so the total effect is unambiguously negative: a price rise definitely reduces a net buyer's demand for a normal good."
@@ -736,7 +783,8 @@
     "40x1+10x2=300; yes, since 40(5)+10(10)=300",
     "40x1+10x2=400; no, the line shifts outward without passing through the endowment",
     "40x1+20x2=400; unchanged since p1 did not change",
-    "40x1+10x2=200; yes, since only p2 matters"
+    "40x1+10x2=200; yes, since only p2 matters",
+    "40x1+20x2=300; yes, since only the total value matters, not which price changed"
    ],
    "answer": 0,
    "explain": "New income is endogenous: m'=p1·w1+p2·w2=40(5)+10(10)=200+100=300 (income FALLS because the value of your good-2 endowment fell). The new budget line 40x1+10x2=300 still passes through (5,10): 40(5)+10(10)=200+100=300 ✓ — confirming the endowment point is always on the line, whatever the prices."
@@ -749,7 +797,8 @@
     "£10,000",
     "£11,000",
     "£9,000",
-    "£10,100"
+    "£10,100",
+    "£12,100 (mistakenly compounding interest twice)"
    ],
    "answer": 1,
    "explain": "If she saves all of m1, it earns interest at rate r: max c2 = (1+r)m1 + m2 = 1.1(10,000) + 0 = £11,000 — exactly the future-value form of the budget constraint evaluated at c1=0."
@@ -762,7 +811,8 @@
     "-r",
     "-(1+r)",
     "-1/(1+r)",
-    "-(1-r)"
+    "-(1-r)",
+    "-1 (mistakenly ignoring the interest rate entirely)"
    ],
    "answer": 1,
    "explain": "Rearranging (1+r)c1+c2=(1+r)m1+m2 for c2 gives c2 = [(1+r)m1+m2] - (1+r)c1, a straight line with slope -(1+r) — giving up £1 of period-1 consumption buys exactly £(1+r) of period-2 consumption."
@@ -775,7 +825,8 @@
     "£100 (consumes exactly her endowment)",
     "£75, making her a lender",
     "£125, making her a borrower",
-    "£55"
+    "£55",
+    "£68.18, making her a borrower"
    ],
    "answer": 1,
    "explain": "Present-value wealth = m1 + m2/(1+r) = 100 + 55/1.1 = 100+50 = £150. Treating this like Cobb-Douglas income with 'price' of c1 equal to 1: c1*=0.5×150/1=£75. Since c1*=75 < m1=100, she saves £25 today — she is a LENDER, and c2*=0.5×150×1.1=£82.5, which checks out as c2*=m2+(1+r)(m1-c1*)=55+1.1(25)=82.5 ✓."
@@ -788,7 +839,8 @@
     "£205 in 21 weeks, since the far future is discounted more heavily",
     "£200 in 20 weeks — the SAME relative preference, since exponential discounting is time-consistent",
     "It cannot be determined without knowing δ exactly",
-    "They must be exactly indifferent between the two"
+    "They must be exactly indifferent between the two",
+    "£200 in 20 weeks, but only if δ happens to equal exactly 1"
    ],
    "answer": 1,
    "explain": "Preferring £200 now means 200 > 205δ. Shifting both dates 20 weeks later means comparing 200δ^20 versus 205δ^21 = 205δ·δ^20 — dividing both sides by the common factor δ^20 recovers exactly 200 > 205δ, the SAME inequality. Exponential discounting is time-consistent: shifting both payoffs equally far into the future never flips the preference."
@@ -801,7 +853,8 @@
     "Risk aversion",
     "Present bias (hyperbolic discounting) — the immediate present is weighted disproportionately more than any future period",
     "Diminishing marginal utility of money",
-    "Standard exponential discounting with a very high δ"
+    "Standard exponential discounting with a very high δ",
+    "Loss aversion"
    ],
    "answer": 1,
    "explain": "This reversal is inconsistent with any single constant exponential discount rate (see the previous question) — it is the classic empirical signature of present bias: people apply an extra discount specifically to 'right now' versus 'any point in the future', even when they treat two future dates (20 vs 21 weeks) nearly interchangeably."
@@ -814,7 +867,8 @@
     "They are unambiguously worse off and might switch to lending",
     "They are unambiguously better off (borrowing is now cheaper) and remain a borrower — they would only switch to lending if r had instead RISEN",
     "Their wellbeing is unaffected by changes in r",
-    "They automatically become a lender whenever r changes at all"
+    "They automatically become a lender whenever r changes at all",
+    "They become exactly indifferent between borrowing and lending, regardless of preferences"
    ],
    "answer": 1,
    "explain": "A fall in r makes the budget line flatter and pivots it around the fixed endowment (m1,m2), expanding the feasible region on the borrowing side. A borrower's original choice remains affordable and more is now available, so by revealed preference they are unambiguously better off and remain a borrower. It is a RISE in r (not a fall) that could push a borrower to switch to becoming a lender instead."
@@ -827,7 +881,8 @@
     "Complete impatience — the consumer only cares about period 0",
     "Standard exponential discounting, with no extra present bias",
     "Infinite patience, where all periods are valued equally regardless of δ",
-    "A consumer who cannot save or borrow at all"
+    "A consumer who cannot save or borrow at all",
+    "Zero patience for any period beyond period 0, however large δ is"
    ],
    "answer": 1,
    "explain": "β is the EXTRA discount applied specifically to all future periods relative to right now. Setting β=1 removes this extra penalty, leaving only the ordinary per-period exponential discount factor δ — i.e. standard, time-consistent exponential discounting."
@@ -840,7 +895,8 @@
     "Always choosing the larger, later payoff regardless of timing",
     "Preferring a smaller-sooner reward when 'sooner' means right now, but preferring the larger-later reward once both options are shifted equally far into the future",
     "Preferring the smaller reward in every scenario, no matter the timing",
-    "Being completely indifferent between all timing options"
+    "Being completely indifferent between all timing options",
+    "Preferring the later, larger reward consistently, whether the earlier option is available now or in the future"
    ],
    "answer": 1,
    "explain": "This is exactly the reversal that no constant exponential discount rate can produce: 'give me the money now' when now is an option, but 'I'll wait the extra week for more' once neither option is immediate — showing an extra, specific bias toward whatever is available RIGHT NOW."
@@ -853,7 +909,8 @@
     "Crisps are always cheaper than carrots",
     "The pleasure of crisps is felt immediately, while the health cost is delayed and therefore underweighted due to present bias (beta<1)",
     "Carrots have no marginal utility at all in the model",
-    "The government has not yet imposed any tax"
+    "The government has not yet imposed any tax",
+    "Present bias only distorts choices about healthy goods, never harmful ones"
    ],
    "answer": 1,
    "explain": "Present bias means costs and benefits arriving in the future are discounted more heavily than the consumer's own long-run (delta-only) preferences would justify. Since the pleasure of crisps arrives now but the health cost arrives later, present bias systematically tilts choices toward over-consuming the harmful good today."
@@ -866,7 +923,8 @@
     "It assumes prices are always distorted by market power",
     "It assumes the consumer's own chosen consumption bundle IS the correct benchmark for their welfare — a tax that changes their choice must, by revealed preference, make them worse off",
     "It assumes all goods are inferior",
-    "It assumes government intervention is illegal"
+    "It assumes government intervention is illegal",
+    "It assumes the government always sets tax rates above the revenue-maximising level"
    ],
    "answer": 1,
    "explain": "Standard welfare analysis treats revealed preference as the gold standard: whatever a rational, unbiased consumer chooses is assumed to be what maximises their own welfare, so any policy-induced change away from their freely chosen bundle can only reduce measured welfare (aside from any offsetting externality correction). Present bias breaks this assumption, which is exactly why sin taxes can be a genuine exception."
