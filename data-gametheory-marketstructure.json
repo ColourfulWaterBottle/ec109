@@ -1,74 +1,587 @@
 {
-  "block": "gametheory-marketstructure",
-  "blockLabel": "Game Theory & Market Structures",
-  "topics": ["Nash Equilibrium", "Mixed Strategies", "Extensive Form & Backward Induction", "Subgame Perfect Equilibrium", "Repeated Games & Folk Theorem", "Perfect Competition & Monopoly", "Monopolistic Competition", "Oligopoly (Cournot & Bertrand)"],
-  "flashcards": [
-    {"id":"gt1","topic":"Nash Equilibrium","front":"State the formal definition of a Nash equilibrium in terms of best responses.","back":"A strategy profile where every player's strategy is a best response to the strategies of all other players — no player can gain by unilaterally deviating, given what everyone else is doing."},
-    {"id":"gt2","topic":"Nash Equilibrium","front":"Distinguish a dominant strategy from a Nash equilibrium strategy.","back":"A dominant strategy is a best response no matter what any other player does — it doesn't depend on their choice at all. A Nash equilibrium strategy only needs to be a best response to the SPECIFIC strategies the other players are actually playing in that equilibrium. Every dominant-strategy equilibrium is a Nash equilibrium, but not vice versa."},
-    {"id":"gt3","topic":"Nash Equilibrium","front":"What is meant by a 'rationalizable' strategy, and how does the set of rationalizable outcomes relate to the set of Nash equilibria?","back":"A rationalizable strategy is one that survives the iterative removal of strategies that are never a best response to ANY belief about what opponents might do. Rationalizable outcomes are a superset of Nash equilibria — every Nash equilibrium strategy is rationalizable, but rationalizability is a weaker requirement (it doesn't require correct beliefs about what opponents actually play)."},
-    {"id":"gt4","topic":"Nash Equilibrium","front":"In a Stag Hunt coordination game, why can BOTH the efficient (Stag, Stag) and inefficient (Hare, Hare) outcomes be Nash equilibria simultaneously?","back":"Nash equilibrium only requires no PROFITABLE unilateral deviation — it says nothing about which equilibrium is best for the players jointly. At (Hare,Hare), if you alone switch to Stag while your partner stays at Hare, you do worse (Stag needs both to cooperate) — so neither wants to deviate alone, even though both would be better off if they could coordinate on (Stag,Stag) together."},
-    {"id":"gt5","topic":"Nash Equilibrium","front":"What is 'payoff dominance' versus 'risk dominance' when a game has multiple pure-strategy Nash equilibria?","back":"Payoff dominance: one equilibrium gives BOTH players a strictly higher payoff than the other — it Pareto-dominates. Risk dominance: one equilibrium is 'safer' to aim for given uncertainty about the other player's choice (e.g. it has a higher expected payoff if you're unsure they'll coordinate). These can conflict — the payoff-dominant equilibrium isn't always the risk-dominant one, which is exactly the tension in a Stag Hunt."},
-    {"id":"gt6","topic":"Mixed Strategies","front":"Why would a player ever want to randomize (play a mixed strategy) rather than picking one action for certain?","back":"When no pure-strategy Nash equilibrium exists (e.g. Matching Pennies), or more generally whenever being predictable would let the opponent exploit you — mixing keeps the opponent indifferent between their own options, so they can't identify and punish a fixed pattern."},
-    {"id":"gt7","topic":"Mixed Strategies","front":"State the indifference condition used to solve for a mixed-strategy Nash equilibrium.","back":"In a mixed-strategy NE, each player's OWN mixing probability is chosen to make the OTHER player exactly indifferent between their pure strategies (so the other player is willing to mix too). You solve by setting the other player's expected payoff from each of their pure actions equal to each other, and solving for your own mixing probability."},
-    {"id":"gt8","topic":"Mixed Strategies","front":"In a mixed-strategy equilibrium, what is each player's equilibrium expected payoff equal to, and why does this make sense?","back":"It equals the payoff from EITHER of their pure strategies played against the opponent's mix (since, by the indifference condition, both give the same expected payoff) — this is exactly why the player is willing to randomize: every pure strategy in their support is equally good against what the opponent is doing."},
-    {"id":"gt9","topic":"Mixed Strategies","front":"Why does a change in a player's OWN payoffs affect the OTHER player's equilibrium mixing probability, not their own?","back":"Because each player's mixing probability is set to satisfy the OTHER player's indifference condition — my mix depends on making YOU indifferent, which depends on YOUR payoffs, not mine. This is a common source of confusion/exam trick: intuitively you'd expect your own payoffs to determine your own strategy, but in mixed NE it's the reverse."},
-    {"id":"gt10","topic":"Extensive Form & Backward Induction","front":"What three things fully specify a dynamic game, and what does a 'strategy' mean in this setting (as opposed to a static game)?","back":"A dynamic game needs: the game tree (decision nodes, branches/actions, terminal payoffs), information sets (what each player knows when they move), and the order of play. A strategy here is a COMPLETE CONTINGENT PLAN — a specification of what action to take at EVERY decision node/information set a player might reach, not just a single action."},
-    {"id":"gt11","topic":"Extensive Form & Backward Induction","front":"Explain 'backward induction' as a solution technique, and state its two key limitations.","back":"Backward induction solves the game by starting at the final decision nodes (where the best action is obvious with no continuation to consider), then working backward, at each earlier node assuming later players will play their already-solved optimal continuation. Limitations: (1) it cannot be applied to games of imperfect information (where a player doesn't know exactly which node they're at), and (2) it cannot be applied to games without a finite, known end point (e.g. infinitely repeated games)."},
-    {"id":"gt12","topic":"Extensive Form & Backward Induction","front":"Why can a Nash equilibrium found by ignoring the order of moves (treating a sequential game as simultaneous, via the normal form) fail to be 'sequentially rational'?","back":"A Nash equilibrium only requires the STRATEGY PROFILE to be mutually best-responding overall — it doesn't check whether each part of the strategy is optimal at every point it might actually be reached, INCLUDING off the path the equilibrium predicts. A strategy can rely on a threatened action that would never actually be rational to carry out if that node were reached — this is a 'non-credible threat', and backward induction/sequential rationality is precisely what rules it out."},
-    {"id":"gt13","topic":"Extensive Form & Backward Induction","front":"Define sequential rationality precisely.","back":"A strategy is sequentially rational for player i if it specifies a best response at EVERY decision node the player could be called on to move at — including nodes that the equilibrium path itself never actually reaches."},
-    {"id":"gt14","topic":"Subgame Perfect Equilibrium","front":"Define a 'subgame' precisely, and define subgame perfect equilibrium (SPE) in terms of it.","back":"A subgame is any part of the game tree that begins at a single decision node (contained in a single information set by itself — i.e. that node is common knowledge to have been reached) and includes ALL its successor nodes. A strategy profile is a subgame perfect equilibrium if and only if it induces a Nash equilibrium in EVERY subgame of the original game, not just in the game as a whole."},
-    {"id":"gt15","topic":"Subgame Perfect Equilibrium","front":"State the 'one-shot deviation principle' and explain when it's used instead of backward induction to find an SPE.","back":"A strategy profile is an SPE if and only if no player can gain by deviating from it at a SINGLE information set/node, for just one action, while following the prescribed strategy everywhere else. It's used instead of backward induction when backward induction can't be applied directly (imperfect information, or no finite end point) — it's a 'guess and check' approach rather than a constructive one: propose a candidate strategy profile, then verify no one-shot deviation is profitable anywhere."},
-    {"id":"gt16","topic":"Subgame Perfect Equilibrium","front":"Why is it true that 'every backward-induction outcome is an SPE, but SPE is a strictly broader solution concept'?","back":"When backward induction CAN be applied (finite game, perfect information), the outcome it produces is automatically an SPE, because at every node it selects the Nash equilibrium of that node's subgame by construction. But SPE as a concept also applies to games backward induction can't solve directly (imperfect information games, infinitely repeated games) — there it's found via the one-shot deviation principle instead, extending the idea beyond where backward induction alone reaches."},
-    {"id":"gt17","topic":"Subgame Perfect Equilibrium","front":"In the Ultimatum Game (Proposer offers a split x to Responder, who can Accept or Reject leaving both with 0), what is the unique SPE outcome, and why does experimental evidence consistently contradict it?","back":"SPE: the Responder should accept ANY positive offer (something is weakly better than the 0 from rejecting), so the Proposer, anticipating this, offers the minimum possible share, keeping almost everything. Experimentally, low offers (e.g. below ~20-30%) are very frequently REJECTED across many cultures — this reveals that real people care about fairness norms and are willing to sacrifice their own payoff to punish an unfair proposer, a preference the standard payoff-maximising model doesn't capture."},
-    {"id":"gt18","topic":"Subgame Perfect Equilibrium","front":"In the Centipede Game, what does SPE predict, and how does the experimental evidence (chess grandmasters vs. average players) relate to backward induction reasoning?","back":"SPE predicts the FIRST player stops immediately at the very first opportunity (backward induction unravels cooperation all the way back, exactly as in the finitely repeated prisoner's dilemma). Experimentally, most people continue for several rounds before stopping — but more sophisticated players (chess grandmasters) stop much earlier, closer to the SPE prediction, suggesting that deeper backward-induction reasoning ability predicts closer adherence to the theoretical prediction."},
-    {"id":"gt19","topic":"Repeated Games & Folk Theorem","front":"Why does backward induction guarantee that 'always defect' is the ONLY SPE of a FINITELY repeated prisoner's dilemma?","back":"In the final period, there's no future to threaten punishment over, so defecting is a dominant strategy that period — this is locked in regardless of history. Given that the final period's play is fixed at defect no matter what, there's no way to credibly punish defection in the second-to-last period either, so the same logic applies there — and this unravels all the way back to period 1, making 'always defect' the unique SPE."},
-    {"id":"gt20","topic":"Repeated Games & Folk Theorem","front":"State the Grim Trigger strategy precisely, and derive the condition on the discount factor δ under which it sustains cooperation as a Nash equilibrium in an infinitely repeated prisoner's dilemma with per-period cooperate payoff π_C, one-shot defection payoff π_D, and mutual-defection payoff π_N.","back":"Grim Trigger: play Cooperate in period 0, and continue to play Cooperate in every later period as long as NEITHER player has ever defected; if either player has ever defected, play Defect forever after. Cooperating forever gives π_C/(1-δ) (geometric series). Deviating once gives π_D + δ·π_N/(1-δ) (one high payoff, then permanent punishment). Cooperation is sustained if π_C/(1-δ) ≥ π_D + δ·π_N/(1-δ), which rearranges to δ ≥ (π_D-π_C)/(π_D-π_N) — patience (or a high enough probability of the game continuing) must be high enough that the future losses from punishment outweigh the one-off gain from cheating."},
-    {"id":"gt21","topic":"Repeated Games & Folk Theorem","front":"Explain the 'Folk Theorem' intuition: what range of payoffs can be sustained as SPE outcomes in an infinitely repeated game with a sufficiently high discount factor?","back":"Essentially any payoff combination that gives each player at least their 'minmax' payoff (the worst outcome the other players can hold them to, i.e. what's achievable if they try to punish you as hard as possible) can be sustained as an SPE outcome for a sufficiently patient (high δ) population of players — not just the one-shot Nash equilibrium payoff, but a much wider range including cooperative, jointly-better outcomes, supported by the credible threat of reverting to punishment."},
-    {"id":"gt22","topic":"Repeated Games & Folk Theorem","front":"What three properties did Axelrod identify as common to the best-performing strategies (like Tit-for-Tat) in his repeated prisoner's dilemma tournaments?","back":"'Niceness' (never the first to defect), 'Retaliation' (responds to defection swiftly, so it can't be exploited), and 'Forgiveness' (returns to cooperation after the opponent stops defecting, rather than punishing forever like Grim Trigger) — this combination outperformed both purely cooperative and purely exploitative strategies."},
-    {"id":"gt23","topic":"Perfect Competition & Monopoly","front":"Derive the monopolist's profit-maximising condition MR=MC from π(Q)=Qp(Q)-c(Q), and state the resulting optimal price-cost margin formula in terms of the elasticity of demand.","back":"dπ/dQ = p(Q) + Q(dp/dQ) - dc/dQ = 0, i.e. MR = MC where MR = p + Q(dp/dQ). Rearranging gives (p-MC)/p = 1/|ε| — the profit-maximising markup over marginal cost, as a fraction of price, equals the INVERSE of the absolute price elasticity of demand at that point. Less elastic demand → higher optimal markup."},
-    {"id":"gt24","topic":"Perfect Competition & Monopoly","front":"Why does a monopolist's profit-maximising output create deadweight loss relative to the socially efficient quantity?","back":"The social optimum requires marginal social benefit (=price, i.e. the demand curve) to equal marginal social cost (=MC). But the monopolist instead sets MARGINAL REVENUE (which is below price for a downward-sloping demand curve) equal to MC, producing LESS than the efficient quantity. The units between the monopoly quantity and the efficient quantity are ones where willingness to pay exceeds marginal cost but are never produced — lost surplus with no offsetting revenue is the deadweight loss."},
-    {"id":"gt25","topic":"Perfect Competition & Monopoly","front":"List the four defining assumptions of the perfect competition model.","back":"1) Many buyers and many sellers, each individually small relative to the market. 2) Undifferentiated (perfect substitute) products. 3) Perfect information about prices. 4) Equal access to resources and production technologies (no firm has a unique cost advantage)."},
-    {"id":"gt26","topic":"Perfect Competition & Monopoly","front":"Why is a perfectly competitive firm's individual demand curve horizontal (perfectly elastic), even though the market demand curve slopes down?","back":"With many identical competitors selling a perfect substitute, any firm pricing even slightly above the market price loses ALL its customers to rivals (buyers switch instantly, since products are identical), while it can sell as much as it wants exactly at the market price — the individual firm simply cannot influence price, it can only choose how much to sell at the price the market has set."},
-    {"id":"gt27","topic":"Perfect Competition & Monopoly","front":"Why do firms in the perfectly competitive long-run equilibrium earn exactly zero economic profit?","back":"If firms are earning positive profit, free entry draws in new competitors, increasing market supply and driving price down; if firms are making losses, firms exit, reducing supply and pushing price up. This process continues until price = minimum average cost exactly, i.e. firms earn zero economic profit (normal profit only) — the point where there's no further incentive for entry or exit."},
-    {"id":"gt28","topic":"Monopolistic Competition","front":"In the Dixit-Stiglitz CES model, what does the elasticity of substitution σ measure, and what value does it need to exceed for the standard model to apply?","back":"σ measures how substitutable the different product varieties are for each other in consumers' utility (how a % change in relative prices pi/pj translates into a % change in relative quantities xi/xj). The Dixit-Stiglitz model requires σ>1 (products must be at least somewhat substitutable, not complements) — as σ→∞ varieties become perfect substitutes, as σ→1 preferences become Cobb-Douglas (equal expenditure share on every variety)."},
-    {"id":"gt29","topic":"Monopolistic Competition","front":"In the Dixit-Stiglitz model, derive the result that each firm prices at a constant proportional markup pi = [σ/(σ-1)]·c over marginal cost c, and explain what happens to this markup as σ→∞.","back":"Each firm treats the aggregate price index P as fixed (it's 'small' relative to the whole market) and maximises πi=(pi-c)(N·m/P)·pi^(-σ)-F. The FOC simplifies to 1-σ(1-c/pi)=0, giving pi=[σ/(σ-1)]·c. As σ→∞ (products become near-perfect substitutes), the markup σ/(σ-1) → 1, so pi → c — firms are pushed toward marginal-cost pricing exactly as competition intensifies, consistent with perfect competition as the limiting case."},
-    {"id":"gt30","topic":"Monopolistic Competition","front":"In the free-entry equilibrium of the Dixit-Stiglitz model, what does the equilibrium number of varieties v = (Nm/F)·(1/σ) tell you about how variety responds to market size, fixed costs, and substitutability?","back":"More varieties are sustained in equilibrium when: the market is more valuable (Nm high — more consumers with more income to spend), fixed costs F are lower (cheaper to launch each new variety, so more can be supported before zero-profit entry stops), and products are WEAKER substitutes (σ low — each firm faces less direct competition from other varieties, so more firms/varieties can coexist profitably)."},
-    {"id":"gt31","topic":"Oligopoly (Cournot & Bertrand)","front":"State the four key assumptions distinguishing the Cournot model from the Bertrand model.","back":"Cournot: firms choose QUANTITIES simultaneously; the market-clearing PRICE is then determined by total output via the inverse demand function. Bertrand: firms choose PRICES simultaneously (with homogeneous products); whichever firm sets the lower price captures the ENTIRE market, with the loser selling zero. Both otherwise share: no ability to commit/move first, and (in the basic versions) homogeneous products and constant marginal cost."},
-    {"id":"gt32","topic":"Oligopoly (Cournot & Bertrand)","front":"Derive the Cournot best-response function BRi(qj)=(1/2)[(A-c)/b - qj] from πi=(A-b(qi+qj)-c)qi, and explain why it slopes downward (quantities are 'strategic substitutes').","back":"∂πi/∂qi = A-2bqi-bqj-c = 0, solving for qi gives BRi(qj)=(1/2)[(A-c)/b - qj]. It slopes downward because more output from the rival lowers the market price, which reduces the marginal value of MY output too — so my profit-maximising response to more competition from them is to produce LESS, not match them. Since each firm's best response moves opposite to the other's action, quantities are 'strategic substitutes' (in contrast to Bertrand prices with differentiated goods, where prices are 'strategic complements' — best responses slope upward)."},
-    {"id":"gt33","topic":"Oligopoly (Cournot & Bertrand)","front":"Solve for the symmetric Cournot-Nash equilibrium quantities and per-firm profit, given linear demand P=A-bQ and constant marginal cost c (two identical firms).","back":"Solving the two best-response functions simultaneously (qi=qj by symmetry): qi=qj=(A-c)/(3b). Total quantity Q=2(A-c)/(3b), price p=A-b·Q=(A+2c)/3. Profit per firm: πi=(p-c)qi=(A-c)²/(9b)."},
-    {"id":"gt34","topic":"Oligopoly (Cournot & Bertrand)","front":"Why is the Cournot equilibrium quantity socially inefficient (Q=2(A-c)/(3b)) even though it's HIGHER than the monopoly quantity (Q=(A-c)/(2b))?","back":"Social efficiency requires P=MC, i.e. Q=(A-c)/b. The Cournot duopoly quantity, 2(A-c)/(3b), sits strictly between the monopoly quantity and the efficient quantity — more competition (more firms) pushes output up toward the efficient level, but with only two firms there's still market power being exercised (each firm ignores the fact that its extra output lowers the price the OTHER firm receives too), so price still exceeds marginal cost and deadweight loss remains, just smaller than under monopoly."},
-    {"id":"gt35","topic":"Oligopoly (Cournot & Bertrand)","front":"State the 'Bertrand paradox': what is the Nash equilibrium of the standard (homogeneous product) Bertrand model, and why is it surprising given the Cournot comparison?","back":"With just TWO firms competing on price with homogeneous products and constant marginal cost c, the unique Nash equilibrium is pi=pj=c — both firms price exactly at marginal cost and earn ZERO economic profit. This is surprising/paradoxical because it means even a duopoly (as few as two firms) achieves the fully competitive, socially efficient outcome — in stark contrast to Cournot, where even many firms competing on quantity still leave some market power and positive profit (until N→∞)."},
-    {"id":"gt36","topic":"Oligopoly (Cournot & Bertrand)","front":"Explain, intuitively, why Bertrand price competition is so much more aggressive than Cournot quantity competition, driving profit all the way to zero with just two firms.","back":"In Bertrand, undercutting your rival's price by an arbitrarily small amount captures the ENTIRE market — the incentive to cut price is enormous since the gain (full market) massively outweighs the tiny price cut, all the way down until price hits marginal cost (below which no further cut is profitable). In Cournot, increasing your own quantity only marginally increases your market share and simultaneously depresses the price on ALL your units sold — the benefit of expanding output is much more muted, so competition doesn't get pushed nearly as far."},
-    {"id":"gt37","topic":"Oligopoly (Cournot & Bertrand)","front":"How does allowing IMPERFECT substitutes (rather than identical products) resolve the Bertrand paradox, and why does this make prices 'strategic complements' (best-response functions sloping upward)?","back":"With imperfect substitutes, qi(pi,pj)=A-bpi+(b/2)pj — a firm no longer loses its ENTIRE market by pricing slightly above its rival, since some consumers still prefer its variety even at a premium. This softens competition, and equilibrium prices settle above marginal cost, avoiding the paradox. Prices become strategic complements (BRi slopes upward in pj) because if your rival raises their price, your own product looks relatively more attractive at any given price of yours, which raises YOUR profit-maximising price too — the two prices move together rather than in opposite directions."}
-  ],
-  "mcq": [
-    {"id":"gtm1","topic":"Nash Equilibrium","q":"Two firms play a game with payoff matrix: (Advertise,Advertise)=(2,2), (Advertise,Don't)=(5,1), (Don't,Advertise)=(1,5), (Don't,Don't)=(4,4). Is 'Advertise' a dominant strategy for either firm, and what is the unique Nash equilibrium?","options":["Advertise is dominant for both; NE is (Advertise, Advertise)","Don't is dominant for both; NE is (Don't, Don't)","Neither has a dominant strategy; multiple NE exist","Advertise is dominant for both; NE is (Don't, Don't)"],"answer":0,"explain":"For either firm, Advertise gives a higher payoff regardless of the opponent's choice (2>1 if opponent advertises, 5>4 if opponent doesn't) — a classic prisoner's dilemma. Advertise is dominant for both, giving the unique NE (Advertise,Advertise) with payoff (2,2), even though (Don't,Don't) with (4,4) would be better for both jointly."},
-    {"id":"gtm2","topic":"Nash Equilibrium","q":"In a pure coordination game where (A,A) gives both players 10 and (B,B) gives both players 10, with (A,B) and (B,A) both giving 0, how many pure-strategy Nash equilibria exist, and are they payoff-dominant, risk-dominant, or both?","options":["One NE; it is both payoff- and risk-dominant","Two NE, (A,A) and (B,B); both are equally payoff-dominant, and neither is more risk-dominant than the other (symmetric)","Three NE including a mixed strategy","No pure-strategy NE exists"],"answer":1,"explain":"Both (A,A) and (B,B) are Nash equilibria (no unilateral deviation improves payoff), and since they give identical payoffs (10,10) to both, neither payoff-dominates the other, and by symmetry neither is more risk-dominant — this is a pure coordination problem where players just need to agree on a convention."},
-    {"id":"gtm3","topic":"Mixed Strategies","q":"In Matching Pennies (Row wants to match, Column wants to mismatch; standard payoffs), what is the mixed-strategy Nash equilibrium?","options":["Both players play Heads with probability 1","Both players play Heads with probability 0.5","Row plays Heads with probability 0.5, Column plays Heads with probability 0.25","No mixed-strategy NE exists in Matching Pennies"],"answer":1,"explain":"Matching Pennies has no pure-strategy NE (whatever one player does, the other wants to deviate). By symmetry and the indifference condition, both players randomize 50-50 between Heads and Tails — this is the unique NE."},
-    {"id":"gtm4","topic":"Mixed Strategies","q":"Row has strategies Up/Down, Column has strategies Left/Right. Payoffs to Row: (Up,Left)=3, (Up,Right)=0, (Down,Left)=0, (Down,Right)=3. In a mixed NE, Column mixes to keep Row indifferent between Up and Down. If Column plays Left with probability q, what value of q makes Row indifferent?","options":["q=0.4","q=0.6","q=0.5","q=0.75"],"answer":2,"explain":"Row's expected payoff from Up = 3q + 0(1-q) = 3q. Row's expected payoff from Down = 0·q + 3(1-q) = 3-3q. Setting equal: 3q = 3-3q → 6q=3 → q=0.5. This symmetric payoff structure (matching Row's action to Column's) is exactly the Matching Pennies pattern, which is why the indifference point lands exactly at 50-50."},
-    {"id":"gtm5","topic":"Extensive Form & Backward Induction","q":"In a two-stage sequential game, Player 1 chooses A or B. If A, the game ends with payoffs (3,1). If B, Player 2 then chooses C or D, giving (1,4) for C or (2,0) for D. Using backward induction, what is the SPE outcome?","options":["Player 1 plays A; game ends at (3,1)","Player 1 plays B, Player 2 plays C; outcome (1,4)","Player 1 plays B, Player 2 plays D; outcome (2,0)","Player 1 is indifferent between A and B"],"answer":0,"explain":"Backward induction: at Player 2's node (reached only if B is played), Player 2 compares C (payoff 4) vs D (payoff 0) for themselves and picks C. Anticipating this, Player 1 compares A (payoff 3 to Player 1) against B-then-C (payoff 1 to Player 1) and prefers A. SPE outcome: Player 1 plays A, game ends immediately at (3,1) — Player 2's node is never actually reached on the equilibrium path."},
-    {"id":"gtm6","topic":"Extensive Form & Backward Induction","q":"A game has one Nash equilibrium supported by a threat that would never actually be carried out if the relevant node were reached. What term describes this threat, and what solution concept is designed to rule it out?","options":["A 'credible commitment'; ruled out by dominant strategy equilibrium","A 'non-credible threat'; ruled out by subgame perfect equilibrium (via sequential rationality)","A 'trigger strategy'; ruled out by the Folk Theorem","A 'pooling equilibrium'; ruled out by Bayesian Nash equilibrium"],"answer":1,"explain":"A threat that wouldn't actually be optimal to carry out if tested is 'non-credible' — Nash equilibrium alone doesn't rule these out since it only checks the strategy overall, not at every node. Subgame perfect equilibrium (via sequential rationality / backward induction / the one-shot deviation principle) is specifically designed to eliminate equilibria resting on such threats."},
-    {"id":"gtm7","topic":"Subgame Perfect Equilibrium","q":"A game tree has 3 decision nodes total (including the root). How many subgames does the FULL game tree contain, at minimum (assuming perfect information throughout)?","options":["1 (only the whole game counts)","2","3 (one starting at each decision node, including the whole game itself)","Cannot be determined without more information"],"answer":2,"explain":"Under perfect information, every decision node (including the root) starts its own valid subgame (a single node plus all its successors) — with 3 decision nodes, there are (at least) 3 subgames: the whole game (rooted at the first node) plus one for each of the other two decision nodes."},
-    {"id":"gtm8","topic":"Subgame Perfect Equilibrium","q":"In the Ultimatum Game with a pot of £10, Player 1 offers a 90-10 split in their own favour. According to the SPE prediction, what should Player 2 do?","options":["Reject, since the split is unfair","Accept, since £1 is better than £0 and rejecting only leaves both with nothing","Player 2 should counter-offer","It depends on Player 2's risk aversion"],"answer":1,"explain":"SPE assumes payoff-maximising, sequentially rational play: Player 2 gets £1 by accepting versus £0 by rejecting, so accepting is the (weakly) dominant choice at that node — even though it's an unequal split. (Real behaviour often departs from this due to fairness preferences, but the pure SPE prediction is to accept any positive offer.)"},
-    {"id":"gtm9","topic":"Repeated Games & Folk Theorem","q":"A stage game prisoner's dilemma has payoffs: mutual cooperation π_C=4, unilateral defection π_D=6, mutual defection π_N=1. Using the Grim Trigger sustainability condition δ≥(π_D-π_C)/(π_D-π_N), what is the minimum discount factor needed to sustain cooperation?","options":["δ≥0.4","δ≥0.5","δ≥0.6","δ≥0.8"],"answer":0,"explain":"δ≥(π_D-π_C)/(π_D-π_N) = (6-4)/(6-1) = 2/5 = 0.4. So the minimum discount factor needed is δ≥0.4."},
-    {"id":"gtm10","topic":"Repeated Games & Folk Theorem","q":"A finitely repeated prisoner's dilemma is played for a KNOWN 20 rounds. What does backward induction predict for round 1 behaviour, and why?","options":["Cooperation, since 20 rounds gives many chances to build trust","Defection, since the unravelling argument from the final round propagates all the way back to round 1","Players randomize 50-50 between cooperate and defect","It depends on the discount factor δ"],"answer":1,"explain":"With a KNOWN, FINITE number of rounds, backward induction starts at round 20 (defect, since no future punishment is possible), which makes round 19's 'threat' non-credible too, and so on all the way back — the unique SPE is to defect in EVERY round, including round 1, regardless of how many rounds there are, as long as the number is finite and known."},
-    {"id":"gtm11","topic":"Perfect Competition & Monopoly","q":"A monopolist faces demand Q=200-2P and has constant marginal cost MC=20. Using MR=MC, find the profit-maximising price.","options":["P=60","P=70","P=55","P=80"],"answer":0,"explain":"Inverse demand: P=100-0.5Q. TR=PQ=100Q-0.5Q². MR=100-Q. Set MR=MC: 100-Q=20 → Q=80. Then P=100-0.5(80)=100-40=60."},
-    {"id":"gtm12","topic":"Perfect Competition & Monopoly","q":"A monopolist has price elasticity of demand ε=-2.5 at its profit-maximising point. What is its optimal price-cost margin (p-MC)/p?","options":["2.5","0.4","0.25","-2.5"],"answer":1,"explain":"(p-MC)/p = 1/|ε| = 1/2.5 = 0.4. The markup as a fraction of price is 40%."},
-    {"id":"gtm13","topic":"Perfect Competition & Monopoly","q":"Two goods are both monopolised: Good A has elastic demand, Good B has inelastic demand, both facing the same constant MC. Which good has the LARGER deadweight loss triangle relative to the efficient (competitive) outcome, holding market size comparable?","options":["Good A (elastic demand) has the larger DWL","Good B (inelastic demand) has the larger DWL","DWL is identical regardless of elasticity","Cannot be determined without knowing MC"],"answer":0,"explain":"With more elastic demand, the monopolist's quantity restriction relative to the competitive quantity is proportionally LARGER (consumers respond more strongly to the price increase, pulling the monopoly quantity further below the efficient one) — this produces a bigger deadweight loss triangle for elastic-demand goods, even though the monopolist charges a smaller MARKUP on them (since markup is 1/|ε|, lower for elastic demand)."},
-    {"id":"gtm14","topic":"Perfect Competition & Monopoly","q":"In perfectly competitive long-run equilibrium, which of the following is true at the equilibrium price p*?","options":["p* = minimum of average variable cost (AVC) only","p* = minimum of average cost (AC), and firms earn zero economic profit","p* > minimum AC, allowing firms to earn positive economic profit indefinitely","p* is set by the single largest firm in the industry"],"answer":1,"explain":"Free entry/exit drives price to exactly the minimum of the average cost curve in the long run — at any higher price, entry would occur (positive profit attracts new firms), and at any lower price, exit would occur (losses drive firms out). Zero economic profit (but positive accounting/normal profit) is the defining feature of long-run competitive equilibrium."},
-    {"id":"gtm15","topic":"Monopolistic Competition","q":"In the Dixit-Stiglitz model, if the elasticity of substitution σ=4, what proportional markup over marginal cost does each firm charge?","options":["4/3 ≈ 1.33 (33% markup)","3/4 = 0.75 (firms price below cost)","4 (400% markup)","1/4 = 0.25 (25% markup)"],"answer":0,"explain":"pi = [σ/(σ-1)]·c = [4/3]·c ≈ 1.33c — a markup of about 33% over marginal cost."},
-    {"id":"gtm16","topic":"Monopolistic Competition","q":"Using v=(Nm/F)·(1/σ), if the number of consumers N doubles and their income m stays the same, what happens to the equilibrium number of product varieties v (holding F and σ fixed)?","options":["v is unchanged","v doubles","v halves","v increases but less than doubles, due to diminishing returns"],"answer":1,"explain":"v is directly proportional to N (given F, σ, m fixed): v=(Nm/F)(1/σ). Doubling N exactly doubles v — a bigger market (more total spending power, Nm) supports proportionally more varieties before the zero-profit free-entry condition binds."},
-    {"id":"gtm17","topic":"Monopolistic Competition","q":"As the elasticity of substitution σ→∞ in the Dixit-Stiglitz model (products become near-perfect substitutes), what happens to firm markups AND to the equilibrium number of varieties v?","options":["Markups fall toward zero (price→marginal cost); v falls toward zero too","Markups fall toward zero (price→marginal cost); v also shrinks, since v is proportional to 1/σ","Markups rise; v rises","Markups fall but v is unaffected since it doesn't depend on σ"],"answer":1,"explain":"As σ→∞: the markup σ/(σ-1)→1, so price→marginal cost (like perfect competition). Separately, v=(Nm/F)(1/σ)→0 as σ→∞ — with near-perfect substitutes, products compete so fiercely that far fewer distinct varieties can profitably coexist; the market consolidates toward something closer to a homogeneous-good competitive market rather than many differentiated products."},
-    {"id":"gtm18","topic":"Oligopoly (Cournot & Bertrand)","q":"Two Cournot duopolists face demand P=120-2Q and have MC=20 (identical). Find each firm's equilibrium quantity.","options":["qi=qj=16.67","qi=qj=33.3","qi=qj=25","qi=qj=50"],"answer":0,"explain":"Using qi=(A-c)/(3b) with A=120, c=20, b=2: qi=(120-20)/(3×2)=100/6≈16.67."},
-    {"id":"gtm19","topic":"Oligopoly (Cournot & Bertrand)","q":"Continuing the same market (P=120-2Q, MC=20), what is the equilibrium market price and each firm's profit?","options":["P=53.3, profit≈555.6 each","P=60, profit≈300 each","P=46.7, profit≈250 each","P=70, profit≈400 each"],"answer":0,"explain":"Total Q=qi+qj=2×16.67=33.33. Price: P=120-2(33.33)=120-66.67=53.33. Profit per firm using πi=(A-c)²/(9b)=(120-20)²/(9×2)=10000/18≈555.6 — matches directly computing (P-c)×qi=(53.33-20)(16.67)≈555.6 too."},
-    {"id":"gtm20","topic":"Oligopoly (Cournot & Bertrand)","q":"Two Bertrand duopolists sell a homogeneous product with identical constant marginal cost c=15. What is the unique Nash equilibrium price, and each firm's profit?","options":["p=15 for both, zero profit for both","p=15 for one, higher for the other, positive profit for the low-price firm only","Both price above c, splitting positive industry profit equally","No pure-strategy NE exists in this setting"],"answer":0,"explain":"The Bertrand paradox: with homogeneous products and constant MC, the unique NE is both firms pricing exactly at marginal cost, p=c=15, earning zero economic profit — any price above c invites undercutting by the rival to capture the whole market, and any price below c means selling at a loss, so p=c=MC is the only stable outcome."},
-    {"id":"gtm21","topic":"Oligopoly (Cournot & Bertrand)","q":"In the differentiated-products Bertrand model with qi=A-bpi+(b/2)pj, why is the equilibrium price ABOVE marginal cost, unlike the standard Bertrand paradox?","options":["Because firms can now collude implicitly without any threat of undercutting","Because a firm no longer loses its ENTIRE market by pricing above its rival — some consumers still buy from it due to product differentiation, softening price competition","Because marginal cost is assumed to be zero in this version","Because demand is now perfectly inelastic"],"answer":1,"explain":"With imperfect substitutes, undercutting no longer captures the whole market instantly — a firm retains some demand even at a price premium, since consumers have individual preferences for each variety. This softens the intensity of price competition compared to the homogeneous-product case, allowing equilibrium prices to settle above marginal cost."},
-    {"id":"gtm22","topic":"Oligopoly (Cournot & Bertrand)","q":"In the Cournot model with free entry (N firms, symmetric), profit per firm is πi=(A-c)²/[b(N+1)²]. As N→∞, what happens to price and profit, and how does this relate to the perfectly competitive benchmark?","options":["Price → A (choke price); profit → ∞","Price → c (marginal cost); profit → 0, converging to the perfectly competitive outcome","Price stays fixed at the monopoly level regardless of N","Profit rises without bound as more firms compete"],"answer":1,"explain":"As N→∞, p=A-N(A-c)/(N+1) → c, and πi=(A-c)²/[b(N+1)²] → 0 — with enough firms freely entering, Cournot competition converges exactly to the perfectly competitive, zero-economic-profit outcome, confirming that entry barriers (limiting N) are the true underlying source of oligopoly profit, not the quantity-setting mechanism itself."}
-  ],
-  "openEnded": [
-    {"id":"gto1","topic":"Nash Equilibrium","q":"Two competing coffee shops must simultaneously choose a price: High or Low. Payoffs (Shop A, Shop B): (High,High)=(50,50), (High,Low)=(10,60), (Low,High)=(60,10), (Low,Low)=(30,30). (a) [4 marks] Find all pure-strategy Nash equilibria, showing your reasoning. (b) [3 marks] Explain why this is structurally a prisoner's dilemma. (c) [3 marks] Suggest, with reference to the Repeated Games material, how the shops might sustain the jointly better (High,High) outcome if they interact repeatedly.","marks":10,"model":"(a) Check each cell for unilateral deviations. At (High,High)=(50,50): if A deviates to Low, A gets 60>50 — profitable deviation, so (High,High) is NOT a NE. At (Low,Low)=(30,30): if A deviates to High, A gets 10<30 — not profitable; by symmetry B also won't deviate. So (Low,Low) IS a Nash equilibrium. Checking (High,Low) and (Low,High): at (High,Low)=(10,60), A would deviate to Low (getting 30>10) — not a NE. By symmetry (Low,High) is also not a NE. The unique pure-strategy NE is (Low,Low).\n(b) Both firms have a dominant strategy to price Low (Low gives a higher payoff than High regardless of what the other firm does — check: if B plays High, A gets 60 from Low vs 50 from High; if B plays Low, A gets 30 from Low vs 10 from High — Low dominates either way), yet the mutually cooperative outcome (High,High)=(50,50) is better for both than the equilibrium (Low,Low)=(30,30) — the defining structure of a prisoner's dilemma.\n(c) If the shops interact repeatedly (e.g. daily pricing decisions) with a sufficiently high discount factor δ, a strategy like Grim Trigger (price High as long as the rival has always priced High; punish forever with Low if they ever deviate) can sustain (High,High) as a subgame perfect equilibrium, provided δ≥(π_D-π_C)/(π_D-π_N) using the one-shot deviation payoffs (60 from deviating, 50 from cooperating, 30 from mutual punishment): δ≥(60-50)/(60-30)=10/30=1/3. As long as the shops are patient enough (or expect to interact for long enough), the threat of reverting to the low-price war is enough to sustain cooperation."},
-    {"id":"gto2","topic":"Extensive Form & Backward Induction","q":"A firm (Entrant) decides whether to Enter a market or Stay Out. If it Stays Out, payoffs are (0, 50) [Entrant, Incumbent]. If it Enters, the Incumbent then chooses to Fight or Accommodate: Fight gives (-10,-10), Accommodate gives (20,20). (a) [4 marks] Draw out the logic of the game tree and solve for the SPE using backward induction. (b) [4 marks] Explain why 'threaten to Fight if Entry occurs' is a non-credible threat here, even though (Stay Out, Fight-if-entered) might look like a Nash equilibrium of the normal form.","marks":8,"model":"(a) Backward induction starts at the Incumbent's decision node (reached only if Entry occurs): compare Fight (-10) vs Accommodate (20) — Accommodate is strictly better for the Incumbent, so the Incumbent will Accommodate if Entry occurs. Knowing this, the Entrant compares Stay Out (payoff 0) vs Enter-then-Accommodate (payoff 20) — Enter is strictly better. SPE: Entrant plays Enter, Incumbent plays Accommodate (if entry occurs), giving outcome (20,20).\n(b) The strategy profile (Stay Out, always Fight if Entry occurs) CAN be a Nash equilibrium of the normal (simultaneous) form: given the Incumbent's threat to Fight, the Entrant's best response is to Stay Out (getting 0, versus -10 from Entering into a fight) — and given the Entrant stays out, the Incumbent's threat is never tested, so it costs the Incumbent nothing to 'commit' to it in the strategic form. But this threat is NON-CREDIBLE: if entry actually occurred, the Incumbent would not actually want to Fight (getting -10) when Accommodating gives 20 — sequential rationality requires the strategy be a best response at EVERY node, including this one that the equilibrium path doesn't visit. Backward induction/SPE correctly discards this equilibrium, leaving only (Enter, Accommodate) as the SPE."},
-    {"id":"gto3","topic":"Repeated Games & Folk Theorem","q":"Two firms play an infinitely repeated Cournot-style pricing game with per-period payoffs: mutual cooperation (collusion) π_C=40 each, one-off defection (undercut) π_D=70, mutual defection (price war) π_N=10. (a) [5 marks] Using Grim Trigger, derive the minimum discount factor δ* needed to sustain collusion as an SPE. (b) [4 marks] The firms' discount factor is δ=0.5. Is collusion sustainable? If not, suggest (without calculation) one real-world factor that could raise the EFFECTIVE discount factor and make collusion easier to sustain.","marks":9,"model":"(a) Grim Trigger sustains cooperation if the discounted value of cooperating forever is at least as large as the value of defecting once and facing permanent punishment: π_C/(1-δ) ≥ π_D + δ·π_N/(1-δ). Rearranging: δ ≥ (π_D-π_C)/(π_D-π_N) = (70-40)/(70-10) = 30/60 = 0.5. So δ*=0.5 exactly.\n(b) With δ=0.5, this is exactly at the threshold δ*=0.5 — collusion is (just barely) sustainable, since the condition is δ≥δ* with equality holding, meaning firms are indifferent between cooperating and defecting (in practice, exam answers should note this is a knife-edge case, and any δ even marginally below 0.5 would break down cooperation). Real-world factors that raise the EFFECTIVE discount factor (making future punishment loom larger relative to present gains) include: a higher probability of the interaction continuing (e.g. a stable market with no expected disruption), more frequent interaction/shorter periods between pricing decisions (so punishment arrives sooner), or genuinely greater patience/lower time-discounting by the firms' decision-makers."},
-    {"id":"gto4","topic":"Perfect Competition & Monopoly","q":"A monopolist faces inverse demand P=150-Q and has cost function C(Q)=10Q+0.5Q² (so MC=10+Q). (a) [4 marks] Find the profit-maximising price and quantity. (b) [4 marks] Find the socially efficient (perfectly competitive) quantity where P=MC, and calculate the deadweight loss.","marks":8,"model":"(a) TR=PQ=(150-Q)Q=150Q-Q². MR=150-2Q. Set MR=MC: 150-2Q=10+Q → 140=3Q → Q*=46.67. P*=150-46.67=103.33.\n(b) Efficient quantity: P=MC → 150-Q=10+Q → 140=2Q → Q**=70. Efficient price: P=150-70=80.\nDeadweight loss = area of the triangle between Q*=46.67 and Q**=70, bounded above by demand and below by MC. At Q=46.67, demand price is 103.33 and MC is 10+46.67=56.67 — a vertical gap of 46.67 at that point, tapering to zero at Q=70. DWL = 0.5 × (Q**-Q*) × (gap at Q*) = 0.5 × (70-46.67) × (103.33-56.67) = 0.5 × 23.33 × 46.67 ≈ 544.5. This represents the lost surplus from the 23.33 units that would have been mutually beneficial to produce (buyers valued them above their marginal cost) but the monopolist withholds to keep price high."}
-  ]
+ "block": "gametheory-marketstructure",
+ "blockLabel": "Game Theory & Market Structures",
+ "topics": [
+  "Nash Equilibrium",
+  "Mixed Strategies",
+  "Extensive Form & Backward Induction",
+  "Subgame Perfect Equilibrium",
+  "Repeated Games & Folk Theorem",
+  "Perfect Competition & Monopoly",
+  "Monopolistic Competition",
+  "Oligopoly (Cournot & Bertrand)"
+ ],
+ "flashcards": [
+  {
+   "id": "gt1",
+   "topic": "Nash Equilibrium",
+   "front": "State the formal definition of a Nash equilibrium in terms of best responses.",
+   "back": "A strategy profile where every player's strategy is a best response to the strategies of all other players — no player can gain by unilaterally deviating, given what everyone else is doing."
+  },
+  {
+   "id": "gt2",
+   "topic": "Nash Equilibrium",
+   "front": "Distinguish a dominant strategy from a Nash equilibrium strategy.",
+   "back": "A dominant strategy is a best response no matter what any other player does — it doesn't depend on their choice at all. A Nash equilibrium strategy only needs to be a best response to the SPECIFIC strategies the other players are actually playing in that equilibrium. Every dominant-strategy equilibrium is a Nash equilibrium, but not vice versa."
+  },
+  {
+   "id": "gt3",
+   "topic": "Nash Equilibrium",
+   "front": "What is meant by a 'rationalizable' strategy, and how does the set of rationalizable outcomes relate to the set of Nash equilibria?",
+   "back": "A rationalizable strategy is one that survives the iterative removal of strategies that are never a best response to ANY belief about what opponents might do. Rationalizable outcomes are a superset of Nash equilibria — every Nash equilibrium strategy is rationalizable, but rationalizability is a weaker requirement (it doesn't require correct beliefs about what opponents actually play)."
+  },
+  {
+   "id": "gt4",
+   "topic": "Nash Equilibrium",
+   "front": "In a Stag Hunt coordination game, why can BOTH the efficient (Stag, Stag) and inefficient (Hare, Hare) outcomes be Nash equilibria simultaneously?",
+   "back": "Nash equilibrium only requires no PROFITABLE unilateral deviation — it says nothing about which equilibrium is best for the players jointly. At (Hare,Hare), if you alone switch to Stag while your partner stays at Hare, you do worse (Stag needs both to cooperate) — so neither wants to deviate alone, even though both would be better off if they could coordinate on (Stag,Stag) together."
+  },
+  {
+   "id": "gt5",
+   "topic": "Nash Equilibrium",
+   "front": "What is 'payoff dominance' versus 'risk dominance' when a game has multiple pure-strategy Nash equilibria?",
+   "back": "Payoff dominance: one equilibrium gives BOTH players a strictly higher payoff than the other — it Pareto-dominates. Risk dominance: one equilibrium is 'safer' to aim for given uncertainty about the other player's choice (e.g. it has a higher expected payoff if you're unsure they'll coordinate). These can conflict — the payoff-dominant equilibrium isn't always the risk-dominant one, which is exactly the tension in a Stag Hunt."
+  },
+  {
+   "id": "gt6",
+   "topic": "Mixed Strategies",
+   "front": "Why would a player ever want to randomize (play a mixed strategy) rather than picking one action for certain?",
+   "back": "When no pure-strategy Nash equilibrium exists (e.g. Matching Pennies), or more generally whenever being predictable would let the opponent exploit you — mixing keeps the opponent indifferent between their own options, so they can't identify and punish a fixed pattern."
+  },
+  {
+   "id": "gt7",
+   "topic": "Mixed Strategies",
+   "front": "State the indifference condition used to solve for a mixed-strategy Nash equilibrium.",
+   "back": "In a mixed-strategy NE, each player's OWN mixing probability is chosen to make the OTHER player exactly indifferent between their pure strategies (so the other player is willing to mix too). You solve by setting the other player's expected payoff from each of their pure actions equal to each other, and solving for your own mixing probability."
+  },
+  {
+   "id": "gt8",
+   "topic": "Mixed Strategies",
+   "front": "In a mixed-strategy equilibrium, what is each player's equilibrium expected payoff equal to, and why does this make sense?",
+   "back": "It equals the payoff from EITHER of their pure strategies played against the opponent's mix (since, by the indifference condition, both give the same expected payoff) — this is exactly why the player is willing to randomize: every pure strategy in their support is equally good against what the opponent is doing."
+  },
+  {
+   "id": "gt9",
+   "topic": "Mixed Strategies",
+   "front": "Why does a change in a player's OWN payoffs affect the OTHER player's equilibrium mixing probability, not their own?",
+   "back": "Because each player's mixing probability is set to satisfy the OTHER player's indifference condition — my mix depends on making YOU indifferent, which depends on YOUR payoffs, not mine. This is a common source of confusion/exam trick: intuitively you'd expect your own payoffs to determine your own strategy, but in mixed NE it's the reverse."
+  },
+  {
+   "id": "gt10",
+   "topic": "Extensive Form & Backward Induction",
+   "front": "What three things fully specify a dynamic game, and what does a 'strategy' mean in this setting (as opposed to a static game)?",
+   "back": "A dynamic game needs: the game tree (decision nodes, branches/actions, terminal payoffs), information sets (what each player knows when they move), and the order of play. A strategy here is a COMPLETE CONTINGENT PLAN — a specification of what action to take at EVERY decision node/information set a player might reach, not just a single action."
+  },
+  {
+   "id": "gt11",
+   "topic": "Extensive Form & Backward Induction",
+   "front": "Explain 'backward induction' as a solution technique, and state its two key limitations.",
+   "back": "Backward induction solves the game by starting at the final decision nodes (where the best action is obvious with no continuation to consider), then working backward, at each earlier node assuming later players will play their already-solved optimal continuation. Limitations: (1) it cannot be applied to games of imperfect information (where a player doesn't know exactly which node they're at), and (2) it cannot be applied to games without a finite, known end point (e.g. infinitely repeated games)."
+  },
+  {
+   "id": "gt12",
+   "topic": "Extensive Form & Backward Induction",
+   "front": "Why can a Nash equilibrium found by ignoring the order of moves (treating a sequential game as simultaneous, via the normal form) fail to be 'sequentially rational'?",
+   "back": "A Nash equilibrium only requires the STRATEGY PROFILE to be mutually best-responding overall — it doesn't check whether each part of the strategy is optimal at every point it might actually be reached, INCLUDING off the path the equilibrium predicts. A strategy can rely on a threatened action that would never actually be rational to carry out if that node were reached — this is a 'non-credible threat', and backward induction/sequential rationality is precisely what rules it out."
+  },
+  {
+   "id": "gt13",
+   "topic": "Extensive Form & Backward Induction",
+   "front": "Define sequential rationality precisely.",
+   "back": "A strategy is sequentially rational for player i if it specifies a best response at EVERY decision node the player could be called on to move at — including nodes that the equilibrium path itself never actually reaches."
+  },
+  {
+   "id": "gt14",
+   "topic": "Subgame Perfect Equilibrium",
+   "front": "Define a 'subgame' precisely, and define subgame perfect equilibrium (SPE) in terms of it.",
+   "back": "A subgame is any part of the game tree that begins at a single decision node (contained in a single information set by itself — i.e. that node is common knowledge to have been reached) and includes ALL its successor nodes. A strategy profile is a subgame perfect equilibrium if and only if it induces a Nash equilibrium in EVERY subgame of the original game, not just in the game as a whole."
+  },
+  {
+   "id": "gt15",
+   "topic": "Subgame Perfect Equilibrium",
+   "front": "State the 'one-shot deviation principle' and explain when it's used instead of backward induction to find an SPE.",
+   "back": "A strategy profile is an SPE if and only if no player can gain by deviating from it at a SINGLE information set/node, for just one action, while following the prescribed strategy everywhere else. It's used instead of backward induction when backward induction can't be applied directly (imperfect information, or no finite end point) — it's a 'guess and check' approach rather than a constructive one: propose a candidate strategy profile, then verify no one-shot deviation is profitable anywhere."
+  },
+  {
+   "id": "gt16",
+   "topic": "Subgame Perfect Equilibrium",
+   "front": "Why is it true that 'every backward-induction outcome is an SPE, but SPE is a strictly broader solution concept'?",
+   "back": "When backward induction CAN be applied (finite game, perfect information), the outcome it produces is automatically an SPE, because at every node it selects the Nash equilibrium of that node's subgame by construction. But SPE as a concept also applies to games backward induction can't solve directly (imperfect information games, infinitely repeated games) — there it's found via the one-shot deviation principle instead, extending the idea beyond where backward induction alone reaches."
+  },
+  {
+   "id": "gt17",
+   "topic": "Subgame Perfect Equilibrium",
+   "front": "In the Ultimatum Game (Proposer offers a split x to Responder, who can Accept or Reject leaving both with 0), what is the unique SPE outcome, and why does experimental evidence consistently contradict it?",
+   "back": "SPE: the Responder should accept ANY positive offer (something is weakly better than the 0 from rejecting), so the Proposer, anticipating this, offers the minimum possible share, keeping almost everything. Experimentally, low offers (e.g. below ~20-30%) are very frequently REJECTED across many cultures — this reveals that real people care about fairness norms and are willing to sacrifice their own payoff to punish an unfair proposer, a preference the standard payoff-maximising model doesn't capture."
+  },
+  {
+   "id": "gt18",
+   "topic": "Subgame Perfect Equilibrium",
+   "front": "In the Centipede Game, what does SPE predict, and how does the experimental evidence (chess grandmasters vs. average players) relate to backward induction reasoning?",
+   "back": "SPE predicts the FIRST player stops immediately at the very first opportunity (backward induction unravels cooperation all the way back, exactly as in the finitely repeated prisoner's dilemma). Experimentally, most people continue for several rounds before stopping — but more sophisticated players (chess grandmasters) stop much earlier, closer to the SPE prediction, suggesting that deeper backward-induction reasoning ability predicts closer adherence to the theoretical prediction."
+  },
+  {
+   "id": "gt19",
+   "topic": "Repeated Games & Folk Theorem",
+   "front": "Why does backward induction guarantee that 'always defect' is the ONLY SPE of a FINITELY repeated prisoner's dilemma?",
+   "back": "In the final period, there's no future to threaten punishment over, so defecting is a dominant strategy that period — this is locked in regardless of history. Given that the final period's play is fixed at defect no matter what, there's no way to credibly punish defection in the second-to-last period either, so the same logic applies there — and this unravels all the way back to period 1, making 'always defect' the unique SPE."
+  },
+  {
+   "id": "gt20",
+   "topic": "Repeated Games & Folk Theorem",
+   "front": "State the Grim Trigger strategy precisely, and derive the condition on the discount factor δ under which it sustains cooperation as a Nash equilibrium in an infinitely repeated prisoner's dilemma with per-period cooperate payoff π_C, one-shot defection payoff π_D, and mutual-defection payoff π_N.",
+   "back": "Grim Trigger: play Cooperate in period 0, and continue to play Cooperate in every later period as long as NEITHER player has ever defected; if either player has ever defected, play Defect forever after. Cooperating forever gives π_C/(1-δ) (geometric series). Deviating once gives π_D + δ·π_N/(1-δ) (one high payoff, then permanent punishment). Cooperation is sustained if π_C/(1-δ) ≥ π_D + δ·π_N/(1-δ), which rearranges to δ ≥ (π_D-π_C)/(π_D-π_N) — patience (or a high enough probability of the game continuing) must be high enough that the future losses from punishment outweigh the one-off gain from cheating."
+  },
+  {
+   "id": "gt21",
+   "topic": "Repeated Games & Folk Theorem",
+   "front": "Explain the 'Folk Theorem' intuition: what range of payoffs can be sustained as SPE outcomes in an infinitely repeated game with a sufficiently high discount factor?",
+   "back": "Essentially any payoff combination that gives each player at least their 'minmax' payoff (the worst outcome the other players can hold them to, i.e. what's achievable if they try to punish you as hard as possible) can be sustained as an SPE outcome for a sufficiently patient (high δ) population of players — not just the one-shot Nash equilibrium payoff, but a much wider range including cooperative, jointly-better outcomes, supported by the credible threat of reverting to punishment."
+  },
+  {
+   "id": "gt22",
+   "topic": "Repeated Games & Folk Theorem",
+   "front": "What three properties did Axelrod identify as common to the best-performing strategies (like Tit-for-Tat) in his repeated prisoner's dilemma tournaments?",
+   "back": "'Niceness' (never the first to defect), 'Retaliation' (responds to defection swiftly, so it can't be exploited), and 'Forgiveness' (returns to cooperation after the opponent stops defecting, rather than punishing forever like Grim Trigger) — this combination outperformed both purely cooperative and purely exploitative strategies."
+  },
+  {
+   "id": "gt23",
+   "topic": "Perfect Competition & Monopoly",
+   "front": "Derive the monopolist's profit-maximising condition MR=MC from π(Q)=Qp(Q)-c(Q), and state the resulting optimal price-cost margin formula in terms of the elasticity of demand.",
+   "back": "dπ/dQ = p(Q) + Q(dp/dQ) - dc/dQ = 0, i.e. MR = MC where MR = p + Q(dp/dQ). Rearranging gives (p-MC)/p = 1/|ε| — the profit-maximising markup over marginal cost, as a fraction of price, equals the INVERSE of the absolute price elasticity of demand at that point. Less elastic demand → higher optimal markup."
+  },
+  {
+   "id": "gt24",
+   "topic": "Perfect Competition & Monopoly",
+   "front": "Why does a monopolist's profit-maximising output create deadweight loss relative to the socially efficient quantity?",
+   "back": "The social optimum requires marginal social benefit (=price, i.e. the demand curve) to equal marginal social cost (=MC). But the monopolist instead sets MARGINAL REVENUE (which is below price for a downward-sloping demand curve) equal to MC, producing LESS than the efficient quantity. The units between the monopoly quantity and the efficient quantity are ones where willingness to pay exceeds marginal cost but are never produced — lost surplus with no offsetting revenue is the deadweight loss."
+  },
+  {
+   "id": "gt25",
+   "topic": "Perfect Competition & Monopoly",
+   "front": "List the four defining assumptions of the perfect competition model.",
+   "back": "1) Many buyers and many sellers, each individually small relative to the market. 2) Undifferentiated (perfect substitute) products. 3) Perfect information about prices. 4) Equal access to resources and production technologies (no firm has a unique cost advantage)."
+  },
+  {
+   "id": "gt26",
+   "topic": "Perfect Competition & Monopoly",
+   "front": "Why is a perfectly competitive firm's individual demand curve horizontal (perfectly elastic), even though the market demand curve slopes down?",
+   "back": "With many identical competitors selling a perfect substitute, any firm pricing even slightly above the market price loses ALL its customers to rivals (buyers switch instantly, since products are identical), while it can sell as much as it wants exactly at the market price — the individual firm simply cannot influence price, it can only choose how much to sell at the price the market has set."
+  },
+  {
+   "id": "gt27",
+   "topic": "Perfect Competition & Monopoly",
+   "front": "Why do firms in the perfectly competitive long-run equilibrium earn exactly zero economic profit?",
+   "back": "If firms are earning positive profit, free entry draws in new competitors, increasing market supply and driving price down; if firms are making losses, firms exit, reducing supply and pushing price up. This process continues until price = minimum average cost exactly, i.e. firms earn zero economic profit (normal profit only) — the point where there's no further incentive for entry or exit."
+  },
+  {
+   "id": "gt28",
+   "topic": "Monopolistic Competition",
+   "front": "In the Dixit-Stiglitz CES model, what does the elasticity of substitution σ measure, and what value does it need to exceed for the standard model to apply?",
+   "back": "σ measures how substitutable the different product varieties are for each other in consumers' utility (how a % change in relative prices pi/pj translates into a % change in relative quantities xi/xj). The Dixit-Stiglitz model requires σ>1 (products must be at least somewhat substitutable, not complements) — as σ→∞ varieties become perfect substitutes, as σ→1 preferences become Cobb-Douglas (equal expenditure share on every variety)."
+  },
+  {
+   "id": "gt29",
+   "topic": "Monopolistic Competition",
+   "front": "In the Dixit-Stiglitz model, derive the result that each firm prices at a constant proportional markup pi = [σ/(σ-1)]·c over marginal cost c, and explain what happens to this markup as σ→∞.",
+   "back": "Each firm treats the aggregate price index P as fixed (it's 'small' relative to the whole market) and maximises πi=(pi-c)(N·m/P)·pi^(-σ)-F. The FOC simplifies to 1-σ(1-c/pi)=0, giving pi=[σ/(σ-1)]·c. As σ→∞ (products become near-perfect substitutes), the markup σ/(σ-1) → 1, so pi → c — firms are pushed toward marginal-cost pricing exactly as competition intensifies, consistent with perfect competition as the limiting case."
+  },
+  {
+   "id": "gt30",
+   "topic": "Monopolistic Competition",
+   "front": "In the free-entry equilibrium of the Dixit-Stiglitz model, what does the equilibrium number of varieties v = (Nm/F)·(1/σ) tell you about how variety responds to market size, fixed costs, and substitutability?",
+   "back": "More varieties are sustained in equilibrium when: the market is more valuable (Nm high — more consumers with more income to spend), fixed costs F are lower (cheaper to launch each new variety, so more can be supported before zero-profit entry stops), and products are WEAKER substitutes (σ low — each firm faces less direct competition from other varieties, so more firms/varieties can coexist profitably)."
+  },
+  {
+   "id": "gt31",
+   "topic": "Oligopoly (Cournot & Bertrand)",
+   "front": "State the four key assumptions distinguishing the Cournot model from the Bertrand model.",
+   "back": "Cournot: firms choose QUANTITIES simultaneously; the market-clearing PRICE is then determined by total output via the inverse demand function. Bertrand: firms choose PRICES simultaneously (with homogeneous products); whichever firm sets the lower price captures the ENTIRE market, with the loser selling zero. Both otherwise share: no ability to commit/move first, and (in the basic versions) homogeneous products and constant marginal cost."
+  },
+  {
+   "id": "gt32",
+   "topic": "Oligopoly (Cournot & Bertrand)",
+   "front": "Derive the Cournot best-response function BRi(qj)=(1/2)[(A-c)/b - qj] from πi=(A-b(qi+qj)-c)qi, and explain why it slopes downward (quantities are 'strategic substitutes').",
+   "back": "∂πi/∂qi = A-2bqi-bqj-c = 0, solving for qi gives BRi(qj)=(1/2)[(A-c)/b - qj]. It slopes downward because more output from the rival lowers the market price, which reduces the marginal value of MY output too — so my profit-maximising response to more competition from them is to produce LESS, not match them. Since each firm's best response moves opposite to the other's action, quantities are 'strategic substitutes' (in contrast to Bertrand prices with differentiated goods, where prices are 'strategic complements' — best responses slope upward)."
+  },
+  {
+   "id": "gt33",
+   "topic": "Oligopoly (Cournot & Bertrand)",
+   "front": "Solve for the symmetric Cournot-Nash equilibrium quantities and per-firm profit, given linear demand P=A-bQ and constant marginal cost c (two identical firms).",
+   "back": "Solving the two best-response functions simultaneously (qi=qj by symmetry): qi=qj=(A-c)/(3b). Total quantity Q=2(A-c)/(3b), price p=A-b·Q=(A+2c)/3. Profit per firm: πi=(p-c)qi=(A-c)²/(9b)."
+  },
+  {
+   "id": "gt34",
+   "topic": "Oligopoly (Cournot & Bertrand)",
+   "front": "Why is the Cournot equilibrium quantity socially inefficient (Q=2(A-c)/(3b)) even though it's HIGHER than the monopoly quantity (Q=(A-c)/(2b))?",
+   "back": "Social efficiency requires P=MC, i.e. Q=(A-c)/b. The Cournot duopoly quantity, 2(A-c)/(3b), sits strictly between the monopoly quantity and the efficient quantity — more competition (more firms) pushes output up toward the efficient level, but with only two firms there's still market power being exercised (each firm ignores the fact that its extra output lowers the price the OTHER firm receives too), so price still exceeds marginal cost and deadweight loss remains, just smaller than under monopoly."
+  },
+  {
+   "id": "gt35",
+   "topic": "Oligopoly (Cournot & Bertrand)",
+   "front": "State the 'Bertrand paradox': what is the Nash equilibrium of the standard (homogeneous product) Bertrand model, and why is it surprising given the Cournot comparison?",
+   "back": "With just TWO firms competing on price with homogeneous products and constant marginal cost c, the unique Nash equilibrium is pi=pj=c — both firms price exactly at marginal cost and earn ZERO economic profit. This is surprising/paradoxical because it means even a duopoly (as few as two firms) achieves the fully competitive, socially efficient outcome — in stark contrast to Cournot, where even many firms competing on quantity still leave some market power and positive profit (until N→∞)."
+  },
+  {
+   "id": "gt36",
+   "topic": "Oligopoly (Cournot & Bertrand)",
+   "front": "Explain, intuitively, why Bertrand price competition is so much more aggressive than Cournot quantity competition, driving profit all the way to zero with just two firms.",
+   "back": "In Bertrand, undercutting your rival's price by an arbitrarily small amount captures the ENTIRE market — the incentive to cut price is enormous since the gain (full market) massively outweighs the tiny price cut, all the way down until price hits marginal cost (below which no further cut is profitable). In Cournot, increasing your own quantity only marginally increases your market share and simultaneously depresses the price on ALL your units sold — the benefit of expanding output is much more muted, so competition doesn't get pushed nearly as far."
+  },
+  {
+   "id": "gt37",
+   "topic": "Oligopoly (Cournot & Bertrand)",
+   "front": "How does allowing IMPERFECT substitutes (rather than identical products) resolve the Bertrand paradox, and why does this make prices 'strategic complements' (best-response functions sloping upward)?",
+   "back": "With imperfect substitutes, qi(pi,pj)=A-bpi+(b/2)pj — a firm no longer loses its ENTIRE market by pricing slightly above its rival, since some consumers still prefer its variety even at a premium. This softens competition, and equilibrium prices settle above marginal cost, avoiding the paradox. Prices become strategic complements (BRi slopes upward in pj) because if your rival raises their price, your own product looks relatively more attractive at any given price of yours, which raises YOUR profit-maximising price too — the two prices move together rather than in opposite directions."
+  }
+ ],
+ "mcq": [
+  {
+   "id": "gtm1",
+   "topic": "Nash Equilibrium",
+   "q": "Two firms play a game with payoff matrix: (Advertise,Advertise)=(2,2), (Advertise,Don't)=(5,1), (Don't,Advertise)=(1,5), (Don't,Don't)=(4,4). Is 'Advertise' a dominant strategy for either firm, and what is the unique Nash equilibrium?",
+   "options": [
+    "Advertise is dominant for both; NE is (Advertise, Advertise)",
+    "Don't is dominant for both; NE is (Don't, Don't)",
+    "Neither has a dominant strategy; multiple NE exist",
+    "Advertise is dominant for both; NE is (Don't, Don't)",
+    "Neither has a dominant strategy; NE is (Don't, Don't)"
+   ],
+   "answer": 0,
+   "explain": "For either firm, Advertise gives a higher payoff regardless of the opponent's choice (2>1 if opponent advertises, 5>4 if opponent doesn't) — a classic prisoner's dilemma. Advertise is dominant for both, giving the unique NE (Advertise,Advertise) with payoff (2,2), even though (Don't,Don't) with (4,4) would be better for both jointly."
+  },
+  {
+   "id": "gtm2",
+   "topic": "Nash Equilibrium",
+   "q": "In a pure coordination game where (A,A) gives both players 10 and (B,B) gives both players 10, with (A,B) and (B,A) both giving 0, which of the following are TRUE? (Select ALL that apply.)",
+   "options": [
+    "(A,A) is a Nash equilibrium",
+    "(B,B) is a Nash equilibrium",
+    "(A,A) payoff-dominates (B,B)",
+    "There is also a mixed-strategy Nash equilibrium in this game",
+    "A player choosing A while the other chooses B is a Nash equilibrium"
+   ],
+   "answer": [
+    0,
+    1,
+    3
+   ],
+   "explain": "Both (A,A) and (B,B) are pure-strategy Nash equilibria — at either, no player gains by unilaterally deviating (switching alone gives 0 instead of 10). Neither payoff-dominates the other since both give identical payoffs (10,10) — C is false. There is ALSO a symmetric mixed-strategy NE where each player randomizes 50-50 between A and B (each is indifferent given the other's 50-50 mix, since expected payoff is 5 either way) — D is true. (A,B) or (B,A) give (0,0), and either player could unilaterally switch to match the other and get 10 instead — clearly not an equilibrium, so E is false."
+  },
+  {
+   "id": "gtm3",
+   "topic": "Mixed Strategies",
+   "q": "In Matching Pennies (Row wants to match, Column wants to mismatch; standard payoffs), what is the mixed-strategy Nash equilibrium?",
+   "options": [
+    "Both players play Heads with probability 1",
+    "Both players play Heads with probability 0.5",
+    "Row plays Heads with probability 0.5, Column plays Heads with probability 0.25",
+    "No mixed-strategy NE exists in Matching Pennies",
+    "Row plays Heads with probability 0.75, Column plays Heads with probability 0.5"
+   ],
+   "answer": 1,
+   "explain": "Matching Pennies has no pure-strategy NE (whatever one player does, the other wants to deviate). By symmetry and the indifference condition, both players randomize 50-50 between Heads and Tails — this is the unique NE."
+  },
+  {
+   "id": "gtm4",
+   "topic": "Mixed Strategies",
+   "q": "Row has strategies Up/Down, Column has strategies Left/Right. Payoffs to Row: (Up,Left)=3, (Up,Right)=0, (Down,Left)=0, (Down,Right)=3. In a mixed NE, Column mixes to keep Row indifferent between Up and Down. If Column plays Left with probability q, what value of q makes Row indifferent?",
+   "options": [
+    "q=0.4",
+    "q=0.6",
+    "q=0.5",
+    "q=0.75",
+    "q=0.25"
+   ],
+   "answer": 2,
+   "explain": "Row's expected payoff from Up = 3q + 0(1-q) = 3q. Row's expected payoff from Down = 0·q + 3(1-q) = 3-3q. Setting equal: 3q = 3-3q → 6q=3 → q=0.5. This symmetric payoff structure (matching Row's action to Column's) is exactly the Matching Pennies pattern, which is why the indifference point lands exactly at 50-50."
+  },
+  {
+   "id": "gtm5",
+   "topic": "Extensive Form & Backward Induction",
+   "q": "In a two-stage sequential game, Player 1 chooses A or B. If A, the game ends with payoffs (3,1). If B, Player 2 then chooses C or D, giving (1,4) for C or (2,0) for D. Using backward induction, what is the SPE outcome?",
+   "options": [
+    "Player 1 plays A; game ends at (3,1)",
+    "Player 1 plays B, Player 2 plays C; outcome (1,4)",
+    "Player 1 plays B, Player 2 plays D; outcome (2,0)",
+    "Player 1 is indifferent between A and B",
+    "Player 1 plays A, Player 2 plays D; outcome (3,1) coincidentally matches option A's payoff"
+   ],
+   "answer": 0,
+   "explain": "Backward induction: at Player 2's node (reached only if B is played), Player 2 compares C (payoff 4) vs D (payoff 0) for themselves and picks C. Anticipating this, Player 1 compares A (payoff 3 to Player 1) against B-then-C (payoff 1 to Player 1) and prefers A. SPE outcome: Player 1 plays A, game ends immediately at (3,1) — Player 2's node is never actually reached on the equilibrium path."
+  },
+  {
+   "id": "gtm6",
+   "topic": "Extensive Form & Backward Induction",
+   "q": "A game has one Nash equilibrium supported by a threat that would never actually be carried out if the relevant node were reached. What term describes this threat, and what solution concept is designed to rule it out?",
+   "options": [
+    "A 'credible commitment'; ruled out by dominant strategy equilibrium",
+    "A 'non-credible threat'; ruled out by subgame perfect equilibrium (via sequential rationality)",
+    "A 'trigger strategy'; ruled out by the Folk Theorem",
+    "A 'pooling equilibrium'; ruled out by Bayesian Nash equilibrium",
+    "A 'best response'; ruled out by rationalizability"
+   ],
+   "answer": 1,
+   "explain": "A threat that wouldn't actually be optimal to carry out if tested is 'non-credible' — Nash equilibrium alone doesn't rule these out since it only checks the strategy overall, not at every node. Subgame perfect equilibrium (via sequential rationality / backward induction / the one-shot deviation principle) is specifically designed to eliminate equilibria resting on such threats."
+  },
+  {
+   "id": "gtm7",
+   "topic": "Subgame Perfect Equilibrium",
+   "q": "A game tree has 3 decision nodes total (including the root). How many subgames does the FULL game tree contain, at minimum (assuming perfect information throughout)?",
+   "options": [
+    "1 (only the whole game counts)",
+    "2",
+    "3 (one starting at each decision node, including the whole game itself)",
+    "Cannot be determined without more information",
+    "4, since every node including terminal ones counts as a subgame"
+   ],
+   "answer": 2,
+   "explain": "Under perfect information, every decision node (including the root) starts its own valid subgame (a single node plus all its successors) — with 3 decision nodes, there are (at least) 3 subgames: the whole game (rooted at the first node) plus one for each of the other two decision nodes."
+  },
+  {
+   "id": "gtm8",
+   "topic": "Subgame Perfect Equilibrium",
+   "q": "In the Ultimatum Game with a pot of £10, Player 1 offers a 90-10 split in their own favour. According to the SPE prediction, what should Player 2 do?",
+   "options": [
+    "Reject, since the split is unfair",
+    "Accept, since £1 is better than £0 and rejecting only leaves both with nothing",
+    "Player 2 should counter-offer",
+    "It depends on Player 2's risk aversion",
+    "Player 2 should reject only if the offer is below 50% of the pot"
+   ],
+   "answer": 1,
+   "explain": "SPE assumes payoff-maximising, sequentially rational play: Player 2 gets £1 by accepting versus £0 by rejecting, so accepting is the (weakly) dominant choice at that node — even though it's an unequal split. (Real behaviour often departs from this due to fairness preferences, but the pure SPE prediction is to accept any positive offer.)"
+  },
+  {
+   "id": "gtm9",
+   "topic": "Repeated Games & Folk Theorem",
+   "q": "A stage game prisoner's dilemma has payoffs: mutual cooperation π_C=4, unilateral defection π_D=6, mutual defection π_N=1. Using the Grim Trigger sustainability condition δ≥(π_D-π_C)/(π_D-π_N), what is the minimum discount factor needed to sustain cooperation?",
+   "options": [
+    "δ≥0.4",
+    "δ≥0.5",
+    "δ≥0.6",
+    "δ≥0.8",
+    "δ≥1.2 (impossible, so cooperation can never be sustained here)"
+   ],
+   "answer": 0,
+   "explain": "δ≥(π_D-π_C)/(π_D-π_N) = (6-4)/(6-1) = 2/5 = 0.4. So the minimum discount factor needed is δ≥0.4."
+  },
+  {
+   "id": "gtm10",
+   "topic": "Repeated Games & Folk Theorem",
+   "q": "A finitely repeated prisoner's dilemma is played for a KNOWN 20 rounds. What does backward induction predict for round 1 behaviour, and why?",
+   "options": [
+    "Cooperation, since 20 rounds gives many chances to build trust",
+    "Defection, since the unravelling argument from the final round propagates all the way back to round 1",
+    "Players randomize 50-50 between cooperate and defect",
+    "It depends on the discount factor δ",
+    "Cooperation in round 1 only, then defection from round 2 onward"
+   ],
+   "answer": 1,
+   "explain": "With a KNOWN, FINITE number of rounds, backward induction starts at round 20 (defect, since no future punishment is possible), which makes round 19's 'threat' non-credible too, and so on all the way back — the unique SPE is to defect in EVERY round, including round 1, regardless of how many rounds there are, as long as the number is finite and known."
+  },
+  {
+   "id": "gtm11",
+   "topic": "Perfect Competition & Monopoly",
+   "q": "A monopolist faces demand Q=200-2P and has constant marginal cost MC=20. Using MR=MC, find the profit-maximising price.",
+   "options": [
+    "P=60",
+    "P=70",
+    "P=55",
+    "P=80",
+    "P=50"
+   ],
+   "answer": 0,
+   "explain": "Inverse demand: P=100-0.5Q. TR=PQ=100Q-0.5Q². MR=100-Q. Set MR=MC: 100-Q=20 → Q=80. Then P=100-0.5(80)=100-40=60."
+  },
+  {
+   "id": "gtm12",
+   "topic": "Perfect Competition & Monopoly",
+   "q": "A monopolist has price elasticity of demand ε=-2.5 at its profit-maximising point. What is its optimal price-cost margin (p-MC)/p?",
+   "options": [
+    "2.5",
+    "0.4",
+    "0.25",
+    "-2.5",
+    "0.6"
+   ],
+   "answer": 1,
+   "explain": "(p-MC)/p = 1/|ε| = 1/2.5 = 0.4. The markup as a fraction of price is 40%."
+  },
+  {
+   "id": "gtm13",
+   "topic": "Perfect Competition & Monopoly",
+   "q": "Two goods are both monopolised: Good A has elastic demand, Good B has inelastic demand, both facing the same constant MC. Which good has the LARGER deadweight loss triangle relative to the efficient (competitive) outcome, holding market size comparable?",
+   "options": [
+    "Good A (elastic demand) has the larger DWL",
+    "Good B (inelastic demand) has the larger DWL",
+    "DWL is identical regardless of elasticity",
+    "Cannot be determined without knowing MC",
+    "DWL depends only on the price level, not on elasticity, so both are equal"
+   ],
+   "answer": 0,
+   "explain": "With more elastic demand, the monopolist's quantity restriction relative to the competitive quantity is proportionally LARGER (consumers respond more strongly to the price increase, pulling the monopoly quantity further below the efficient one) — this produces a bigger deadweight loss triangle for elastic-demand goods, even though the monopolist charges a smaller MARKUP on them (since markup is 1/|ε|, lower for elastic demand)."
+  },
+  {
+   "id": "gtm14",
+   "topic": "Perfect Competition & Monopoly",
+   "q": "Which of the following are TRUE of perfectly competitive long-run equilibrium at price p*? (Select ALL that apply.)",
+   "options": [
+    "p* equals the minimum of the average cost (AC) curve",
+    "Firms earn zero economic profit, though they may earn positive accounting/normal profit",
+    "p* equals marginal cost at the firm's chosen output level",
+    "Free entry and exit are what drive price to this level, not any single firm's pricing decision",
+    "Firms earn zero economic profit only if the market has exactly one active firm"
+   ],
+   "answer": [
+    0,
+    1,
+    2,
+    3
+   ],
+   "explain": "In long-run competitive equilibrium: p*=min AC (A true) — any higher price attracts entry, any lower price causes exit, until price settles exactly at the bottom of the AC curve. This means zero ECONOMIC profit (B true) — though normal/accounting profit, covering the opportunity cost of capital, is still earned. Since each price-taking firm also individually sets p=MC to maximise its own profit (C true), and it is entry/exit — not any one firm's choice — that pins down the price level (D true). Option E is false: this zero-profit result holds with MANY firms in a competitive market, not a single one (a single firm setting price would instead be a monopoly)."
+  },
+  {
+   "id": "gtm15",
+   "topic": "Monopolistic Competition",
+   "q": "In the Dixit-Stiglitz model, if the elasticity of substitution σ=4, what proportional markup over marginal cost does each firm charge?",
+   "options": [
+    "4/3 ≈ 1.33 (33% markup)",
+    "3/4 = 0.75 (firms price below cost)",
+    "4 (400% markup)",
+    "1/4 = 0.25 (25% markup)",
+    "5/4 = 1.25 (25% markup)"
+   ],
+   "answer": 0,
+   "explain": "pi = [σ/(σ-1)]·c = [4/3]·c ≈ 1.33c — a markup of about 33% over marginal cost."
+  },
+  {
+   "id": "gtm16",
+   "topic": "Monopolistic Competition",
+   "q": "Using v=(Nm/F)·(1/σ), if the number of consumers N doubles and their income m stays the same, what happens to the equilibrium number of product varieties v (holding F and σ fixed)?",
+   "options": [
+    "v is unchanged",
+    "v doubles",
+    "v halves",
+    "v increases but less than doubles, due to diminishing returns",
+    "v is proportional to N² rather than N"
+   ],
+   "answer": 1,
+   "explain": "v is directly proportional to N (given F, σ, m fixed): v=(Nm/F)(1/σ). Doubling N exactly doubles v — a bigger market (more total spending power, Nm) supports proportionally more varieties before the zero-profit free-entry condition binds."
+  },
+  {
+   "id": "gtm17",
+   "topic": "Monopolistic Competition",
+   "q": "As the elasticity of substitution σ→∞ in the Dixit-Stiglitz model (products become near-perfect substitutes), what happens to firm markups AND to the equilibrium number of varieties v?",
+   "options": [
+    "Markups fall toward zero (price→marginal cost); v falls toward zero too",
+    "Markups fall toward zero (price→marginal cost); v also shrinks, since v is proportional to 1/σ",
+    "Markups rise; v rises",
+    "Markups fall but v is unaffected since it doesn't depend on σ",
+    "Markups rise toward infinity; v also rises without bound"
+   ],
+   "answer": 1,
+   "explain": "As σ→∞: the markup σ/(σ-1)→1, so price→marginal cost (like perfect competition). Separately, v=(Nm/F)(1/σ)→0 as σ→∞ — with near-perfect substitutes, products compete so fiercely that far fewer distinct varieties can profitably coexist; the market consolidates toward something closer to a homogeneous-good competitive market rather than many differentiated products."
+  },
+  {
+   "id": "gtm18",
+   "topic": "Oligopoly (Cournot & Bertrand)",
+   "q": "Two Cournot duopolists face demand P=120-2Q and have MC=20 (identical). Find each firm's equilibrium quantity.",
+   "options": [
+    "qi=qj=16.67",
+    "qi=qj=33.3",
+    "qi=qj=25",
+    "qi=qj=50",
+    "qi=qj=20"
+   ],
+   "answer": 0,
+   "explain": "Using qi=(A-c)/(3b) with A=120, c=20, b=2: qi=(120-20)/(3×2)=100/6≈16.67."
+  },
+  {
+   "id": "gtm19",
+   "topic": "Oligopoly (Cournot & Bertrand)",
+   "q": "Continuing the same market (P=120-2Q, MC=20), what is the equilibrium market price and each firm's profit?",
+   "options": [
+    "P=53.3, profit≈555.6 each",
+    "P=60, profit≈300 each",
+    "P=46.7, profit≈250 each",
+    "P=70, profit≈400 each",
+    "P=40, profit≈444.4 each"
+   ],
+   "answer": 0,
+   "explain": "Total Q=qi+qj=2×16.67=33.33. Price: P=120-2(33.33)=120-66.67=53.33. Profit per firm using πi=(A-c)²/(9b)=(120-20)²/(9×2)=10000/18≈555.6 — matches directly computing (P-c)×qi=(53.33-20)(16.67)≈555.6 too."
+  },
+  {
+   "id": "gtm20",
+   "topic": "Oligopoly (Cournot & Bertrand)",
+   "q": "Two Bertrand duopolists sell a homogeneous product with identical constant marginal cost c=15. What is the unique Nash equilibrium price, and each firm's profit?",
+   "options": [
+    "p=15 for both, zero profit for both",
+    "p=15 for one, higher for the other, positive profit for the low-price firm only",
+    "Both price above c, splitting positive industry profit equally",
+    "No pure-strategy NE exists in this setting",
+    "p=15 for both, with each earning exactly half the monopoly profit"
+   ],
+   "answer": 0,
+   "explain": "The Bertrand paradox: with homogeneous products and constant MC, the unique NE is both firms pricing exactly at marginal cost, p=c=15, earning zero economic profit — any price above c invites undercutting by the rival to capture the whole market, and any price below c means selling at a loss, so p=c=MC is the only stable outcome."
+  },
+  {
+   "id": "gtm21",
+   "topic": "Oligopoly (Cournot & Bertrand)",
+   "q": "In the differentiated-products Bertrand model with qi=A-bpi+(b/2)pj, why is the equilibrium price ABOVE marginal cost, unlike the standard Bertrand paradox?",
+   "options": [
+    "Because firms can now collude implicitly without any threat of undercutting",
+    "Because a firm no longer loses its ENTIRE market by pricing above its rival — some consumers still buy from it due to product differentiation, softening price competition",
+    "Because marginal cost is assumed to be zero in this version",
+    "Because demand is now perfectly inelastic",
+    "Because in this model marginal cost is negative, subsidising output"
+   ],
+   "answer": 1,
+   "explain": "With imperfect substitutes, undercutting no longer captures the whole market instantly — a firm retains some demand even at a price premium, since consumers have individual preferences for each variety. This softens the intensity of price competition compared to the homogeneous-product case, allowing equilibrium prices to settle above marginal cost."
+  },
+  {
+   "id": "gtm22",
+   "topic": "Oligopoly (Cournot & Bertrand)",
+   "q": "In the Cournot model with free entry (N firms, symmetric), profit per firm is πi=(A-c)²/[b(N+1)²]. As N→∞, what happens to price and profit, and how does this relate to the perfectly competitive benchmark?",
+   "options": [
+    "Price → A (choke price); profit → ∞",
+    "Price → c (marginal cost); profit → 0, converging to the perfectly competitive outcome",
+    "Price stays fixed at the monopoly level regardless of N",
+    "Profit rises without bound as more firms compete",
+    "Price falls initially then rises back toward the monopoly level as N grows further"
+   ],
+   "answer": 1,
+   "explain": "As N→∞, p=A-N(A-c)/(N+1) → c, and πi=(A-c)²/[b(N+1)²] → 0 — with enough firms freely entering, Cournot competition converges exactly to the perfectly competitive, zero-economic-profit outcome, confirming that entry barriers (limiting N) are the true underlying source of oligopoly profit, not the quantity-setting mechanism itself."
+  }
+ ],
+ "openEnded": [
+  {
+   "id": "gto1",
+   "topic": "Nash Equilibrium",
+   "q": "Two competing coffee shops must simultaneously choose a price: High or Low. Payoffs (Shop A, Shop B): (High,High)=(50,50), (High,Low)=(10,60), (Low,High)=(60,10), (Low,Low)=(30,30). (a) [4 marks] Find all pure-strategy Nash equilibria, showing your reasoning. (b) [3 marks] Explain why this is structurally a prisoner's dilemma. (c) [3 marks] Suggest, with reference to the Repeated Games material, how the shops might sustain the jointly better (High,High) outcome if they interact repeatedly.",
+   "marks": 10,
+   "model": "(a) Check each cell for unilateral deviations. At (High,High)=(50,50): if A deviates to Low, A gets 60>50 — profitable deviation, so (High,High) is NOT a NE. At (Low,Low)=(30,30): if A deviates to High, A gets 10<30 — not profitable; by symmetry B also won't deviate. So (Low,Low) IS a Nash equilibrium. Checking (High,Low) and (Low,High): at (High,Low)=(10,60), A would deviate to Low (getting 30>10) — not a NE. By symmetry (Low,High) is also not a NE. The unique pure-strategy NE is (Low,Low).\n(b) Both firms have a dominant strategy to price Low (Low gives a higher payoff than High regardless of what the other firm does — check: if B plays High, A gets 60 from Low vs 50 from High; if B plays Low, A gets 30 from Low vs 10 from High — Low dominates either way), yet the mutually cooperative outcome (High,High)=(50,50) is better for both than the equilibrium (Low,Low)=(30,30) — the defining structure of a prisoner's dilemma.\n(c) If the shops interact repeatedly (e.g. daily pricing decisions) with a sufficiently high discount factor δ, a strategy like Grim Trigger (price High as long as the rival has always priced High; punish forever with Low if they ever deviate) can sustain (High,High) as a subgame perfect equilibrium, provided δ≥(π_D-π_C)/(π_D-π_N) using the one-shot deviation payoffs (60 from deviating, 50 from cooperating, 30 from mutual punishment): δ≥(60-50)/(60-30)=10/30=1/3. As long as the shops are patient enough (or expect to interact for long enough), the threat of reverting to the low-price war is enough to sustain cooperation."
+  },
+  {
+   "id": "gto2",
+   "topic": "Extensive Form & Backward Induction",
+   "q": "A firm (Entrant) decides whether to Enter a market or Stay Out. If it Stays Out, payoffs are (0, 50) [Entrant, Incumbent]. If it Enters, the Incumbent then chooses to Fight or Accommodate: Fight gives (-10,-10), Accommodate gives (20,20). (a) [4 marks] Draw out the logic of the game tree and solve for the SPE using backward induction. (b) [4 marks] Explain why 'threaten to Fight if Entry occurs' is a non-credible threat here, even though (Stay Out, Fight-if-entered) might look like a Nash equilibrium of the normal form.",
+   "marks": 8,
+   "model": "(a) Backward induction starts at the Incumbent's decision node (reached only if Entry occurs): compare Fight (-10) vs Accommodate (20) — Accommodate is strictly better for the Incumbent, so the Incumbent will Accommodate if Entry occurs. Knowing this, the Entrant compares Stay Out (payoff 0) vs Enter-then-Accommodate (payoff 20) — Enter is strictly better. SPE: Entrant plays Enter, Incumbent plays Accommodate (if entry occurs), giving outcome (20,20).\n(b) The strategy profile (Stay Out, always Fight if Entry occurs) CAN be a Nash equilibrium of the normal (simultaneous) form: given the Incumbent's threat to Fight, the Entrant's best response is to Stay Out (getting 0, versus -10 from Entering into a fight) — and given the Entrant stays out, the Incumbent's threat is never tested, so it costs the Incumbent nothing to 'commit' to it in the strategic form. But this threat is NON-CREDIBLE: if entry actually occurred, the Incumbent would not actually want to Fight (getting -10) when Accommodating gives 20 — sequential rationality requires the strategy be a best response at EVERY node, including this one that the equilibrium path doesn't visit. Backward induction/SPE correctly discards this equilibrium, leaving only (Enter, Accommodate) as the SPE."
+  },
+  {
+   "id": "gto3",
+   "topic": "Repeated Games & Folk Theorem",
+   "q": "Two firms play an infinitely repeated Cournot-style pricing game with per-period payoffs: mutual cooperation (collusion) π_C=40 each, one-off defection (undercut) π_D=70, mutual defection (price war) π_N=10. (a) [5 marks] Using Grim Trigger, derive the minimum discount factor δ* needed to sustain collusion as an SPE. (b) [4 marks] The firms' discount factor is δ=0.5. Is collusion sustainable? If not, suggest (without calculation) one real-world factor that could raise the EFFECTIVE discount factor and make collusion easier to sustain.",
+   "marks": 9,
+   "model": "(a) Grim Trigger sustains cooperation if the discounted value of cooperating forever is at least as large as the value of defecting once and facing permanent punishment: π_C/(1-δ) ≥ π_D + δ·π_N/(1-δ). Rearranging: δ ≥ (π_D-π_C)/(π_D-π_N) = (70-40)/(70-10) = 30/60 = 0.5. So δ*=0.5 exactly.\n(b) With δ=0.5, this is exactly at the threshold δ*=0.5 — collusion is (just barely) sustainable, since the condition is δ≥δ* with equality holding, meaning firms are indifferent between cooperating and defecting (in practice, exam answers should note this is a knife-edge case, and any δ even marginally below 0.5 would break down cooperation). Real-world factors that raise the EFFECTIVE discount factor (making future punishment loom larger relative to present gains) include: a higher probability of the interaction continuing (e.g. a stable market with no expected disruption), more frequent interaction/shorter periods between pricing decisions (so punishment arrives sooner), or genuinely greater patience/lower time-discounting by the firms' decision-makers."
+  },
+  {
+   "id": "gto4",
+   "topic": "Perfect Competition & Monopoly",
+   "q": "A monopolist faces inverse demand P=150-Q and has cost function C(Q)=10Q+0.5Q² (so MC=10+Q). (a) [4 marks] Find the profit-maximising price and quantity. (b) [4 marks] Find the socially efficient (perfectly competitive) quantity where P=MC, and calculate the deadweight loss.",
+   "marks": 8,
+   "model": "(a) TR=PQ=(150-Q)Q=150Q-Q². MR=150-2Q. Set MR=MC: 150-2Q=10+Q → 140=3Q → Q*=46.67. P*=150-46.67=103.33.\n(b) Efficient quantity: P=MC → 150-Q=10+Q → 140=2Q → Q**=70. Efficient price: P=150-70=80.\nDeadweight loss = area of the triangle between Q*=46.67 and Q**=70, bounded above by demand and below by MC. At Q=46.67, demand price is 103.33 and MC is 10+46.67=56.67 — a vertical gap of 46.67 at that point, tapering to zero at Q=70. DWL = 0.5 × (Q**-Q*) × (gap at Q*) = 0.5 × (70-46.67) × (103.33-56.67) = 0.5 × 23.33 × 46.67 ≈ 544.5. This represents the lost surplus from the 23.33 units that would have been mutually beneficial to produce (buyers valued them above their marginal cost) but the monopolist withholds to keep price high."
+  }
+ ]
 }
